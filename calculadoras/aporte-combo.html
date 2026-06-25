@@ -16,17 +16,31 @@ body{font-family:system-ui,Arial,sans-serif;background:#f9f9f9;color:#222;min-he
 .mnj-back:hover{color:#B83D0E}
 .mnj-content{flex:1;display:flex;justify-content:center;padding:24px 16px}
 .card{border:2px solid #D95218;padding:24px;border-radius:10px;box-shadow:0 2px 10px rgba(217,82,24,.1);width:100%;max-width:560px;background:#fff}
-h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:#D95218;margin-bottom:16px}
-label{display:block;margin-top:12px;font-size:14px;font-weight:500;color:#444}
+h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:#D95218;margin-bottom:20px;line-height:1.2}
+label{display:block;margin-top:14px;font-size:14px;font-weight:500;color:#444}
 input{width:100%;padding:9px 12px;margin-top:4px;border:1.5px solid #ddd;border-radius:7px;font-size:15px;outline:none;transition:border .2s}
 input:focus{border-color:#D95218}
 .hint{font-size:12px;color:#888;margin-top:4px;line-height:1.4}
 .hint strong{color:#D95218}
-.btn-calc{margin-top:16px;width:100%;padding:12px;border-radius:8px;border:0;background:#D95218;color:#fff;cursor:pointer;font-weight:700;font-size:15px;transition:background .15s}
+.divider{border:0;border-top:1px solid #f0e0da;margin:16px 0}
+.btn-calc{margin-top:18px;width:100%;padding:12px;border-radius:8px;border:0;background:#D95218;color:#fff;cursor:pointer;font-weight:700;font-size:15px;transition:background .15s}
 .btn-calc:hover{background:#B83D0E}
-.result{margin-top:16px;padding:14px;border-radius:8px;background:#fff5f2;border-left:4px solid #D95218;font-size:14px;line-height:1.8;display:none}
-.result strong{color:#D95218}
-.divider{border:0;border-top:1px solid #f0e0da;margin:12px 0}
+.result{display:none;margin-top:20px}
+.res-block{border-radius:10px;padding:16px;margin-bottom:12px}
+.res-main{background:#fff5f2;border-left:4px solid #D95218}
+.res-period{background:#f9f9f9;border:1px solid #eee}
+.res-money{background:#fff5f2;border:1px solid #fde0d6;border-radius:10px;padding:16px;margin-bottom:12px}
+.res-compare{background:#f9f9f9;border:1px solid #eee;border-radius:10px;padding:16px;margin-bottom:12px}
+.res-double{background:#f9f9f9;border:1px solid #eee;border-radius:10px;padding:16px;margin-bottom:12px}
+.res-goal{background:#EAF3DE;border-left:4px solid #3B6D11;border-radius:10px;padding:16px;margin-bottom:12px;display:none}
+.res-label{font-size:12px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.res-value{font-size:26px;font-weight:700;color:#D95218;font-family:'Syne',sans-serif}
+.res-desc{font-size:13px;color:#666;margin-top:4px;line-height:1.5}
+.res-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #f0e0da;font-size:14px}
+.res-row:last-child{border-bottom:none}
+.res-row span:first-child{color:#666}
+.res-row span:last-child{font-weight:600;color:#222}
+.res-row span.highlight{color:#D95218}
 .info{font-size:12px;color:#888;margin-top:14px;line-height:1.5}
 .info strong{color:#444}
 .btn-fechar{display:block;width:100%;margin-top:20px;padding:11px;border-radius:8px;border:2px solid #D95218;background:#fff;color:#D95218;cursor:pointer;font-weight:700;font-size:14px;text-align:center;text-decoration:none;transition:all .15s}
@@ -35,17 +49,18 @@ input:focus{border-color:#D95218}
 </style>
 </head>
 <body>
+
 <header class="mnj-header">
   <a class="mnj-header-left" href="https://manjubinhainvestidor.wordpress.com/">
     <img src="https://manjubinhainvestidor.wordpress.com/wp-content/uploads/2026/06/majubinharight-3.png" alt="Manjubinha"/>
     <span>Manjubinha</span>
   </a>
-  <a class="mnj-back" href="https://manjubinhainvestidor.wordpress.com/calculadoras/">← Calculadoras</a>
+  <a class="mnj-back" href="https://manjubinhainvestidor.wordpress.com/calculadoras/">&#8592; Calculadoras</a>
 </header>
 
 <div class="mnj-content">
 <div class="card">
-  <h3>💰 Combo: Aporte Inicial + Mensal</h3>
+  <h3>&#128176; Combo: Aporte Inicial + Mensal</h3>
 
   <label>Valor inicial (R$)</label>
   <input id="pv" type="number" step="0.01" value="10000"/>
@@ -53,47 +68,150 @@ input:focus{border-color:#D95218}
   <label>Contribuição mensal (R$)</label>
   <input id="pmt" type="number" step="0.01" value="500"/>
 
-  <label>Taxa anual (%)</label>
+  <label>Taxa anual esperada (%)</label>
   <input id="rate" type="number" step="0.01" value="8"/>
   <div class="hint">Rendimento esperado ao longo de 1 ano. Referência comum: <strong>8% ao ano</strong>.</div>
 
   <label>Período (anos)</label>
   <input id="years" type="number" step="1" value="10"/>
 
+  <hr class="divider">
+
+  <label>Meta de patrimônio (R$) <span style="font-weight:400;color:#aaa">opcional</span></label>
+  <input id="goal" type="number" step="0.01" placeholder="Ex: 1000000"/>
+  <div class="hint">Se quiser saber em quanto tempo você atinge um valor específico.</div>
+
   <button class="btn-calc" onclick="calcular()">Calcular Valor Futuro</button>
-  <div class="result" id="res"></div>
+
+  <div class="result" id="res">
+
+    <div class="res-block res-main">
+      <div class="res-label">&#127919; Valor acumulado ao final</div>
+      <div class="res-value" id="r-total"></div>
+      <div class="res-desc" id="r-total-desc"></div>
+    </div>
+
+    <div class="res-block res-period">
+      <div class="res-label">&#128197; Período simulado</div>
+      <div class="res-value" id="r-period" style="font-size:20px"></div>
+      <div class="res-desc" id="r-period-desc"></div>
+    </div>
+
+    <div class="res-money">
+      <div class="res-label">&#128176; O que acontece no caminho</div>
+      <div class="res-row"><span>Você vai investir no total</span><span id="r-aport"></span></div>
+      <div class="res-row"><span>Rendimento gerado pelos juros</span><span class="highlight" id="r-juros"></span></div>
+      <div class="res-row"><span>Seu dinheiro multiplicou</span><span class="highlight" id="r-mult"></span></div>
+    </div>
+
+    <div class="res-compare">
+      <div class="res-label">&#128202; Comparação: o poder do aporte mensal</div>
+      <div class="res-row"><span>Só com o aporte inicial (sem mensais)</span><span id="r-only-pv"></span></div>
+      <div class="res-row"><span>Com aportes mensais</span><span class="highlight" id="r-with-pmt"></span></div>
+      <div class="res-row"><span>Diferença gerada pelos aportes mensais</span><span class="highlight" id="r-diff"></span></div>
+    </div>
+
+    <div class="res-double">
+      <div class="res-label">&#9200;&#65039; Tempo para dobrar o dinheiro</div>
+      <div id="r-double" style="font-size:14px;line-height:1.8;margin-top:6px"></div>
+    </div>
+
+    <div class="res-goal" id="r-goal-block">
+      <div class="res-label">&#127919; Sua meta de patrimônio</div>
+      <div id="r-goal-text" style="font-size:14px;line-height:1.8;margin-top:4px"></div>
+    </div>
+
+  </div>
 
   <hr class="divider">
   <div class="info">
     <strong>O que é esta calculadora?</strong><br>
-    Combina um aporte inicial com contribuições mensais. O valor cresce com juros compostos ao longo do tempo.<br><br>
-    <strong>Fórmula:</strong> FV = PV × (1 + r)^t + PMT × [((1 + i)^N − 1) / i]
+    Combina um aporte inicial com contribuições mensais e mostra o crescimento do patrimônio com juros compostos ao longo do tempo.<br><br>
+    <strong>Fórmula:</strong> FV = PV x (1 + r)^t + PMT x [((1 + i)^N - 1) / i]
   </div>
 
-  <a class="btn-fechar" href="https://manjubinhainvestidor.wordpress.com/calculadoras/">← Voltar às Calculadoras</a>
+  <a class="btn-fechar" href="https://manjubinhainvestidor.wordpress.com/calculadoras/">&#8592; Voltar às Calculadoras</a>
 </div>
 </div>
 
 <footer class="mnj-footer">
-  ⚠️ <strong>Atenção:</strong> Simulação educacional. Não é recomendação de investimento.
+  &#9888;&#65039; <strong>Atenção:</strong> Simulação educacional. Não é recomendação de investimento.
 </footer>
 
 <script>
 function brl(x){return x.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}
 function calcular(){
-  var PV=parseFloat(document.getElementById('pv').value)||0;
-  var PMT=parseFloat(document.getElementById('pmt').value)||0;
-  var ann=(parseFloat(document.getElementById('rate').value)||0)/100;
-  var years=parseFloat(document.getElementById('years').value)||0;
-  var i=ann/12,N=years*12;
-  var el=document.getElementById('res');
+  var PV    = parseFloat(document.getElementById('pv').value)||0;
+  var PMT   = parseFloat(document.getElementById('pmt').value)||0;
+  var ann   = (parseFloat(document.getElementById('rate').value)||0)/100;
+  var years = parseFloat(document.getElementById('years').value)||0;
+  var goal  = parseFloat(document.getElementById('goal').value)||0;
+  var i     = ann/12;
+  var N     = years*12;
+
+  // Valor futuro total
+  var fvPV   = PV*Math.pow(1+ann,years);
+  var fvPMT  = i===0 ? PMT*N : PMT*((Math.pow(1+i,N)-1)/i);
+  var total  = fvPV+fvPMT;
+  var aport  = PV+PMT*N;
+  var juros  = total-aport;
+  var mult   = aport>0 ? (total/aport) : 0;
+
+  // Só com aporte inicial
+  var onlyPV = PV*Math.pow(1+ann,years);
+
+  var el = document.getElementById('res');
   el.style.display='block';
-  var fvPV=PV*Math.pow(1+ann,years);
-  var fvPMT=i===0?PMT*N:PMT*((Math.pow(1+i,N)-1)/i);
-  var total=fvPV+fvPMT,aport=PV+PMT*N,juros=total-aport;
-  el.innerHTML='Valor acumulado: <strong>'+brl(total)+'</strong><br>'
-    +'Total aportado: <strong>'+brl(aport)+'</strong><br>'
-    +'Rendimento gerado: <strong>'+brl(juros)+'</strong>';
+
+  document.getElementById('r-total').textContent = brl(total);
+  document.getElementById('r-total-desc').textContent =
+    'Com ' + brl(PV) + ' inicial e ' + brl(PMT) + ' por mês durante ' + years + ' anos.';
+
+  document.getElementById('r-period').textContent = years + (years===1?' ano':' anos');
+  document.getElementById('r-period-desc').textContent =
+    'Taxa de ' + (ann*100).toFixed(1) + '% ao ano (' + (ann/12*100).toFixed(3) + '% ao mês).';
+
+  document.getElementById('r-aport').textContent  = brl(aport);
+  document.getElementById('r-juros').textContent  = brl(juros);
+  document.getElementById('r-mult').textContent   = mult.toFixed(1) + 'x';
+
+  document.getElementById('r-only-pv').textContent  = brl(onlyPV);
+  document.getElementById('r-with-pmt').textContent = brl(total);
+  document.getElementById('r-diff').textContent     = brl(total-onlyPV);
+
+  // Regra dos 72
+  var doubleYears = ann>0 ? (72/(ann*100)).toFixed(1) : '?';
+  document.getElementById('r-double').innerHTML =
+    'Com taxa de <strong>' + (ann*100).toFixed(1) + '% ao ano</strong>, seu dinheiro dobra a cada aproximadamente <strong>' + doubleYears + ' anos</strong>.<br>' +
+    'Isso significa que em ' + years + ' anos o dinheiro pode dobrar cerca de <strong>' + (ann>0?(years/doubleYears).toFixed(1):'?') + ' vezes</strong>.';
+
+  // Meta de patrimônio
+  var goalBlock = document.getElementById('r-goal-block');
+  var goalText  = document.getElementById('r-goal-text');
+  if(goal>0){
+    goalBlock.style.display='block';
+    if(total>=goal){
+      goalText.innerHTML = 'Você <strong>atinge sua meta de ' + brl(goal) + '</strong> dentro do período simulado de ' + years + ' anos.';
+    } else {
+      // Calcula quando atinge a meta
+      var monthsToGoal = 0;
+      var found = false;
+      for(var n=1;n<=1200;n++){
+        var fvN = PV*Math.pow(1+i,n) + (i===0?PMT*n:PMT*((Math.pow(1+i,n)-1)/i));
+        if(fvN>=goal){monthsToGoal=n;found=true;break}
+      }
+      if(found){
+        var anosGoal=Math.floor(monthsToGoal/12), mesesGoal=monthsToGoal%12;
+        goalText.innerHTML =
+          'Sua meta de <strong>' + brl(goal) + '</strong> será atingida em aproximadamente <strong>' + anosGoal + ' anos' + (mesesGoal>0?' e '+mesesGoal+' meses':'') + '</strong>.<br>' +
+          'Ou seja, <strong>' + (anosGoal-years>0?'mais '+(anosGoal-years)+' anos além do período simulado':anosGoal+' anos no total') + '</strong>.';
+      } else {
+        goalText.innerHTML = 'Com os valores informados, a meta de <strong>' + brl(goal) + '</strong> não é atingida em 100 anos. Aumente os aportes ou revise a meta.';
+      }
+    }
+  } else {
+    goalBlock.style.display='none';
+  }
 }
 </script>
 </body>
