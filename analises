@@ -1,0 +1,397 @@
+"""
+Manjubinha Investidor — Script de Análises Automáticas
+Roda 2x por semana (terça e sexta) via GitHub Actions.
+Busca documentos novos nos sites de RI dos 60 ativos,
+analisa com Claude API e publica no WordPress.com.
+"""
+
+import os
+import json
+import requests
+import anthropic
+from datetime import datetime, timedelta
+from pathlib import Path
+
+# ── Configurações ──────────────────────────────────────────────────────────────
+WP_SITE     = "manjubinhainvestidor.wordpress.com"
+WP_USER     = os.environ["WP_USER"]        # seu usuário WordPress.com
+WP_PASSWORD = os.environ["WP_APP_PASS"]   # Application Password gerado no WP
+CLAUDE_KEY  = os.environ["ANTHROPIC_API_KEY"]
+
+WP_API      = f"https://public-api.wordpress.com/wp/v2/sites/{WP_SITE}"
+WP_AUTH     = (WP_USER, WP_PASSWORD)
+
+# Categorias no WordPress.com (IDs já criados)
+CAT_FIIS    = 790154326
+CAT_ACOES   = 790154327
+
+# Arquivo de controle: documentos já processados (evita duplicatas)
+CONTROLE    = Path("controle_docs.json")
+
+# ── Prompt padrão de análise ───────────────────────────────────────────────────
+PROMPT_FII = """
+Você é um analista financeiro do site Manjubinha Investidor, que cria análises
+simplificadas de FIIs para investidores iniciantes e intermediários.
+
+Com base no documento do FII {ticker} ({nome}) fornecido abaixo, escreva uma
+análise completa seguindo EXATAMENTE esta estrutura em HTML para WordPress:
+
+1. Bloco de info (H4 em laranja #ff6900 com <mark>):
+   - Tipo de documento — Período
+   - Publicado em: DD/MM/AAAA — [Site oficial da gestora ↗]({ri_url})
+   - Tipo: {tipo} — Gestora: {gestora}
+
+2. Seções com H3 e emoji:
+   💬 O que esse fundo faz?
+   📊 Indicadores Principais (formato: **Indicador: valor** — explicação curta)
+   🎯 DY Real? (analise se o DY está inflado por extraordinários; se for fundo de papel, sempre alertar que P/VP acima de 1,0 não é recomendado para compra com explicação curta)
+   ⚠️ Pontos de Atenção
+   👁️ Deve Ser Acompanhado
+   ✅ Boa Notícia
+   🔄 Mudou fundamento?
+   📌 Merece Aporte? (💰 Foco em Renda: e 📈 Foco em Valorização: cada um com <br> e texto)
+
+3. Termine com um bloco <blockquote> de conclusão com 📌
+
+Use linguagem simples, direta, sem jargões desnecessários.
+Seja específico com os números do documento.
+Máximo 600 palavras no total.
+
+DOCUMENTO:
+{conteudo_doc}
+"""
+
+PROMPT_ACAO = """
+Você é um analista financeiro do site Manjubinha Investidor, que cria análises
+simplificadas de Ações para investidores iniciantes e intermediários.
+
+Com base no documento da empresa {ticker} ({nome}) fornecido abaixo, escreva uma
+análise completa seguindo EXATAMENTE esta estrutura:
+
+1. Bloco de info (H4 em laranja #ff6900 com <mark>):
+   - Tipo de documento — Período
+   - Publicado em: DD/MM/AAAA — [Site oficial de RI ↗]({ri_url})
+   - Setor: {setor} — Empresa: {nome}
+
+2. Seções com H3 e emoji:
+   💬 O que essa empresa faz?
+   📊 Indicadores Principais (formato: **Indicador: valor** — explicação curta)
+   🎯 DY Real? (analise se o DY está inflado por eventos extraordinários; seja direto)
+   ⚠️ Pontos de Atenção
+   👁️ Deve Ser Acompanhado
+   ✅ Boa Notícia
+   🔄 Mudou fundamento?
+   📌 Merece Aporte? (💰 Foco em Renda: e 📈 Foco em Valorização: cada um com <br> e texto)
+
+3. Termine com um bloco <blockquote> de conclusão com 📌
+
+Use linguagem simples, direta, sem jargões desnecessários.
+Seja específico com os números do documento.
+Máximo 600 palavras no total.
+
+DOCUMENTO:
+{conteudo_doc}
+"""
+
+# ── Funções auxiliares ─────────────────────────────────────────────────────────
+
+def carregar_controle():
+    if CONTROLE.exists():
+        return json.loads(CONTROLE.read_text())
+    return {}
+
+def salvar_controle(controle):
+    CONTROLE.write_text(json.dumps(controle, indent=2, ensure_ascii=False))
+
+def carregar_config():
+    return json.loads(Path("config.json").read_text())
+
+def carregar_ranking():
+    return json.loads(Path("ranking.json").read_text())
+
+def salvar_ranking(ranking):
+    Path("ranking.json").write_text(json.dumps(ranking, indent=2, ensure_ascii=False))
+
+def buscar_pdf_fii(ativo, desde_data):
+    """
+    Busca documentos novos no FundosNet (B3) para FIIs.
+    Retorna lista de {titulo, url, data} publicados após desde_data.
+    """
+    cnpj = ativo.get("fundosnet_cnpj", "").replace("/", "%2F").replace(".", "").replace("-", "")
+    url = f"https://fnet.bmfbovespa.com.br/fnet/publico/pesquisarDocumentos"
+    
+    tipos_relevantes = [
+        "Relatório Mensal",
+        "Fato Relevante", 
+        "Informe Mensal",
+        "Comunicado ao Mercado"
+    ]
+    
+    docs = []
+    try:
+        # Busca via FundosNet API pública
+        params = {
+            "tipoFundo": "FII",
+            "cnpj": ativo["fundosnet_cnpj"],
+            "dataInicial": desde_data.strftime("%Y-%m-%d"),
+            "dataFinal": datetime.today().strftime("%Y-%m-%d"),
+        }
+        resp = requests.get(url, params=params, timeout=15)
+        if resp.status_code == 200:
+            data = resp.json()
+            for doc in data.get("data", {}).get("list", []):
+                tipo = doc.get("tipoDocumento", {}).get("descricao", "")
+                if any(t in tipo for t in tipos_relevantes):
+                    docs.append({
+                        "titulo": f"{tipo} — {doc.get('competencia', '')}",
+                        "url": f"https://fnet.bmfbovespa.com.br/fnet/publico/exibirDocumento?id={doc.get('id')}",
+                        "data": doc.get("dataEntrega", "")[:10],
+                        "tipo": tipo
+                    })
+    except Exception as e:
+        print(f"  ⚠️  Erro ao buscar FundosNet para {ativo['ticker']}: {e}")
+    
+    return docs
+
+def buscar_doc_acao(ativo, desde_data):
+    """
+    Busca documentos novos no ENET/CVM para Ações.
+    Retorna lista de {titulo, url, data}.
+    """
+    docs = []
+    try:
+        # CVM ENET API pública
+        url = "https://efts.cvm.gov.br/EFTS/unif/busca"
+        params = {
+            "q": ativo["ticker"],
+            "dateRange": "custom",
+            "startDate": desde_data.strftime("%Y-%m-%d"),
+            "endDate": datetime.today().strftime("%Y-%m-%d"),
+            "category": "ITR,DFP,PRESS",  # ITR=trimestral, DFP=anual, PRESS=press release
+        }
+        resp = requests.get(url, params=params, timeout=15)
+        if resp.status_code == 200:
+            data = resp.json()
+            for hit in data.get("hits", {}).get("hits", []):
+                src = hit.get("_source", {})
+                categoria = src.get("categoria", "")
+                if any(c in categoria for c in ["Trimestral", "Release", "Resultado"]):
+                    docs.append({
+                        "titulo": src.get("titulo", categoria),
+                        "url": src.get("linkDownload", ativo["ri_url"]),
+                        "data": src.get("dataReferencia", "")[:10],
+                        "tipo": categoria
+                    })
+    except Exception as e:
+        print(f"  ⚠️  Erro ao buscar CVM para {ativo['ticker']}: {e}")
+    
+    # Fallback: usa URL de RI diretamente (sem automação)
+    if not docs:
+        print(f"  ℹ️  {ativo['ticker']}: sem resultado automático, RI em {ativo['ri_url']}")
+    
+    return docs
+
+def baixar_texto_pdf(url_pdf):
+    """Baixa e extrai texto de um PDF via URL."""
+    try:
+        resp = requests.get(url_pdf, timeout=30)
+        if resp.status_code == 200:
+            # Extração simples via pypdf (instalado no requirements.txt)
+            import io
+            from pypdf import PdfReader
+            reader = PdfReader(io.BytesIO(resp.content))
+            texto = "\n".join(page.extract_text() or "" for page in reader.pages[:15])
+            return texto[:12000]  # Limita para caber no contexto do Claude
+    except Exception as e:
+        print(f"  ⚠️  Erro ao baixar PDF: {e}")
+    return None
+
+def analisar_com_claude(prompt_template, ativo, conteudo_doc, tipo="fii"):
+    """Envia para a API do Claude e retorna a análise em HTML."""
+    client = anthropic.Anthropic(api_key=CLAUDE_KEY)
+    
+    if tipo == "fii":
+        prompt = prompt_template.format(
+            ticker=ativo["ticker"],
+            nome=ativo["nome"],
+            ri_url=ativo["ri_url"],
+            tipo=ativo.get("tipo", ""),
+            gestora=ativo.get("gestora", ""),
+            conteudo_doc=conteudo_doc
+        )
+    else:
+        prompt = prompt_template.format(
+            ticker=ativo["ticker"],
+            nome=ativo["nome"],
+            ri_url=ativo["ri_url"],
+            setor=ativo.get("setor", ""),
+            conteudo_doc=conteudo_doc
+        )
+    
+    msg = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=2000,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return msg.content[0].text
+
+def gerar_conteudo_wp(analise_html, ativo, doc, tipo="fii"):
+    """Monta o conteúdo final do post WordPress com blocos Gutenberg."""
+    conteudo = f"""<!-- wp:post-content -->
+{analise_html}
+<!-- /wp:post-content -->"""
+    return analise_html  # O Claude já gera o HTML estruturado
+
+def publicar_post_wp(titulo, conteudo, ativo, doc, tipo="fii"):
+    """Publica o post no WordPress.com e retorna a URL."""
+    categoria = CAT_FIIS if tipo == "fii" else CAT_ACOES
+    
+    # Busca ou cria tag para o ticker
+    tag_resp = requests.get(
+        f"{WP_API}/tags",
+        params={"search": ativo["ticker"]},
+        auth=WP_AUTH
+    )
+    tags = tag_resp.json()
+    if tags:
+        tag_id = tags[0]["id"]
+    else:
+        nova_tag = requests.post(
+            f"{WP_API}/tags",
+            json={"name": ativo["ticker"]},
+            auth=WP_AUTH
+        ).json()
+        tag_id = nova_tag.get("id")
+    
+    post_data = {
+        "title": titulo,
+        "content": conteudo,
+        "status": "publish",
+        "categories": [categoria],
+        "tags": [tag_id] if tag_id else [],
+    }
+    
+    resp = requests.post(f"{WP_API}/posts", json=post_data, auth=WP_AUTH)
+    if resp.status_code in (200, 201):
+        post = resp.json()
+        print(f"  ✅ Publicado: {post['link']}")
+        return post["link"]
+    else:
+        print(f"  ❌ Erro ao publicar: {resp.status_code} — {resp.text[:200]}")
+        return None
+
+def atualizar_ranking_com_link(ticker, post_url, tipo="fii"):
+    """Atualiza o ranking.json com o link do novo post."""
+    ranking = carregar_ranking()
+    lista = ranking["fiis"] if tipo == "fii" else ranking["acoes"]
+    for ativo in lista:
+        if ativo["ticker"] == ticker:
+            ativo["post_url"] = post_url
+            break
+    salvar_ranking(ranking)
+
+# ── Fluxo principal ────────────────────────────────────────────────────────────
+
+def processar_fiis(config, controle, desde_data):
+    print("\n📦 Processando FIIs...")
+    for ativo in config["fiis"]:
+        ticker = ativo["ticker"]
+        print(f"\n  → {ticker} ({ativo['nome']})")
+        
+        docs = buscar_pdf_fii(ativo, desde_data)
+        if not docs:
+            print(f"     Nenhum documento novo.")
+            continue
+        
+        for doc in docs:
+            doc_id = f"{ticker}_{doc['data']}_{doc['tipo']}"
+            if doc_id in controle:
+                print(f"     Já processado: {doc['titulo']}")
+                continue
+            
+            print(f"     📄 Novo: {doc['titulo']}")
+            texto = baixar_texto_pdf(doc["url"])
+            if not texto:
+                print(f"     ⚠️  Não foi possível extrair texto do PDF.")
+                controle[doc_id] = {"status": "erro_pdf", "data": doc["data"]}
+                salvar_controle(controle)
+                continue
+            
+            print(f"     🤖 Analisando com Claude...")
+            analise = analisar_com_claude(PROMPT_FII, ativo, texto, tipo="fii")
+            
+            titulo_post = f"{ticker} — {ativo['nome']} | {doc['titulo']}"
+            print(f"     📝 Publicando: {titulo_post}")
+            url = publicar_post_wp(titulo_post, analise, ativo, doc, tipo="fii")
+            
+            if url:
+                atualizar_ranking_com_link(ticker, url, tipo="fii")
+                controle[doc_id] = {"status": "ok", "data": doc["data"], "url": url}
+            else:
+                controle[doc_id] = {"status": "erro_wp", "data": doc["data"]}
+            
+            salvar_controle(controle)
+
+def processar_acoes(config, controle, desde_data):
+    print("\n📈 Processando Ações...")
+    for ativo in config["acoes"]:
+        ticker = ativo["ticker"]
+        print(f"\n  → {ticker} ({ativo['nome']})")
+        
+        docs = buscar_doc_acao(ativo, desde_data)
+        if not docs:
+            print(f"     Nenhum documento novo.")
+            continue
+        
+        for doc in docs:
+            doc_id = f"{ticker}_{doc['data']}_{doc['tipo']}"
+            if doc_id in controle:
+                print(f"     Já processado: {doc['titulo']}")
+                continue
+            
+            print(f"     📄 Novo: {doc['titulo']}")
+            texto = baixar_texto_pdf(doc["url"])
+            if not texto:
+                print(f"     ⚠️  Não foi possível extrair texto do PDF.")
+                controle[doc_id] = {"status": "erro_pdf", "data": doc["data"]}
+                salvar_controle(controle)
+                continue
+            
+            print(f"     🤖 Analisando com Claude...")
+            analise = analisar_com_claude(PROMPT_ACAO, ativo, texto, tipo="acao")
+            
+            titulo_post = f"{ticker} — {ativo['nome']} | {doc['titulo']}"
+            print(f"     📝 Publicando: {titulo_post}")
+            url = publicar_post_wp(titulo_post, analise, ativo, doc, tipo="acao")
+            
+            if url:
+                atualizar_ranking_com_link(ticker, url, tipo="acao")
+                controle[doc_id] = {"status": "ok", "data": doc["data"], "url": url}
+            else:
+                controle[doc_id] = {"status": "erro_wp", "data": doc["data"]}
+            
+            salvar_controle(controle)
+
+def main():
+    print("🐟 Manjubinha Analises — Iniciando")
+    print(f"   Data: {datetime.today().strftime('%Y-%m-%d %H:%M')}")
+    
+    config   = carregar_config()
+    controle = carregar_controle()
+    
+    # Retroativo: busca documentos desde início de junho/2026
+    # Após a primeira rodada, muda para últimos 7 dias automaticamente
+    if not controle:
+        print("   📅 Primeira execução: buscando documentos desde 01/06/2026")
+        desde_data = datetime(2026, 6, 1)
+    else:
+        print("   📅 Buscando documentos dos últimos 8 dias")
+        desde_data = datetime.today() - timedelta(days=8)
+    
+    processar_fiis(config, controle, desde_data)
+    processar_acoes(config, controle, desde_data)
+    
+    print("\n✅ Concluído!")
+
+if __name__ == "__main__":
+    main()
