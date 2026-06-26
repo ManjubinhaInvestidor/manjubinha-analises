@@ -37,6 +37,13 @@ jobs:
           WP_USER: ${{ secrets.WP_USER }}
           WP_APP_PASS: ${{ secrets.WP_APP_PASS }}
 
+      - name: Setup do site (menu + CSS)
+        run: python setup_site.py
+        continue-on-error: true
+        env:
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASS: ${{ secrets.WP_APP_PASS }}
+
       - name: Salvar controle e ranking atualizados
         run: |
           git config user.name "ManjubinhaInvestidor"
