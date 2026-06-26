@@ -2,8 +2,8 @@ name: Manjubinha — Análises Automáticas
 
 on:
   schedule:
-    - cron: '0 11 * * 2'   # Terça 08h BRT
-    - cron: '0 11 * * 5'   # Sexta 08h BRT
+    - cron: '0 12 * * 2'   # Terça 09h BRT (12:00 UTC)
+    - cron: '0 12 * * 5'   # Sexta 09h BRT (12:00 UTC)
   workflow_dispatch:
 
 jobs:
@@ -27,7 +27,8 @@ jobs:
       - name: Rodar análises
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          WP_TOKEN:       ${{ secrets.WP_TOKEN }}
+          WP_USER:        ${{ secrets.WP_USER }}
+          WP_APP_PASS:    ${{ secrets.WP_APP_PASS }}
         run: python analises.py
 
       - name: Salvar controle e ranking atualizados
