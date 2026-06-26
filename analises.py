@@ -8,18 +8,23 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 # ── Config ─────────────────────────────────────────────────────────────────────
-WP_SITE    = "manjubinhainvestidor.wordpress.com"
-WP_TOKEN   = os.environ["WP_TOKEN"]
+WP_URL     = "https://manjubinhainvestidor.com.br"
+WP_USER    = os.environ["WP_USER"]
+WP_PASS    = os.environ["WP_APP_PASS"]
 GEMINI_KEY = os.environ["GEMINI_API_KEY"]
 
-WP_API     = f"https://public-api.wordpress.com/wp/v2/sites/{WP_SITE}"
-WP_HEADERS = {"Authorization": f"Bearer {WP_TOKEN}"}
+WP_API     = f"{WP_URL}/wp-json/wp/v2"
+# WordPress.org usa Basic Auth com usuário + Application Password
+import base64
+_cred = base64.b64encode(f"{WP_USER}:{WP_PASS}".encode()).decode()
+WP_HEADERS = {"Authorization": f"Basic {_cred}"}
 
 # Gemini Flash com Google Search grounding
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_KEY}"
 
-CAT_FIIS   = 790154326
-CAT_ACOES  = 790154327
+# IDs de categoria serão buscados dinamicamente pelo slug
+CAT_FIIS   = None  # preenchido em main()
+CAT_ACOES  = None  # preenchido em main()
 CONTROLE   = Path("controle_docs.json")
 
 MES_ATUAL  = datetime.today().strftime("%B de %Y")  # ex: junho de 2026
@@ -160,6 +165,16 @@ def gemini_search(prompt):
     print("  ❌ Gemini: 3 tentativas falharam.")
     return None
 
+def get_or_create_category(slug, name):
+    """Busca categoria pelo slug ou cria se não existir."""
+    r = requests.get(f"{WP_API}/categories", headers=WP_HEADERS, params={"slug": slug})
+    cats = r.json()
+    if isinstance(cats, list) and cats:
+        return cats[0]["id"]
+    # Cria a categoria
+    r = requests.post(f"{WP_API}/categories", headers=WP_HEADERS, json={"name": name, "slug": slug})
+    return r.json().get("id")
+
 def get_tag(ticker):
     r = requests.get(f"{WP_API}/tags", params={"search": ticker}, headers=WP_HEADERS)
     tags = r.json()
@@ -247,6 +262,12 @@ def main():
     print(f"🐟 Manjubinha — {datetime.today().strftime('%Y-%m-%d %H:%M UTC')}")
     config   = carregar("config.json", {})
     controle = carregar(CONTROLE, {})
+
+    # Busca/cria categorias no WordPress.org
+    global CAT_FIIS, CAT_ACOES
+    CAT_FIIS  = get_or_create_category("analises-fiis", "FIIs | Análises")
+    CAT_ACOES = get_or_create_category("documentos-acoes", "Ações | Análises")
+    print(f"   📂 Categoria FIIs: {CAT_FIIS} | Ações: {CAT_ACOES}")
     mes      = datetime.today().strftime("%m-%Y")  # ex: 06-2026
 
     print(f"   📅 Mês: {MES_ATUAL}")
