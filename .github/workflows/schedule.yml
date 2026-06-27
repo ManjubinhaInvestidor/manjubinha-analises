@@ -11,7 +11,7 @@ on:
 jobs:
   analisar:
     runs-on: ubuntu-latest
-    steps:
+    steps:h
       - name: Baixar repositorio
         uses: actions/checkout@v4
         with:
@@ -27,7 +27,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           WP_USER:        ${{ secrets.WP_USER }}
           WP_APP_PASS:    ${{ secrets.WP_APP_PASS }}
-        run: python analises.py
+        run: python -u analises.py
       - name: Salvar controle e ranking
         run: |
           git config user.name "Manjubinha Bot"
