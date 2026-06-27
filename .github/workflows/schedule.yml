@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Instalar dependencias
-        run: pip install requests pypdf
+        run: pip install requests pypdf beautifulsoup4
       - name: Rodar analises
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
