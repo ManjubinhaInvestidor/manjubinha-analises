@@ -133,11 +133,13 @@ def gemini(prompt):
         if r.status_code == 200:
             return r.json()["candidates"][0]["content"]["parts"][0]["text"]
         elif r.status_code == 429:
+            print(f"  429 ERRO: {r.text[:300]}")
             print(f"  Rate limit aguardando 60s ({tentativa+1}/3)")
             time.sleep(60)
         else:
-            print(f"  Gemini {r.status_code}: {r.text[:200]}")
+            print(f"  Gemini {r.status_code}: {r.text[:300]}")
             return None
+    print("  Gemini falhou apos 3 tentativas - continuando...")
     return None
 
 # Categorias fixas do WordPress Manjubinha Hostinger
