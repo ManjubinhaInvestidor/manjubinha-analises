@@ -140,6 +140,60 @@ def gemini(prompt):
             return None
     return None
 
+# Categorias fixas do WordPress Manjubinha Hostinger
+CAT_FII_PRINCIPAL = 13
+CAT_ACAO_PRINCIPAL = 2
+
+CAT_FII_TIPO = {
+    "Papel": 30, "papel": 30,
+    "Tijolo": 31, "tijolo": 31,
+    "FoF": 26, "fof": 26,
+    "Hibrido": 27, "hibrido": 27,
+    "Hibrido": 27,
+    "Fiagro": 25, "fiagro": 25,
+}
+
+CAT_FII_SEG = {
+    "Logistico": 19, "Logistico": 19,
+    "Shoppings": 22,
+    "Lajes Corp.": 18,
+    "TVM": 23,
+}
+
+CAT_ACAO_SETOR = {
+    "Bens Industriais": 3,
+    "Consumo Ciclico": 4, "Consumo Ciclico": 4,
+    "Consumo Nao Ciclico": 5,
+    "Financeiro": 6,
+    "Materiais Basicos": 7,
+    "Petroleo, Gas e Biocombustiveis": 8,
+    "Saude": 9,
+    "Tecnologia da Informacao": 10,
+    "Telecomunicacoes": 11,
+    "Utilidade Publica": 12,
+}
+
+def get_fii_categories(ativo):
+    cats = [CAT_FII_PRINCIPAL]
+    tipo = ativo.get("tipo", "")
+    seg = ativo.get("segmento", "")
+    if tipo.lower() == "tijolo" and seg:
+        cat = CAT_FII_SEG.get(seg)
+        cats.append(cat if cat else 31)
+    elif tipo:
+        cat = CAT_FII_TIPO.get(tipo)
+        if cat:
+            cats.append(cat)
+    return cats
+
+def get_acao_categories(ativo):
+    cats = [CAT_ACAO_PRINCIPAL]
+    setor = ativo.get("setor", "")
+    cat = CAT_ACAO_SETOR.get(setor)
+    if cat:
+        cats.append(cat)
+    return cats
+
 def get_or_create_category(slug, name):
     r = requests.get(f"{WP_API}/categories", headers=WP_HEADERS, params={"slug": slug})
     cats = r.json()
@@ -156,11 +210,11 @@ def get_tag(ticker):
     nova = requests.post(f"{WP_API}/tags", headers=WP_HEADERS, json={"name": ticker})
     return nova.json().get("id")
 
-def publicar(titulo, conteudo, categoria, ticker):
+def publicar(titulo, conteudo, categorias, ticker):
     tag_id = get_tag(ticker)
     r = requests.post(f"{WP_API}/posts", headers=WP_HEADERS, json={
         "title": titulo, "content": conteudo,
-        "status": "publish", "categories": [categoria],
+        "status": "publish", "categories": categorias,
         "tags": [tag_id] if tag_id else []
     })
     if r.status_code in (200, 201):
@@ -197,8 +251,11 @@ def processar_ativo(ativo, controle, semana, cat, tipo):
     print(f"  -> {t} ({ativo['nome']})")
     if tipo == "fii":
         prompt = PROMPT_FII.replace("{ticker}", t).replace("{nome}", ativo["nome"]).replace("{ri_url}", ativo.get("ri_url","")).replace("{tipo}", ativo.get("tipo","")).replace("{gestora}", ativo.get("gestora",""))
+        categorias = get_fii_categories(ativo)
     else:
         prompt = PROMPT_ACAO.replace("{ticker}", t).replace("{nome}", ativo["nome"]).replace("{ri_url}", ativo.get("ri_url","")).replace("{setor}", ativo.get("setor",""))
+        categorias = get_acao_categories(ativo)
+    print(f"     Categorias: {categorias}")
     print("     Gemini...")
     analise = gemini(prompt)
     if not analise:
@@ -208,7 +265,7 @@ def processar_ativo(ativo, controle, semana, cat, tipo):
     mes = datetime.today().strftime("%m/%Y")
     titulo = f"{t} - {ativo['nome']} | Analise {mes}"
     print("     Publicando...")
-    url = publicar(titulo, analise, cat, t)
+    url = publicar(titulo, analise, categorias, t)
     if url:
         atualizar_ranking(t, url, tipo)
         controle[chave] = {"status": "ok", "url": url, "data": datetime.today().strftime("%Y-%m-%d")}
@@ -224,8 +281,6 @@ def main():
     controle = carregar(CONTROLE, {})
     semana   = semana_atual()
     print(f"Semana: {semana}")
-    cat_fiis  = get_or_create_category("analises-fiis", "FIIs | Analises")
-    cat_acoes = get_or_create_category("documentos-acoes", "Acoes | Analises")
     fiis_rodada  = proximos(config.get("fiis",  []), controle, semana, POR_RODADA)
     acoes_rodada = proximos(config.get("acoes", []), controle, semana, POR_RODADA)
     if not fiis_rodada and not acoes_rodada:
@@ -233,10 +288,10 @@ def main():
         return
     print(f"FIIs: {[a['ticker'] for a in fiis_rodada]}")
     for ativo in fiis_rodada:
-        processar_ativo(ativo, controle, semana, cat_fiis, "fii")
+        processar_ativo(ativo, controle, semana, None, "fii")
     print(f"Acoes: {[a['ticker'] for a in acoes_rodada]}")
     for ativo in acoes_rodada:
-        processar_ativo(ativo, controle, semana, cat_acoes, "acao")
+        processar_ativo(ativo, controle, semana, None, "acao")
     pf = len(proximos(config.get("fiis",[]),  controle, semana, 99))
     pa = len(proximos(config.get("acoes",[]), controle, semana, 99))
     print(f"Concluido! Restam {pf} FIIs e {pa} Acoes esta semana.")
