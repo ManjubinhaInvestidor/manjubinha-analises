@@ -178,5 +178,17 @@
   },
   "IRBR3_06-2026": {
     "status": "erro_claude"
+  },
+  "MXRF11_2026-W26": {
+    "status": "erro_gemini"
+  },
+  "KNCR11_2026-W26": {
+    "status": "erro_gemini"
+  },
+  "PETR4_2026-W26": {
+    "status": "erro_gemini"
+  },
+  "VALE3_2026-W26": {
+    "status": "erro_gemini"
   }
 }
