@@ -154,6 +154,9 @@ def buscar_ultimo_doc(ticker, inv10_tipo):
             span = card.find("span", class_="card-date--content")
             if p:
                 descricao = p.get_text(strip=True)[:100]
+                # Para acoes a CVM usa "Categoria - Tipo": pega so o Tipo (parte apos " - ")
+                if " - " in descricao:
+                    descricao = descricao.split(" - ")[-1].strip()[:100]
             if span:
                 data = span.get_text(strip=True)
         return {"id": doc_id, "descricao": descricao, "data": data, "url_doc": href}
