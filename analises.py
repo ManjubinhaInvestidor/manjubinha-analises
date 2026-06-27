@@ -145,17 +145,20 @@ def buscar_ultimo_doc(ticker, inv10_tipo):
             return None
         href = link["href"]
         doc_id = href.rstrip("/").split("/")[-1]
-        # Extrai descricao e data da linha do link
-        row = link.find_parent("tr") or link.find_parent("li") or link.find_parent("div")
+        # Extrai descricao e data das celulas <td> da linha
+        tr = link.find_parent("tr")
         descricao, data = "Comunicado", ""
-        if row:
-            for cell in row.find_all(["td", "span", "p", "div"]):
-                text = cell.get_text(strip=True)
-                if re.match(r"\d{2}/\d{2}/\d{4}", text):
+        if tr:
+            for td in tr.find_all("td"):
+                text = td.get_text(strip=True)
+                if not text or text.upper() == "ABRIR":
+                    continue
+                if re.match(r"\d{2}/\d{2}/\d{4}", text) and not data:
                     data = text
-                elif text and text.upper() not in ("ABRIR", "") and len(text) > 3:
-                    if descricao == "Comunicado":
-                        descricao = text[:120]
+                elif len(text) > 3 and descricao == "Comunicado":
+                    # descricao nao deve ser apenas uma data
+                    if not re.search(r"\d{2}/\d{2}/\d{4}", text):
+                        descricao = text[:100]
         return {"id": doc_id, "descricao": descricao, "data": data, "url_doc": href}
     except Exception as e:
         print(f"  Erro scraping {ticker}: {e}")
@@ -192,12 +195,15 @@ def gemini(prompt):
         elif r.status_code == 429:
             print(f"  429 quota: aguardando 60s ({tentativa+1}/3)")
             time.sleep(60)
+        elif r.status_code == 503:
+            print(f"  503 sobrecarga: aguardando 30s ({tentativa+1}/3)")
+            time.sleep(30)
         else:
             so_quota = False
             print(f"  Gemini {r.status_code}: {r.text[:200]}")
             return False
     if so_quota:
-        print("  Quota esgotada apos 3 tentativas - retentara na proxima rodada")
+        print("  Gemini indisponivel apos 3 tentativas - retentara na proxima rodada")
         return None
     return False
 
