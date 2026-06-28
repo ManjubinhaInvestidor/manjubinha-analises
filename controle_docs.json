@@ -61,5 +61,41 @@
   },
   "ITUB4": {
     "ultima": "2026-06-28"
+  },
+  "KNRI11_22955": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knri11-kinea-renda-imobiliaria-informe-mensal-06-2026/",
+    "data": "2026-06-28",
+    "descricao": "Informe Mensal"
+  },
+  "KNRI11": {
+    "ultima": "2026-06-28"
+  },
+  "GARE11_23116": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/gare11-guardian-real-estate-informe-mensal-06-2026/",
+    "data": "2026-06-28",
+    "descricao": "Informe Mensal"
+  },
+  "GARE11": {
+    "ultima": "2026-06-28"
+  },
+  "BBAS3_44747": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-relatorio-de-agencia-de-rating-06-2026/",
+    "data": "2026-06-28",
+    "descricao": "Relatório de Agência de Rating"
+  },
+  "BBAS3": {
+    "ultima": "2026-06-28"
+  },
+  "WEGE3_44388": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-reuniao-da-administracao-06-2026/",
+    "data": "2026-06-28",
+    "descricao": "Reunião da Administração"
+  },
+  "WEGE3": {
+    "ultima": "2026-06-28"
   }
 }
