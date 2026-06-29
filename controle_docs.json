@@ -133,5 +133,41 @@
   },
   "ABEV3": {
     "ultima": "2026-06-28"
+  },
+  "KNSC11_22957": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knsc11-kinea-securities-informe-mensal-06-2026/",
+    "data": "2026-06-29",
+    "descricao": "Informe Mensal"
+  },
+  "KNSC11": {
+    "ultima": "2026-06-29"
+  },
+  "VISC11_23663": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/visc11-vinci-shopping-centers-fatos-relevantes-06-2026/",
+    "data": "2026-06-29",
+    "descricao": "Fatos Relevantes"
+  },
+  "VISC11": {
+    "ultima": "2026-06-29"
+  },
+  "TAEE11_44645": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/taee11-taesa-comunicado-ao-mercado-06-2026/",
+    "data": "2026-06-29",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "TAEE11": {
+    "ultima": "2026-06-29"
+  },
+  "CPLE6_44918": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-conselho-de-administracao-06-2026/",
+    "data": "2026-06-29",
+    "descricao": "Conselho de Administração"
+  },
+  "CPLE6": {
+    "ultima": "2026-06-29"
   }
 }
