@@ -9,12 +9,15 @@ import os, json, requests, time, re
 from datetime import datetime
 from pathlib import Path
 from bs4 import BeautifulSoup
+from google.oauth2 import service_account
+from google.auth.transport.requests import Request as GoogleAuthRequest
 
 # Config
 WP_URL    = "https://manjubinhainvestidor.com.br"
 WP_USER   = os.environ["WP_USER"]
 WP_PASS   = os.environ["WP_APP_PASS"]
 GEMINI_KEY = os.environ["GEMINI_API_KEY"]
+GOOGLE_INDEXING_KEY = os.environ.get("GOOGLE_INDEXING_KEY", "")
 
 WP_API = f"{WP_URL}/wp-json/wp/v2"
 import base64
@@ -272,6 +275,29 @@ def get_tag(ticker):
     nova = requests.post(f"{WP_API}/tags", headers=WP_HEADERS, json={"name": ticker})
     return nova.json().get("id")
 
+def solicitar_indexacao(url):
+    """Pede pro Google indexar a URL via Indexing API. Falha silenciosa - nunca trava o pipeline."""
+    if not GOOGLE_INDEXING_KEY:
+        return
+    try:
+        creds_info = json.loads(GOOGLE_INDEXING_KEY)
+        creds = service_account.Credentials.from_service_account_info(
+            creds_info, scopes=["https://www.googleapis.com/auth/indexing"]
+        )
+        creds.refresh(GoogleAuthRequest())
+        r = requests.post(
+            "https://indexing.googleapis.com/v3/urlNotifications:publish",
+            headers={"Authorization": f"Bearer {creds.token}", "Content-Type": "application/json"},
+            json={"url": url, "type": "URL_UPDATED"},
+            timeout=15
+        )
+        if r.status_code == 200:
+            print(f"  Indexacao solicitada: {url}")
+        else:
+            print(f"  Indexing API erro {r.status_code}: {r.text[:200]}")
+    except Exception as e:
+        print(f"  Indexing API falhou: {e}")
+
 def publicar(titulo, conteudo, categorias, ticker):
     tag_id = get_tag(ticker)
     r = requests.post(f"{WP_API}/posts", headers=WP_HEADERS, json={
@@ -282,6 +308,7 @@ def publicar(titulo, conteudo, categorias, ticker):
     if r.status_code in (200, 201):
         url = r.json()["link"]
         print(f"  OK {url}")
+        solicitar_indexacao(url)
         return url
     print(f"  WP ERRO {r.status_code}: {r.text[:300]}")
     return None
