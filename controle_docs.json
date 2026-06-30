@@ -340,5 +340,41 @@
   },
   "TOTS3": {
     "ultima": "2026-06-30"
+  },
+  "RBRR11_23449": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rbrr11-rbr-high-grade-relatorio-gerencial-06-2026/",
+    "data": "2026-06-30",
+    "descricao": "Relatório Gerencial"
+  },
+  "RBRR11": {
+    "ultima": "2026-06-30"
+  },
+  "BCFF11_9369": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bcff11-btg-pactual-fundo-de-fundos-outros-comunicados-06-2026/",
+    "data": "2026-06-30",
+    "descricao": "Outros Comunicados"
+  },
+  "BCFF11": {
+    "ultima": "2026-06-30"
+  },
+  "JBSS3_31612": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/jbss3-jbs-comunicacao-sobre-transacao-entre-partes-relacionadascomunicacao-sobre-transicao-entre-partes-rela-06-2026/",
+    "data": "2026-06-30",
+    "descricao": "Comunicação sobre Transação entre Partes Relacionadas\r\nComunicação sobre Transição entre Partes Rela"
+  },
+  "JBSS3": {
+    "ultima": "2026-06-30"
+  },
+  "ALUP11_44319": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alup11-alupar-aviso-aos-acionistas-06-2026/",
+    "data": "2026-06-30",
+    "descricao": "Aviso aos Acionistas"
+  },
+  "ALUP11": {
+    "ultima": "2026-06-30"
   }
 }
