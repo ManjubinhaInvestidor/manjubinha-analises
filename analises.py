@@ -7,7 +7,7 @@ Controle por ID do documento - nunca repete o mesmo doc.
 
 import os, json, requests, time, re
 from datetime import datetime
-from pathlib import Path
+from pathlib import Pathh
 from bs4 import BeautifulSoup
 from google.oauth2 import service_account
 from google.auth.transport.requests import Request as GoogleAuthRequest
@@ -194,7 +194,7 @@ def gemini(prompt):
     for tentativa in range(3):
         r = requests.post(GEMINI_URL, json=payload, timeout=90)
         if r.status_code == 200:
-            parts = r.json()["candidates"][0]["content"]["parts"]
+            resp_json = r.json()            candidates = resp_json.get("candidates", [])
             # Pega o ultimo part do tipo text (pode haver parts de tool_use antes)
             textos = [p["text"] for p in parts if p.get("type","text") == "text" or "text" in p]
             texto = textos[-1] if textos else ""
