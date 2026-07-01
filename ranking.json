@@ -19,15 +19,15 @@
         "dy_12m": 13.3,
         "p_vp": 1.05,
         "anos_listado": 11.9,
-        "retorno_total_24m": 28.5
+        "retorno_total_24m": 29.6
       },
       "posicoes": {
         "liquidez": 1,
-        "perenidade": 3,
+        "perenidade": 2,
         "renda": 4,
         "valorizacao": 2
       },
-      "score": 11,
+      "score": 10,
       "destaque": "Maior liquidez da lista"
     },
     {
@@ -41,15 +41,15 @@
         "dy_12m": 13.09,
         "p_vp": 1.05,
         "anos_listado": 11.9,
-        "retorno_total_24m": 19.5
+        "retorno_total_24m": 20.6
       },
       "posicoes": {
         "liquidez": 3,
-        "perenidade": 2,
+        "perenidade": 3,
         "renda": 5,
         "valorizacao": 4
       },
-      "score": 17
+      "score": 18
     },
     {
       "ticker": "XPML11",
@@ -62,7 +62,7 @@
         "dy_12m": 10.47,
         "p_vp": 0.96,
         "anos_listado": 6.1,
-        "retorno_total_24m": 728.0
+        "retorno_total_24m": 734.2
       },
       "posicoes": {
         "liquidez": 2,
@@ -84,15 +84,15 @@
         "dy_12m": 9.23,
         "p_vp": 1.0,
         "anos_listado": 11.9,
-        "retorno_total_24m": 18.7
+        "retorno_total_24m": 19.5
       },
       "posicoes": {
         "liquidez": 5,
-        "perenidade": 5,
+        "perenidade": 4,
         "renda": 15,
         "valorizacao": 6
       },
-      "score": 36
+      "score": 35
     },
     {
       "ticker": "HGLG11",
@@ -111,9 +111,9 @@
         "liquidez": 4,
         "perenidade": 1,
         "renda": 16,
-        "valorizacao": 13
+        "valorizacao": 12
       },
-      "score": 38,
+      "score": 37,
       "destaque": "Mais antigo da lista"
     },
     {
@@ -127,15 +127,15 @@
         "dy_12m": 12.06,
         "p_vp": 0.9,
         "anos_listado": 8.7,
-        "retorno_total_24m": 11.3
+        "retorno_total_24m": 10.8
       },
       "posicoes": {
         "liquidez": 6,
-        "perenidade": 7,
+        "perenidade": 6,
         "renda": 9,
         "valorizacao": 11
       },
-      "score": 39
+      "score": 38
     },
     {
       "ticker": "CPTS11",
@@ -148,36 +148,15 @@
         "dy_12m": 14.06,
         "p_vp": 0.85,
         "anos_listado": 8.7,
-        "retorno_total_24m": -5.9
+        "retorno_total_24m": -5.1
       },
       "posicoes": {
         "liquidez": 7,
-        "perenidade": 6,
+        "perenidade": 7,
         "renda": 2,
         "valorizacao": 17
       },
-      "score": 39
-    },
-    {
-      "ticker": "KNRI11",
-      "nome": "Kinea Renda Imobiliaria",
-      "tipo": "Hibrido",
-      "segmento": null,
-      "post_url": "https://manjubinhainvestidor.com.br/knri11-kinea-renda-imobiliaria-informe-mensal-06-2026/",
-      "metricas": {
-        "liquidez_diaria": 9607030.0,
-        "dy_12m": 8.09,
-        "p_vp": 0.94,
-        "anos_listado": 11.9,
-        "retorno_total_24m": 17.3
-      },
-      "posicoes": {
-        "liquidez": 9,
-        "perenidade": 4,
-        "renda": 17,
-        "valorizacao": 8
-      },
-      "score": 47
+      "score": 40
     },
     {
       "ticker": "OUJP11",
@@ -190,16 +169,37 @@
         "dy_12m": 17.54,
         "p_vp": 0.76,
         "anos_listado": 8.7,
-        "retorno_total_24m": 22.7
+        "retorno_total_24m": 22.5
       },
       "posicoes": {
         "liquidez": 17,
-        "perenidade": 9,
+        "perenidade": 8,
         "renda": 1,
         "valorizacao": 3
       },
-      "score": 47,
+      "score": 46,
       "destaque": "Maior renda da lista"
+    },
+    {
+      "ticker": "KNRI11",
+      "nome": "Kinea Renda Imobiliaria",
+      "tipo": "Hibrido",
+      "segmento": null,
+      "post_url": "https://manjubinhainvestidor.com.br/knri11-kinea-renda-imobiliaria-informe-mensal-06-2026/",
+      "metricas": {
+        "liquidez_diaria": 9607030.0,
+        "dy_12m": 8.09,
+        "p_vp": 0.94,
+        "anos_listado": 11.9,
+        "retorno_total_24m": 18.1
+      },
+      "posicoes": {
+        "liquidez": 9,
+        "perenidade": 5,
+        "renda": 17,
+        "valorizacao": 7
+      },
+      "score": 47
     },
     {
       "ticker": "VISC11",
@@ -212,15 +212,15 @@
         "dy_12m": 9.27,
         "p_vp": 0.91,
         "anos_listado": 8.7,
-        "retorno_total_24m": 8.7
+        "retorno_total_24m": 7.8
       },
       "posicoes": {
         "liquidez": 8,
-        "perenidade": 8,
+        "perenidade": 9,
         "renda": 14,
-        "valorizacao": 12
+        "valorizacao": 13
       },
-      "score": 50
+      "score": 52
     },
     {
       "ticker": "RECR11",
@@ -233,7 +233,7 @@
         "dy_12m": 12.92,
         "p_vp": 0.92,
         "anos_listado": 5.1,
-        "retorno_total_24m": 19.5
+        "retorno_total_24m": 19.7
       },
       "posicoes": {
         "liquidez": 13,
@@ -254,15 +254,15 @@
         "dy_12m": 9.41,
         "p_vp": 0.99,
         "anos_listado": 6.6,
-        "retorno_total_24m": 17.4
+        "retorno_total_24m": 16.3
       },
       "posicoes": {
         "liquidez": 11,
         "perenidade": 13,
         "renda": 13,
-        "valorizacao": 7
+        "valorizacao": 8
       },
-      "score": 55
+      "score": 56
     },
     {
       "ticker": "RBRR11",
@@ -275,7 +275,7 @@
         "dy_12m": 12.59,
         "p_vp": 0.84,
         "anos_listado": 8.2,
-        "retorno_total_24m": 7.5
+        "retorno_total_24m": 7.3
       },
       "posicoes": {
         "liquidez": 12,
@@ -296,7 +296,7 @@
         "dy_12m": 9.63,
         "p_vp": 0.82,
         "anos_listado": 6.9,
-        "retorno_total_24m": 5.7
+        "retorno_total_24m": 6.6
       },
       "posicoes": {
         "liquidez": 10,
@@ -317,7 +317,7 @@
         "dy_12m": 9.98,
         "p_vp": 0.94,
         "anos_listado": 8.5,
-        "retorno_total_24m": 11.4
+        "retorno_total_24m": 12.1
       },
       "posicoes": {
         "liquidez": 14,
@@ -338,7 +338,7 @@
         "dy_12m": 13.77,
         "p_vp": 0.81,
         "anos_listado": 6.4,
-        "retorno_total_24m": 2.3
+        "retorno_total_24m": 4.4
       },
       "posicoes": {
         "liquidez": 15,
@@ -359,7 +359,7 @@
         "dy_12m": 12.28,
         "p_vp": 0.89,
         "anos_listado": 6.3,
-        "retorno_total_24m": 16.7
+        "retorno_total_24m": 15.9
       },
       "posicoes": {
         "liquidez": 16,
@@ -384,7 +384,7 @@
           "dy_12m": 12.07,
           "p_vp": 0.88,
           "anos_listado": 2.3,
-          "retorno_total_24m": 8.9
+          "retorno_total_24m": 10.3
         },
         "motivo_exclusao": "menos de 5 anos de listagem"
       },
@@ -399,7 +399,7 @@
           "dy_12m": 12.17,
           "p_vp": 1.05,
           "anos_listado": 4.4,
-          "retorno_total_24m": 23.7
+          "retorno_total_24m": 25.2
         },
         "motivo_exclusao": "menos de 5 anos de listagem"
       },
@@ -414,7 +414,7 @@
           "dy_12m": 12.71,
           "p_vp": 0.79,
           "anos_listado": 2.9,
-          "retorno_total_24m": -26.0
+          "retorno_total_24m": -26.3
         },
         "motivo_exclusao": "menos de 5 anos de listagem"
       },
@@ -429,7 +429,7 @@
           "dy_12m": 7.27,
           "p_vp": 0.68,
           "anos_listado": 2.4,
-          "retorno_total_24m": -12.5
+          "retorno_total_24m": -13.9
         },
         "motivo_exclusao": "menos de 5 anos de listagem; P/VP fora da faixa 0,70-1,20"
       },
@@ -444,7 +444,7 @@
           "dy_12m": 8.86,
           "p_vp": 0.74,
           "anos_listado": 6.1,
-          "retorno_total_24m": 6.0
+          "retorno_total_24m": 3.8
         },
         "motivo_exclusao": "liquidez abaixo de R$500 mil/dia"
       },
@@ -461,7 +461,7 @@
           "anos_listado": null,
           "retorno_total_24m": null
         },
-        "motivo_exclusao": "liquidez abaixo de R$500 mil/dia; menos de 5 anos de listagem; sem distribuicao nos ultimos 12m"
+        "motivo_exclusao": "liquidez abaixo de R$500 mil/dia; sem distribuicao nos ultimos 12m"
       },
       {
         "ticker": "RBRF11",
@@ -474,7 +474,7 @@
           "dy_12m": 5.46,
           "p_vp": 0.78,
           "anos_listado": 8.7,
-          "retorno_total_24m": 8.5
+          "retorno_total_24m": 7.2
         },
         "motivo_exclusao": "liquidez abaixo de R$500 mil/dia"
       },
@@ -489,7 +489,7 @@
           "dy_12m": 10.08,
           "p_vp": 0.94,
           "anos_listado": 2.4,
-          "retorno_total_24m": 29.9
+          "retorno_total_24m": 32.6
         },
         "motivo_exclusao": "liquidez abaixo de R$500 mil/dia; menos de 5 anos de listagem"
       },
@@ -504,7 +504,7 @@
           "dy_12m": 8.24,
           "p_vp": 0.69,
           "anos_listado": 6.7,
-          "retorno_total_24m": 21.2
+          "retorno_total_24m": 14.2
         },
         "motivo_exclusao": "P/VP fora da faixa 0,70-1,20"
       },
@@ -521,7 +521,7 @@
           "anos_listado": null,
           "retorno_total_24m": null
         },
-        "motivo_exclusao": "liquidez abaixo de R$500 mil/dia; menos de 5 anos de listagem; sem distribuicao nos ultimos 12m; P/VP fora da faixa 0,70-1,20"
+        "motivo_exclusao": "liquidez abaixo de R$500 mil/dia; sem distribuicao nos ultimos 12m; P/VP fora da faixa 0,70-1,20"
       },
       {
         "ticker": "XPCO11",
@@ -536,7 +536,7 @@
           "anos_listado": null,
           "retorno_total_24m": null
         },
-        "motivo_exclusao": "liquidez abaixo de R$500 mil/dia; menos de 5 anos de listagem; sem distribuicao nos ultimos 12m; P/VP fora da faixa 0,70-1,20"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): liquidez, idade, DY, P/VP"
       },
       {
         "ticker": "RZTR11",
@@ -549,7 +549,7 @@
           "dy_12m": 13.28,
           "p_vp": 0.91,
           "anos_listado": 2.4,
-          "retorno_total_24m": 17.3
+          "retorno_total_24m": 18.3
         },
         "motivo_exclusao": "menos de 5 anos de listagem"
       },
@@ -564,7 +564,7 @@
           "dy_12m": 21.04,
           "p_vp": 0.16,
           "anos_listado": 7.0,
-          "retorno_total_24m": -24.7
+          "retorno_total_24m": -29.5
         },
         "motivo_exclusao": "P/VP fora da faixa 0,70-1,20"
       }
@@ -580,11 +580,11 @@
           "dy_12m": 7.85,
           "p_vp": 1.09,
           "anos_listado": 26.5,
-          "retorno_total_24m": 19.1,
-          "retorno_total_5a": 356.2,
-          "tag_along": 0
+          "retorno_total_24m": 22.5,
+          "retorno_total_5a": 383.3,
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "VALE3",
@@ -596,11 +596,11 @@
           "dy_12m": 7.19,
           "p_vp": 1.81,
           "anos_listado": 26.5,
-          "retorno_total_24m": 49.4,
+          "retorno_total_24m": 54.9,
           "retorno_total_5a": 28.3,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "ITUB4",
@@ -613,10 +613,10 @@
           "p_vp": 2.33,
           "anos_listado": 25.5,
           "retorno_total_24m": 54.7,
-          "retorno_total_5a": 113.6,
-          "tag_along": 0
+          "retorno_total_5a": 114.4,
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "BBAS3",
@@ -628,11 +628,11 @@
           "dy_12m": 2.76,
           "p_vp": 0.61,
           "anos_listado": 26.5,
-          "retorno_total_24m": -22.7,
-          "retorno_total_5a": 87.6,
-          "tag_along": 0
+          "retorno_total_24m": -21.4,
+          "retorno_total_5a": 89.8,
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "WEGE3",
@@ -644,11 +644,11 @@
           "dy_12m": 4.64,
           "p_vp": 11.1,
           "anos_listado": 26.5,
-          "retorno_total_24m": -9.2,
-          "retorno_total_5a": 45.3,
-          "tag_along": 0
+          "retorno_total_24m": -8.9,
+          "retorno_total_5a": 46.0,
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "BBDC4",
@@ -662,9 +662,9 @@
           "anos_listado": 18.5,
           "retorno_total_24m": 35.4,
           "retorno_total_5a": 21.4,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "ABEV3",
@@ -678,9 +678,9 @@
           "anos_listado": 26.5,
           "retorno_total_24m": 42.0,
           "retorno_total_5a": 22.9,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "TAEE11",
@@ -692,11 +692,11 @@
           "dy_12m": 8.23,
           "p_vp": 1.72,
           "anos_listado": 18.6,
-          "retorno_total_24m": 29.5,
+          "retorno_total_24m": 31.9,
           "retorno_total_5a": 66.1,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "CPLE6",
@@ -710,9 +710,9 @@
           "anos_listado": null,
           "retorno_total_24m": null,
           "retorno_total_5a": null,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "liquidez abaixo de R$10 mi/dia; menos de 8 anos de listagem; sem dividendos nos ultimos 12m; retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "liquidez abaixo de R$10 mi/dia; sem dividendos nos ultimos 12m"
       },
       {
         "ticker": "EGIE3",
@@ -724,11 +724,11 @@
           "dy_12m": 3.46,
           "p_vp": 2.93,
           "anos_listado": 24.3,
-          "retorno_total_24m": 8.6,
-          "retorno_total_5a": 59.0,
-          "tag_along": 0
+          "retorno_total_24m": 11.3,
+          "retorno_total_5a": 63.1,
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "VIVT3",
@@ -740,11 +740,11 @@
           "dy_12m": 7.17,
           "p_vp": 1.58,
           "anos_listado": 26.5,
-          "retorno_total_24m": 47.6,
+          "retorno_total_24m": 48.3,
           "retorno_total_5a": 112.0,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "PRIO3",
@@ -758,9 +758,9 @@
           "anos_listado": 15.7,
           "retorno_total_24m": 11.9,
           "retorno_total_5a": 173.8,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "sem dividendos nos ultimos 12m; tag along abaixo de 80%"
+        "motivo_exclusao": "sem dividendos nos ultimos 12m"
       },
       {
         "ticker": "SBSP3",
@@ -774,9 +774,9 @@
           "anos_listado": 26.5,
           "retorno_total_24m": 72.2,
           "retorno_total_5a": 382.4,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "RDOR3",
@@ -788,11 +788,11 @@
           "dy_12m": 12.51,
           "p_vp": 3.93,
           "anos_listado": 5.5,
-          "retorno_total_24m": 24.2,
-          "retorno_total_5a": -39.0,
-          "tag_along": 0
+          "retorno_total_24m": 41.1,
+          "retorno_total_5a": -40.0,
+          "tag_along": null
         },
-        "motivo_exclusao": "menos de 8 anos de listagem; retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "menos de 8 anos de listagem; retorno total negativo em 5 anos"
       },
       {
         "ticker": "B3SA3",
@@ -806,9 +806,9 @@
           "anos_listado": 18.7,
           "retorno_total_24m": 22.8,
           "retorno_total_5a": 22.8,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "SUZB3",
@@ -822,9 +822,9 @@
           "anos_listado": 21.9,
           "retorno_total_24m": -22.1,
           "retorno_total_5a": -23.8,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "retorno total negativo em 5 anos"
       },
       {
         "ticker": "ENGI11",
@@ -836,11 +836,11 @@
           "dy_12m": 3.22,
           "p_vp": 1.23,
           "anos_listado": 16.7,
-          "retorno_total_24m": 19.4,
-          "retorno_total_5a": 48.4,
-          "tag_along": 0
+          "retorno_total_24m": 22.0,
+          "retorno_total_5a": 50.7,
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "CPFE3",
@@ -854,9 +854,9 @@
           "anos_listado": 26.5,
           "retorno_total_24m": 40.2,
           "retorno_total_5a": 113.6,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "TOTS3",
@@ -868,11 +868,11 @@
           "dy_12m": 2.37,
           "p_vp": 3.47,
           "anos_listado": 20.3,
-          "retorno_total_24m": 0.1,
-          "retorno_total_5a": -21.1,
-          "tag_along": 0
+          "retorno_total_24m": 0.9,
+          "retorno_total_5a": -20.9,
+          "tag_along": null
         },
-        "motivo_exclusao": "retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "retorno total negativo em 5 anos"
       },
       {
         "ticker": "JBSS3",
@@ -886,9 +886,9 @@
           "anos_listado": null,
           "retorno_total_24m": null,
           "retorno_total_5a": null,
-          "tag_along": 10
+          "tag_along": null
         },
-        "motivo_exclusao": "liquidez abaixo de R$10 mi/dia; menos de 8 anos de listagem; sem dividendos nos ultimos 12m; retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "liquidez abaixo de R$10 mi/dia; sem dividendos nos ultimos 12m"
       },
       {
         "ticker": "ALUP11",
@@ -900,11 +900,11 @@
           "dy_12m": 3.35,
           "p_vp": 1.14,
           "anos_listado": 13.2,
-          "retorno_total_24m": 11.4,
+          "retorno_total_24m": 12.1,
           "retorno_total_5a": 76.3,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "KLBN11",
@@ -916,11 +916,11 @@
           "dy_12m": 8.42,
           "p_vp": 2.31,
           "anos_listado": 12.4,
-          "retorno_total_24m": -11.1,
+          "retorno_total_24m": -9.7,
           "retorno_total_5a": -3.2,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "retorno total negativo em 5 anos"
       },
       {
         "ticker": "BPAC11",
@@ -932,11 +932,11 @@
           "dy_12m": 2.27,
           "p_vp": 2.82,
           "anos_listado": 9.3,
-          "retorno_total_24m": 58.6,
-          "retorno_total_5a": 114.0,
-          "tag_along": 0
+          "retorno_total_24m": 77.6,
+          "retorno_total_5a": 103.4,
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "EMBR3",
@@ -950,9 +950,9 @@
           "anos_listado": null,
           "retorno_total_24m": null,
           "retorno_total_5a": null,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "liquidez abaixo de R$10 mi/dia; menos de 8 anos de listagem; sem dividendos nos ultimos 12m; retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): liquidez, idade, DY, retorno 5a, tag along"
       },
       {
         "ticker": "RENT3",
@@ -966,9 +966,9 @@
           "anos_listado": 21.1,
           "retorno_total_24m": 9.4,
           "retorno_total_5a": -12.0,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "retorno total negativo em 5 anos"
       },
       {
         "ticker": "CSAN3",
@@ -982,9 +982,9 @@
           "anos_listado": 20.6,
           "retorno_total_24m": -72.3,
           "retorno_total_5a": -81.4,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "sem dividendos nos ultimos 12m; retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "sem dividendos nos ultimos 12m; retorno total negativo em 5 anos"
       },
       {
         "ticker": "HAPV3",
@@ -996,11 +996,11 @@
           "dy_12m": 0.0,
           "p_vp": 0.11,
           "anos_listado": 8.2,
-          "retorno_total_24m": -83.4,
-          "retorno_total_5a": -95.2,
-          "tag_along": 0
+          "retorno_total_24m": -81.9,
+          "retorno_total_5a": -95.1,
+          "tag_along": null
         },
-        "motivo_exclusao": "sem dividendos nos ultimos 12m; retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "sem dividendos nos ultimos 12m; retorno total negativo em 5 anos"
       },
       {
         "ticker": "POMO4",
@@ -1012,11 +1012,11 @@
           "dy_12m": 15.76,
           "p_vp": 1.84,
           "anos_listado": 26.5,
-          "retorno_total_24m": 8.7,
+          "retorno_total_24m": 10.6,
           "retorno_total_5a": 320.4,
-          "tag_along": 0
+          "tag_along": null
         },
-        "motivo_exclusao": "tag along abaixo de 80%"
+        "motivo_exclusao": "dados indisponiveis nesta coleta (nao e reprovacao): tag along"
       },
       {
         "ticker": "ALLL3",
@@ -1030,10 +1030,9 @@
           "anos_listado": null,
           "retorno_total_24m": null,
           "retorno_total_5a": null,
-          "tag_along": null,
-          "tag_along_pendente": true
+          "tag_along": null
         },
-        "motivo_exclusao": "liquidez abaixo de R$10 mi/dia; menos de 8 anos de listagem; sem dividendos nos ultimos 12m; retorno total negativo em 5 anos"
+        "motivo_exclusao": "liquidez abaixo de R$10 mi/dia; sem dividendos nos ultimos 12m"
       },
       {
         "ticker": "IRBR3",
@@ -1045,11 +1044,11 @@
           "dy_12m": 2.28,
           "p_vp": 0.85,
           "anos_listado": 8.9,
-          "retorno_total_24m": 16.0,
-          "retorno_total_5a": -57.8,
-          "tag_along": 0
+          "retorno_total_24m": 87.1,
+          "retorno_total_5a": -61.3,
+          "tag_along": null
         },
-        "motivo_exclusao": "retorno total negativo em 5 anos; tag along abaixo de 80%"
+        "motivo_exclusao": "retorno total negativo em 5 anos"
       }
     ]
   }
