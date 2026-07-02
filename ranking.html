@@ -9,34 +9,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Nunito',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:linear-gradient(145deg,#171717,#262626);border:1px solid #333;border-radius:18px;color:#f2f2f2;padding:16px}
+body{font-family:'Nunito',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:transparent;color:#222;padding:4px}
 .tabs{display:flex;gap:8px;margin-bottom:1rem}
-.tab{font-family:'Baloo 2',cursive;padding:7px 24px;border:1.5px solid #444;border-radius:999px;background:transparent;font-size:14px;cursor:pointer;color:#999}
+.tab{font-family:'Baloo 2',cursive;padding:7px 24px;border:1.5px solid #ccc;border-radius:999px;background:#fff;font-size:14px;cursor:pointer;color:#666}
 .tab.active{background:#23c55e;color:#fff;border-color:#23c55e;font-weight:700}
 .filtros{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.9rem}
-.fbtn{padding:4px 14px;border:1px solid #3a3a3a;border-radius:20px;background:transparent;font-size:12px;cursor:pointer;color:#999}
+.fbtn{padding:4px 14px;border:1px solid #ddd;border-radius:20px;background:#fff;font-size:12px;cursor:pointer;color:#777}
 .fbtn.on{background:#f6c453;color:#111;border-color:#f6c453;font-weight:700}
-.info{font-size:12px;color:#999;margin-bottom:.9rem;line-height:1.5}
-.info b{color:#ccc}
+.info{font-size:12px;color:#777;margin-bottom:.9rem;line-height:1.5}
+.info b{color:#333}
 .tbl-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:460px}
-th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#888;font-weight:700;padding:6px 8px;border-bottom:2px solid #333}
+table{width:100%;border-collapse:separate;border-spacing:0 8px;font-size:13.5px;min-width:460px}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#999;font-weight:700;padding:2px 10px;border:none}
 th.num{text-align:right}
-td{padding:9px 8px;border-bottom:1px solid #2c2c2c;vertical-align:middle}
-tr:hover td{background:#202020}
-.pos{color:#666;font-size:12px;width:28px}
+td{padding:12px 10px;vertical-align:middle;background:linear-gradient(135deg,#171717,#242424);border:none;color:#e8e8e8;border-top:1px solid #333;border-bottom:1px solid #333}
+td:first-child{border-radius:14px 0 0 14px;border-left:1px solid #333}
+td:last-child{border-radius:0 14px 14px 0;border-right:1px solid #333}
+tr:hover td{background:#2a2a2a}
+.pos{color:#23c55e;font-weight:800;font-size:13px;width:34px;text-align:center}
 .tk{font-weight:700;color:#fff}
 .tk a{color:#f6c453;text-decoration:none}
 .tk a:hover{text-decoration:underline}
-.nm{color:#999;font-size:12.5px;font-weight:400}
-.bd{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10.5px;background:#2b2b2b;color:#bbb;margin-right:4px;white-space:nowrap}
-.bd.b2{background:rgba(35,197,94,.15);color:#23c55e}
-.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:#e8e8e8}
-.dest{display:inline-block;padding:2px 9px;border-radius:10px;font-size:10.5px;background:rgba(246,196,83,.12);color:#f6c453;border:1px solid rgba(246,196,83,.35);white-space:nowrap}
-.radar-t{font-family:'Baloo 2',cursive;font-size:14px;font-weight:700;color:#f6c453;margin:1.4rem 0 .4rem}
-.radar-i{font-size:11.5px;color:#999;margin-bottom:.6rem}
-.mot{font-size:11px;color:#e0a92f}
-.foot{font-size:11.5px;color:#777;text-align:right;margin-top:.7rem}
+.nm{color:#aaa;font-size:12.5px;font-weight:400}
+.bd{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10.5px;background:#2f2f2f;color:#ccc;margin-right:4px;white-space:nowrap}
+.bd.b2{background:rgba(35,197,94,.18);color:#4ade80}
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:#f2f2f2}
+.dest{display:inline-block;padding:2px 9px;border-radius:10px;font-size:10.5px;background:rgba(246,196,83,.15);color:#f6c453;border:1px solid rgba(246,196,83,.4);white-space:nowrap}
+.radar-t{font-family:'Baloo 2',cursive;font-size:14px;font-weight:700;color:#b97a1a;margin:1.4rem 0 .4rem}
+.radar-i{font-size:11.5px;color:#888;margin-bottom:.6rem}
+.mot{font-size:11px;color:#f6c453}
+.foot{font-size:11.5px;color:#999;text-align:right;margin-top:.7rem}
 @media(max-width:640px){.hidem{display:none}}
 </style>
 </head>
