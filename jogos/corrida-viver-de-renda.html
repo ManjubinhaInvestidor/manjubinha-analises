@@ -132,7 +132,7 @@ td.pos{color:var(--moeda);font-weight:800}
 <br>
 <button class="btn" onclick="comecarJogo()">Começar 🌊</button>
 <div class="licao" style="text-align:left;margin-top:14px">
-<b>🐟 Como jogar:</b> a cada mês você recebe R$ 6.500 de salário e gasta R$ 4.550. A sobra de R$ 1.950 (30% do salário) e o dinheiro do caixa você distribui entre FII, ação de dividendos e Tesouro. Vença fazendo sua renda passiva mensal alcançar a meta de R$ 1.300, seu primeiro degrau rumo a viver de renda, antes do mês 48! Atenção: FIIs pagam dividendos todo mês, mas ações pagam por trimestre (mar, jun, set e dez), como na vida real. Dica: guarde uma reserva no caixa, porque emergências (desemprego, saúde) podem te obrigar a vender no prejuízo ou cair no cheque especial.
+<b>🐟 Como jogar:</b> a cada mês você recebe R$ 6.500 de salário e gasta R$ 4.550. A sobra de R$ 1.950 (30% do salário) e o dinheiro do caixa você distribui entre FII, ação de dividendos e Tesouro. Vença fazendo sua renda passiva mensal alcançar a meta de R$ 1.300, seu primeiro degrau rumo a viver de renda, antes do mês 48! Atenção: FIIs pagam dividendos todo mês, mas ações pagam por trimestre (mar, jun, set e dez), como na vida real. Dica: guarde uma reserva no caixa, porque emergências (desemprego, saúde) podem te obrigar a vender no prejuízo ou cair no cheque especial. Mas cuidado: dinheiro parado no caixa também perde valor todo mês pra inflação (o balde furado), então guarde só o necessário e invista o resto.
 </div>
 </div>
 
@@ -238,6 +238,7 @@ selicMes: 0.010, // 1,0% a.m. (tesouro)
 prazoMeses: 48,
 caixaInicial: 5000,
 metaRenda: 1300,     // renda passiva alvo pra vencer (primeiro degrau rumo a viver de renda)
+inflacaoCaixa: 0.004,// corrosão mensal do caixa parado pela inflação (~5% ao ano)
 desagio: 0.10,       // perda ao vender ativo de risco na pressa (sem reserva)
 jurosDivida: 0.08,   // juros mensais sobre caixa negativo (cheque especial)
 mesesDesemprego: 2,  // duração do desemprego (meses sem salário)
@@ -270,6 +271,7 @@ ganhoEventos:0, // R$ ganhos em eventos bons (13º, valorizações)
 picoRenda:0,
 vendasForcadas:0, desagioPago:0, jurosDivida:0,
 mesesEndividado:0, emergenciasSemReserva:0, mesesDesemprego:0,
+perdaInflacaoCaixa:0,
 }
 };
 }
@@ -433,6 +435,7 @@ let divsAcao = 0;
 if([2,5,8,11].includes(mesDoAno(s.mes))){ divsAcao = s.acao*s.yieldAcao*3; }
 s.lastDivsAcao = divsAcao;
 const divs = divsFii + divsAcao;
+s.lastDivs = divs;
 const juros = s.tesouro*s.selic;
 s.tesouro += juros; // tesouro capitaliza
 s.caixa += divs; // dividendos caem na conta (reinvestidos no próximo mês via sliders)
@@ -447,6 +450,9 @@ s.acao *= (0.99 + rand()*0.03); // -1,0% a +2,0%
 const ev = eventoDoMes(s, rand);
 ev.fx(s);
 if(ev.ruim) s.stats.eventosRuins++; else if(ev.id!=='calmo') s.stats.eventosBons++;
+
+// 5b. Inflação corrói o caixa parado (dinheiro parado perde poder de compra)
+if(s.caixa > 0){ const perda = s.caixa*CFG.inflacaoCaixa; s.caixa -= perda; s.stats.perdaInflacaoCaixa += perda; }
 
 // 6. Estatísticas de comportamento
 const investido = s.fii + s.acao + s.tesouro;
@@ -484,7 +490,10 @@ const fmtR = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
 
 // Reinvestimento / caixa parado
 if(st.mesesCaixaParado > 3){
-melhorar.push('Você deixou muito dinheiro parado no caixa em '+st.mesesCaixaParado+' meses. Uma reserva de emergência é ótima, mas caixa ocioso demais não rende: o excedente deveria estar investido.');
+melhorar.push('Você deixou muito dinheiro parado no caixa em '+st.mesesCaixaParado+' meses. Uma reserva de emergência é ótima, mas caixa ocioso demais não rende e ainda perde pra inflação: o excedente deveria estar investido.');
+}
+if(st.perdaInflacaoCaixa > 0){
+fatores.push('🪣 Balde furado: a inflação corroeu '+fmtR(st.perdaInflacaoCaixa)+' do dinheiro que ficou parado no caixa. Dinheiro parado não fica parado: ele encolhe.');
 }
 
 // Reserva de emergência
@@ -680,7 +689,7 @@ $('eventoTexto').textContent=ev.d;
 var linkEv=LINKS_EVENTO[ev.id]?' <a href="'+LINKS_EVENTO[ev.id]+'" target="_top" style="color:var(--aqua)">Ler no site &rarr;</a>':'';
 $('eventoLicao').innerHTML='<b>🐟 Lição do Manjubinha:</b> '+ev.l+linkEv;
 
-if(S.lastDivsAcao>0) logar('💰 <b style="color:var(--moeda)">Dividendos trimestrais das ações:</b> +'+fmt(S.lastDivsAcao));
+if(S.lastDivs>0){ var msgDiv='💰 <b style="color:var(--moeda)">Dividendos caíram no caixa:</b> +'+fmt(S.lastDivs); if(S.lastDivsAcao>0) msgDiv+=' (inclui o trimestre das ações)'; msgDiv+=' — entram no próximo aporte'; logar(msgDiv); }
 logar('<span class="mes">Mês '+mesAtual+' ('+nomeMes(mesAtual)+'):</span> '+ev.t+' Renda passiva média: '+fmt(S.rendaPassiva)+'/mês');
 atualizarTudo();
 
