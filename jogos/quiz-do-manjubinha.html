@@ -519,6 +519,7 @@ var MJ_TRILHA=null;
 window.addEventListener('message',function(ev){ if(ev.data&&ev.data.type==='mjTrilha') MJ_TRILHA=ev.data; });
 function mjTrilhaCompleta(){ return !!(MJ_TRILHA&&MJ_TRILHA.total>0&&MJ_TRILHA.lidos>=MJ_TRILHA.total); }
 function mjAvisar(evt){ try{ if(window.parent!==window) window.parent.postMessage({type:'mjJogo',jogo:'quiz',evento:evt,nick:getNick()},'*'); }catch(e){} }
+setInterval(function(){ try{ if(window.parent!==window) window.parent.postMessage({type:'mjAltura',jogo:'quiz',h:document.body.scrollHeight+30},'*'); }catch(e){} },800);
 
 // ===================== UI =====================
 let P=null, timerId=null, tempoRestante=0, respondeu=false;
