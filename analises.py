@@ -21,6 +21,14 @@ GOOGLE_INDEXING_KEY = os.environ.get("GOOGLE_INDEXING_KEY", "")
 
 WP_API = f"{WP_URL}/wp-json/wp/v2"
 import base64
+# --- Retentativas automaticas para instabilidade de rede (nao retenta 429) ---
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+_retry = Retry(total=2, connect=2, read=2, backoff_factor=10, status_forcelist=[500, 502, 503, 504], allowed_methods=None, respect_retry_after_header=False)
+_sessao = requests.Session()
+_sessao.mount("https://", HTTPAdapter(max_retries=_retry))
+_sessao.mount("http://", HTTPAdapter(max_retries=_retry))
+requests = _sessao
 _cred = base64.b64encode(f"{WP_USER}:{WP_PASS}".encode()).decode()
 WP_HEADERS = {"Authorization": f"Basic {_cred}"}
 
