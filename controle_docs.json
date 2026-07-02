@@ -412,5 +412,41 @@
   },
   "BPAC11": {
     "ultima": "2026-07-01"
+  },
+  "BRCO11_23147": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/brco11-bresco-logistica-informe-mensal-07-2026/",
+    "data": "2026-07-02",
+    "descricao": "Informe Mensal"
+  },
+  "BRCO11": {
+    "ultima": "2026-07-02"
+  },
+  "PATL11_23818": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/patl11-patria-logistica-distribuicoes-07-2026/",
+    "data": "2026-07-02",
+    "descricao": "Distribuições"
+  },
+  "PATL11": {
+    "ultima": "2026-07-02"
+  },
+  "EMBR3_44598": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/embr3-embraer-aviso-aos-acionistas-07-2026/",
+    "data": "2026-07-02",
+    "descricao": "Aviso aos Acionistas"
+  },
+  "EMBR3": {
+    "ultima": "2026-07-02"
+  },
+  "RENT3_45148": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rent3-localiza-documentos-de-oferta-de-distribuicao-publica-07-2026/",
+    "data": "2026-07-02",
+    "descricao": "Documentos de Oferta de Distribuição Pública"
+  },
+  "RENT3": {
+    "ultima": "2026-07-02"
   }
 }
