@@ -23,7 +23,7 @@ font-family:'Nunito',sans-serif;
 background:linear-gradient(180deg,#181818 0%,#101820 55%,var(--mar-fundo) 100%);
 color:var(--areia);
 min-height:100vh;
-padding:16px;
+padding:10px;
 }
 .wrap{max-width:760px;margin:0 auto}
 h1,h2,h3{font-family:'Baloo 2',cursive}
@@ -33,8 +33,8 @@ h1{font-size:1.6rem;color:var(--aqua);text-align:center;line-height:1.2}
 background:linear-gradient(145deg,#171717,#262626);
 border:2px solid rgba(63,208,201,.15);
 border-radius:18px;
-padding:18px;
-margin-bottom:14px;
+padding:12px;
+margin-bottom:10px;
 }
 #telaNick{text-align:center}
 #telaNick input{
@@ -53,15 +53,15 @@ padding:12px 26px;cursor:pointer;transition:transform .12s;
 .btn.sec{background:transparent;color:var(--aqua);border:2px solid var(--aqua)}
 .btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .painel{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
-.painel .item{background:#0d1a26;border-radius:12px;padding:10px 4px}
+.painel .item{background:#0d1a26;border-radius:12px;padding:7px 3px}
 .painel .rotulo{font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;opacity:.7}
 .painel .valor{font-family:'Baloo 2',cursive;font-size:1rem;color:var(--moeda)}
 .painel .valor.aqua{color:var(--aqua)}
 .painel .valor.prazo{color:var(--coral)}
 .aquario{
-position:relative;height:56px;border-radius:14px;overflow:hidden;
+position:relative;height:34px;border-radius:14px;overflow:hidden;
 background:linear-gradient(180deg,#0b2b3f,#0d1a26);
-border:2px solid var(--mar-claro);margin:14px 0 6px;
+border:2px solid var(--mar-claro);margin:10px 0 4px;
 }
 .agua{
 position:absolute;inset:0;width:0%;
@@ -92,7 +92,7 @@ margin-top:10px;padding:10px 12px;background:#0d1a26;border-left:4px solid var(-
 border-radius:8px;font-size:.85rem;
 }
 .licao b{color:var(--aqua)}
-#log{max-height:150px;overflow-y:auto;font-size:.8rem;line-height:1.5}
+#log{max-height:110px;overflow-y:auto;font-size:.8rem;line-height:1.5}
 #log p{border-bottom:1px dashed rgba(255,255,255,.1);padding:3px 0}
 #log .mes{color:var(--moeda);font-weight:800}
 #telaFim{text-align:center;display:none}
@@ -122,7 +122,7 @@ td.pos{color:var(--moeda);font-weight:800}
 <body>
 <div class="wrap">
 <h1><svg style="width:44px;height:26px;vertical-align:-4px" viewBox="0 0 66 40" xmlns="http://www.w3.org/2000/svg"><path d="M4 20c9-11 24-11 33 0-9 11-24 11-33 0z" fill="#3fd0c9"/><path d="M37 20l13-8v16z" fill="#2fa8a2"/><circle cx="13" cy="18" r="2.6" fill="#0d1a26"/></svg> Corrida pra Viver de Renda</h1>
-<p class="sub">Faça sua renda passiva superar seus gastos em até 48 meses. Um jogo do Manjubinha Investidor.</p>
+<p class="sub">Faça sua renda passiva bater a meta em até 48 meses. Um jogo do Manjubinha Investidor.</p>
 
 <!-- TELA NICK -->
 <div class="card" id="telaNick">
@@ -132,7 +132,7 @@ td.pos{color:var(--moeda);font-weight:800}
 <br>
 <button class="btn" onclick="comecarJogo()">Começar 🌊</button>
 <div class="licao" style="text-align:left;margin-top:14px">
-<b>🐟 Como jogar:</b> a cada mês você recebe R$ 6.500 de salário e gasta R$ 2.000. A sobra (e o dinheiro do caixa) você distribui entre FII, ação de dividendos e Tesouro. Vença fazendo sua renda passiva mensal alcançar seus gastos antes do mês 48! Atenção: FIIs pagam dividendos todo mês, mas ações pagam por trimestre (mar, jun, set e dez), como na vida real. Dica: guarde uma reserva no caixa, porque emergências (desemprego, saúde) podem te obrigar a vender no prejuízo ou cair no cheque especial.
+<b>🐟 Como jogar:</b> a cada mês você recebe R$ 6.500 de salário e gasta R$ 4.550. A sobra de R$ 1.950 (30% do salário) e o dinheiro do caixa você distribui entre FII, ação de dividendos e Tesouro. Vença fazendo sua renda passiva mensal alcançar a meta de R$ 1.300, seu primeiro degrau rumo a viver de renda, antes do mês 48! Atenção: FIIs pagam dividendos todo mês, mas ações pagam por trimestre (mar, jun, set e dez), como na vida real. Dica: guarde uma reserva no caixa, porque emergências (desemprego, saúde) podem te obrigar a vender no prejuízo ou cair no cheque especial.
 </div>
 </div>
 
@@ -147,19 +147,13 @@ td.pos{color:var(--moeda);font-weight:800}
 </div>
 <div class="legAquario">
 <span>Renda passiva média: <b id="uiRenda" style="color:var(--alga)">R$ 0</b>/mês</span>
-<span>Meta (gastos): <b id="uiGastos" style="color:var(--coral)">R$ 0</b>/mês</span>
+<span>Meta (renda alvo): <b id="uiGastos" style="color:var(--coral)">R$ 0</b>/mês</span>
 </div>
 <div class="aquario" aria-label="Progresso rumo à liberdade financeira">
 <div class="agua" id="uiAgua"></div>
 <div class="peixe" id="uiPeixe"><svg style="width:42px;height:26px;display:block" viewBox="0 0 66 40" xmlns="http://www.w3.org/2000/svg"><path d="M4 20c9-11 24-11 33 0-9 11-24 11-33 0z" fill="#3fd0c9"/><path d="M37 20l13-8v16z" fill="#2fa8a2"/><circle cx="13" cy="18" r="2.6" fill="#0d1a26"/></svg></div>
 <div class="meta">🏝️</div>
 </div>
-</div>
-
-<div class="card" id="evento" style="display:none">
-<h3 id="eventoTitulo"></h3>
-<p id="eventoTexto" style="font-size:.9rem"></p>
-<div class="licao" id="eventoLicao"></div>
 </div>
 
 <div class="card">
@@ -186,6 +180,12 @@ td.pos{color:var(--moeda);font-weight:800}
 <div class="centro">
 <button class="btn" id="btnAvancar" onclick="avancarMes()">Investir e avançar o mês ▶</button>
 </div>
+</div>
+
+<div class="card" id="evento" style="display:none">
+<h3 id="eventoTitulo"></h3>
+<p id="eventoTexto" style="font-size:.9rem"></p>
+<div class="licao" id="eventoLicao"></div>
 </div>
 
 <div class="card">
@@ -231,18 +231,19 @@ try{ if(window.top===window){ location.replace('https://manjubinhainvestidor.com
 // ===================== NÚCLEO DO JOGO (lógica pura, testável) =====================
 const CFG = {
 salario: 6500,
-gastosBase: 2000,
+gastosBase: 4550,
 yieldFii: 0.012, // 1,2% a.m. em dividendos
 yieldAcao: 0.010, // 1,0% a.m. em dividendos
 selicMes: 0.010, // 1,0% a.m. (tesouro)
 prazoMeses: 48,
 caixaInicial: 5000,
+metaRenda: 1300,     // renda passiva alvo pra vencer (primeiro degrau rumo a viver de renda)
 desagio: 0.10,       // perda ao vender ativo de risco na pressa (sem reserva)
 jurosDivida: 0.08,   // juros mensais sobre caixa negativo (cheque especial)
-mesesDesemprego: 5,  // duração do desemprego (meses sem salário)
-chanceDesemprego: 0.09,
-chanceGrave: 0.05,
-custoGrave: 12000,
+mesesDesemprego: 2,  // duração do desemprego (meses sem salário)
+chanceDesemprego: 0.05,
+chanceGrave: 0.03,
+custoGrave: 4000,
 };
 
 function novoEstado(){
@@ -322,32 +323,32 @@ fx:s=>{s.caixa+=s.salario; s.stats.ganhoEventos+=s.salario;},
 d:'Dezembro chegou e caiu o 13º na conta! Entre presentes e ceia, a tentação é grande... mas que tal investir uma boa parte?',
 l:'Rendas extras aceleram MUITO a bola de neve dos juros compostos. Aportar cedo vale mais que aportar muito.'},
 {id:'imprevisto', t:'🚗 Gasto inesperado!', ruim:true,
-fx:s=>{pagarEmergencia(s,1500);},
-d:'O carro quebrou na estrada e o mecânico levou R$ 1.500. Sem reserva, sai do seu caixa; se faltar, você vende investimento.',
+fx:s=>{pagarEmergencia(s,1200);},
+d:'O carro quebrou na estrada e o mecânico levou R$ 1.200. Sem reserva, sai do seu caixa; se faltar, você vende investimento.',
 l:'Imprevistos acontecem. Ter uma reserva de emergência em Tesouro SELIC evita vender ativos bons na hora errada.'},
 {id:'inflacao', t:'📊 Inflação alta no mês', ruim:true,
 fx:s=>{s.gastos=Math.round(s.gastos*1.015);},
 d:'O IPCA acelerou e seus gastos mensais subiram 1,5%.',
 l:'A meta de renda passiva não é fixa: a inflação aumenta seus gastos. Por isso ativos que corrigem pela inflação são valiosos.'},
 {id:'ipva', t:'🧾 Chegaram IPVA e IPTU!', ruim:true,
-fx:s=>{pagarEmergencia(s,1200);},
-d:'Janeiro à moda brasileira: os boletos de IPVA e IPTU custaram R$ 1.200. Sem caixa, a conta sai dos investimentos.',
+fx:s=>{pagarEmergencia(s,1000);},
+d:'Janeiro à moda brasileira: os boletos de IPVA e IPTU custaram R$ 1.000. Sem caixa, a conta sai dos investimentos.',
 l:'Todo brasileiro sabe que janeiro pesa. Quem provisiona esses gastos ao longo do ano não precisa vender investimentos pra pagar boleto.'},
 {id:'restituicao', t:'🦁 Restituição do Imposto de Renda!', ruim:false,
-fx:s=>{s.caixa+=2500; s.stats.ganhoEventos+=2500;},
-d:'O Leão devolveu R$ 2.500. Dinheiro que parecia perdido voltou pra conta.',
+fx:s=>{s.caixa+=2000; s.stats.ganhoEventos+=2000;},
+d:'O Leão devolveu R$ 2.000. Dinheiro que parecia perdido voltou pra conta.',
 l:'Restituição não é presente, é dinheiro seu que ficou parado. E lembre: FIIs têm dividendos isentos de IR pra pessoa física, uma vantagem e tanto pra quem vive de renda.'},
 {id:'copa', t:'⚽🌽 Festa junina e futebol!', ruim:false,
 fx:s=>{},
 d:'Junho de festa junina e futebol! Quentão, churrasco e jogo com os amigos, mas os aportes seguiram em dia.',
 l:'Viver de renda não é abrir mão da vida. É o equilíbrio: curtir o presente sem esquecer os aportes que compram sua liberdade futura.'},
 {id:'carnaval', t:'🎭 Carnaval!', ruim:true,
-fx:s=>{pagarEmergencia(s,900);},
-d:'Fevereiro é de bloquinho, fantasia e viagem. A folia custou R$ 900. Sem reserva no caixa, sai dos investimentos.',
+fx:s=>{pagarEmergencia(s,700);},
+d:'Fevereiro é de bloquinho, fantasia e viagem. A folia custou R$ 700. Sem reserva no caixa, sai dos investimentos.',
 l:'O ano no Brasil só começa depois do Carnaval, mas seus boletos começam em janeiro. Curtir a folia com um valor planejado evita começar o ano no vermelho.'},
 {id:'ferias', t:'🏖️ Férias com as crianças!', ruim:true,
-fx:s=>{pagarEmergencia(s,1300);},
-d:'Julho chegou e a criançada está em casa: passeios, viagem e sorvete custaram R$ 1.300. Sem caixa, sai dos investimentos.',
+fx:s=>{pagarEmergencia(s,900);},
+d:'Julho chegou e a criançada está em casa: passeios, viagem e sorvete custaram R$ 900. Sem caixa, sai dos investimentos.',
 l:'Férias escolares são previsíveis: acontecem todo ano! Gastos que você já sabe que virão não deveriam pegar ninguém de surpresa. Provisione um pouquinho por mês e viaje sem culpa.'},
 {id:'desemprego', t:'💼 Você perdeu o emprego!', ruim:true,
 fx:s=>{ if(s.semRenda<=0){ s.semRenda=CFG.mesesDesemprego; } },
@@ -461,7 +462,7 @@ s.rendaPassiva = calcRenda(s);
 if(s.rendaPassiva > s.stats.picoRenda) s.stats.picoRenda = s.rendaPassiva;
 if(patrimonio <= 0){
 s.fim = 'quebra';
-} else if(s.rendaPassiva >= s.gastos){
+} else if(s.rendaPassiva >= CFG.metaRenda){
 s.fim = 'vitoria';
 } else if(s.mes >= CFG.prazoMeses){
 s.fim = 'prazo';
@@ -478,7 +479,7 @@ const st=s.stats;
 const totalAportes = st.aporteFii+st.aporteAcao+st.aporteTes;
 const totalRendimentos = st.totalDivs+st.totalJuros;
 const investido = s.fii+s.acao+s.tesouro;
-const pctMeta = Math.min(Math.round(s.rendaPassiva/s.gastos*100),100);
+const pctMeta = Math.min(Math.round(s.rendaPassiva/CFG.metaRenda*100),100);
 const fmtR = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
 
 // Reinvestimento / caixa parado
@@ -600,7 +601,7 @@ $('telaJogo').classList.remove('escondido');
 $('log').innerHTML='';
 $('evento').style.display='none';
 $('btnAvancar').disabled=false;
-logar('🐟 <b>'+escapa(getNick())+'</b> mergulhou na corrida! Meta: renda passiva de '+fmt(S.gastos)+'/mês em até '+CFG.prazoMeses+' meses. Estamos em janeiro: prepare o bolso pros boletos!');
+logar('🐟 <b>'+escapa(getNick())+'</b> mergulhou na corrida! Meta: renda passiva de '+fmt(CFG.metaRenda)+'/mês em até '+CFG.prazoMeses+' meses. Estamos em janeiro: prepare o bolso pros boletos!');
 if(mjTrilhaCompleta()) logar('🎓 <b style="color:var(--moeda)">Bônus Cardume Formado:</b> +R$ 1.000 no caixa inicial por completar a trilha Comece por aqui!');
 atualizarTudo();
 }
@@ -648,13 +649,13 @@ $('uiMes').textContent=S.mes+' ('+nomeMes(S.mes).slice(0,3)+')';
 $('uiPrazo').textContent=(CFG.prazoMeses-S.mes+1)+'m';
 $('uiCaixa').textContent=fmt(S.caixa);
 $('uiPatrimonio').textContent=fmt(S.caixa+S.fii+S.acao+S.tesouro);
-$('uiGastos').textContent=fmt(S.gastos);
+$('uiGastos').textContent=fmt(CFG.metaRenda);
 $('yFii').textContent=(S.yieldFii*100).toFixed(1).replace('.',',');
 $('yAcao').textContent=(S.yieldAcao*100).toFixed(1).replace('.',',');
 $('yTes').textContent=(S.selic*100).toFixed(1).replace('.',',');
 const renda=calcRenda(S);
 $('uiRenda').textContent=fmt(renda);
-const pct=Math.min(renda/S.gastos*100,100);
+const pct=Math.min(renda/CFG.metaRenda*100,100);
 $('uiAgua').style.width=pct+'%';
 $('uiPeixe').style.left=Math.min(pct,92)+'%';
 atualizarAlocacao();
@@ -701,9 +702,9 @@ $('telaFim').style.display='block';
 if(venceu){
 salvarRanking(getNick(),meses);
 $('fimEmoji').textContent='🏝️🐟🎉';
-$('fimTitulo').textContent='Você chegou à ilha da liberdade!';
+$('fimTitulo').textContent='Você bateu sua meta de renda!';
 $('fimTitulo').style.color='var(--alga)';
-$('fimFrase').innerHTML='Sua renda passiva superou seus gastos em <b style="color:var(--moeda)">'+meses+' meses</b>.';
+$('fimFrase').innerHTML='Sua renda passiva alcançou a meta de '+fmt(CFG.metaRenda)+'/mês em <b style="color:var(--moeda)">'+meses+' meses</b>. É o primeiro grande degrau rumo a viver de renda!';
 $('blocoRanking').style.display='block';
 const tb=$('tabelaRanking').querySelector('tbody');
 tb.innerHTML='';
@@ -730,7 +731,7 @@ $('btnRejogar').textContent='Tentar de novo 💪';
 }
 
 $('fimResumo').textContent='Patrimônio final: '+fmt(S.caixa+S.fii+S.acao+S.tesouro)+
-' | Renda passiva: '+fmt(S.rendaPassiva)+'/mês | Meta: '+fmt(S.gastos)+'/mês';
+' | Renda passiva: '+fmt(S.rendaPassiva)+'/mês | Meta: '+fmt(CFG.metaRenda)+'/mês';
 
 preencherLista('relAcertos', rel.acertos, 'ok');
 preencherLista('relMelhorar', rel.melhorar.length?rel.melhorar:['Nada a apontar: partida impecável! 🐟'], 'melhorar');
