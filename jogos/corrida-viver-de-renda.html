@@ -497,11 +497,17 @@ function getRanking(){ try{ return JSON.parse(localStorage.getItem('mj_ranking')
 function salvarRanking(nick, meses){
 try{
 const r = getRanking();
-r.push({nick, meses, data: new Date().toISOString().slice(0,10)});
+r.push({nick, meses, selo: (typeof mjTrilhaCompleta==='function'&&mjTrilhaCompleta())?1:0, data: new Date().toISOString().slice(0,10)});
 r.sort((a,b)=>a.meses-b.meses);
 localStorage.setItem('mj_ranking', JSON.stringify(r.slice(0,10)));
 }catch(e){}
 }
+
+// ===== Ponte com o site Manjubinha =====
+var MJ_TRILHA=null;
+window.addEventListener('message',function(ev){ if(ev.data&&ev.data.type==='mjTrilha') MJ_TRILHA=ev.data; });
+function mjTrilhaCompleta(){ return !!(MJ_TRILHA&&MJ_TRILHA.total>0&&MJ_TRILHA.lidos>=MJ_TRILHA.total); }
+function mjAvisar(evt){ try{ if(window.parent!==window) window.parent.postMessage({type:'mjJogo',jogo:'corrida',evento:evt,nick:getNick()},'*'); }catch(e){} }
 
 // ===================== UI =====================
 let S = null;
@@ -516,6 +522,8 @@ iniciarPartida();
 }
 function iniciarPartida(){
 S = novoEstado();
+mjAvisar('start');
+if(mjTrilhaCompleta()){ S.caixa+=1000; }
 $('telaNick').style.display='none';
 $('telaFim').style.display='none';
 $('telaJogo').classList.remove('escondido');
@@ -523,6 +531,7 @@ $('log').innerHTML='';
 $('evento').style.display='none';
 $('btnAvancar').disabled=false;
 logar('🐟 <b>'+escapa(getNick())+'</b> mergulhou na corrida! Meta: renda passiva de '+fmt(S.gastos)+'/mês em até '+CFG.prazoMeses+' meses. Estamos em janeiro: prepare o bolso pros boletos!');
+if(mjTrilhaCompleta()) logar('🎓 <b style="color:var(--moeda)">Bônus Cardume Formado:</b> +R$ 1.000 no caixa inicial por completar a trilha Comece por aqui!');
 atualizarTudo();
 }
 function escapa(t){ const d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
@@ -611,6 +620,7 @@ setTimeout(mostrarFim,900);
 }
 
 function mostrarFim(){
+mjAvisar('fim');
 const rel=gerarRelatorio(S);
 const venceu=(S.fim==='vitoria');
 const meses=S.mes;
@@ -629,7 +639,7 @@ const tb=$('tabelaRanking').querySelector('tbody');
 tb.innerHTML='';
 getRanking().forEach((r,i)=>{
 const tr=document.createElement('tr');
-tr.innerHTML='<td class="pos">'+(i+1)+'º</td><td>'+escapa(r.nick)+'</td><td>'+r.meses+' meses</td>';
+tr.innerHTML='<td class="pos">'+(i+1)+'º</td><td>'+escapa(r.nick)+(r.selo?' 🎓':'')+'</td><td>'+r.meses+' meses</td>';
 tb.appendChild(tr);
 });
 $('btnRejogar').textContent='Bater meu recorde 🔁';
@@ -655,6 +665,7 @@ if(S.stats.mesesConcentrado>5) links.push('Carteira concentrada? Compare os ativ
 links.push('Crises no jogo te assustaram? Na vida real o perigo é vender no pânico: <a href="'+POSTS_URL.panic+'" target="_top" style="color:var(--aqua)">Panic Selling &rarr;</a>');
 links.push('FIIs de tijolo ou de papel? Entenda a diferença: <a href="'+POSTS_URL.fii+'" target="_top" style="color:var(--aqua)">Ler o post &rarr;</a>');
 links.push('Todos os conteúdos do Manjubinha: <a href="'+POSTS_URL.posts+'" target="_top" style="color:var(--aqua)">Ver posts &rarr;</a>');
+if(MJ_TRILHA && !mjTrilhaCompleta()){ links.unshift('🐟 '+escapa(getNick())+', no jogo você venceu. Na vida real, continue a trilha <b>Comece por aqui</b>: <a href="https://manjubinhainvestidor.com.br/#mj-comece" target="_top" style="color:var(--aqua)">ir para o passo '+(MJ_TRILHA.lidos+1)+' &rarr;</a>'); }
 preencherLista('relLinks', links, 'fator');
 }
 
