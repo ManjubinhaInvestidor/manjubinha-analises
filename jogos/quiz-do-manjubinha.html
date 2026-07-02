@@ -277,10 +277,10 @@ return {acertou, ganho, correta: q.c, explicacao: q.e};
 
 // ===================== RELATÓRIO =====================
 const DICAS_TEMA = {
-'FII': 'Dá uma olhada nos posts sobre fundos imobiliários no Manjubinha: vacância, P/VP e dividendos isentos não terão mais segredo.',
-'Ações': 'Vale revisitar os conteúdos sobre ações de dividendos: dividend yield, tag along e empresas perenes.',
-'Tesouro': 'Os posts sobre Tesouro Direto explicam Selic, IPCA+ e marcação a mercado de um jeito simples.',
-'Conceitos': 'Os fundamentos do viver de renda (juros compostos, reserva, diversificação) são a base de tudo: vale reler com carinho.',
+'FII': 'Dá uma olhada nos posts sobre fundos imobiliários no Manjubinha: vacância, P/VP e dividendos isentos não terão mais segredo. <a href="https://manjubinhainvestidor.com.br/fiis-tijolo-vs-papel/" target="_top" style="color:var(--aqua)">Ler o post &rarr;</a>',
+'Ações': 'Vale revisitar os conteúdos sobre ações de dividendos: dividend yield, tag along e empresas perenes. <a href="https://manjubinhainvestidor.com.br/fiis-vs-acoes/" target="_top" style="color:var(--aqua)">Ler o post &rarr;</a>',
+'Tesouro': 'Os posts sobre Tesouro Direto explicam Selic, IPCA+ e marcação a mercado de um jeito simples. <a href="https://manjubinhainvestidor.com.br/fiis-ou-tesouro-ipca-selic-alta-erro-timing/" target="_top" style="color:var(--aqua)">Ler o post &rarr;</a>',
+'Conceitos': 'Os fundamentos do viver de renda (juros compostos, reserva, diversificação) são a base de tudo: vale reler com carinho. <a href="https://manjubinhainvestidor.com.br/posts/" target="_top" style="color:var(--aqua)">Ver os posts &rarr;</a>',
 };
 
 function gerarRelatorio(p){
@@ -475,7 +475,7 @@ const ul=$(id); ul.innerHTML='';
 itens.forEach(t=>{
 const li=document.createElement('li');
 li.className=classe;
-li.textContent=t;
+li.innerHTML=t;
 ul.appendChild(li);
 });
 }
