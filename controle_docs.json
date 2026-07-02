@@ -484,5 +484,21 @@
   },
   "HAPV3": {
     "ultima": "2026-07-02"
+  },
+  "RZTR11_23698": {
+    "status": "sem_analise",
+    "data": "2026-07-02"
+  },
+  "RZTR11": {
+    "ultima": "2026-07-02"
+  },
+  "POMO4_45022": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/pomo4-marcopolo-calendario-de-eventos-corporativos-07-2026/",
+    "data": "2026-07-02",
+    "descricao": "Calendário de Eventos Corporativos"
+  },
+  "POMO4": {
+    "ultima": "2026-07-02"
   }
 }
