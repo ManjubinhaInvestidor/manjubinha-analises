@@ -225,6 +225,8 @@ td.pos{color:var(--moeda);font-weight:800}
 </div>
 
 <script>
+// Acesso direto fora do site? Redireciona para a página oficial do jogo.
+try{ if(window.top===window){ location.replace('https://manjubinhainvestidor.com.br/jogos/corrida-viver-de-renda/'); } }catch(e){}
 /*CORE-START*/
 // ===================== NÚCLEO DO JOGO (lógica pura, testável) =====================
 const CFG = {
