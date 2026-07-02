@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<script>try{ if(window.top===window){ location.replace("https://manjubinhainvestidor.com.br/ranking-de-ativos/"); } }catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ranking Manjubinha</title>
@@ -38,8 +39,8 @@ tr:hover td{background:#fafafa}
 </head>
 <body>
 <div class="tabs">
-  <button class="tab active" id="tf" onclick="mostrar('fiis')">FIIs</button>
-  <button class="tab" id="ta" onclick="mostrar('acoes')">A&ccedil;&otilde;es</button>
+<button class="tab active" id="tf" onclick="mostrar('fiis')">FIIs</button>
+<button class="tab" id="ta" onclick="mostrar('acoes')">A&ccedil;&otilde;es</button>
 </div>
 <div class="info">Todos os ativos desta lista atendem aos 4 pilares Manjubinha: <b>perenidade, renda, valoriza&ccedil;&atilde;o e liquidez</b>. A ordem &eacute; definida pela soma das posi&ccedil;&otilde;es em cada pilar, com a liquidez valendo em dobro. A explica&ccedil;&atilde;o completa est&aacute; logo abaixo do ranking.</div>
 <div class="filtros" id="filtros"></div>
@@ -48,71 +49,71 @@ tr:hover td{background:#fafafa}
 <script>
 var D=null,ATIVO='fiis',FILTRO='Todos';
 function fmtMoeda(v){
-  if(v==null)return'-';
-  if(v>=1e9)return'R$ '+(v/1e9).toFixed(1).replace('.',',')+' bi/dia';
-  if(v>=1e6)return'R$ '+(v/1e6).toFixed(1).replace('.',',')+' mi/dia';
-  return'R$ '+(v/1e3).toFixed(0)+' mil/dia';
+if(v==null)return'-';
+if(v>=1e9)return'R$ '+(v/1e9).toFixed(1).replace('.',',')+' bi/dia';
+if(v>=1e6)return'R$ '+(v/1e6).toFixed(1).replace('.',',')+' mi/dia';
+return'R$ '+(v/1e3).toFixed(0)+' mil/dia';
 }
 function fmtPct(v){return v==null?'-':String(v).replace('.',',')+'%'}
 function fmtNum(v){return v==null?'-':String(v).replace('.',',')}
 function grupo(a){return (ATIVO==='fiis'?a.tipo:a.setor)||'Outros'}
 function mostrar(qual){
-  ATIVO=qual;FILTRO='Todos';
-  document.getElementById('tf').className='tab'+(qual==='fiis'?' active':'');
-  document.getElementById('ta').className='tab'+(qual==='acoes'?' active':'');
-  render();
+ATIVO=qual;FILTRO='Todos';
+document.getElementById('tf').className='tab'+(qual==='fiis'?' active':'');
+document.getElementById('ta').className='tab'+(qual==='acoes'?' active':'');
+render();
 }
 function setFiltro(f){FILTRO=f;render()}
 function render(){
-  if(!D)return;
-  var lista=D[ATIVO]||[],fii=ATIVO==='fiis';
-  var grupos=['Todos'];
-  lista.forEach(function(a){var g=grupo(a);if(grupos.indexOf(g)<0)grupos.push(g)});
-  document.getElementById('filtros').innerHTML=grupos.map(function(g){
-    return '<button class="fbtn'+(g===FILTRO?' on':'')+'" onclick="setFiltro(\''+g.replace(/'/g,"\\'")+'\')">'+g+'</button>';
-  }).join('');
-  var h='<table><tr><th></th><th>Ativo</th><th class="hidem"></th>'+
-    '<th class="num">Liquidez</th><th class="num">DY 12m</th>'+
-    '<th class="num">'+(fii?'P/VP':'Tag Along')+'</th><th class="hidem"></th></tr>';
-  for(var i=0;i<lista.length;i++){
-    var a=lista[i],m=a.metricas||{};
-    if(FILTRO!=='Todos'&&grupo(a)!==FILTRO)continue;
-    var nome=a.post_url?'<a href="'+a.post_url+'" target="_top">'+a.ticker+'</a>':a.ticker;
-    var badges=fii
-      ?('<span class="bd">'+(a.tipo||'')+'</span>'+(a.segmento?'<span class="bd b2">'+a.segmento+'</span>':''))
-      :(a.setor?'<span class="bd">'+a.setor+'</span>':'');
-    var col3=fii?fmtNum(m.p_vp):(m.tag_along!=null?m.tag_along+'%':'-');
-    h+='<tr><td class="pos">'+(i+1)+'</td>'+
-       '<td class="tk">'+nome+'<div class="nm">'+(a.nome||'')+'</div></td>'+
-       '<td class="hidem">'+badges+'</td>'+
-       '<td class="num">'+fmtMoeda(m.liquidez_diaria)+'</td>'+
-       '<td class="num">'+fmtPct(m.dy_12m)+'</td>'+
-       '<td class="num">'+col3+'</td>'+
-       '<td class="hidem">'+(a.destaque?'<span class="dest">'+a.destaque+'</span>':'')+'</td></tr>';
-  }
-  h+='</table>';
-  var radar=((D.reprovados||{})[ATIVO]||[]).filter(function(r){return r.metricas&&(r.metricas.liquidez_diaria!=null||r.metricas.dy_12m!=null)});
-  if(radar.length){
-    h+='<div class="radar-t">&#128064; Vale observar</div><div class="radar-i">Ativos no radar do Manjubinha que hoje n&atilde;o atendem a todos os pilares. O motivo aparece ao lado.</div>';
-    h+='<table><tr><th></th><th>Ativo</th><th class="num">Liquidez</th><th class="num">DY 12m</th><th class="num">'+(fii?'P/VP':'Tag Along')+'</th><th>Motivo</th></tr>';
-    for(var k=0;k<radar.length;k++){
-      var r=radar[k],rm=r.metricas||{};
-      var rn=r.post_url?'<a href="'+r.post_url+'" target="_top">'+r.ticker+'</a>':r.ticker;
-      var rc3=fii?fmtNum(rm.p_vp):(rm.tag_along!=null?rm.tag_along+'%':'-');
-      h+='<tr><td class="pos">'+(lista.length+k+1)+'</td><td class="tk">'+rn+'<div class="nm">'+(r.nome||'')+'</div></td>'+
-         '<td class="num">'+fmtMoeda(rm.liquidez_diaria)+'</td>'+
-         '<td class="num">'+fmtPct(rm.dy_12m)+'</td>'+
-         '<td class="num">'+rc3+'</td>'+
-         '<td class="mot">'+(r.motivo_exclusao||'')+'</td></tr>';
-    }
-    h+='</table>';
-  }
-  document.getElementById('conteudo').innerHTML=h;
-  document.getElementById('foot').textContent='Atualizado em '+(D.ultima_atualizacao||'');
-  setTimeout(function(){try{window.parent.postMessage({type:'rankingHeight',height:document.body.scrollHeight},'*')}catch(e){}},150);
+if(!D)return;
+var lista=D[ATIVO]||[],fii=ATIVO==='fiis';
+var grupos=['Todos'];
+lista.forEach(function(a){var g=grupo(a);if(grupos.indexOf(g)<0)grupos.push(g)});
+document.getElementById('filtros').innerHTML=grupos.map(function(g){
+return '<button class="fbtn'+(g===FILTRO?' on':'')+'" onclick="setFiltro(\''+g.replace(/'/g,"\\'")+'\')">'+g+'</button>';
+}).join('');
+var h='<table><tr><th></th><th>Ativo</th><th class="hidem"></th>'+
+'<th class="num">Liquidez</th><th class="num">DY 12m</th>'+
+'<th class="num">'+(fii?'P/VP':'Tag Along')+'</th><th class="hidem"></th></tr>';
+for(var i=0;i<lista.length;i++){
+var a=lista[i],m=a.metricas||{};
+if(FILTRO!=='Todos'&&grupo(a)!==FILTRO)continue;
+var nome=a.post_url?'<a href="'+a.post_url+'" target="_top">'+a.ticker+'</a>':a.ticker;
+var badges=fii
+?('<span class="bd">'+(a.tipo||'')+'</span>'+(a.segmento?'<span class="bd b2">'+a.segmento+'</span>':''))
+:(a.setor?'<span class="bd">'+a.setor+'</span>':'');
+var col3=fii?fmtNum(m.p_vp):(m.tag_along!=null?m.tag_along+'%':'-');
+h+='<tr><td class="pos">'+(i+1)+'</td>'+
+'<td class="tk">'+nome+'<div class="nm">'+(a.nome||'')+'</div></td>'+
+'<td class="hidem">'+badges+'</td>'+
+'<td class="num">'+fmtMoeda(m.liquidez_diaria)+'</td>'+
+'<td class="num">'+fmtPct(m.dy_12m)+'</td>'+
+'<td class="num">'+col3+'</td>'+
+'<td class="hidem">'+(a.destaque?'<span class="dest">'+a.destaque+'</span>':'')+'</td></tr>';
+}
+h+='</table>';
+var radar=((D.reprovados||{})[ATIVO]||[]).filter(function(r){return r.metricas&&(r.metricas.liquidez_diaria!=null||r.metricas.dy_12m!=null)});
+if(radar.length){
+h+='<div class="radar-t">&#128064; Vale observar</div><div class="radar-i">Ativos no radar do Manjubinha que hoje n&atilde;o atendem a todos os pilares. O motivo aparece ao lado.</div>';
+h+='<table><tr><th></th><th>Ativo</th><th class="num">Liquidez</th><th class="num">DY 12m</th><th class="num">'+(fii?'P/VP':'Tag Along')+'</th><th>Motivo</th></tr>';
+for(var k=0;k<radar.length;k++){
+var r=radar[k],rm=r.metricas||{};
+var rn=r.post_url?'<a href="'+r.post_url+'" target="_top">'+r.ticker+'</a>':r.ticker;
+var rc3=fii?fmtNum(rm.p_vp):(rm.tag_along!=null?rm.tag_along+'%':'-');
+h+='<tr><td class="pos">'+(lista.length+k+1)+'</td><td class="tk">'+rn+'<div class="nm">'+(r.nome||'')+'</div></td>'+
+'<td class="num">'+fmtMoeda(rm.liquidez_diaria)+'</td>'+
+'<td class="num">'+fmtPct(rm.dy_12m)+'</td>'+
+'<td class="num">'+rc3+'</td>'+
+'<td class="mot">'+(r.motivo_exclusao||'')+'</td></tr>';
+}
+h+='</table>';
+}
+document.getElementById('conteudo').innerHTML=h;
+document.getElementById('foot').textContent='Atualizado em '+(D.ultima_atualizacao||'');
+setTimeout(function(){try{window.parent.postMessage({type:'rankingHeight',height:document.body.scrollHeight},'*')}catch(e){}},150);
 }
 fetch('ranking.json?v='+Date.now()).then(function(r){return r.json()}).then(function(j){D=j;render()})
-  .catch(function(){document.getElementById('conteudo').textContent='Nao foi possivel carregar o ranking.'});
+.catch(function(){document.getElementById('conteudo').textContent='Nao foi possivel carregar o ranking.'});
 </script>
 </body>
 </html>
