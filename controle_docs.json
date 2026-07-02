@@ -448,5 +448,41 @@
   },
   "RENT3": {
     "ultima": "2026-07-02"
+  },
+  "RCRB11_23734": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rcrb11-rio-bravo-renda-corporativa-fatos-relevantes-07-2026/",
+    "data": "2026-07-02",
+    "descricao": "Fatos Relevantes"
+  },
+  "RCRB11": {
+    "ultima": "2026-07-02"
+  },
+  "MGFF11_339": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/mgff11-mogno-fundo-de-fundos-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-02",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "MGFF11": {
+    "ultima": "2026-07-02"
+  },
+  "CSAN3_45194": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/csan3-cosan-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-02",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "CSAN3": {
+    "ultima": "2026-07-02"
+  },
+  "HAPV3_43820": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hapv3-hapvida-regimento-interno-do-conselho-de-administracao-07-2026/",
+    "data": "2026-07-02",
+    "descricao": "Regimento interno do Conselho de Administração"
+  },
+  "HAPV3": {
+    "ultima": "2026-07-02"
   }
 }
