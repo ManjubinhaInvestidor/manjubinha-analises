@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corrida pra Viver de Renda | Manjubinha Investidor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--mar-fundo:#062c43;
+--mar-medio:#0b4a6f;
+--mar-claro:#116d99;
+--aqua:#3fd0c9;
+--moeda:#ffc94d;
+--coral:#ff6b6b;
+--areia:#f4ede1;
+--alga:#7ee081;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Nunito',sans-serif;
+background:linear-gradient(180deg,#083b58 0%,var(--mar-fundo) 60%,#041f30 100%);
+color:var(--areia);
+min-height:100vh;
+padding:16px;
+}
+.wrap{max-width:760px;margin:0 auto}
+h1,h2,h3{font-family:'Baloo 2',cursive}
+h1{font-size:1.6rem;color:var(--aqua);text-align:center;line-height:1.2}
+.sub{text-align:center;font-size:.85rem;opacity:.8;margin:4px 0 16px}
+.card{
+background:var(--mar-medio);
+border:2px solid rgba(63,208,201,.25);
+border-radius:18px;
+padding:18px;
+margin-bottom:14px;
+}
+#telaNick{text-align:center}
+#telaNick input{
+width:100%;max-width:320px;padding:12px 16px;border-radius:12px;
+border:2px solid var(--mar-claro);background:#04283d;color:var(--areia);
+font-size:1rem;font-family:'Nunito',sans-serif;margin:12px 0;
+}
+#telaNick input:focus{outline:2px solid var(--aqua)}
+.btn{
+font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:800;
+background:var(--aqua);color:#04283d;border:none;border-radius:14px;
+padding:12px 26px;cursor:pointer;transition:transform .12s;
+}
+.btn:hover{transform:scale(1.05)}
+.btn:focus-visible{outline:3px solid var(--moeda)}
+.btn.sec{background:transparent;color:var(--aqua);border:2px solid var(--aqua)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.painel{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.painel .item{background:#04283d;border-radius:12px;padding:10px 4px}
+.painel .rotulo{font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;opacity:.7}
+.painel .valor{font-family:'Baloo 2',cursive;font-size:1rem;color:var(--moeda)}
+.painel .valor.aqua{color:var(--aqua)}
+.painel .valor.prazo{color:var(--coral)}
+.aquario{
+position:relative;height:56px;border-radius:14px;overflow:hidden;
+background:linear-gradient(180deg,#0a5178,#04283d);
+border:2px solid var(--mar-claro);margin:14px 0 6px;
+}
+.agua{
+position:absolute;inset:0;width:0%;
+background:linear-gradient(90deg,rgba(63,208,201,.35),rgba(126,224,129,.45));
+transition:width .8s ease;
+}
+.peixe{
+position:absolute;top:50%;left:0%;transform:translate(-10%,-50%);
+font-size:1.9rem;transition:left .8s ease;
+filter:drop-shadow(0 2px 3px rgba(0,0,0,.4));
+}
+.meta{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:1.4rem}
+.legAquario{display:flex;justify-content:space-between;font-size:.75rem;opacity:.85;margin-bottom:4px;flex-wrap:wrap;gap:4px}
+.ativo{display:flex;align-items:center;gap:10px;margin:10px 0;flex-wrap:wrap}
+.ativo .nome{flex:1;min-width:150px}
+.ativo .nome b{color:var(--aqua)}
+.ativo .nome small{display:block;opacity:.75;font-size:.72rem}
+.ativo input[type=range]{flex:2;min-width:120px;accent-color:var(--aqua)}
+.ativo .qtde{width:92px;text-align:right;font-family:'Baloo 2',cursive;color:var(--moeda)}
+.sobra{font-size:.85rem;text-align:right;opacity:.9;margin-top:4px}
+.sobra b{color:var(--alga)}
+#evento{border-color:var(--moeda)}
+#evento.ruim{border-color:var(--coral)}
+#evento h3{color:var(--moeda);margin-bottom:6px}
+#evento.ruim h3{color:var(--coral)}
+.licao{
+margin-top:10px;padding:10px 12px;background:#04283d;border-left:4px solid var(--aqua);
+border-radius:8px;font-size:.85rem;
+}
+.licao b{color:var(--aqua)}
+#log{max-height:150px;overflow-y:auto;font-size:.8rem;line-height:1.5}
+#log p{border-bottom:1px dashed rgba(255,255,255,.1);padding:3px 0}
+#log .mes{color:var(--moeda);font-weight:800}
+#telaFim{text-align:center;display:none}
+#telaFim .grande{font-size:3rem}
+.relatorio{text-align:left;margin-top:14px}
+.relatorio h3{color:var(--aqua);font-size:1rem;margin:12px 0 6px}
+.relatorio ul{list-style:none}
+.relatorio li{padding:7px 10px;margin:5px 0;border-radius:8px;background:#04283d;font-size:.85rem;line-height:1.4}
+.relatorio li.ok{border-left:4px solid var(--alga)}
+.relatorio li.melhorar{border-left:4px solid var(--moeda)}
+.relatorio li.fator{border-left:4px solid var(--aqua)}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.9rem}
+th,td{padding:8px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.12)}
+th{color:var(--aqua);font-family:'Baloo 2',cursive}
+td.pos{color:var(--moeda);font-weight:800}
+.centro{text-align:center;margin-top:12px}
+.escondido{display:none}
+.linha-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+@media(max-width:480px){
+.painel{grid-template-columns:repeat(2,1fr)}
+}
+@media(prefers-reduced-motion:reduce){
+.agua,.peixe,.btn{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🐟 Corrida pra Viver de Renda</h1>
+<p class="sub">Faça sua renda passiva superar seus gastos em até 48 meses. Um jogo do Manjubinha Investidor.</p>
+
+<!-- TELA NICK -->
+<div class="card" id="telaNick">
+<h2>Quem está nadando hoje?</h2>
+<p style="font-size:.85rem;opacity:.8;margin-top:6px">Seu nick fica salvo neste navegador e entra no ranking local.</p>
+<input type="text" id="inputNick" maxlength="16" placeholder="Seu nick (ex: Manjubinha)">
+<br>
+<button class="btn" onclick="comecarJogo()">Começar 🌊</button>
+<div class="licao" style="text-align:left;margin-top:14px">
+<b>🐟 Como jogar:</b> a cada mês você recebe R$ 6.500 de salário e gasta R$ 2.000. A sobra (e o dinheiro do caixa) você distribui entre FII, ação de dividendos e Tesouro. Vença fazendo sua renda passiva mensal alcançar seus gastos antes do mês 48!
+</div>
+</div>
+
+<!-- JOGO -->
+<div id="telaJogo" class="escondido">
+<div class="card">
+<div class="painel">
+<div class="item"><div class="rotulo">Mês</div><div class="valor aqua" id="uiMes">1</div></div>
+<div class="item"><div class="rotulo">Prazo</div><div class="valor prazo" id="uiPrazo">48</div></div>
+<div class="item"><div class="rotulo">Caixa</div><div class="valor" id="uiCaixa">R$ 0</div></div>
+<div class="item"><div class="rotulo">Patrimônio</div><div class="valor" id="uiPatrimonio">R$ 0</div></div>
+</div>
+<div class="legAquario">
+<span>Renda passiva: <b id="uiRenda" style="color:var(--alga)">R$ 0</b>/mês</span>
+<span>Meta (gastos): <b id="uiGastos" style="color:var(--coral)">R$ 0</b>/mês</span>
+</div>
+<div class="aquario" aria-label="Progresso rumo à liberdade financeira">
+<div class="agua" id="uiAgua"></div>
+<div class="peixe" id="uiPeixe">🐟</div>
+<div class="meta">🏝️</div>
+</div>
+</div>
+
+<div class="card" id="evento" style="display:none">
+<h3 id="eventoTitulo"></h3>
+<p id="eventoTexto" style="font-size:.9rem"></p>
+<div class="licao" id="eventoLicao"></div>
+</div>
+
+<div class="card">
+<h3 style="color:var(--aqua)">Onde investir este mês?</h3>
+<p style="font-size:.8rem;opacity:.8;margin:4px 0 8px">Você vai investir a sobra do salário + o que está no caixa: <b id="uiDisponivel" style="color:var(--alga)"></b>. Arraste as barras.</p>
+
+<div class="ativo">
+<div class="nome"><b>🏢 FII</b><small>Aluguel mensal (<span id="yFii"></span>% a.m.), cota oscila</small></div>
+<input type="range" id="rFii" min="0" max="100" value="34" oninput="ajustarSliders('rFii')">
+<div class="qtde" id="vFii">R$ 0</div>
+</div>
+<div class="ativo">
+<div class="nome"><b>📈 Ação de dividendos</b><small>Dividendos (<span id="yAcao"></span>% a.m.) + valorização, oscila mais</small></div>
+<input type="range" id="rAcao" min="0" max="100" value="33" oninput="ajustarSliders('rAcao')">
+<div class="qtde" id="vAcao">R$ 0</div>
+</div>
+<div class="ativo">
+<div class="nome"><b>🏛️ Tesouro</b><small>Juros ligados à SELIC (<span id="yTes"></span>% a.m.), seguro</small></div>
+<input type="range" id="rTes" min="0" max="100" value="33" oninput="ajustarSliders('rTes')">
+<div class="qtde" id="vTes">R$ 0</div>
+</div>
+<div class="sobra">Fica no caixa (reserva): <b id="vCaixaSobra">R$ 0</b></div>
+
+<div class="centro">
+<button class="btn" id="btnAvancar" onclick="avancarMes()">Investir e avançar o mês ▶</button>
+</div>
+</div>
+
+<div class="card">
+<h3 style="color:var(--aqua);font-size:1rem">Diário de bordo</h3>
+<div id="log"></div>
+</div>
+</div>
+
+<!-- FIM (vitória ou fim de prazo) -->
+<div class="card" id="telaFim">
+<div class="grande" id="fimEmoji">🏝️🐟🎉</div>
+<h2 id="fimTitulo" style="color:var(--alga)"></h2>
+<p style="margin:8px 0" id="fimFrase"></p>
+<p style="font-size:.85rem;opacity:.85" id="fimResumo"></p>
+
+<div class="relatorio">
+<h3>✅ O que você acertou</h3>
+<ul id="relAcertos"></ul>
+<h3>🧭 O que dá pra melhorar</h3>
+<ul id="relMelhorar"></ul>
+<h3>⚖️ O que mais pesou no resultado</h3>
+<ul id="relFatores"></ul>
+</div>
+
+<div id="blocoRanking">
+<h3 style="color:var(--aqua);margin-top:16px">🏆 Ranking local</h3>
+<table id="tabelaRanking"><thead><tr><th>#</th><th>Nick</th><th>Meses</th></tr></thead><tbody></tbody></table>
+</div>
+
+<div class="linha-btns">
+<button class="btn" onclick="reiniciar()" id="btnRejogar">Jogar de novo 🔁</button>
+<button class="btn sec" onclick="trocarNick()">Trocar nick</button>
+</div>
+</div>
+</div>
+
+<script>
+/*CORE-START*/
+// ===================== NÚCLEO DO JOGO (lógica pura, testável) =====================
+const CFG = {
+salario: 6500,
+gastosBase: 2000,
+yieldFii: 0.012, // 1,2% a.m. em dividendos
+yieldAcao: 0.010, // 1,0% a.m. em dividendos
+selicMes: 0.010, // 1,0% a.m. (tesouro)
+prazoMeses: 48,
+caixaInicial: 5000,
+};
+
+function novoEstado(){
+return {
+mes: 1,
+caixa: CFG.caixaInicial,
+fii: 0, acao: 0, tesouro: 0,
+yieldFii: CFG.yieldFii,
+yieldAcao: CFG.yieldAcao,
+selic: CFG.selicMes,
+gastos: CFG.gastosBase,
+salario: CFG.salario,
+rendaPassiva: 0,
+fim: null, // 'vitoria' | 'prazo'
+stats: {
+aporteFii:0, aporteAcao:0, aporteTes:0,
+totalDivs:0, totalJuros:0,
+mesesCaixaParado:0, // reserva > 25% do patrimônio
+mesesConcentrado:0, // um ativo > 75% do investido
+eventosBons:0, eventosRuins:0,
+perdaEventos:0, // R$ perdidos em quedas de eventos ruins
+ganhoEventos:0, // R$ ganhos em eventos bons (13º, valorizações)
+picoRenda:0,
+}
+};
+}
+
+const EVENTOS = [
+{id:'selicUp', t:'📈 SELIC subiu!', ruim:false,
+fx:s=>{s.selic=Math.min(s.selic+0.002,0.015);},
+d:'O Banco Central elevou a taxa básica de juros. Seu Tesouro passa a render mais.',
+l:'Quando a SELIC sobe, a renda fixa fica mais atraente. Mas cotas de FII costumam cair no curto prazo, o que pode ser chance de comprar mais barato.'},
+{id:'selicDown', t:'📉 SELIC caiu!', ruim:false,
+fx:s=>{s.selic=Math.max(s.selic-0.002,0.006);},
+d:'Corte na taxa básica de juros. O Tesouro rende menos, mas a renda variável tende a se valorizar.',
+l:'Juros baixos empurram investidores pra FIIs e ações de dividendos em busca de renda. Diversificar protege você em qualquer cenário.'},
+{id:'vacancia', t:'🏢 Vacância no FII!', ruim:true,
+fx:s=>{s.yieldFii=Math.max(s.yieldFii-0.0015,0.007); const perda=s.fii*0.05; s.fii-=perda; s.stats.perdaEventos+=perda;},
+d:'Um inquilino importante saiu e o fundo cortou dividendos. A cota caiu 5%.',
+l:'Vacância reduz a renda do FII. Por isso o Manjubinha olha Perenidade: fundos com muitos imóveis e inquilinos sofrem menos com uma saída.'},
+{id:'contrato', t:'🏢 FII anunciou novo contrato!', ruim:false,
+fx:s=>{s.yieldFii=Math.min(s.yieldFii+0.0015,0.015); const ganho=s.fii*0.04; s.fii+=ganho; s.stats.ganhoEventos+=ganho;},
+d:'O fundo alugou um imóvel que estava vago. Dividendos maiores e a cota valorizou 4%.',
+l:'A renda do FII vem de contratos de aluguel reais. Acompanhar os relatórios gerenciais ajuda a entender pra onde vai o dividendo.'},
+{id:'divUp', t:'💰 Empresa aumentou dividendos!', ruim:false,
+fx:s=>{s.yieldAcao=Math.min(s.yieldAcao+0.0015,0.014); const ganho=s.acao*0.05; s.acao+=ganho; s.stats.ganhoEventos+=ganho;},
+d:'Lucro recorde e a companhia decidiu distribuir mais. A ação subiu 5%.',
+l:'Empresas perenes e lucrativas tendem a pagar dividendos crescentes. É o motor do viver de renda com ações.'},
+{id:'crise', t:'📉 Crise no mercado!', ruim:true,
+fx:s=>{const p=s.acao*0.10+s.fii*0.06; s.acao*=0.90; s.fii*=0.94; s.stats.perdaEventos+=p;},
+d:'Pânico na bolsa: suas ações caíram 10% e FIIs 6%. Os dividendos, porém, continuam pingando.',
+l:'Preço não é renda. Quem vive de renda foca no fluxo de dividendos, não na cotação do dia. Crise pode ser hora de comprar mais barato.'},
+{id:'decimo', t:'🎁 Décimo terceiro!', ruim:false,
+fx:s=>{s.caixa+=s.salario; s.stats.ganhoEventos+=s.salario;},
+d:'Dezembro chegou e caiu o 13º na conta! Entre presentes e ceia, a tentação é grande... mas que tal investir uma boa parte?',
+l:'Rendas extras aceleram MUITO a bola de neve dos juros compostos. Aportar cedo vale mais que aportar muito.'},
+{id:'imprevisto', t:'🚗 Gasto inesperado!', ruim:true,
+fx:s=>{const p=Math.min(1500,s.caixa); s.caixa-=p; s.stats.perdaEventos+=p;},
+d:'O carro quebrou na estrada e o mecânico levou até R$ 1.500 do seu caixa.',
+l:'Imprevistos acontecem. Ter uma reserva de emergência em Tesouro SELIC evita vender ativos bons na hora errada.'},
+{id:'inflacao', t:'📊 Inflação alta no mês', ruim:true,
+fx:s=>{s.gastos=Math.round(s.gastos*1.015);},
+d:'O IPCA acelerou e seus gastos mensais subiram 1,5%.',
+l:'A meta de renda passiva não é fixa: a inflação aumenta seus gastos. Por isso ativos que corrigem pela inflação são valiosos.'},
+{id:'ipva', t:'🧾 Chegaram IPVA e IPTU!', ruim:true,
+fx:s=>{const p=Math.min(1200,s.caixa); s.caixa-=p; s.stats.perdaEventos+=p;},
+d:'Janeiro à moda brasileira: os boletos de IPVA e IPTU levaram até R$ 1.200 do seu caixa.',
+l:'Todo brasileiro sabe que janeiro pesa. Quem provisiona esses gastos ao longo do ano não precisa vender investimentos pra pagar boleto.'},
+{id:'restituicao', t:'🦁 Restituição do Imposto de Renda!', ruim:false,
+fx:s=>{s.caixa+=2500; s.stats.ganhoEventos+=2500;},
+d:'O Leão devolveu R$ 2.500. Dinheiro que parecia perdido voltou pra conta.',
+l:'Restituição não é presente, é dinheiro seu que ficou parado. E lembre: FIIs têm dividendos isentos de IR pra pessoa física, uma vantagem e tanto pra quem vive de renda.'},
+{id:'copa', t:'⚽🌽 Festa junina e futebol!', ruim:false,
+fx:s=>{},
+d:'Junho de festa junina e futebol! Quentão, churrasco e jogo com os amigos, mas os aportes seguiram em dia.',
+l:'Viver de renda não é abrir mão da vida. É o equilíbrio: curtir o presente sem esquecer os aportes que compram sua liberdade futura.'},
+{id:'carnaval', t:'🎭 Carnaval!', ruim:true,
+fx:s=>{const p=Math.min(900,s.caixa); s.caixa-=p; s.stats.perdaEventos+=p;},
+d:'Fevereiro é de bloquinho, fantasia e viagem. A folia levou até R$ 900 do seu caixa.',
+l:'O ano no Brasil só começa depois do Carnaval, mas seus boletos começam em janeiro. Curtir a folia com um valor planejado evita começar o ano no vermelho.'},
+{id:'ferias', t:'🏖️ Férias com as crianças!', ruim:true,
+fx:s=>{const p=Math.min(1300,s.caixa); s.caixa-=p; s.stats.perdaEventos+=p;},
+d:'Julho chegou e a criançada está em casa: passeios, viagem e sorvete levaram até R$ 1.300 do caixa.',
+l:'Férias escolares são previsíveis: acontecem todo ano! Gastos que você já sabe que virão não deveriam pegar ninguém de surpresa. Provisione um pouquinho por mês e viaje sem culpa.'},
+{id:'calmo', t:'🌊 Mês tranquilo no oceano', ruim:false,
+fx:s=>{},
+d:'Nada de novo. Os dividendos pingaram normalmente.',
+l:'Viver de renda é maratona, não corrida de 100 metros. A consistência dos aportes é o que constrói o patrimônio.'},
+];
+
+const MESES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+function mesDoAno(mes){ return ((mes-1)%12); } // 0=Janeiro (o jogo começa em janeiro)
+function nomeMes(mes){ return MESES[mesDoAno(mes)]; }
+
+// Eventos fixos do calendário brasileiro; nos demais meses, sorteia do mercado
+const CALENDARIO = {0:'ipva', 1:'carnaval', 4:'restituicao', 5:'copa', 6:'ferias', 11:'decimo'};
+const POOL_MERCADO = ['selicUp','selicDown','vacancia','contrato','divUp','crise','imprevisto','inflacao','calmo'];
+
+function eventoDoMes(s, rand){
+const m = mesDoAno(s.mes);
+if(CALENDARIO[m] !== undefined){
+return EVENTOS.find(e=>e.id===CALENDARIO[m]);
+}
+const id = POOL_MERCADO[Math.floor(rand()*POOL_MERCADO.length)];
+return EVENTOS.find(e=>e.id===id);
+}
+
+function calcRenda(s){
+return s.fii*s.yieldFii + s.acao*s.yieldAcao + s.tesouro*s.selic;
+}
+
+// aloc = {fii,acao,tes} em frações (0 a 1, soma <= 1). rand() = função aleatória (injetável nos testes).
+function passoMes(s, aloc, rand){
+rand = rand || Math.random;
+// 1. Dinheiro disponível: sobra do mês + caixa acumulado
+const sobra = Math.max(s.salario - s.gastos, 0);
+const disponivel = sobra + s.caixa;
+const somaAloc = aloc.fii + aloc.acao + aloc.tes;
+const invFii = disponivel*aloc.fii, invAcao = disponivel*aloc.acao, invTes = disponivel*aloc.tes;
+s.fii += invFii; s.acao += invAcao; s.tesouro += invTes;
+s.caixa = disponivel*(1-somaAloc);
+s.stats.aporteFii += invFii; s.stats.aporteAcao += invAcao; s.stats.aporteTes += invTes;
+
+// 2. Rendimentos do mês
+const divs = s.fii*s.yieldFii + s.acao*s.yieldAcao;
+const juros = s.tesouro*s.selic;
+s.tesouro += juros; // tesouro capitaliza
+s.caixa += divs; // dividendos caem na conta (reinvestidos no próximo mês via sliders)
+s.stats.totalDivs += divs;
+s.stats.totalJuros += juros;
+
+// 3. Oscilação leve de mercado
+s.fii *= (0.995 + rand()*0.02); // -0,5% a +1,5%
+s.acao *= (0.99 + rand()*0.03); // -1,0% a +2,0%
+
+// 4. Evento do mês (calendário brasileiro + sorteio de mercado)
+const ev = eventoDoMes(s, rand);
+ev.fx(s);
+if(ev.ruim) s.stats.eventosRuins++; else if(ev.id!=='calmo') s.stats.eventosBons++;
+
+// 5. Estatísticas de comportamento
+const investido = s.fii + s.acao + s.tesouro;
+const patrimonio = investido + s.caixa;
+if(patrimonio > 0 && s.caixa/patrimonio > 0.25) s.stats.mesesCaixaParado++;
+if(investido > 0){
+const maior = Math.max(s.fii, s.acao, s.tesouro);
+if(maior/investido > 0.75) s.stats.mesesConcentrado++;
+}
+
+// 6. Renda e desfecho
+s.rendaPassiva = calcRenda(s);
+if(s.rendaPassiva > s.stats.picoRenda) s.stats.picoRenda = s.rendaPassiva;
+if(s.rendaPassiva >= s.gastos){
+s.fim = 'vitoria';
+} else if(s.mes >= CFG.prazoMeses){
+s.fim = 'prazo';
+} else {
+s.mes++;
+}
+return ev;
+}
+
+// ===================== RELATÓRIO =====================
+function gerarRelatorio(s){
+const acertos=[], melhorar=[], fatores=[];
+const st=s.stats;
+const totalAportes = st.aporteFii+st.aporteAcao+st.aporteTes;
+const totalRendimentos = st.totalDivs+st.totalJuros;
+const investido = s.fii+s.acao+s.tesouro;
+const pctMeta = Math.min(Math.round(s.rendaPassiva/s.gastos*100),100);
+const fmtR = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+
+// Reinvestimento / caixa parado
+if(st.mesesCaixaParado <= 3){
+acertos.push('Você quase não deixou dinheiro parado no caixa. Reinvestir os dividendos todo mês é o segredo dos juros compostos.');
+} else {
+melhorar.push('Você deixou dinheiro parado no caixa em '+st.mesesCaixaParado+' meses. Dinheiro parado não gera renda: reinvestir os dividendos acelera muito a bola de neve.');
+}
+
+// Diversificação
+if(st.mesesConcentrado <= 5){
+acertos.push('Carteira diversificada entre FII, ações e Tesouro na maior parte do tempo. Isso amorteceu os eventos ruins.');
+} else {
+melhorar.push('Sua carteira ficou concentrada (mais de 75% em um único ativo) durante '+st.mesesConcentrado+' meses. Concentração amplifica tanto os ganhos quanto as crises.');
+}
+
+// Consistência de aportes
+if(totalAportes > 0){
+acertos.push('Você aportou '+fmtR(totalAportes)+' ao longo do jogo. Aportes consistentes são a base do viver de renda.');
+} else {
+melhorar.push('Você não chegou a investir. Sem aportes, não existe renda passiva: o primeiro passo é sempre começar.');
+}
+
+// Fator: juros compostos
+if(totalRendimentos > 0 && totalAportes > 0){
+const pct = Math.round(totalRendimentos/(totalAportes+totalRendimentos)*100);
+fatores.push('💪 Juros compostos: seus investimentos geraram '+fmtR(totalRendimentos)+' sozinhos ('+pct+'% de tudo que entrou na carteira). Quanto mais cedo o dinheiro entra, mais ele trabalha.');
+}
+
+// Fator: eventos
+if(st.perdaEventos > 0 || st.ganhoEventos > 0){
+if(st.ganhoEventos >= st.perdaEventos){
+fatores.push('🍀 O mercado ajudou: eventos positivos somaram '+fmtR(st.ganhoEventos)+' contra '+fmtR(st.perdaEventos)+' de perdas. Mas não conte com sorte: conte com estratégia.');
+} else {
+fatores.push('🌪️ O mercado atrapalhou: eventos negativos custaram '+fmtR(st.perdaEventos)+' contra '+fmtR(st.ganhoEventos)+' de ganhos extras. Quem diversifica e reinveste atravessa até as fases ruins.');
+}
+}
+
+// Fator: inflação
+if(s.gastos > CFG.gastosBase){
+fatores.push('📊 Inflação: sua meta subiu de '+fmtR(CFG.gastosBase)+' para '+fmtR(s.gastos)+'/mês. No mundo real é igual: a meta de renda cresce junto com o custo de vida.');
+}
+
+// Composição final da renda
+if(investido > 0){
+const partes=[['FIIs',s.fii*s.yieldFii],['ações',s.acao*s.yieldAcao],['Tesouro',s.tesouro*s.selic]];
+partes.sort((a,b)=>b[1]-a[1]);
+if(partes[0][1] > 0){
+fatores.push('🏆 Seu maior gerador de renda: '+partes[0][0]+', com '+fmtR(partes[0][1])+'/mês no final.');
+}
+}
+
+// Mensagens específicas de derrota suave
+if(s.fim === 'prazo'){
+melhorar.push('Você alcançou '+pctMeta+'% da meta. No ritmo em que terminou, faltava pouco: com os mesmos aportes e reinvestindo tudo, a ilha estava a poucos meses de distância.');
+}
+
+if(acertos.length===0) acertos.push('Você jogou até o fim e viu os juros compostos em ação. Isso já é mais do que a maioria faz na vida real.');
+return {acertos, melhorar, fatores, pctMeta};
+}
+/*CORE-END*/
+
+// ===================== NICK / STORAGE =====================
+function getNick(){ try{ return localStorage.getItem('mj_nick') || ''; }catch(e){ return ''; } }
+function setNick(n){ try{ localStorage.setItem('mj_nick', n); }catch(e){} }
+function getRanking(){ try{ return JSON.parse(localStorage.getItem('mj_ranking')||'[]'); }catch(e){ return []; } }
+function salvarRanking(nick, meses){
+try{
+const r = getRanking();
+r.push({nick, meses, data: new Date().toISOString().slice(0,10)});
+r.sort((a,b)=>a.meses-b.meses);
+localStorage.setItem('mj_ranking', JSON.stringify(r.slice(0,10)));
+}catch(e){}
+}
+
+// ===================== UI =====================
+let S = null;
+const $ = id => document.getElementById(id);
+const fmt = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+
+function comecarJogo(){
+const n = $('inputNick').value.trim();
+if(!n){ $('inputNick').focus(); return; }
+setNick(n);
+iniciarPartida();
+}
+function iniciarPartida(){
+S = novoEstado();
+$('telaNick').style.display='none';
+$('telaFim').style.display='none';
+$('telaJogo').classList.remove('escondido');
+$('log').innerHTML='';
+$('evento').style.display='none';
+$('btnAvancar').disabled=false;
+logar('🐟 <b>'+escapa(getNick())+'</b> mergulhou na corrida! Meta: renda passiva de '+fmt(S.gastos)+'/mês em até '+CFG.prazoMeses+' meses. Estamos em janeiro: prepare o bolso pros boletos!');
+atualizarTudo();
+}
+function escapa(t){ const d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+
+// Sliders: soma nunca passa de 100 (reduz os outros proporcionalmente)
+function ajustarSliders(mudou){
+const ids=['rFii','rAcao','rTes'];
+let vals=ids.map(i=>+$(i).value);
+let soma=vals[0]+vals[1]+vals[2];
+if(soma>100){
+const iMudou=ids.indexOf(mudou);
+let excesso=soma-100;
+const outros=[0,1,2].filter(i=>i!==iMudou);
+// reduz os outros proporcionalmente ao que têm
+const somaOutros=outros.reduce((a,i)=>a+vals[i],0);
+outros.forEach(i=>{
+const corte = somaOutros>0 ? Math.round(excesso*vals[i]/somaOutros) : 0;
+vals[i]=Math.max(vals[i]-corte,0);
+});
+// ajuste fino de arredondamento
+soma=vals[0]+vals[1]+vals[2];
+if(soma>100) vals[iMudou]-= (soma-100);
+ids.forEach((id,i)=>$(id).value=vals[i]);
+}
+atualizarAlocacao();
+}
+
+function alocAtual(){
+return { fii:+$('rFii').value/100, acao:+$('rAcao').value/100, tes:+$('rTes').value/100 };
+}
+
+function atualizarAlocacao(){
+const a=alocAtual();
+const disponivel=Math.max(S.salario-S.gastos,0)+S.caixa;
+$('uiDisponivel').textContent=fmt(disponivel);
+$('vFii').textContent=fmt(disponivel*a.fii);
+$('vAcao').textContent=fmt(disponivel*a.acao);
+$('vTes').textContent=fmt(disponivel*a.tes);
+$('vCaixaSobra').textContent=fmt(disponivel*(1-a.fii-a.acao-a.tes));
+}
+
+function atualizarTudo(){
+$('uiMes').textContent=S.mes+' ('+nomeMes(S.mes).slice(0,3)+')';
+$('uiPrazo').textContent=(CFG.prazoMeses-S.mes+1)+'m';
+$('uiCaixa').textContent=fmt(S.caixa);
+$('uiPatrimonio').textContent=fmt(S.caixa+S.fii+S.acao+S.tesouro);
+$('uiGastos').textContent=fmt(S.gastos);
+$('yFii').textContent=(S.yieldFii*100).toFixed(1).replace('.',',');
+$('yAcao').textContent=(S.yieldAcao*100).toFixed(1).replace('.',',');
+$('yTes').textContent=(S.selic*100).toFixed(1).replace('.',',');
+const renda=calcRenda(S);
+$('uiRenda').textContent=fmt(renda);
+const pct=Math.min(renda/S.gastos*100,100);
+$('uiAgua').style.width=pct+'%';
+$('uiPeixe').style.left=Math.min(pct,92)+'%';
+atualizarAlocacao();
+}
+
+function logar(html){
+const p=document.createElement('p');
+p.innerHTML=html;
+$('log').prepend(p);
+}
+
+function avancarMes(){
+if(S.fim) return;
+const mesAtual=S.mes;
+const ev=passoMes(S, alocAtual());
+
+const cEv=$('evento');
+cEv.style.display='block';
+cEv.classList.toggle('ruim',ev.ruim);
+$('eventoTitulo').textContent=ev.t;
+$('eventoTexto').textContent=ev.d;
+$('eventoLicao').innerHTML='<b>🐟 Lição do Manjubinha:</b> '+ev.l;
+
+logar('<span class="mes">Mês '+mesAtual+' ('+nomeMes(mesAtual)+'):</span> '+ev.t+' Renda passiva: '+fmt(S.rendaPassiva)+'/mês');
+atualizarTudo();
+
+if(S.fim){
+$('btnAvancar').disabled=true;
+setTimeout(mostrarFim,900);
+}
+}
+
+function mostrarFim(){
+const rel=gerarRelatorio(S);
+const venceu=(S.fim==='vitoria');
+const meses=S.mes;
+
+$('telaJogo').classList.add('escondido');
+$('telaFim').style.display='block';
+
+if(venceu){
+salvarRanking(getNick(),meses);
+$('fimEmoji').textContent='🏝️🐟🎉';
+$('fimTitulo').textContent='Você chegou à ilha da liberdade!';
+$('fimTitulo').style.color='var(--alga)';
+$('fimFrase').innerHTML='Sua renda passiva superou seus gastos em <b style="color:var(--moeda)">'+meses+' meses</b>.';
+$('blocoRanking').style.display='block';
+const tb=$('tabelaRanking').querySelector('tbody');
+tb.innerHTML='';
+getRanking().forEach((r,i)=>{
+const tr=document.createElement('tr');
+tr.innerHTML='<td class="pos">'+(i+1)+'º</td><td>'+escapa(r.nick)+'</td><td>'+r.meses+' meses</td>';
+tb.appendChild(tr);
+});
+$('btnRejogar').textContent='Bater meu recorde 🔁';
+} else {
+$('fimEmoji').textContent='🌅🐟';
+$('fimTitulo').textContent='A ilha já está no horizonte!';
+$('fimTitulo').style.color='var(--moeda)';
+$('fimFrase').innerHTML='O prazo de '+CFG.prazoMeses+' meses acabou, mas você construiu <b style="color:var(--alga)">'+rel.pctMeta+'%</b> do caminho. Isso não é derrota: é aprendizado rendendo juros. Bora de novo?';
+$('blocoRanking').style.display='none';
+$('btnRejogar').textContent='Tentar de novo 💪';
+}
+
+$('fimResumo').textContent='Patrimônio final: '+fmt(S.caixa+S.fii+S.acao+S.tesouro)+
+' | Renda passiva: '+fmt(S.rendaPassiva)+'/mês | Meta: '+fmt(S.gastos)+'/mês';
+
+preencherLista('relAcertos', rel.acertos, 'ok');
+preencherLista('relMelhorar', rel.melhorar.length?rel.melhorar:['Nada a apontar: partida impecável! 🐟'], 'melhorar');
+preencherLista('relFatores', rel.fatores, 'fator');
+}
+
+function preencherLista(id, itens, classe){
+const ul=$(id); ul.innerHTML='';
+itens.forEach(t=>{
+const li=document.createElement('li');
+li.className=classe;
+li.textContent=t;
+ul.appendChild(li);
+});
+}
+
+function reiniciar(){ iniciarPartida(); }
+function trocarNick(){
+$('telaFim').style.display='none';
+$('telaNick').style.display='block';
+$('inputNick').value=getNick();
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+const n=getNick();
+if(n) $('inputNick').value=n;
+});
+</script>
+</body>
+</html>

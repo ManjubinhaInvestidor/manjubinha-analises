@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz do Manjubinha | Manjubinha Investidor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--mar-fundo:#062c43;
+--mar-medio:#0b4a6f;
+--mar-claro:#116d99;
+--aqua:#3fd0c9;
+--moeda:#ffc94d;
+--coral:#ff6b6b;
+--areia:#f4ede1;
+--alga:#7ee081;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Nunito',sans-serif;
+background:linear-gradient(180deg,#083b58 0%,var(--mar-fundo) 60%,#041f30 100%);
+color:var(--areia);
+min-height:100vh;
+padding:16px;
+}
+.wrap{max-width:680px;margin:0 auto}
+h1,h2,h3{font-family:'Baloo 2',cursive}
+h1{font-size:1.6rem;color:var(--aqua);text-align:center;line-height:1.2}
+.sub{text-align:center;font-size:.85rem;opacity:.8;margin:4px 0 16px}
+.card{
+background:var(--mar-medio);
+border:2px solid rgba(63,208,201,.25);
+border-radius:18px;
+padding:18px;
+margin-bottom:14px;
+}
+#telaNick{text-align:center}
+#telaNick input{
+width:100%;max-width:320px;padding:12px 16px;border-radius:12px;
+border:2px solid var(--mar-claro);background:#04283d;color:var(--areia);
+font-size:1rem;font-family:'Nunito',sans-serif;margin:12px 0;
+}
+#telaNick input:focus{outline:2px solid var(--aqua)}
+.btn{
+font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:800;
+background:var(--aqua);color:#04283d;border:none;border-radius:14px;
+padding:12px 26px;cursor:pointer;transition:transform .12s;
+}
+.btn:hover{transform:scale(1.05)}
+.btn:focus-visible{outline:3px solid var(--moeda)}
+.btn.sec{background:transparent;color:var(--aqua);border:2px solid var(--aqua)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+/* Placar */
+.placar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;margin-bottom:12px}
+.placar .item{background:#04283d;border-radius:12px;padding:8px 4px}
+.placar .rotulo{font-size:.62rem;text-transform:uppercase;letter-spacing:.05em;opacity:.7}
+.placar .valor{font-family:'Baloo 2',cursive;font-size:1.05rem;color:var(--moeda)}
+.placar .valor.aqua{color:var(--aqua)}
+.placar .valor.combo{color:var(--alga)}
+
+/* Timer: cardume de peixinhos fugindo */
+.timerBox{position:relative;height:34px;border-radius:10px;overflow:hidden;background:#04283d;border:2px solid var(--mar-claro);margin-bottom:14px}
+.timerAgua{position:absolute;inset:0;width:100%;background:linear-gradient(90deg,rgba(63,208,201,.4),rgba(126,224,129,.35));transition:width .2s linear}
+.timerPeixes{position:absolute;top:50%;transform:translateY(-50%);right:6px;font-size:1rem;letter-spacing:2px}
+
+/* Pergunta */
+.categoria{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;background:#04283d;color:var(--aqua);padding:4px 10px;border-radius:20px;margin-bottom:8px}
+.pergunta{font-size:1.05rem;font-weight:800;line-height:1.4;margin-bottom:14px}
+.opcao{
+display:block;width:100%;text-align:left;
+background:#04283d;color:var(--areia);
+border:2px solid var(--mar-claro);border-radius:12px;
+padding:12px 14px;margin:8px 0;font-size:.95rem;font-family:'Nunito',sans-serif;
+cursor:pointer;transition:transform .1s, border-color .15s;
+}
+.opcao:hover:not(:disabled){transform:translateX(4px);border-color:var(--aqua)}
+.opcao:focus-visible{outline:3px solid var(--moeda)}
+.opcao.certa{border-color:var(--alga);background:#0d3d2a}
+.opcao.errada{border-color:var(--coral);background:#4a1a1a}
+.opcao:disabled{cursor:default}
+
+.feedback{margin-top:12px;padding:12px;border-radius:10px;background:#04283d;font-size:.88rem;line-height:1.5;display:none}
+.feedback.show{display:block}
+.feedback b{color:var(--aqua)}
+.feedback .pts{font-family:'Baloo 2',cursive;font-size:1.1rem}
+.feedback .pts.ganhou{color:var(--alga)}
+.feedback .pts.zerou{color:var(--coral)}
+
+/* Fim */
+#telaFim{text-align:center;display:none}
+#telaFim .grande{font-size:3rem}
+.relatorio{text-align:left;margin-top:14px}
+.relatorio h3{color:var(--aqua);font-size:1rem;margin:12px 0 6px}
+.relatorio ul{list-style:none}
+.relatorio li{padding:7px 10px;margin:5px 0;border-radius:8px;background:#04283d;font-size:.85rem;line-height:1.4}
+.relatorio li.ok{border-left:4px solid var(--alga)}
+.relatorio li.melhorar{border-left:4px solid var(--moeda)}
+.relatorio li.fator{border-left:4px solid var(--aqua)}
+.barraTema{height:8px;border-radius:4px;background:#062c43;margin-top:4px;overflow:hidden}
+.barraTema div{height:100%;background:var(--alga);border-radius:4px}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.9rem}
+th,td{padding:8px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.12)}
+th{color:var(--aqua);font-family:'Baloo 2',cursive}
+td.pos{color:var(--moeda);font-weight:800}
+.centro{text-align:center;margin-top:12px}
+.escondido{display:none}
+.linha-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+@media(max-width:480px){.placar{grid-template-columns:repeat(4,1fr)}.placar .valor{font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){.opcao,.btn,.timerAgua{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🐟 Quiz do Manjubinha</h1>
+<p class="sub">10 perguntas, 20 segundos cada. Acerte em sequência pra multiplicar seus pontos!</p>
+
+<!-- NICK -->
+<div class="card" id="telaNick">
+<h2>Quem vai encarar o cardume?</h2>
+<p style="font-size:.85rem;opacity:.8;margin-top:6px">Seu nick fica salvo neste navegador e entra no ranking local.</p>
+<input type="text" id="inputNick" maxlength="16" placeholder="Seu nick (ex: Manjubinha)">
+<br>
+<button class="btn" onclick="comecarJogo()">Começar 🌊</button>
+<div class="feedback show" style="text-align:left;margin-top:14px">
+<b>🐟 Como funciona:</b> cada acerto vale 100 pontos + bônus de velocidade. Acertos seguidos aumentam o combo (x2, x3), que multiplica tudo. Errou ou o tempo acabou? O combo volta pro início, mas você aprende a resposta certa na hora!
+</div>
+</div>
+
+<!-- QUIZ -->
+<div id="telaQuiz" class="escondido">
+<div class="placar">
+<div class="item"><div class="rotulo">Pergunta</div><div class="valor aqua" id="uiNum">1/10</div></div>
+<div class="item"><div class="rotulo">Pontos</div><div class="valor" id="uiPontos">0</div></div>
+<div class="item"><div class="rotulo">Combo</div><div class="valor combo" id="uiCombo">x1</div></div>
+<div class="item"><div class="rotulo">Acertos</div><div class="valor" id="uiAcertos">0</div></div>
+</div>
+<div class="timerBox">
+<div class="timerAgua" id="uiTimer"></div>
+<div class="timerPeixes">🐟🐟🐟</div>
+</div>
+<div class="card">
+<span class="categoria" id="uiCategoria"></span>
+<div class="pergunta" id="uiPergunta"></div>
+<div id="uiOpcoes"></div>
+<div class="feedback" id="uiFeedback"></div>
+<div class="centro">
+<button class="btn escondido" id="btnProxima" onclick="proximaPergunta()">Próxima ▶</button>
+</div>
+</div>
+</div>
+
+<!-- FIM -->
+<div class="card" id="telaFim">
+<div class="grande" id="fimEmoji">🏆🐟</div>
+<h2 id="fimTitulo"></h2>
+<p style="margin:8px 0" id="fimFrase"></p>
+
+<div class="relatorio">
+<h3>📊 Seu desempenho por tema</h3>
+<ul id="relTemas"></ul>
+<h3>✅ Pontos fortes</h3>
+<ul id="relAcertos"></ul>
+<h3>🧭 O que vale estudar</h3>
+<ul id="relMelhorar"></ul>
+<h3>⚖️ O que mais pesou na pontuação</h3>
+<ul id="relFatores"></ul>
+</div>
+
+<h3 style="color:var(--aqua);margin-top:16px">🏆 Ranking local</h3>
+<table id="tabelaRanking"><thead><tr><th>#</th><th>Nick</th><th>Pontos</th></tr></thead><tbody></tbody></table>
+
+<div class="linha-btns">
+<button class="btn" onclick="reiniciar()">Jogar de novo 🔁</button>
+<button class="btn sec" onclick="trocarNick()">Trocar nick</button>
+</div>
+</div>
+</div>
+
+<script>
+/*CORE-START*/
+// ===================== BANCO DE PERGUNTAS =====================
+// cat: FII | Ações | Tesouro | Conceitos
+const PERGUNTAS = [
+{cat:'FII', q:'Os dividendos de FIIs recebidos por pessoa física no Brasil são:', o:['Tributados em 15% de IR','Isentos de Imposto de Renda','Tributados em 27,5%','Tributados só acima de R$ 10 mil'], c:1,
+e:'Os rendimentos mensais de FIIs são isentos de IR pra pessoa física (respeitadas as regras, como o fundo ter mais de 50 cotistas). É uma das maiores vantagens de quem vive de renda com FIIs.'},
+{cat:'FII', q:'O que significa vacância em um fundo imobiliário?', o:['Queda no preço da cota','Imóveis do fundo sem inquilinos','Férias do gestor do fundo','Atraso no pagamento de dividendos'], c:1,
+e:'Vacância é a parte dos imóveis que está vazia, sem gerar aluguel. Quanto maior a vacância, menor tende a ser o dividendo distribuído.'},
+{cat:'FII', q:'Um FII com P/VP igual a 0,90 está sendo negociado:', o:['10% acima do valor patrimonial','10% abaixo do valor patrimonial','Exatamente no valor patrimonial','Com 90% de desconto'], c:1,
+e:'P/VP menor que 1 indica que a cota vale menos na bolsa do que o patrimônio do fundo por cota. Pode ser oportunidade, mas sempre vale investigar o motivo.'},
+{cat:'FII', q:'Por lei, os FIIs devem distribuir aos cotistas no mínimo:', o:['50% do resultado semestral','75% do resultado semestral','95% do resultado semestral','100% do resultado semestral'], c:2,
+e:'FIIs distribuem pelo menos 95% do resultado apurado no semestre. É por isso que eles são máquinas de renda mensal pro cotista.'},
+{cat:'FII', q:'Qual característica indica maior Perenidade em um FII?', o:['Ter um único imóvel bem localizado','Ter muitos imóveis e muitos inquilinos','Pagar o maior dividendo do mercado','Ter a cota mais barata da bolsa'], c:1,
+e:'Fundos com muitos imóveis e inquilinos diversificados sofrem menos quando um contrato acaba. Dividendo alto demais, aliás, pode ser sinal de risco, não de qualidade.'},
+{cat:'Ações', q:'O que é dividend yield (DY)?', o:['O lucro total da empresa no ano','Os dividendos pagos divididos pelo preço da ação','A valorização da ação em 12 meses','O valor patrimonial da empresa'], c:1,
+e:'DY = dividendos por ação ÷ preço da ação. Um DY de 6% significa que, mantido o patamar, você recebe 6% do valor investido por ano em proventos.'},
+{cat:'Ações', q:'No Brasil, os dividendos de ações recebidos por pessoa física são:', o:['Isentos de Imposto de Renda','Tributados em 15%','Tributados em 22,5%','Tributados na tabela progressiva'], c:0,
+e:'Dividendos de ações são isentos de IR pra pessoa física. Já os Juros sobre Capital Próprio (JCP) têm retenção de 15% na fonte. São coisas diferentes!'},
+{cat:'Ações', q:'O que é tag along?', o:['Taxa cobrada pela corretora','Direito de vender suas ações junto com o controlador, por preço mínimo garantido','Bônus anual pago em ações','Imposto sobre venda de ações'], c:1,
+e:'Tag along protege o pequeno acionista: se o controle da empresa for vendido, você tem direito de vender suas ações por pelo menos um percentual do preço pago ao controlador (100% é o ideal).'},
+{cat:'Ações', q:'Uma empresa perene, boa pra viver de renda, costuma ter:', o:['Lucros consistentes há muitos anos','A ação que mais subiu no mês','O maior número de notícias na mídia','O menor preço por ação da bolsa'], c:0,
+e:'Perenidade é histórico: lucros consistentes, dívida controlada e um negócio que sobrevive a crises. Preço baixo ou fama não pagam dividendos.'},
+{cat:'Ações', q:'Em uma crise, o preço das suas ações cai 20%, mas os dividendos continuam iguais. Sua renda passiva:', o:['Cai 20% também','Não muda','Sobe 20%','Fica suspensa'], c:1,
+e:'Preço não é renda! Os dividendos dependem do lucro da empresa, não da cotação do dia. Quem vive de renda foca no fluxo de proventos, não no sobe e desce da bolsa.'},
+{cat:'Tesouro', q:'O Tesouro Selic é indicado principalmente para:', o:['Apostas de curto prazo na bolsa','Reserva de emergência','Proteção contra inflação em 30 anos','Receber dividendos mensais'], c:1,
+e:'O Tesouro Selic rende perto de 100% da taxa básica, tem liquidez diária e baixíssima oscilação. É o lar perfeito da reserva de emergência.'},
+{cat:'Tesouro', q:'Qual título protege seu poder de compra da inflação no longo prazo?', o:['Tesouro Selic','Tesouro Prefixado','Tesouro IPCA+','Poupança'], c:2,
+e:'O Tesouro IPCA+ paga a inflação oficial (IPCA) mais uma taxa real. Não importa quanto os preços subam, seu dinheiro mantém (e aumenta) o poder de compra.'},
+{cat:'Tesouro', q:'Se você vender um Tesouro IPCA+ antes do vencimento, pode:', o:['Receber sempre exatamente o combinado','Ganhar ou perder, pela marcação a mercado','Perder todo o dinheiro investido','Pagar multa de 50%'], c:1,
+e:'Antes do vencimento, o título vale o preço de mercado do dia, que oscila com os juros. Levando até o vencimento, você recebe exatamente a taxa contratada.'},
+{cat:'Tesouro', q:'Quem garante os títulos do Tesouro Direto?', o:['O FGC, até R$ 250 mil','O banco onde você investe','O Tesouro Nacional (governo federal)','A B3'], c:2,
+e:'Títulos públicos são garantidos pelo próprio governo federal, considerado o menor risco de crédito do país. O FGC garante produtos de bancos, como CDB e poupança.'},
+{cat:'Conceitos', q:'"Viver de renda" significa, na prática:', o:['Ficar rico da noite pro dia','Ter renda passiva mensal maior ou igual aos seus gastos','Nunca mais gastar dinheiro','Ganhar na loteria e parar de trabalhar'], c:1,
+e:'A liberdade financeira chega quando seus investimentos geram, todo mês, o suficiente pra pagar sua vida. Trabalhar vira escolha, não obrigação.'},
+{cat:'Conceitos', q:'O poder dos juros compostos vem principalmente de:', o:['Investir muito dinheiro de uma vez','Reinvestir os rendimentos por bastante tempo','Trocar de investimento toda semana','Escolher só ativos que sobem'], c:1,
+e:'Juros compostos são juros sobre juros: os rendimentos reinvestidos também passam a render. Tempo e consistência valem mais que aportes gigantes tardios.'},
+{cat:'Conceitos', q:'Antes de investir em renda variável, o ideal é ter:', o:['Um carro quitado','Uma reserva de emergência','Um curso de day trade','Pelo menos R$ 100 mil'], c:1,
+e:'A reserva de emergência (3 a 12 meses de gastos em algo seguro e líquido) evita que você venda bons ativos na pior hora quando um imprevisto chegar.'},
+{cat:'Conceitos', q:'Diversificar a carteira serve principalmente para:', o:['Garantir lucro em qualquer cenário','Reduzir o impacto de um ativo ruim no total','Pagar menos imposto','Impressionar o gerente do banco'], c:1,
+e:'Diversificação não garante lucro, mas amortece: quando um ativo sofre, os outros seguram a carteira. É o famoso "não pôr todos os ovos na mesma cesta".'},
+{cat:'Conceitos', q:'Seus gastos são R$ 3.000/mês e sua carteira rende 0,75% ao mês em proventos. De quanto patrimônio você precisa pra viver de renda?', o:['R$ 100 mil','R$ 400 mil','R$ 4 milhões','R$ 40 mil'], c:1,
+e:'Conta rápida: 3.000 ÷ 0,0075 = R$ 400 mil. Essa é a matemática central do viver de renda: gastos mensais divididos pela taxa mensal de proventos.'},
+{cat:'Conceitos', q:'A inflação alta, com o tempo, faz sua meta de renda passiva:', o:['Diminuir','Continuar igual pra sempre','Aumentar, porque seus gastos sobem','Desaparecer'], c:2,
+e:'Se os preços sobem, você precisa de mais renda pra manter o mesmo padrão de vida. Por isso ativos que corrigem pela inflação são tão importantes na carteira.'},
+];
+
+// ===================== LÓGICA PURA (testável) =====================
+const CFG = { numPerguntas: 10, tempoSeg: 20, pontosBase: 100, bonusMaxTempo: 100, comboMax: 3 };
+
+function embaralhar(arr, rand){
+rand = rand || Math.random;
+const a = arr.slice();
+for(let i=a.length-1;i>0;i--){
+const j = Math.floor(rand()*(i+1));
+[a[i],a[j]]=[a[j],a[i]];
+}
+return a;
+}
+
+function novaPartida(rand){
+return {
+perguntas: embaralhar(PERGUNTAS, rand).slice(0, CFG.numPerguntas),
+idx: 0, pontos: 0, combo: 1, acertos: 0,
+maiorCombo: 1, pontosPorVelocidade: 0, pontosPorCombo: 0,
+porTema: {}, // cat -> {certas, total}
+fim: false,
+};
+}
+
+// responder: escolha = índice da opção ou -1 (tempo esgotado); tempoRestante em segundos
+function responder(p, escolha, tempoRestante){
+const q = p.perguntas[p.idx];
+if(!p.porTema[q.cat]) p.porTema[q.cat] = {certas:0, total:0};
+p.porTema[q.cat].total++;
+const acertou = (escolha === q.c);
+let ganho = 0;
+if(acertou){
+const bonus = Math.round(CFG.bonusMaxTempo * Math.max(tempoRestante,0) / CFG.tempoSeg);
+const base = CFG.pontosBase + bonus;
+ganho = base * p.combo;
+p.pontos += ganho;
+p.pontosPorVelocidade += bonus * p.combo;
+if(p.combo > 1) p.pontosPorCombo += base * (p.combo - 1);
+p.acertos++;
+p.porTema[q.cat].certas++;
+p.combo = Math.min(p.combo + 1, CFG.comboMax);
+if(p.combo > p.maiorCombo) p.maiorCombo = p.combo;
+} else {
+p.combo = 1;
+}
+p.idx++;
+if(p.idx >= p.perguntas.length) p.fim = true;
+return {acertou, ganho, correta: q.c, explicacao: q.e};
+}
+
+// ===================== RELATÓRIO =====================
+const DICAS_TEMA = {
+'FII': 'Dá uma olhada nos posts sobre fundos imobiliários no Manjubinha: vacância, P/VP e dividendos isentos não terão mais segredo.',
+'Ações': 'Vale revisitar os conteúdos sobre ações de dividendos: dividend yield, tag along e empresas perenes.',
+'Tesouro': 'Os posts sobre Tesouro Direto explicam Selic, IPCA+ e marcação a mercado de um jeito simples.',
+'Conceitos': 'Os fundamentos do viver de renda (juros compostos, reserva, diversificação) são a base de tudo: vale reler com carinho.',
+};
+
+function gerarRelatorio(p){
+const acertosL=[], melhorar=[], fatores=[], temas=[];
+const pct = Math.round(p.acertos / p.perguntas.length * 100);
+
+for(const [cat, d] of Object.entries(p.porTema)){
+const pctCat = Math.round(d.certas/d.total*100);
+temas.push({cat, certas:d.certas, total:d.total, pct:pctCat});
+if(pctCat === 100 && d.total >= 2){
+acertosL.push('Mandou perfeito em '+cat+' ('+d.certas+'/'+d.total+'). Esse tema já é seu!');
+} else if(pctCat < 50){
+melhorar.push(cat+': '+d.certas+' de '+d.total+'. '+DICAS_TEMA[cat]);
+}
+}
+temas.sort((a,b)=>b.pct-a.pct);
+
+if(p.maiorCombo >= CFG.comboMax){
+acertosL.push('Você atingiu o combo máximo (x'+CFG.comboMax+')! Sequências de acertos renderam '+p.pontosPorCombo+' pontos extras.');
+}
+if(p.pontosPorVelocidade > 0){
+fatores.push('⚡ Velocidade: responder rápido rendeu '+p.pontosPorVelocidade+' pontos de bônus. Mas cuidado: rapidez sem certeza derruba o combo!');
+}
+if(p.pontosPorCombo > 0){
+fatores.push('🔥 Combo: os multiplicadores somaram '+p.pontosPorCombo+' pontos. Manter a sequência vale mais que qualquer acerto isolado.');
+} else {
+fatores.push('🔥 Combo: você não chegou a multiplicar pontos. Acertos seguidos multiplicam tudo por até x'+CFG.comboMax+': é aí que o placar explode.');
+}
+const perdidas = p.perguntas.length - p.acertos;
+if(perdidas > 0){
+fatores.push('🎯 Precisão: '+perdidas+' erro(s) zeraram seu combo e custaram pontos indiretos. Cada explicação que você leu vale mais que os pontos!');
+}
+
+if(acertosL.length===0){
+acertosL.push('Você completou o desafio e saiu sabendo mais do que entrou. É exatamente assim que todo investidor começa.');
+}
+if(melhorar.length===0){
+melhorar.push('Nenhum tema ficou devendo. Que tal jogar de novo e caçar a pontuação perfeita?');
+}
+return {acertosL, melhorar, fatores, temas, pct};
+}
+
+function tituloFinal(pct){
+if(pct === 100) return {emoji:'👑🐟', titulo:'Tubarão dos investimentos!', frase:'Gabaritou! O cardume inteiro se curva.'};
+if(pct >= 80) return {emoji:'🏆🐟', titulo:'Manjubinha raiz!', frase:'Você domina o oceano do viver de renda.'};
+if(pct >= 60) return {emoji:'🌊🐟', titulo:'Nadando de braçada!', frase:'Bom desempenho! Alguns temas afiados e outros pra polir.'};
+if(pct >= 40) return {emoji:'🐠', titulo:'Peixinho em crescimento!', frase:'Você já sabe mais do que a maioria. Cada erro de hoje é acerto de amanhã.'};
+return {emoji:'🌅🐟', titulo:'Todo cardume começa com um peixinho!', frase:'O importante: agora você sabe as respostas. Jogue de novo e veja seu placar subir!'};
+}
+/*CORE-END*/
+
+// ===================== NICK / STORAGE =====================
+function getNick(){ try{ return localStorage.getItem('mj_nick') || ''; }catch(e){ return ''; } }
+function setNick(n){ try{ localStorage.setItem('mj_nick', n); }catch(e){} }
+function getRanking(){ try{ return JSON.parse(localStorage.getItem('mj_quiz_ranking')||'[]'); }catch(e){ return []; } }
+function salvarRanking(nick, pontos){
+try{
+const r = getRanking();
+r.push({nick, pontos, data: new Date().toISOString().slice(0,10)});
+r.sort((a,b)=>b.pontos-a.pontos);
+localStorage.setItem('mj_quiz_ranking', JSON.stringify(r.slice(0,10)));
+}catch(e){}
+}
+
+// ===================== UI =====================
+let P=null, timerId=null, tempoRestante=0, respondeu=false;
+const $ = id => document.getElementById(id);
+
+function comecarJogo(){
+const n=$('inputNick').value.trim();
+if(!n){ $('inputNick').focus(); return; }
+setNick(n);
+iniciarPartida();
+}
+function iniciarPartida(){
+P=novaPartida();
+$('telaNick').style.display='none';
+$('telaFim').style.display='none';
+$('telaQuiz').classList.remove('escondido');
+mostrarPergunta();
+}
+function escapa(t){ const d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+
+function mostrarPergunta(){
+respondeu=false;
+const q=P.perguntas[P.idx];
+$('uiNum').textContent=(P.idx+1)+'/'+P.perguntas.length;
+$('uiPontos').textContent=P.pontos;
+$('uiCombo').textContent='x'+P.combo;
+$('uiAcertos').textContent=P.acertos;
+$('uiCategoria').textContent=q.cat;
+$('uiPergunta').textContent=q.q;
+$('uiFeedback').className='feedback';
+$('uiFeedback').innerHTML='';
+$('btnProxima').classList.add('escondido');
+
+const box=$('uiOpcoes');
+box.innerHTML='';
+q.o.forEach((op,i)=>{
+const b=document.createElement('button');
+b.className='opcao';
+b.textContent=op;
+b.onclick=()=>escolher(i);
+box.appendChild(b);
+});
+
+tempoRestante=CFG.tempoSeg;
+atualizarTimer();
+clearInterval(timerId);
+timerId=setInterval(()=>{
+tempoRestante-=0.2;
+atualizarTimer();
+if(tempoRestante<=0){ clearInterval(timerId); escolher(-1); }
+},200);
+}
+
+function atualizarTimer(){
+const pct=Math.max(tempoRestante/CFG.tempoSeg*100,0);
+$('uiTimer').style.width=pct+'%';
+}
+
+function escolher(i){
+if(respondeu) return;
+respondeu=true;
+clearInterval(timerId);
+const r=responder(P, i, tempoRestante);
+
+const botoes=$('uiOpcoes').querySelectorAll('.opcao');
+botoes.forEach((b,idx)=>{
+b.disabled=true;
+if(idx===r.correta) b.classList.add('certa');
+if(idx===i && !r.acertou) b.classList.add('errada');
+});
+
+const fb=$('uiFeedback');
+if(r.acertou){
+fb.innerHTML='<span class="pts ganhou">+'+r.ganho+' pontos! 🎉</span><br><b>🐟 Manjubinha explica:</b> '+r.explicacao;
+} else if(i===-1){
+fb.innerHTML='<span class="pts zerou">⏰ Tempo esgotado! Combo zerado.</span><br><b>🐟 Manjubinha explica:</b> '+r.explicacao;
+} else {
+fb.innerHTML='<span class="pts zerou">Ops, não foi dessa vez. Combo zerado.</span><br><b>🐟 Manjubinha explica:</b> '+r.explicacao;
+}
+fb.classList.add('show');
+
+$('uiPontos').textContent=P.pontos;
+$('uiCombo').textContent='x'+P.combo;
+$('uiAcertos').textContent=P.acertos;
+$('btnProxima').textContent = P.fim ? 'Ver resultado 🏁' : 'Próxima ▶';
+$('btnProxima').classList.remove('escondido');
+$('btnProxima').focus();
+}
+
+function proximaPergunta(){
+if(P.fim){ mostrarFim(); return; }
+mostrarPergunta();
+}
+
+function mostrarFim(){
+const rel=gerarRelatorio(P);
+const t=tituloFinal(rel.pct);
+salvarRanking(getNick(), P.pontos);
+
+$('telaQuiz').classList.add('escondido');
+$('telaFim').style.display='block';
+$('fimEmoji').textContent=t.emoji;
+$('fimTitulo').textContent=t.titulo;
+$('fimTitulo').style.color = rel.pct>=60 ? 'var(--alga)' : 'var(--moeda)';
+$('fimFrase').innerHTML=t.frase+'<br><b style="color:var(--moeda)">'+P.pontos+' pontos</b> | '+P.acertos+'/'+P.perguntas.length+' acertos | maior combo x'+P.maiorCombo;
+
+const ulT=$('relTemas'); ulT.innerHTML='';
+rel.temas.forEach(tm=>{
+const li=document.createElement('li');
+li.className='fator';
+li.innerHTML=escapa(tm.cat)+': '+tm.certas+'/'+tm.total+' ('+tm.pct+'%)<div class="barraTema"><div style="width:'+tm.pct+'%"></div></div>';
+ulT.appendChild(li);
+});
+preencherLista('relAcertos', rel.acertosL, 'ok');
+preencherLista('relMelhorar', rel.melhorar, 'melhorar');
+preencherLista('relFatores', rel.fatores, 'fator');
+
+const tb=$('tabelaRanking').querySelector('tbody');
+tb.innerHTML='';
+getRanking().forEach((r,i)=>{
+const tr=document.createElement('tr');
+tr.innerHTML='<td class="pos">'+(i+1)+'º</td><td>'+escapa(r.nick)+'</td><td>'+r.pontos+'</td>';
+tb.appendChild(tr);
+});
+}
+
+function preencherLista(id, itens, classe){
+const ul=$(id); ul.innerHTML='';
+itens.forEach(t=>{
+const li=document.createElement('li');
+li.className=classe;
+li.textContent=t;
+ul.appendChild(li);
+});
+}
+
+function reiniciar(){ iniciarPartida(); }
+function trocarNick(){
+$('telaFim').style.display='none';
+$('telaNick').style.display='block';
+$('inputNick').value=getNick();
+}
+window.addEventListener('DOMContentLoaded',()=>{
+const n=getNick();
+if(n) $('inputNick').value=n;
+});
+</script>
+</body>
+</html>
