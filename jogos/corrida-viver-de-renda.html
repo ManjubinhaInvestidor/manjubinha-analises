@@ -8,19 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
---mar-fundo:#062c43;
---mar-medio:#0b4a6f;
---mar-claro:#116d99;
+--mar-fundo:#0a1118;
+--mar-medio:#1a1a1a;
+--mar-claro:#0b2b3f;
 --aqua:#3fd0c9;
---moeda:#ffc94d;
+--moeda:#f6c453;
 --coral:#ff6b6b;
---areia:#f4ede1;
---alga:#7ee081;
+--areia:#f2f2f2;
+--alga:#23c55e;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:'Nunito',sans-serif;
-background:linear-gradient(180deg,#083b58 0%,var(--mar-fundo) 60%,#041f30 100%);
+background:linear-gradient(180deg,#181818 0%,#101820 55%,var(--mar-fundo) 100%);
 color:var(--areia);
 min-height:100vh;
 padding:16px;
@@ -30,8 +30,8 @@ h1,h2,h3{font-family:'Baloo 2',cursive}
 h1{font-size:1.6rem;color:var(--aqua);text-align:center;line-height:1.2}
 .sub{text-align:center;font-size:.85rem;opacity:.8;margin:4px 0 16px}
 .card{
-background:var(--mar-medio);
-border:2px solid rgba(63,208,201,.25);
+background:linear-gradient(145deg,#171717,#262626);
+border:2px solid rgba(63,208,201,.15);
 border-radius:18px;
 padding:18px;
 margin-bottom:14px;
@@ -39,13 +39,13 @@ margin-bottom:14px;
 #telaNick{text-align:center}
 #telaNick input{
 width:100%;max-width:320px;padding:12px 16px;border-radius:12px;
-border:2px solid var(--mar-claro);background:#04283d;color:var(--areia);
+border:2px solid var(--mar-claro);background:#0d1a26;color:var(--areia);
 font-size:1rem;font-family:'Nunito',sans-serif;margin:12px 0;
 }
 #telaNick input:focus{outline:2px solid var(--aqua)}
 .btn{
 font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:800;
-background:var(--aqua);color:#04283d;border:none;border-radius:14px;
+background:var(--moeda);color:#111;border:none;border-radius:999px;
 padding:12px 26px;cursor:pointer;transition:transform .12s;
 }
 .btn:hover{transform:scale(1.05)}
@@ -53,14 +53,14 @@ padding:12px 26px;cursor:pointer;transition:transform .12s;
 .btn.sec{background:transparent;color:var(--aqua);border:2px solid var(--aqua)}
 .btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
 .painel{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
-.painel .item{background:#04283d;border-radius:12px;padding:10px 4px}
+.painel .item{background:#0d1a26;border-radius:12px;padding:10px 4px}
 .painel .rotulo{font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;opacity:.7}
 .painel .valor{font-family:'Baloo 2',cursive;font-size:1rem;color:var(--moeda)}
 .painel .valor.aqua{color:var(--aqua)}
 .painel .valor.prazo{color:var(--coral)}
 .aquario{
 position:relative;height:56px;border-radius:14px;overflow:hidden;
-background:linear-gradient(180deg,#0a5178,#04283d);
+background:linear-gradient(180deg,#0b2b3f,#0d1a26);
 border:2px solid var(--mar-claro);margin:14px 0 6px;
 }
 .agua{
@@ -88,7 +88,7 @@ filter:drop-shadow(0 2px 3px rgba(0,0,0,.4));
 #evento h3{color:var(--moeda);margin-bottom:6px}
 #evento.ruim h3{color:var(--coral)}
 .licao{
-margin-top:10px;padding:10px 12px;background:#04283d;border-left:4px solid var(--aqua);
+margin-top:10px;padding:10px 12px;background:#0d1a26;border-left:4px solid var(--aqua);
 border-radius:8px;font-size:.85rem;
 }
 .licao b{color:var(--aqua)}
@@ -100,7 +100,7 @@ border-radius:8px;font-size:.85rem;
 .relatorio{text-align:left;margin-top:14px}
 .relatorio h3{color:var(--aqua);font-size:1rem;margin:12px 0 6px}
 .relatorio ul{list-style:none}
-.relatorio li{padding:7px 10px;margin:5px 0;border-radius:8px;background:#04283d;font-size:.85rem;line-height:1.4}
+.relatorio li{padding:7px 10px;margin:5px 0;border-radius:8px;background:#0d1a26;font-size:.85rem;line-height:1.4}
 .relatorio li.ok{border-left:4px solid var(--alga)}
 .relatorio li.melhorar{border-left:4px solid var(--moeda)}
 .relatorio li.fator{border-left:4px solid var(--aqua)}
@@ -121,7 +121,7 @@ td.pos{color:var(--moeda);font-weight:800}
 </head>
 <body>
 <div class="wrap">
-<h1>🐟 Corrida pra Viver de Renda</h1>
+<h1><svg style="width:44px;height:26px;vertical-align:-4px" viewBox="0 0 66 40" xmlns="http://www.w3.org/2000/svg"><path d="M4 20c9-11 24-11 33 0-9 11-24 11-33 0z" fill="#3fd0c9"/><path d="M37 20l13-8v16z" fill="#2fa8a2"/><circle cx="13" cy="18" r="2.6" fill="#0d1a26"/></svg> Corrida pra Viver de Renda</h1>
 <p class="sub">Faça sua renda passiva superar seus gastos em até 48 meses. Um jogo do Manjubinha Investidor.</p>
 
 <!-- TELA NICK -->
@@ -132,7 +132,7 @@ td.pos{color:var(--moeda);font-weight:800}
 <br>
 <button class="btn" onclick="comecarJogo()">Começar 🌊</button>
 <div class="licao" style="text-align:left;margin-top:14px">
-<b>🐟 Como jogar:</b> a cada mês você recebe R$ 6.500 de salário e gasta R$ 2.000. A sobra (e o dinheiro do caixa) você distribui entre FII, ação de dividendos e Tesouro. Vença fazendo sua renda passiva mensal alcançar seus gastos antes do mês 48!
+<b>🐟 Como jogar:</b> a cada mês você recebe R$ 6.500 de salário e gasta R$ 2.000. A sobra (e o dinheiro do caixa) você distribui entre FII, ação de dividendos e Tesouro. Vença fazendo sua renda passiva mensal alcançar seus gastos antes do mês 48! Atenção: FIIs pagam dividendos todo mês, mas ações pagam por trimestre (mar, jun, set e dez), como na vida real.
 </div>
 </div>
 
@@ -146,12 +146,12 @@ td.pos{color:var(--moeda);font-weight:800}
 <div class="item"><div class="rotulo">Patrimônio</div><div class="valor" id="uiPatrimonio">R$ 0</div></div>
 </div>
 <div class="legAquario">
-<span>Renda passiva: <b id="uiRenda" style="color:var(--alga)">R$ 0</b>/mês</span>
+<span>Renda passiva média: <b id="uiRenda" style="color:var(--alga)">R$ 0</b>/mês</span>
 <span>Meta (gastos): <b id="uiGastos" style="color:var(--coral)">R$ 0</b>/mês</span>
 </div>
 <div class="aquario" aria-label="Progresso rumo à liberdade financeira">
 <div class="agua" id="uiAgua"></div>
-<div class="peixe" id="uiPeixe">🐟</div>
+<div class="peixe" id="uiPeixe"><svg style="width:42px;height:26px;display:block" viewBox="0 0 66 40" xmlns="http://www.w3.org/2000/svg"><path d="M4 20c9-11 24-11 33 0-9 11-24 11-33 0z" fill="#3fd0c9"/><path d="M37 20l13-8v16z" fill="#2fa8a2"/><circle cx="13" cy="18" r="2.6" fill="#0d1a26"/></svg></div>
 <div class="meta">🏝️</div>
 </div>
 </div>
@@ -172,7 +172,7 @@ td.pos{color:var(--moeda);font-weight:800}
 <div class="qtde" id="vFii">R$ 0</div>
 </div>
 <div class="ativo">
-<div class="nome"><b>📈 Ação de dividendos</b><small>Dividendos (<span id="yAcao"></span>% a.m.) + valorização, oscila mais</small></div>
+<div class="nome"><b>📈 Ação de dividendos</b><small>Dividendos trimestrais (média <span id="yAcao"></span>% a.m.) + valorização, oscila mais</small></div>
 <input type="range" id="rAcao" min="0" max="100" value="33" oninput="ajustarSliders('rAcao')">
 <div class="qtde" id="vAcao">R$ 0</div>
 </div>
@@ -208,6 +208,8 @@ td.pos{color:var(--moeda);font-weight:800}
 <ul id="relMelhorar"></ul>
 <h3>⚖️ O que mais pesou no resultado</h3>
 <ul id="relFatores"></ul>
+<h3>📚 Continue aprendendo</h3>
+<ul id="relLinks"></ul>
 </div>
 
 <div id="blocoRanking">
@@ -323,6 +325,25 @@ d:'Nada de novo. Os dividendos pingaram normalmente.',
 l:'Viver de renda é maratona, não corrida de 100 metros. A consistência dos aportes é o que constrói o patrimônio.'},
 ];
 
+const POSTS_URL={
+fii:'https://manjubinhainvestidor.com.br/fiis-tijolo-vs-papel/',
+acoes:'https://manjubinhainvestidor.com.br/fiis-vs-acoes/',
+tesouro:'https://manjubinhainvestidor.com.br/fiis-ou-tesouro-ipca-selic-alta-erro-timing/',
+panic:'https://manjubinhainvestidor.com.br/panic-selling-o-que-e-causas-como-evitar/',
+ego:'https://manjubinhainvestidor.com.br/ego-nos-investimentos-erro-caro-viver-de-renda/',
+posts:'https://manjubinhainvestidor.com.br/posts/'
+};
+const LINKS_EVENTO={
+selicUp:POSTS_URL.tesouro, selicDown:POSTS_URL.tesouro,
+vacancia:POSTS_URL.fii, contrato:POSTS_URL.fii,
+divUp:POSTS_URL.acoes, crise:POSTS_URL.panic,
+decimo:POSTS_URL.posts, imprevisto:POSTS_URL.tesouro,
+inflacao:POSTS_URL.tesouro, ipva:POSTS_URL.posts,
+restituicao:POSTS_URL.fii, copa:POSTS_URL.ego,
+carnaval:POSTS_URL.ego, ferias:POSTS_URL.posts,
+calmo:POSTS_URL.posts
+};
+
 const MESES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 function mesDoAno(mes){ return ((mes-1)%12); } // 0=Janeiro (o jogo começa em janeiro)
 function nomeMes(mes){ return MESES[mesDoAno(mes)]; }
@@ -356,8 +377,12 @@ s.fii += invFii; s.acao += invAcao; s.tesouro += invTes;
 s.caixa = disponivel*(1-somaAloc);
 s.stats.aporteFii += invFii; s.stats.aporteAcao += invAcao; s.stats.aporteTes += invTes;
 
-// 2. Rendimentos do mês
-const divs = s.fii*s.yieldFii + s.acao*s.yieldAcao;
+// 2. Rendimentos do mês (FIIs pagam todo mês; ações pagam por trimestre: mar, jun, set, dez)
+const divsFii = s.fii*s.yieldFii;
+let divsAcao = 0;
+if([2,5,8,11].includes(mesDoAno(s.mes))){ divsAcao = s.acao*s.yieldAcao*3; }
+s.lastDivsAcao = divsAcao;
+const divs = divsFii + divsAcao;
 const juros = s.tesouro*s.selic;
 s.tesouro += juros; // tesouro capitaliza
 s.caixa += divs; // dividendos caem na conta (reinvestidos no próximo mês via sliders)
@@ -572,9 +597,11 @@ cEv.style.display='block';
 cEv.classList.toggle('ruim',ev.ruim);
 $('eventoTitulo').textContent=ev.t;
 $('eventoTexto').textContent=ev.d;
-$('eventoLicao').innerHTML='<b>🐟 Lição do Manjubinha:</b> '+ev.l;
+var linkEv=LINKS_EVENTO[ev.id]?' <a href="'+LINKS_EVENTO[ev.id]+'" target="_top" style="color:var(--aqua)">Ler no site &rarr;</a>':'';
+$('eventoLicao').innerHTML='<b>🐟 Lição do Manjubinha:</b> '+ev.l+linkEv;
 
-logar('<span class="mes">Mês '+mesAtual+' ('+nomeMes(mesAtual)+'):</span> '+ev.t+' Renda passiva: '+fmt(S.rendaPassiva)+'/mês');
+if(S.lastDivsAcao>0) logar('💰 <b style="color:var(--moeda)">Dividendos trimestrais das ações:</b> +'+fmt(S.lastDivsAcao));
+logar('<span class="mes">Mês '+mesAtual+' ('+nomeMes(mesAtual)+'):</span> '+ev.t+' Renda passiva média: '+fmt(S.rendaPassiva)+'/mês');
 atualizarTudo();
 
 if(S.fim){
@@ -621,6 +648,14 @@ $('fimResumo').textContent='Patrimônio final: '+fmt(S.caixa+S.fii+S.acao+S.teso
 preencherLista('relAcertos', rel.acertos, 'ok');
 preencherLista('relMelhorar', rel.melhorar.length?rel.melhorar:['Nada a apontar: partida impecável! 🐟'], 'melhorar');
 preencherLista('relFatores', rel.fatores, 'fator');
+
+const links=[];
+if(S.stats.mesesCaixaParado>3) links.push('Dinheiro parado no caixa? Entenda onde deixar a reserva rendendo: <a href="'+POSTS_URL.tesouro+'" target="_top" style="color:var(--aqua)">FIIs ou Tesouro IPCA+ &rarr;</a>');
+if(S.stats.mesesConcentrado>5) links.push('Carteira concentrada? Compare os ativos e diversifique melhor: <a href="'+POSTS_URL.acoes+'" target="_top" style="color:var(--aqua)">FIIs vs Ações &rarr;</a>');
+links.push('Crises no jogo te assustaram? Na vida real o perigo é vender no pânico: <a href="'+POSTS_URL.panic+'" target="_top" style="color:var(--aqua)">Panic Selling &rarr;</a>');
+links.push('FIIs de tijolo ou de papel? Entenda a diferença: <a href="'+POSTS_URL.fii+'" target="_top" style="color:var(--aqua)">Ler o post &rarr;</a>');
+links.push('Todos os conteúdos do Manjubinha: <a href="'+POSTS_URL.posts+'" target="_top" style="color:var(--aqua)">Ver posts &rarr;</a>');
+preencherLista('relLinks', links, 'fator');
 }
 
 function preencherLista(id, itens, classe){
@@ -628,7 +663,7 @@ const ul=$(id); ul.innerHTML='';
 itens.forEach(t=>{
 const li=document.createElement('li');
 li.className=classe;
-li.textContent=t;
+li.innerHTML=t;
 ul.appendChild(li);
 });
 }
