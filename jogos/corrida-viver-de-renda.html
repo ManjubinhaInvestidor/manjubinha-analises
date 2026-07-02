@@ -132,7 +132,7 @@ td.pos{color:var(--moeda);font-weight:800}
 <br>
 <button class="btn" onclick="comecarJogo()">Começar 🌊</button>
 <div class="licao" style="text-align:left;margin-top:14px">
-<b>🐟 Como jogar:</b> a cada mês você recebe R$ 6.500 de salário e gasta R$ 2.000. A sobra (e o dinheiro do caixa) você distribui entre FII, ação de dividendos e Tesouro. Vença fazendo sua renda passiva mensal alcançar seus gastos antes do mês 48! Atenção: FIIs pagam dividendos todo mês, mas ações pagam por trimestre (mar, jun, set e dez), como na vida real.
+<b>🐟 Como jogar:</b> a cada mês você recebe R$ 6.500 de salário e gasta R$ 2.000. A sobra (e o dinheiro do caixa) você distribui entre FII, ação de dividendos e Tesouro. Vença fazendo sua renda passiva mensal alcançar seus gastos antes do mês 48! Atenção: FIIs pagam dividendos todo mês, mas ações pagam por trimestre (mar, jun, set e dez), como na vida real. Dica: guarde uma reserva no caixa, porque emergências (desemprego, saúde) podem te obrigar a vender no prejuízo ou cair no cheque especial.
 </div>
 </div>
 
@@ -237,6 +237,12 @@ yieldAcao: 0.010, // 1,0% a.m. em dividendos
 selicMes: 0.010, // 1,0% a.m. (tesouro)
 prazoMeses: 48,
 caixaInicial: 5000,
+desagio: 0.10,       // perda ao vender ativo de risco na pressa (sem reserva)
+jurosDivida: 0.08,   // juros mensais sobre caixa negativo (cheque especial)
+mesesDesemprego: 5,  // duração do desemprego (meses sem salário)
+chanceDesemprego: 0.09,
+chanceGrave: 0.05,
+custoGrave: 12000,
 };
 
 function novoEstado(){
@@ -244,24 +250,46 @@ return {
 mes: 1,
 caixa: CFG.caixaInicial,
 fii: 0, acao: 0, tesouro: 0,
+semRenda: 0, // meses restantes sem salário (desemprego)
 yieldFii: CFG.yieldFii,
 yieldAcao: CFG.yieldAcao,
 selic: CFG.selicMes,
 gastos: CFG.gastosBase,
 salario: CFG.salario,
 rendaPassiva: 0,
-fim: null, // 'vitoria' | 'prazo'
+fim: null, // 'vitoria' | 'prazo' | 'quebra'
 stats: {
 aporteFii:0, aporteAcao:0, aporteTes:0,
 totalDivs:0, totalJuros:0,
-mesesCaixaParado:0, // reserva > 25% do patrimônio
+mesesCaixaParado:0, // caixa ocioso > 50% do patrimônio
 mesesConcentrado:0, // um ativo > 75% do investido
 eventosBons:0, eventosRuins:0,
-perdaEventos:0, // R$ perdidos em quedas de eventos ruins
+perdaEventos:0, // R$ perdidos em eventos ruins
 ganhoEventos:0, // R$ ganhos em eventos bons (13º, valorizações)
 picoRenda:0,
+vendasForcadas:0, desagioPago:0, jurosDivida:0,
+mesesEndividado:0, emergenciasSemReserva:0, mesesDesemprego:0,
 }
 };
+}
+
+// Paga um custo de emergência na ordem: caixa -> Tesouro -> FII/ação (com deságio) -> dívida.
+function pagarEmergencia(s, custo){
+s.stats.perdaEventos += custo;
+let resto = custo;
+const doCaixa = Math.min(Math.max(s.caixa,0), resto);
+s.caixa -= doCaixa; resto -= doCaixa;
+if(resto>0.009) s.stats.emergenciasSemReserva++;
+if(resto>0.009){ const v=Math.min(s.tesouro,resto); s.tesouro-=v; resto-=v; s.stats.vendasForcadas+=v; }
+for(const k of ['fii','acao']){
+if(resto<=0.009) break;
+const liquido = s[k]*(1-CFG.desagio);
+const usar = Math.min(liquido, resto);
+const bruto = usar/(1-CFG.desagio);
+s[k]-=bruto; resto-=usar;
+s.stats.vendasForcadas+=bruto; s.stats.desagioPago+=(bruto-usar); s.stats.perdaEventos+=(bruto-usar);
+}
+if(resto>0.009){ s.caixa -= resto; } // vira dívida (caixa negativo)
 }
 
 const EVENTOS = [
@@ -294,16 +322,16 @@ fx:s=>{s.caixa+=s.salario; s.stats.ganhoEventos+=s.salario;},
 d:'Dezembro chegou e caiu o 13º na conta! Entre presentes e ceia, a tentação é grande... mas que tal investir uma boa parte?',
 l:'Rendas extras aceleram MUITO a bola de neve dos juros compostos. Aportar cedo vale mais que aportar muito.'},
 {id:'imprevisto', t:'🚗 Gasto inesperado!', ruim:true,
-fx:s=>{const p=Math.min(1500,s.caixa); s.caixa-=p; s.stats.perdaEventos+=p;},
-d:'O carro quebrou na estrada e o mecânico levou até R$ 1.500 do seu caixa.',
+fx:s=>{pagarEmergencia(s,1500);},
+d:'O carro quebrou na estrada e o mecânico levou R$ 1.500. Sem reserva, sai do seu caixa; se faltar, você vende investimento.',
 l:'Imprevistos acontecem. Ter uma reserva de emergência em Tesouro SELIC evita vender ativos bons na hora errada.'},
 {id:'inflacao', t:'📊 Inflação alta no mês', ruim:true,
 fx:s=>{s.gastos=Math.round(s.gastos*1.015);},
 d:'O IPCA acelerou e seus gastos mensais subiram 1,5%.',
 l:'A meta de renda passiva não é fixa: a inflação aumenta seus gastos. Por isso ativos que corrigem pela inflação são valiosos.'},
 {id:'ipva', t:'🧾 Chegaram IPVA e IPTU!', ruim:true,
-fx:s=>{const p=Math.min(1200,s.caixa); s.caixa-=p; s.stats.perdaEventos+=p;},
-d:'Janeiro à moda brasileira: os boletos de IPVA e IPTU levaram até R$ 1.200 do seu caixa.',
+fx:s=>{pagarEmergencia(s,1200);},
+d:'Janeiro à moda brasileira: os boletos de IPVA e IPTU custaram R$ 1.200. Sem caixa, a conta sai dos investimentos.',
 l:'Todo brasileiro sabe que janeiro pesa. Quem provisiona esses gastos ao longo do ano não precisa vender investimentos pra pagar boleto.'},
 {id:'restituicao', t:'🦁 Restituição do Imposto de Renda!', ruim:false,
 fx:s=>{s.caixa+=2500; s.stats.ganhoEventos+=2500;},
@@ -314,13 +342,21 @@ fx:s=>{},
 d:'Junho de festa junina e futebol! Quentão, churrasco e jogo com os amigos, mas os aportes seguiram em dia.',
 l:'Viver de renda não é abrir mão da vida. É o equilíbrio: curtir o presente sem esquecer os aportes que compram sua liberdade futura.'},
 {id:'carnaval', t:'🎭 Carnaval!', ruim:true,
-fx:s=>{const p=Math.min(900,s.caixa); s.caixa-=p; s.stats.perdaEventos+=p;},
-d:'Fevereiro é de bloquinho, fantasia e viagem. A folia levou até R$ 900 do seu caixa.',
+fx:s=>{pagarEmergencia(s,900);},
+d:'Fevereiro é de bloquinho, fantasia e viagem. A folia custou R$ 900. Sem reserva no caixa, sai dos investimentos.',
 l:'O ano no Brasil só começa depois do Carnaval, mas seus boletos começam em janeiro. Curtir a folia com um valor planejado evita começar o ano no vermelho.'},
 {id:'ferias', t:'🏖️ Férias com as crianças!', ruim:true,
-fx:s=>{const p=Math.min(1300,s.caixa); s.caixa-=p; s.stats.perdaEventos+=p;},
-d:'Julho chegou e a criançada está em casa: passeios, viagem e sorvete levaram até R$ 1.300 do caixa.',
+fx:s=>{pagarEmergencia(s,1300);},
+d:'Julho chegou e a criançada está em casa: passeios, viagem e sorvete custaram R$ 1.300. Sem caixa, sai dos investimentos.',
 l:'Férias escolares são previsíveis: acontecem todo ano! Gastos que você já sabe que virão não deveriam pegar ninguém de surpresa. Provisione um pouquinho por mês e viaje sem culpa.'},
+{id:'desemprego', t:'💼 Você perdeu o emprego!', ruim:true,
+fx:s=>{ if(s.semRenda<=0){ s.semRenda=CFG.mesesDesemprego; } },
+d:'A empresa cortou pessoal e você ficou sem salário por alguns meses. As contas, porém, não esperam.',
+l:'É aqui que a reserva de emergência salva: sem ela, você é obrigado a vender bons investimentos na baixa (com prejuízo) ou cair no cheque especial pra pagar as contas.'},
+{id:'emergenciaGrave', t:'🏥 Emergência grave!', ruim:true,
+fx:s=>{ pagarEmergencia(s, CFG.custoGrave); },
+d:'Um problema sério de saúde (ou na casa) trouxe uma conta alta e inadiável de milhares de reais.',
+l:'Emergências grandes existem. Uma reserva em Tesouro SELIC evita que um imprevisto vire dívida cara ou te obrigue a torrar a carteira inteira no pior momento.'},
 {id:'calmo', t:'🌊 Mês tranquilo no oceano', ruim:false,
 fx:s=>{},
 d:'Nada de novo. Os dividendos pingaram normalmente.',
@@ -343,6 +379,7 @@ decimo:POSTS_URL.posts, imprevisto:POSTS_URL.tesouro,
 inflacao:POSTS_URL.tesouro, ipva:POSTS_URL.posts,
 restituicao:POSTS_URL.fii, copa:POSTS_URL.ego,
 carnaval:POSTS_URL.ego, ferias:POSTS_URL.posts,
+desemprego:POSTS_URL.tesouro, emergenciaGrave:POSTS_URL.tesouro,
 calmo:POSTS_URL.posts
 };
 
@@ -359,6 +396,8 @@ const m = mesDoAno(s.mes);
 if(CALENDARIO[m] !== undefined){
 return EVENTOS.find(e=>e.id===CALENDARIO[m]);
 }
+if(rand() < CFG.chanceGrave){ return EVENTOS.find(e=>e.id==='emergenciaGrave'); }
+if(s.semRenda<=0 && rand() < CFG.chanceDesemprego){ return EVENTOS.find(e=>e.id==='desemprego'); }
 const id = POOL_MERCADO[Math.floor(rand()*POOL_MERCADO.length)];
 return EVENTOS.find(e=>e.id===id);
 }
@@ -370,16 +409,24 @@ return s.fii*s.yieldFii + s.acao*s.yieldAcao + s.tesouro*s.selic;
 // aloc = {fii,acao,tes} em frações (0 a 1, soma <= 1). rand() = função aleatória (injetável nos testes).
 function passoMes(s, aloc, rand){
 rand = rand || Math.random;
-// 1. Dinheiro disponível: sobra do mês + caixa acumulado
-const sobra = Math.max(s.salario - s.gastos, 0);
-const disponivel = sobra + s.caixa;
-const somaAloc = aloc.fii + aloc.acao + aloc.tes;
+
+// 0. Juros sobre dívida (caixa negativo do mês anterior)
+if(s.caixa < 0){ const j=(-s.caixa)*CFG.jurosDivida; s.caixa-=j; s.stats.jurosDivida+=j; s.stats.mesesEndividado++; }
+
+// 1. Fluxo de caixa: salário (zero se desempregado) menos gastos
+let renda = s.salario;
+if(s.semRenda > 0){ renda = 0; s.semRenda--; s.stats.mesesDesemprego++; }
+const net = renda - s.gastos;
+if(net >= 0){ s.caixa += net; } else { pagarEmergencia(s, -net); }
+
+// 2. Investe o que houver de caixa positivo
+const disponivel = Math.max(s.caixa, 0);
 const invFii = disponivel*aloc.fii, invAcao = disponivel*aloc.acao, invTes = disponivel*aloc.tes;
 s.fii += invFii; s.acao += invAcao; s.tesouro += invTes;
-s.caixa = disponivel*(1-somaAloc);
+s.caixa -= (invFii + invAcao + invTes);
 s.stats.aporteFii += invFii; s.stats.aporteAcao += invAcao; s.stats.aporteTes += invTes;
 
-// 2. Rendimentos do mês (FIIs pagam todo mês; ações pagam por trimestre: mar, jun, set, dez)
+// 3. Rendimentos do mês (FIIs pagam todo mês; ações pagam por trimestre: mar, jun, set, dez)
 const divsFii = s.fii*s.yieldFii;
 let divsAcao = 0;
 if([2,5,8,11].includes(mesDoAno(s.mes))){ divsAcao = s.acao*s.yieldAcao*3; }
@@ -391,28 +438,30 @@ s.caixa += divs; // dividendos caem na conta (reinvestidos no próximo mês via 
 s.stats.totalDivs += divs;
 s.stats.totalJuros += juros;
 
-// 3. Oscilação leve de mercado
+// 4. Oscilação leve de mercado
 s.fii *= (0.995 + rand()*0.02); // -0,5% a +1,5%
 s.acao *= (0.99 + rand()*0.03); // -1,0% a +2,0%
 
-// 4. Evento do mês (calendário brasileiro + sorteio de mercado)
+// 5. Evento do mês (calendário brasileiro + sorteio de mercado)
 const ev = eventoDoMes(s, rand);
 ev.fx(s);
 if(ev.ruim) s.stats.eventosRuins++; else if(ev.id!=='calmo') s.stats.eventosBons++;
 
-// 5. Estatísticas de comportamento
+// 6. Estatísticas de comportamento
 const investido = s.fii + s.acao + s.tesouro;
 const patrimonio = investido + s.caixa;
-if(patrimonio > 0 && s.caixa/patrimonio > 0.25) s.stats.mesesCaixaParado++;
+if(patrimonio > 0 && s.caixa > 0 && s.caixa/patrimonio > 0.5) s.stats.mesesCaixaParado++;
 if(investido > 0){
 const maior = Math.max(s.fii, s.acao, s.tesouro);
 if(maior/investido > 0.75) s.stats.mesesConcentrado++;
 }
 
-// 6. Renda e desfecho
+// 7. Renda e desfecho
 s.rendaPassiva = calcRenda(s);
 if(s.rendaPassiva > s.stats.picoRenda) s.stats.picoRenda = s.rendaPassiva;
-if(s.rendaPassiva >= s.gastos){
+if(patrimonio <= 0){
+s.fim = 'quebra';
+} else if(s.rendaPassiva >= s.gastos){
 s.fim = 'vitoria';
 } else if(s.mes >= CFG.prazoMeses){
 s.fim = 'prazo';
@@ -433,10 +482,20 @@ const pctMeta = Math.min(Math.round(s.rendaPassiva/s.gastos*100),100);
 const fmtR = v => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
 
 // Reinvestimento / caixa parado
-if(st.mesesCaixaParado <= 3){
-acertos.push('Você quase não deixou dinheiro parado no caixa. Reinvestir os dividendos todo mês é o segredo dos juros compostos.');
+if(st.mesesCaixaParado > 3){
+melhorar.push('Você deixou muito dinheiro parado no caixa em '+st.mesesCaixaParado+' meses. Uma reserva de emergência é ótima, mas caixa ocioso demais não rende: o excedente deveria estar investido.');
+}
+
+// Reserva de emergência
+if(st.emergenciasSemReserva === 0){
+acertos.push('Você nunca foi pego sem reserva: todas as emergências foram pagas com o caixa, sem precisar vender investimentos na baixa.');
 } else {
-melhorar.push('Você deixou dinheiro parado no caixa em '+st.mesesCaixaParado+' meses. Dinheiro parado não gera renda: reinvestir os dividendos acelera muito a bola de neve.');
+melhorar.push('Em '+st.emergenciasSemReserva+' emergências você ficou sem reserva e teve que vender investimentos às pressas, perdendo '+fmtR(st.desagioPago)+' em deságio. Uma reserva em Tesouro SELIC teria evitado esse prejuízo.');
+}
+
+// Dívida
+if(st.mesesEndividado > 0){
+melhorar.push('Você passou '+st.mesesEndividado+' meses no vermelho e pagou '+fmtR(st.jurosDivida)+' só de juros de dívida. Sem reserva, um imprevisto vira uma bola de neve de juros contra você.');
 }
 
 // Diversificação
@@ -457,6 +516,11 @@ melhorar.push('Você não chegou a investir. Sem aportes, não existe renda pass
 if(totalRendimentos > 0 && totalAportes > 0){
 const pct = Math.round(totalRendimentos/(totalAportes+totalRendimentos)*100);
 fatores.push('💪 Juros compostos: seus investimentos geraram '+fmtR(totalRendimentos)+' sozinhos ('+pct+'% de tudo que entrou na carteira). Quanto mais cedo o dinheiro entra, mais ele trabalha.');
+}
+
+// Fator: desemprego
+if(st.mesesDesemprego > 0){
+fatores.push('💼 Você ficou '+st.mesesDesemprego+' meses sem salário. Quem tinha reserva atravessou tranquilo; quem não tinha, vendeu ativo no prejuízo. Na vida real é assim também.');
 }
 
 // Fator: eventos
@@ -485,6 +549,9 @@ fatores.push('🏆 Seu maior gerador de renda: '+partes[0][0]+', com '+fmtR(part
 // Mensagens específicas de derrota suave
 if(s.fim === 'prazo'){
 melhorar.push('Você alcançou '+pctMeta+'% da meta. No ritmo em que terminou, faltava pouco: com os mesmos aportes e reinvestindo tudo, a ilha estava a poucos meses de distância.');
+}
+if(s.fim === 'quebra'){
+melhorar.push('Seu patrimônio zerou: as emergências chegaram e, sem reserva, você vendeu tudo no prejuízo e ainda caiu no cheque especial. A lição número um do viver de renda é montar a reserva ANTES de investir pesado.');
 }
 
 if(acertos.length===0) acertos.push('Você jogou até o fim e viu os juros compostos em ação. Isso já é mais do que a maioria faz na vida real.');
@@ -568,7 +635,7 @@ return { fii:+$('rFii').value/100, acao:+$('rAcao').value/100, tes:+$('rTes').va
 
 function atualizarAlocacao(){
 const a=alocAtual();
-const disponivel=Math.max(S.salario-S.gastos,0)+S.caixa;
+const disponivel=Math.max(S.salario-S.gastos,0)+Math.max(S.caixa,0);
 $('uiDisponivel').textContent=fmt(disponivel);
 $('vFii').textContent=fmt(disponivel*a.fii);
 $('vAcao').textContent=fmt(disponivel*a.acao);
@@ -646,6 +713,13 @@ tr.innerHTML='<td class="pos">'+(i+1)+'º</td><td>'+escapa(r.nick)+(r.selo?' �
 tb.appendChild(tr);
 });
 $('btnRejogar').textContent='Bater meu recorde 🔁';
+} else if(S.fim==='quebra'){
+$('fimEmoji').textContent='🌊💸';
+$('fimTitulo').textContent='Seu patrimônio afundou!';
+$('fimTitulo').style.color='var(--coral)';
+$('fimFrase').innerHTML='As emergências chegaram e, sem reserva, você teve que vender tudo no prejuízo e ainda ficou no vermelho, no mês <b style="color:var(--coral)">'+meses+'</b>. Doeu, mas é a lição mais barata da sua vida: <b>reserva de emergência vem antes de investir pesado</b>.';
+$('blocoRanking').style.display='none';
+$('btnRejogar').textContent='Tentar de novo 💪';
 } else {
 $('fimEmoji').textContent='🌅🐟';
 $('fimTitulo').textContent='A ilha já está no horizonte!';
@@ -663,12 +737,13 @@ preencherLista('relMelhorar', rel.melhorar.length?rel.melhorar:['Nada a apontar:
 preencherLista('relFatores', rel.fatores, 'fator');
 
 const links=[];
-if(S.stats.mesesCaixaParado>3) links.push('Dinheiro parado no caixa? Entenda onde deixar a reserva rendendo: <a href="'+POSTS_URL.tesouro+'" target="_top" style="color:var(--aqua)">FIIs ou Tesouro IPCA+ &rarr;</a>');
+if(S.stats.emergenciasSemReserva>0) links.push('Foi pego sem reserva? Entenda onde deixar o dinheiro da emergência rendendo: <a href="'+POSTS_URL.tesouro+'" target="_top" style="color:var(--aqua)">FIIs ou Tesouro IPCA+ &rarr;</a>');
+if(S.stats.mesesCaixaParado>3) links.push('Dinheiro parado demais no caixa? Veja quanto faz sentido guardar: <a href="'+POSTS_URL.tesouro+'" target="_top" style="color:var(--aqua)">Reserva rendendo &rarr;</a>');
 if(S.stats.mesesConcentrado>5) links.push('Carteira concentrada? Compare os ativos e diversifique melhor: <a href="'+POSTS_URL.acoes+'" target="_top" style="color:var(--aqua)">FIIs vs Ações &rarr;</a>');
 links.push('Crises no jogo te assustaram? Na vida real o perigo é vender no pânico: <a href="'+POSTS_URL.panic+'" target="_top" style="color:var(--aqua)">Panic Selling &rarr;</a>');
 links.push('FIIs de tijolo ou de papel? Entenda a diferença: <a href="'+POSTS_URL.fii+'" target="_top" style="color:var(--aqua)">Ler o post &rarr;</a>');
 links.push('Todos os conteúdos do Manjubinha: <a href="'+POSTS_URL.posts+'" target="_top" style="color:var(--aqua)">Ver posts &rarr;</a>');
-if(MJ_TRILHA && !mjTrilhaCompleta()){ links.unshift('🐟 '+escapa(getNick())+', no jogo você venceu. Na vida real, continue a trilha <b>Comece por aqui</b>: <a href="https://manjubinhainvestidor.com.br/#mj-comece" target="_top" style="color:var(--aqua)">ir para o passo '+(MJ_TRILHA.lidos+1)+' &rarr;</a>'); }
+if(MJ_TRILHA && !mjTrilhaCompleta()){ links.unshift('🐟 '+escapa(getNick())+', continue a trilha <b>Comece por aqui</b> na vida real: <a href="https://manjubinhainvestidor.com.br/#mj-comece" target="_top" style="color:var(--aqua)">ir para o passo '+(MJ_TRILHA.lidos+1)+' &rarr;</a>'); }
 preencherLista('relLinks', links, 'fator');
 }
 
