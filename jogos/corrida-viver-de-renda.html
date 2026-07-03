@@ -402,8 +402,9 @@ s.stats.perdaEventos += custo;
 let resto = custo;
 const doCaixa = Math.min(Math.max(s.caixa,0), resto);
 s.caixa -= doCaixa; resto -= doCaixa;
-if(resto>0.009) s.stats.emergenciasSemReserva++;
 if(resto>0.009){ const v=Math.min(s.tesouro,resto); s.tesouro-=v; resto-=v; s.stats.vendasForcadas+=v; }
+// "Sem reserva" = nem conta corrente nem Tesouro bastaram (vai vender ativo de risco com deságio ou virar dívida)
+if(resto>0.009) s.stats.emergenciasSemReserva++;
 for(const k of ['fii','acao']){
 if(resto<=0.009) break;
 const liquido = s[k]*(1-CFG.desagio);
@@ -649,9 +650,9 @@ fatores.push('🪣 Balde furado: a inflação corroeu '+fmtR(st.perdaInflacaoCai
 
 // Reserva de emergência
 if(st.emergenciasSemReserva === 0){
-acertos.push('Você nunca foi pego sem reserva: todas as emergências foram pagas com o dinheiro da conta corrente, sem precisar vender investimentos na baixa.');
+acertos.push('Sua reserva (conta corrente + Tesouro) cobriu todas as emergências: você nunca precisou vender FII ou ações na baixa.');
 } else {
-melhorar.push({t:'Em '+st.emergenciasSemReserva+' emergências você ficou sem reserva e teve que vender investimentos às pressas, perdendo '+fmtR(st.desagioPago)+' em deságio. Uma reserva em Tesouro SELIC teria evitado esse prejuízo.', n:'grave'});
+melhorar.push({t:'Em '+st.emergenciasSemReserva+' emergências a reserva não foi suficiente e você teve que vender FII/ações às pressas'+(st.desagioPago>0.5?', perdendo '+fmtR(st.desagioPago)+' em deságio':'')+'. Uma reserva maior em Tesouro SELIC teria evitado esse prejuízo.', n:'grave'});
 }
 
 // Dívida
