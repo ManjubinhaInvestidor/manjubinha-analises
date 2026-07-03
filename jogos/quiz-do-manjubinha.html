@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz do Manjubinha | Manjubinha Investidor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
 --mar-fundo:#0a1118;
@@ -110,6 +110,34 @@ td.pos{color:var(--moeda);font-weight:800}
 .linha-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
 @media(max-width:480px){.placar{grid-template-columns:repeat(4,1fr)}.placar .valor{font-size:.9rem}}
 @media(prefers-reduced-motion:reduce){.opcao,.btn,.timerAgua{transition:none}}
+
+/* ===== Remake visual quiz 2026-07 ===== */
+:root{--mar-fundo:#0a0f15;--mar-medio:#141b23;--mar-claro:rgba(255,255,255,.10);--aqua:#69ada6;--moeda:#c9a86b;--coral:#e08a7b;--areia:#e8edf1;--alga:#5fbf8b;}
+body{background:#0b1119!important;font-family:'Inter','Nunito',sans-serif!important}
+.wrap,.card,.opcao,.btn,.pergunta,.categoria,.feedback,.relatorio,.placar,.combo,.pts,.grande,.valor,.rotulo,.fator,h1,h2,h3{font-family:'Inter','Nunito',sans-serif!important}
+h1,h2,h3{font-weight:600!important;letter-spacing:-.005em}
+h1{color:var(--areia)!important;font-size:1.4rem}
+h1 svg{width:56px!important;height:34px!important}
+h1 svg path{fill:#7cc0b8!important}h1 svg path:nth-of-type(2){fill:var(--moeda)!important}
+.sub{opacity:.58}
+.card{background:#141b23!important;border:1px solid rgba(255,255,255,.07)!important;border-radius:14px!important}
+.btn{background:rgba(201,168,107,.16)!important;color:#f0dcae!important;border:1px solid rgba(201,168,107,.5)!important;border-radius:11px!important;font-weight:600!important;box-shadow:none!important}
+.btn:hover{background:rgba(201,168,107,.24)!important;transform:none!important}
+.btn.sec{background:transparent!important;color:var(--aqua)!important;border:1px solid rgba(255,255,255,.14)!important}
+.placar .item{background:rgba(255,255,255,.03)!important;border:1px solid rgba(255,255,255,.06)!important;border-radius:10px!important}
+.placar .valor{font-weight:600!important}.placar .rotulo{letter-spacing:.05em;opacity:.8}
+.categoria{background:rgba(105,173,166,.14)!important;color:var(--aqua)!important;font-weight:600!important;border:1px solid rgba(105,173,166,.28)!important}
+.pergunta{font-weight:600!important;font-size:1.12rem!important}
+.opcao{background:rgba(255,255,255,.03)!important;border:1px solid rgba(255,255,255,.10)!important;border-radius:11px!important;transition:border-color .15s,background .15s!important}
+.opcao:hover:not(:disabled){transform:none!important;border-color:var(--aqua)!important;background:rgba(255,255,255,.055)!important}
+.opcao.certa{border-color:var(--alga)!important;background:rgba(95,191,139,.16)!important}
+.opcao.errada{border-color:var(--coral)!important;background:rgba(224,138,123,.16)!important}
+.timerAgua{background:linear-gradient(180deg,rgba(105,173,166,.42),rgba(105,173,166,.16))!important}
+.timerBox{border:1px solid rgba(255,255,255,.08)!important;border-radius:12px!important}
+.feedback{background:rgba(255,255,255,.03)!important;border-radius:10px!important}
+.relatorio .fator,.barraTema{background:rgba(255,255,255,.04)!important}
+input,select,textarea{font-family:'Inter',sans-serif!important}
+.combo{color:var(--moeda)!important}
 </style>
 </head>
 <body>
