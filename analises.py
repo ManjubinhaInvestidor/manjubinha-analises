@@ -6,6 +6,10 @@ Controle por ID do documento - nunca repete o mesmo doc.
 """
 
 import os, json, requests, time, re
+# --- Forca IPv4: runners do GitHub Actions nao tem rota IPv6; o site tem registro AAAA ---
+import socket
+import urllib3.util.connection as _u3
+_u3.allowed_gai_family = lambda: socket.AF_INET
 from datetime import datetime
 from pathlib import Path
 from bs4 import BeautifulSoup
