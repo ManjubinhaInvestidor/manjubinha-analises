@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-07-02",
+  "ultima_atualizacao": "2026-07-03",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",

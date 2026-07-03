@@ -500,5 +500,23 @@
   },
   "POMO4": {
     "ultima": "2026-07-02"
+  },
+  "HCTR11_23105": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hctr11-hectare-ce-relatorio-gerencial-07-2026/",
+    "data": "2026-07-03",
+    "descricao": "Relatório Gerencial"
+  },
+  "HCTR11": {
+    "ultima": "2026-07-03"
+  },
+  "IRBR3_45211": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-regimento-interno-de-comites-07-2026/",
+    "data": "2026-07-03",
+    "descricao": "Regimento interno de Comitês"
+  },
+  "IRBR3": {
+    "ultima": "2026-07-03"
   }
 }
