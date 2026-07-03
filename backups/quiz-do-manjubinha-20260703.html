@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz do Manjubinha | Manjubinha Investidor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--mar-fundo:#0a1118;
+--mar-medio:#1a1a1a;
+--mar-claro:#0b2b3f;
+--aqua:#3fd0c9;
+--moeda:#f6c453;
+--coral:#ff6b6b;
+--areia:#f2f2f2;
+--alga:#23c55e;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Nunito',sans-serif;
+background:linear-gradient(180deg,#181818 0%,#101820 55%,var(--mar-fundo) 100%);
+color:var(--areia);
+min-height:100vh;
+padding:16px;
+}
+.wrap{max-width:680px;margin:0 auto}
+h1,h2,h3{font-family:'Baloo 2',cursive}
+h1{font-size:1.6rem;color:var(--aqua);text-align:center;line-height:1.2}
+.sub{text-align:center;font-size:.85rem;opacity:.8;margin:4px 0 16px}
+.card{
+background:linear-gradient(145deg,#171717,#262626);
+border:2px solid rgba(63,208,201,.15);
+border-radius:18px;
+padding:18px;
+margin-bottom:14px;
+}
+#telaNick{text-align:center}
+#telaNick input{
+width:100%;max-width:320px;padding:12px 16px;border-radius:12px;
+border:2px solid var(--mar-claro);background:#0d1a26;color:var(--areia);
+font-size:1rem;font-family:'Nunito',sans-serif;margin:12px 0;
+}
+#telaNick input:focus{outline:2px solid var(--aqua)}
+.btn{
+font-family:'Baloo 2',cursive;font-size:1.05rem;font-weight:800;
+background:var(--moeda);color:#111;border:none;border-radius:999px;
+padding:12px 26px;cursor:pointer;transition:transform .12s;
+}
+.btn:hover{transform:scale(1.05)}
+.btn:focus-visible{outline:3px solid var(--moeda)}
+.btn.sec{background:transparent;color:var(--aqua);border:2px solid var(--aqua)}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+
+/* Placar */
+.placar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;margin-bottom:12px}
+.placar .item{background:#0d1a26;border-radius:12px;padding:8px 4px}
+.placar .rotulo{font-size:.62rem;text-transform:uppercase;letter-spacing:.05em;opacity:.7}
+.placar .valor{font-family:'Baloo 2',cursive;font-size:1.05rem;color:var(--moeda)}
+.placar .valor.aqua{color:var(--aqua)}
+.placar .valor.combo{color:var(--alga)}
+
+/* Timer: cardume de peixinhos fugindo */
+.timerBox{position:relative;height:34px;border-radius:10px;overflow:hidden;background:#0d1a26;border:2px solid var(--mar-claro);margin-bottom:14px}
+.timerAgua{position:absolute;inset:0;width:100%;background:linear-gradient(90deg,rgba(63,208,201,.4),rgba(126,224,129,.35));transition:width .2s linear}
+.timerPeixes{position:absolute;top:50%;transform:translateY(-50%);right:6px;font-size:1rem;letter-spacing:2px}
+
+/* Pergunta */
+.categoria{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;background:#0d1a26;color:var(--aqua);padding:4px 10px;border-radius:20px;margin-bottom:8px}
+.pergunta{font-size:1.05rem;font-weight:800;line-height:1.4;margin-bottom:14px}
+.opcao{
+display:block;width:100%;text-align:left;
+background:#0d1a26;color:var(--areia);
+border:2px solid var(--mar-claro);border-radius:12px;
+padding:12px 14px;margin:8px 0;font-size:.95rem;font-family:'Nunito',sans-serif;
+cursor:pointer;transition:transform .1s, border-color .15s;
+}
+.opcao:hover:not(:disabled){transform:translateX(4px);border-color:var(--aqua)}
+.opcao:focus-visible{outline:3px solid var(--moeda)}
+.opcao.certa{border-color:var(--alga);background:#0d3d2a}
+.opcao.errada{border-color:var(--coral);background:#4a1a1a}
+.opcao:disabled{cursor:default}
+
+.feedback{margin-top:12px;padding:12px;border-radius:10px;background:#0d1a26;font-size:.88rem;line-height:1.5;display:none}
+.feedback.show{display:block}
+.feedback b{color:var(--aqua)}
+.feedback .pts{font-family:'Baloo 2',cursive;font-size:1.1rem}
+.feedback .pts.ganhou{color:var(--alga)}
+.feedback .pts.zerou{color:var(--coral)}
+
+/* Fim */
+#telaFim{text-align:center;display:none}
+#telaFim .grande{font-size:3rem}
+.relatorio{text-align:left;margin-top:14px}
+.relatorio h3{color:var(--aqua);font-size:1rem;margin:12px 0 6px}
+.relatorio ul{list-style:none}
+.relatorio li{padding:7px 10px;margin:5px 0;border-radius:8px;background:#0d1a26;font-size:.85rem;line-height:1.4}
+.relatorio li.ok{border-left:4px solid var(--alga)}
+.relatorio li.melhorar{border-left:4px solid var(--moeda)}
+.relatorio li.fator{border-left:4px solid var(--aqua)}
+.barraTema{height:8px;border-radius:4px;background:#062c43;margin-top:4px;overflow:hidden}
+.barraTema div{height:100%;background:var(--alga);border-radius:4px}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.9rem}
+th,td{padding:8px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.12)}
+th{color:var(--aqua);font-family:'Baloo 2',cursive}
+td.pos{color:var(--moeda);font-weight:800}
+.centro{text-align:center;margin-top:12px}
+.escondido{display:none}
+.linha-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+@media(max-width:480px){.placar{grid-template-columns:repeat(4,1fr)}.placar .valor{font-size:.9rem}}
+@media(prefers-reduced-motion:reduce){.opcao,.btn,.timerAgua{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1><svg style="width:44px;height:26px;vertical-align:-4px" viewBox="0 0 66 40" xmlns="http://www.w3.org/2000/svg"><path d="M4 20c9-11 24-11 33 0-9 11-24 11-33 0z" fill="#3fd0c9"/><path d="M37 20l13-8v16z" fill="#2fa8a2"/><circle cx="13" cy="18" r="2.6" fill="#0d1a26"/></svg> Quiz do Manjubinha</h1>
+<p class="sub">20 segundos por pergunta. Acerte em sequência pra multiplicar seus pontos!</p>
+
+<!-- NICK -->
+<div class="card" id="telaNick">
+<h2>Quem vai encarar o cardume?</h2>
+<p style="font-size:.85rem;opacity:.8;margin-top:6px">Seu nick fica salvo neste navegador e entra no ranking local.</p>
+<input type="text" id="inputNick" maxlength="16" placeholder="Seu nick (ex: Manjubinha)">
+<br>
+<label for="selNum" style="font-size:.85rem;opacity:.85">Quantas perguntas?</label>
+<select id="selNum" style="margin:0 0 12px 8px;padding:8px 14px;border-radius:10px;border:2px solid var(--mar-claro);background:#0d1a26;color:var(--areia);font-family:'Nunito',sans-serif;font-size:.95rem">
+<option>10</option><option selected>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option>
+</select>
+<br>
+<button class="btn" onclick="comecarJogo()">Começar 🌊</button>
+<div class="feedback show" style="text-align:left;margin-top:14px">
+<b>🐟 Como funciona:</b> cada acerto vale 100 pontos + bônus de velocidade. Acertos seguidos aumentam o combo (x2, x3), que multiplica tudo. Errou ou o tempo acabou? O combo volta pro início, mas você aprende a resposta certa na hora!
+</div>
+</div>
+
+<!-- QUIZ -->
+<div id="telaQuiz" class="escondido">
+<div class="placar">
+<div class="item"><div class="rotulo">Pergunta</div><div class="valor aqua" id="uiNum">1/10</div></div>
+<div class="item"><div class="rotulo">Pontos</div><div class="valor" id="uiPontos">0</div></div>
+<div class="item"><div class="rotulo">Combo</div><div class="valor combo" id="uiCombo">x1</div></div>
+<div class="item"><div class="rotulo">Acertos</div><div class="valor" id="uiAcertos">0</div></div>
+</div>
+<div class="timerBox">
+<div class="timerAgua" id="uiTimer"></div>
+<div class="timerPeixes">🐟🐟🐟</div>
+</div>
+<div class="card">
+<span class="categoria" id="uiCategoria"></span>
+<div class="pergunta" id="uiPergunta"></div>
+<div id="uiOpcoes"></div>
+<div class="feedback" id="uiFeedback"></div>
+<div class="centro">
+<button class="btn escondido" id="btnProxima" onclick="proximaPergunta()">Próxima ▶</button>
+</div>
+</div>
+</div>
+
+<!-- FIM -->
+<div class="card" id="telaFim">
+<div class="grande" id="fimEmoji">🏆🐟</div>
+<h2 id="fimTitulo"></h2>
+<p style="margin:8px 0" id="fimFrase"></p>
+
+<div class="relatorio">
+<h3>📊 Seu desempenho por tema</h3>
+<ul id="relTemas"></ul>
+<h3>✅ Pontos fortes</h3>
+<ul id="relAcertos"></ul>
+<h3>🧭 O que vale estudar</h3>
+<ul id="relMelhorar"></ul>
+<h3>⚖️ O que mais pesou na pontuação</h3>
+<ul id="relFatores"></ul>
+</div>
+
+<h3 style="color:var(--aqua);margin-top:16px">🏆 Ranking local</h3>
+<table id="tabelaRanking"><thead><tr><th>#</th><th>Nick</th><th>Pontos</th></tr></thead><tbody></tbody></table>
+
+<div class="linha-btns">
+<button class="btn" onclick="reiniciar()">Jogar de novo 🔁</button>
+<button class="btn sec" onclick="trocarNick()">Trocar nick</button>
+</div>
+</div>
+</div>
+
+<script>
+// Acesso direto fora do site? Redireciona para a página oficial do jogo.
+try{ if(window.top===window){ location.replace('https://manjubinhainvestidor.com.br/jogos/quiz-do-manjubinha/'); } }catch(e){}
+/*CORE-START*/
+// ===================== BANCO DE PERGUNTAS =====================
+// cat: FII | Ações | Tesouro | Conceitos
+const PERGUNTAS = [
+{cat:'FII', q:'Os dividendos de FIIs recebidos por pessoa física no Brasil são:', o:['Tributados em 15% de IR','Isentos de Imposto de Renda','Tributados em 27,5%','Tributados só acima de R$ 10 mil'], c:1,
+e:'Os rendimentos mensais de FIIs são isentos de IR pra pessoa física (respeitadas as regras, como o fundo ter mais de 50 cotistas). É uma das maiores vantagens de quem vive de renda com FIIs.'},
+{cat:'FII', q:'O que significa vacância em um fundo imobiliário?', o:['Queda no preço da cota','Imóveis do fundo sem inquilinos','Férias do gestor do fundo','Atraso no pagamento de dividendos'], c:1,
+e:'Vacância é a parte dos imóveis que está vazia, sem gerar aluguel. Quanto maior a vacância, menor tende a ser o dividendo distribuído.'},
+{cat:'FII', q:'Um FII com P/VP igual a 0,90 está sendo negociado:', o:['10% acima do valor patrimonial','10% abaixo do valor patrimonial','Exatamente no valor patrimonial','Com 90% de desconto'], c:1,
+e:'P/VP menor que 1 indica que a cota vale menos na bolsa do que o patrimônio do fundo por cota. Pode ser oportunidade, mas sempre vale investigar o motivo.'},
+{cat:'FII', q:'Por lei, os FIIs devem distribuir aos cotistas no mínimo:', o:['50% do resultado semestral','75% do resultado semestral','95% do resultado semestral','100% do resultado semestral'], c:2,
+e:'FIIs distribuem pelo menos 95% do resultado apurado no semestre. É por isso que eles são máquinas de renda mensal pro cotista.'},
+{cat:'FII', q:'Qual característica indica maior Perenidade em um FII?', o:['Ter um único imóvel bem localizado','Ter muitos imóveis e muitos inquilinos','Pagar o maior dividendo do mercado','Ter a cota mais barata da bolsa'], c:1,
+e:'Fundos com muitos imóveis e inquilinos diversificados sofrem menos quando um contrato acaba. Dividendo alto demais, aliás, pode ser sinal de risco, não de qualidade.'},
+{cat:'Ações', q:'O que é dividend yield (DY)?', o:['O lucro total da empresa no ano','Os dividendos pagos divididos pelo preço da ação','A valorização da ação em 12 meses','O valor patrimonial da empresa'], c:1,
+e:'DY = dividendos por ação ÷ preço da ação. Um DY de 6% significa que, mantido o patamar, você recebe 6% do valor investido por ano em proventos.'},
+{cat:'Ações', q:'No Brasil, os dividendos de ações recebidos por pessoa física são:', o:['Isentos de Imposto de Renda','Tributados em 15%','Tributados em 22,5%','Tributados na tabela progressiva'], c:0,
+e:'Dividendos de ações são isentos de IR pra pessoa física. Já os Juros sobre Capital Próprio (JCP) têm retenção de 15% na fonte. São coisas diferentes!'},
+{cat:'Ações', q:'O que é tag along?', o:['Taxa cobrada pela corretora','Direito de vender suas ações junto com o controlador, por preço mínimo garantido','Bônus anual pago em ações','Imposto sobre venda de ações'], c:1,
+e:'Tag along protege o pequeno acionista: se o controle da empresa for vendido, você tem direito de vender suas ações por pelo menos um percentual do preço pago ao controlador (100% é o ideal).'},
+{cat:'Ações', q:'Uma empresa perene, boa pra viver de renda, costuma ter:', o:['Lucros consistentes há muitos anos','A ação que mais subiu no mês','O maior número de notícias na mídia','O menor preço por ação da bolsa'], c:0,
+e:'Perenidade é histórico: lucros consistentes, dívida controlada e um negócio que sobrevive a crises. Preço baixo ou fama não pagam dividendos.'},
+{cat:'Ações', q:'Em uma crise, o preço das suas ações cai 20%, mas os dividendos continuam iguais. Sua renda passiva:', o:['Cai 20% também','Não muda','Sobe 20%','Fica suspensa'], c:1,
+e:'Preço não é renda! Os dividendos dependem do lucro da empresa, não da cotação do dia. Quem vive de renda foca no fluxo de proventos, não no sobe e desce da bolsa.'},
+{cat:'Tesouro', q:'O Tesouro Selic é indicado principalmente para:', o:['Apostas de curto prazo na bolsa','Reserva de emergência','Proteção contra inflação em 30 anos','Receber dividendos mensais'], c:1,
+e:'O Tesouro Selic rende perto de 100% da taxa básica, tem liquidez diária e baixíssima oscilação. É o lar perfeito da reserva de emergência.'},
+{cat:'Tesouro', q:'Qual título protege seu poder de compra da inflação no longo prazo?', o:['Tesouro Selic','Tesouro Prefixado','Tesouro IPCA+','Poupança'], c:2,
+e:'O Tesouro IPCA+ paga a inflação oficial (IPCA) mais uma taxa real, mas atenção: isso só é garantido se você levar até o vencimento. Antes do prazo, a marcação a mercado pode reduzir o valor do título e até gerar prejuízo na venda. Se o dinheiro pode ser resgatado antes, o ideal é o Tesouro Selic.'},
+{cat:'Tesouro', q:'Se você vender um Tesouro IPCA+ antes do vencimento, pode:', o:['Receber sempre exatamente o combinado','Ganhar ou perder, pela marcação a mercado','Perder todo o dinheiro investido','Pagar multa de 50%'], c:1,
+e:'Antes do vencimento, o título vale o preço de mercado do dia, que oscila com os juros. Levando até o vencimento, você recebe exatamente a taxa contratada.'},
+{cat:'Tesouro', q:'Quem garante os títulos do Tesouro Direto?', o:['O FGC, até R$ 250 mil','O banco onde você investe','O Tesouro Nacional (governo federal)','A B3'], c:2,
+e:'Títulos públicos são garantidos pelo próprio governo federal, considerado o menor risco de crédito do país. O FGC garante produtos de bancos, como CDB e poupança.'},
+{cat:'Conceitos', q:'"Viver de renda" significa, na prática:', o:['Ficar rico da noite pro dia','Ter renda passiva mensal maior ou igual aos seus gastos','Nunca mais gastar dinheiro','Ganhar na loteria e parar de trabalhar'], c:1,
+e:'A liberdade financeira chega quando seus investimentos geram, todo mês, o suficiente pra pagar sua vida. Trabalhar vira escolha, não obrigação.'},
+{cat:'Conceitos', q:'O poder dos juros compostos vem principalmente de:', o:['Investir muito dinheiro de uma vez','Reinvestir os rendimentos por bastante tempo','Trocar de investimento toda semana','Escolher só ativos que sobem'], c:1,
+e:'Juros compostos são juros sobre juros: os rendimentos reinvestidos também passam a render. Tempo e consistência valem mais que aportes gigantes tardios.'},
+{cat:'Conceitos', q:'Antes de investir em renda variável, o ideal é ter:', o:['Um carro quitado','Uma reserva de emergência','Um curso de day trade','Pelo menos R$ 100 mil'], c:1,
+e:'A reserva de emergência (3 a 12 meses de gastos em algo seguro e líquido) evita que você venda bons ativos na pior hora quando um imprevisto chegar.'},
+{cat:'Conceitos', q:'Diversificar a carteira serve principalmente para:', o:['Garantir lucro em qualquer cenário','Reduzir o impacto de um ativo ruim no total','Pagar menos imposto','Impressionar o gerente do banco'], c:1,
+e:'Diversificação não garante lucro, mas amortece: quando um ativo sofre, os outros seguram a carteira. É o famoso "não pôr todos os ovos na mesma cesta".'},
+{cat:'Conceitos', q:'Seus gastos são R$ 3.000/mês e sua carteira rende 0,75% ao mês em proventos. De quanto patrimônio você precisa pra viver de renda?', o:['R$ 100 mil','R$ 400 mil','R$ 4 milhões','R$ 40 mil'], c:1,
+e:'Conta rápida: 3.000 ÷ 0,0075 = R$ 400 mil. Essa é a matemática central do viver de renda: gastos mensais divididos pela taxa mensal de proventos.'},
+{cat:'Conceitos', q:'A inflação alta, com o tempo, faz sua meta de renda passiva:', o:['Diminuir','Continuar igual pra sempre','Aumentar, porque seus gastos sobem','Desaparecer'], c:2,
+e:'Se os preços sobem, você precisa de mais renda pra manter o mesmo padrão de vida. Por isso ativos que corrigem pela inflação são tão importantes na carteira.'},
+{cat:'FII', q:'Qual a diferença entre FII de tijolo e FII de papel?', o:['Tijolo investe em imóveis físicos; papel, em títulos de crédito imobiliário','Tijolo é mais arriscado que ação','Papel não paga dividendos','São o mesmo tipo de fundo'], c:0,
+e:'FIIs de tijolo têm imóveis reais (galpões, shoppings, lajes) e ganham com aluguel. FIIs de papel investem em CRIs e recebíveis, com renda ligada a juros e inflação.'},
+{cat:'FII', q:'Um FII híbrido é aquele que:', o:['Só investe fora do Brasil','Mistura imóveis físicos e títulos de crédito na carteira','Não pode pagar dividendos','É negociado fora da bolsa'], c:1,
+e:'O híbrido combina tijolo e papel no mesmo fundo. Isso dilui riscos específicos de cada estratégia, mas exige olhar os relatórios pra entender o peso de cada parte.'},
+{cat:'FII', q:'O que é o IFIX?', o:['O imposto dos FIIs','O índice dos FIIs mais negociados da B3','A taxa de administração média','O informe mensal obrigatório'], c:1,
+e:'O IFIX é o índice que acompanha os FIIs mais líquidos da B3. Serve de referência pra comparar se um fundo ou uma carteira está indo melhor ou pior que a média do mercado.'},
+{cat:'FII', q:'A taxa de administração de um FII é:', o:['Cobrada só quando o fundo dá lucro','Um custo anual sobre o patrimônio, descontado antes dos dividendos','Paga pelo inquilino do imóvel','Proibida pela CVM'], c:1,
+e:'A taxa de administração remunera a gestão e é descontada do resultado do fundo. Taxas muito altas comem parte da sua renda, vale comparar entre fundos parecidos.'},
+{cat:'FII', q:'Onde o cotista encontra a situação real de vacância e contratos de um FII?', o:['Nas redes sociais do fundo','No relatório gerencial mensal','No boleto do aluguel','Na nota de corretagem'], c:1,
+e:'O relatório gerencial mensal traz vacância, inadimplência, contratos e resultado. É a leitura mais importante pra quem acompanha FII de perto.'},
+{cat:'FII', q:'Os códigos de FIIs na B3 normalmente terminam em:', o:['3','4','11','33'], c:2,
+e:'FIIs são negociados com final 11, como MXRF11 e HGLG11. O final 11 também aparece em units de ações, então vale conferir o tipo do ativo antes de comprar.'},
+{cat:'FII', q:'O ganho de capital na venda de cotas de FII com lucro paga:', o:['Nada, é isento','15% de IR','20% de IR','27,5% de IR'], c:2,
+e:'Os dividendos mensais são isentos, mas vender cota com lucro paga 20% de IR sobre o ganho, sem faixa de isenção. A apuração e o DARF são responsabilidade do investidor.'},
+{cat:'FII', q:'Contratos atípicos de aluguel em FIIs se caracterizam por:', o:['Duração curta e revisão anual','Prazos longos e multas altas de rescisão','Não ter valor definido','Serem proibidos em galpões'], c:1,
+e:'Contratos atípicos costumam ter 10 anos ou mais e multas pesadas se o inquilino sair antes. Dão previsibilidade de renda, mas geralmente com menos ganho nas revisões.'},
+{cat:'FII', q:'Se um FII está com P/VP de 1,30, isso indica que:', o:['A cota é negociada 30% acima do valor patrimonial','O fundo dará 30% de dividendo','O fundo tem 30% de vacância','A cota vale 30% do patrimônio'], c:0,
+e:'P/VP acima de 1 significa ágio: o mercado paga mais que o patrimônio por cota. Pode refletir qualidade e confiança, mas reduz a margem de segurança de quem compra.'},
+{cat:'FII', q:'A vacância financeira de um FII mede:', o:['Quantos imóveis estão vazios','Quanto de receita potencial não está sendo recebida','O atraso na bolsa','A dívida do fundo'], c:1,
+e:'A vacância física conta área vazia; a financeira mede a receita que se deixa de receber. Um imóvel pequeno e caro vago pesa mais na financeira que na física.'},
+{cat:'FII', q:'Em uma emissão de novas cotas, o direito de preferência serve para:', o:['Garantir dividendo dobrado','Permitir ao cotista comprar novas cotas antes do público, sem ser diluído','Vender cotas sem imposto','Trocar de administrador'], c:1,
+e:'Na emissão, quem já é cotista pode subscrever novas cotas na proporção do que possui. Se não exercer nem vender o direito, sua participação no fundo é diluída.'},
+{cat:'FII', q:'FIIs de shoppings tendem a sofrer mais quando:', o:['O consumo das famílias cai','A SELIC cai','O dólar cai','A inflação fica na meta'], c:0,
+e:'A receita de shoppings depende das vendas dos lojistas. Em crise de consumo, aluguel variável e ocupação caem. Em contrapartida, capturam bem a retomada da economia.'},
+{cat:'FII', q:'Um FII de papel com carteira atrelada ao CDI tende a distribuir mais quando:', o:['A SELIC sobe','A SELIC cai','A bolsa sobe','O IPCA fica negativo'], c:0,
+e:'CRIs indexados ao CDI rendem mais com juros altos, e isso vai pro dividendo. Já os atrelados ao IPCA dependem da inflação do período. Por isso importa conhecer o indexador da carteira.'},
+{cat:'FII', q:'Qual destes é um risco típico de FIIs com poucos imóveis e um só inquilino?', o:['Excesso de diversificação','Risco de concentração: a saída do inquilino derruba a renda','Imunidade a crises','Liquidez alta demais'], c:1,
+e:'Os fundos chamados de monoativo ou monoinquilino dependem de um contrato. Se ele acaba, a renda pode ir a zero até realugar. Perenidade pede diversificação de imóveis e inquilinos.'},
+{cat:'FII', q:'A isenção de IR dos dividendos de FII para pessoa física exige, entre outras regras, que:', o:['O investidor tenha menos de 10% das cotas e o fundo tenha no mínimo 50 cotistas','O investidor seja aposentado','O fundo tenha menos de 10 cotistas','O fundo pague só semestralmente'], c:0,
+e:'A isenção vale para fundos negociados em bolsa com pelo menos 50 cotistas, desde que o investidor pessoa física tenha menos de 10% das cotas do fundo.'},
+{cat:'FII', q:'Gestão ativa em um FII significa que o gestor:', o:['Trabalha em horário comercial','Pode comprar e vender ativos buscando melhorar o resultado','Não cobra taxa','Segue um índice sem mexer na carteira'], c:1,
+e:'Na gestão ativa o gestor gira a carteira em busca de retorno. Na passiva, o fundo apenas mantém um conjunto definido de imóveis ou segue um índice de referência.'},
+{cat:'FII', q:'Fundos de fundos (FOFs) de FIIs são fundos que:', o:['Investem em cotas de outros FIIs','Só compram imóveis no exterior','Não podem ser negociados em bolsa','Pagam dividendos em imóveis'], c:0,
+e:'O FOF monta uma carteira de cotas de outros FIIs. Oferece diversificação em uma única cota, mas embute duas camadas de taxa: a do FOF e a dos fundos investidos.'},
+{cat:'FII', q:'A renda distribuída pelos FIIs vem principalmente de:', o:['Doações do governo','Aluguéis recebidos ou juros de títulos imobiliários','Venda de novas cotas','Rendimento da poupança'], c:1,
+e:'Tijolo distribui aluguel; papel distribui os juros e correções dos CRIs. Ganhos com venda de ativos também entram, mas são pontuais. Entenda de onde vem o dividendo antes de confiar nele.'},
+{cat:'FII', q:'Dividendo excepcionalmente alto em um mês pode indicar:', o:['Que o fundo sempre pagará esse valor','Evento não recorrente, como lucro na venda de um imóvel','Erro do banco','Que o fundo virou ação'], c:1,
+e:'Vendas de ativos e receitas pontuais inflam o dividendo de um mês. Olhar a média dos últimos 12 meses evita comprar pela renda errada e se decepcionar depois.'},
+{cat:'FII', q:'A liquidez diária de um FII importa porque:', o:['Aumenta o dividendo','Facilita comprar e vender sem grandes perdas no preço','Reduz o IR','Garante que a cota nunca cai'], c:1,
+e:'Liquidez é a facilidade de negociar. Em fundos pouco líquidos, vender rápido costuma exigir aceitar preço pior. No ranking Manjubinha ela vale em dobro justamente por proteger o pequeno investidor.'},
+{cat:'Ações', q:'No Brasil, tickers terminados em 3, como PETR3, indicam:', o:['Ações preferenciais','Ações ordinárias, com direito a voto','Fundos imobiliários','Títulos públicos'], c:1,
+e:'Final 3 é ação ordinária (ON), que dá direito a voto em assembleia. Final 4 é preferencial (PN), com prioridade nos dividendos. Units, com final 11, misturam as duas.'},
+{cat:'Ações', q:'O que são Juros sobre Capital Próprio (JCP)?', o:['Um tipo de provento com retenção de 15% de IR na fonte','Dividendos isentos','Taxa da corretora','Empréstimo do banco'], c:0,
+e:'JCP é outra forma de a empresa distribuir lucro. Diferente do dividendo, tem 15% de IR retido na fonte. No seu extrato, ele já chega líquido do imposto.'},
+{cat:'Ações', q:'Payout de uma empresa é:', o:['O total de dívidas','O percentual do lucro distribuído como proventos','O preço máximo da ação','O número de acionistas'], c:1,
+e:'Payout de 50% significa que metade do lucro vai para os acionistas. Payout muito alto pode limitar o crescimento; muito baixo pode indicar que a renda virá menor.'},
+{cat:'Ações', q:'Comprar uma ação na data ex-dividendo significa:', o:['Receber o dividendo anunciado','Não ter direito ao dividendo anunciado','Pagar imposto dobrado','Ganhar bonificação'], c:1,
+e:'Quem tem a ação até a data com recebe o provento. Na data ex, a ação passa a ser negociada sem esse direito, e o preço costuma abrir descontado no valor do dividendo.'},
+{cat:'Ações', q:'A venda de ações no swing trade é isenta de IR quando:', o:['O total vendido no mês fica até R$ 20 mil e há lucro','O lucro passa de R$ 100 mil','A ação é de banco','Nunca é isenta'], c:0,
+e:'Vendas de até R$ 20 mil no mês, fora do day trade, têm lucro isento de IR. Acima disso, paga-se 15% sobre o ganho. Day trade paga 20% sem faixa de isenção.'},
+{cat:'Ações', q:'Um desdobramento (split) de ações:', o:['Aumenta o valor total investido','Divide cada ação em várias, sem mudar o valor total','Reduz o lucro da empresa','Cancela dividendos'], c:1,
+e:'No split você passa a ter mais ações com preço proporcionalmente menor. O bolo é o mesmo, só cortado em mais fatias. Serve pra dar liquidez e facilitar o acesso ao papel.'},
+{cat:'Ações', q:'ROE mede:', o:['A dívida da empresa','O retorno da empresa sobre o patrimônio dos acionistas','O preço justo da ação','O tamanho do dividendo'], c:1,
+e:'ROE é o lucro dividido pelo patrimônio líquido. Mostra a eficiência do negócio em gerar retorno com o capital dos sócios. Consistência de ROE alto é marca de empresa de qualidade.'},
+{cat:'Ações', q:'O indicador P/L de uma ação representa:', o:['Preço dividido pelo lucro por ação','Patrimônio dividido pela liquidez','Passivo dividido pelo lucro','Preço dividido pela liquidez'], c:0,
+e:'O P/L indica quantos anos de lucro atual seriam necessários pra pagar o preço da ação. P/L baixo pode ser barganha ou armadilha: sempre investigue o motivo.'},
+{cat:'Ações', q:'Uma dividend trap (armadilha de dividendos) acontece quando:', o:['O yield parece alto porque o preço despencou por problemas reais','A empresa paga dividendo demais aos funcionários','O banco cobra taxa sobre proventos','O dividendo é pago em dobro'], c:0,
+e:'Yield = dividendo dividido pelo preço. Se o preço cai por deterioração do negócio, o yield passado parece ótimo, mas o dividendo futuro tende a encolher. Olhe a saúde do lucro, não só o yield.'},
+{cat:'Ações', q:'Setores como energia elétrica e saneamento são procurados por quem vive de renda porque:', o:['Têm receitas previsíveis e reguladas','Nunca caem na bolsa','São isentos de todos os impostos','Dobram de preço todo ano'], c:0,
+e:'Demanda estável e contratos regulados geram lucros previsíveis e dividendos consistentes. Não é garantia de retorno, mas dá mais visibilidade à renda futura.'},
+{cat:'Ações', q:'Bonificação em ações é quando a empresa:', o:['Distribui novas ações gratuitamente aos acionistas','Paga um jantar aos acionistas','Recompra ações do mercado','Emite dívida'], c:0,
+e:'Na bonificação a empresa incorpora reservas ao capital e entrega novas ações proporcionalmente a quem já é sócio. Seu número de ações cresce sem novo aporte.'},
+{cat:'Ações', q:'O free float de uma empresa é:', o:['O lucro livre de impostos','A parcela das ações em livre circulação no mercado','O caixa disponível','O valor da marca'], c:1,
+e:'Free float é o que não está nas mãos dos controladores e está disponível pra negociação. Free float maior costuma significar mais liquidez para o pequeno investidor.'},
+{cat:'Ações', q:'No mercado fracionário da B3 é possível:', o:['Comprar menos de 100 ações, até 1 unidade','Comprar só lotes de 1.000','Negociar apenas FIIs','Operar sem corretora'], c:0,
+e:'O lote padrão é de 100 ações, mas no fracionário dá pra comprar de 1 a 99. É a porta de entrada de quem começa com pouco dinheiro, sem precisar esperar juntar um lote.'},
+{cat:'Ações', q:'Recompra de ações pela própria empresa tende a:', o:['Diluir os acionistas','Aumentar o lucro por ação dos que permanecem','Reduzir o valor da empresa à metade','Suspender os dividendos pra sempre'], c:1,
+e:'Com menos ações em circulação, o mesmo lucro se divide por menos papéis. É uma forma indireta de devolver valor ao acionista, alternativa aos dividendos.'},
+{cat:'Ações', q:'Uma ação caiu 30% mas o lucro e os dividendos da empresa seguem crescendo. Para quem foca em renda, isso pode ser:', o:['Motivo para vender tudo no pânico','Oportunidade de comprar renda mais barata','Prova de que dividendos acabaram','Irrelevante, preço é tudo'], c:1,
+e:'Se os fundamentos seguem bons, preço menor significa comprar o mesmo fluxo de dividendos pagando menos. O yield da compra melhora. O perigo é quando o lucro cai junto.'},
+{cat:'Ações', q:'Diversificar entre setores diferentes na carteira de ações serve para:', o:['Garantir lucro em qualquer cenário','Reduzir o impacto de uma crise setorial na sua renda','Eliminar o IR','Aumentar o risco de propósito'], c:1,
+e:'Crises costumam bater diferente em cada setor. Bancos, energia, saneamento e consumo reagem a fatores distintos. Diversificar protege o fluxo de dividendos como um todo.'},
+{cat:'Ações', q:'O Ibovespa é:', o:['O principal índice de ações da bolsa brasileira','Um imposto sobre operações','O nome da corretora estatal','Um título do governo'], c:0,
+e:'O Ibovespa reúne as ações mais negociadas da B3 e é o termômetro mais citado do mercado brasileiro. Subir ou cair X pontos se refere a esse índice.'},
+{cat:'Ações', q:'Circuit breaker é o mecanismo que:', o:['Pausa o pregão após quedas muito fortes','Desliga a energia da bolsa','Garante lucro aos investidores','Cancela todos os negócios do dia'], c:0,
+e:'Com queda de 10% no Ibovespa, o pregão para por 30 minutos; com 15%, por 1 hora. A pausa serve pra esfriar o pânico e dar tempo de decisão aos investidores.'},
+{cat:'Ações', q:'Para viver de renda com ações, o mais importante é:', o:['Acertar o topo e o fundo do mercado','Empresas com lucros e dividendos consistentes ao longo dos anos','Trocar de carteira toda semana','Seguir dicas de influenciadores'], c:1,
+e:'Renda vem de lucro distribuído. Empresas perenes, lucrativas e boas pagadoras constroem o fluxo. Tentar adivinhar preços de curto prazo costuma custar caro.'},
+{cat:'Ações', q:'Uma unit, como BPAC11, é:', o:['Um pacote que reúne ações ON e PN em um único ativo','Um fundo imobiliário','Um título do Tesouro','Uma opção de compra'], c:0,
+e:'Units empacotam ações ordinárias e preferenciais da mesma empresa. Apesar do final 11, não confunda com FII: o tipo do ativo é diferente.'},
+{cat:'Tesouro', q:'Quando os juros de mercado sobem, o preço de um Tesouro Prefixado antigo:', o:['Sobe','Cai','Não muda','Vira zero'], c:1,
+e:'O prefixado promete uma taxa fixa. Se o mercado passa a exigir juros maiores, títulos antigos com taxa menor perdem valor na marcação a mercado. No vencimento, porém, paga o combinado.'},
+{cat:'Tesouro', q:'O Tesouro IPCA+ com juros semestrais difere do IPCA+ comum porque:', o:['Não tem inflação','Paga cupons de juros a cada 6 meses em vez de tudo no vencimento','É isento de IR','Vence todo mês'], c:1,
+e:'A versão com juros semestrais antecipa renda via cupons, útil pra quem já vive de renda. Em compensação, cada cupom paga IR e o efeito dos juros compostos é menor.'},
+{cat:'Tesouro', q:'O IR sobre os rendimentos do Tesouro Direto segue tabela regressiva que chega a:', o:['15% após 2 anos','Zero após 1 ano','25% pra sempre','5% após 10 anos'], c:0,
+e:'Começa em 22,5% até 180 dias e cai até 15% acima de 720 dias. Quanto mais tempo investido, menos imposto sobre o rendimento. Não há isenção total.'},
+{cat:'Tesouro', q:'A taxa de custódia da B3 no Tesouro Direto é:', o:['0,20% ao ano, com isenção para Tesouro Selic até R$ 10 mil','10% ao ano','Cobrada só na compra','Inexistente'], c:0,
+e:'A B3 cobra 0,20% ao ano sobre o valor investido. No Tesouro Selic há isenção sobre os primeiros R$ 10 mil. Corretoras sérias não cobram taxa adicional do Tesouro.'},
+{cat:'Tesouro', q:'Se você vender um título do Tesouro, o dinheiro cai na conta:', o:['Em até 1 dia útil','Em 30 dias','Somente no vencimento','Em 6 meses'], c:0,
+e:'O Tesouro Direto tem recompra diária: vendeu, o valor chega em D+1. Liquidez é um dos grandes pontos fortes dos títulos públicos.'},
+{cat:'Tesouro', q:'Resgates de renda fixa nos primeiros 30 dias podem ter, além do IR:', o:['IOF regressivo sobre o rendimento','Multa da CVM','Taxa de vacância','Perda do principal garantida'], c:0,
+e:'O IOF incide sobre o rendimento e diminui a cada dia, zerando no 30º. Por isso, mesmo na reserva de emergência, evite resgatar nos primeiros dias se puder.'},
+{cat:'Tesouro', q:'Come-cotas é uma antecipação semestral de IR que existe em:', o:['Fundos de renda fixa, mas não no Tesouro Direto','Todos os títulos públicos','Ações','Poupança'], c:0,
+e:'O come-cotas morde fundos de investimento a cada 6 meses. No Tesouro Direto o IR só é cobrado no resgate, cupom ou vencimento, o que ajuda os juros compostos.'},
+{cat:'Tesouro', q:'Guardar a reserva de emergência no Tesouro Prefixado longo é:', o:['Ideal, pois rende mais','Arriscado, pois a marcação a mercado pode gerar perda num resgate urgente','Obrigatório por lei','Isento de IR'], c:1,
+e:'Emergência pede estabilidade e liquidez: Tesouro Selic. Prefixados e IPCA+ longos oscilam bastante antes do vencimento, e a urgência pode te forçar a vender no prejuízo.'},
+{cat:'Tesouro', q:'Se os juros de mercado caem, quem tem Tesouro IPCA+ longo comprado antes:', o:['Vê o título se valorizar na marcação a mercado','Perde tudo','Não sofre efeito nenhum','Deixa de receber inflação'], c:0,
+e:'Marcação a mercado funciona nos dois sentidos: juros caindo valorizam títulos antigos com taxas maiores. Alguns investidores até vendem antecipado pra embolsar esse ganho.'},
+{cat:'Tesouro', q:'O valor mínimo para começar a investir no Tesouro Direto é:', o:['Cerca de R$ 30','R$ 10 mil','R$ 100 mil','1 salário mínimo'], c:0,
+e:'Dá pra comprar frações de título a partir de aproximadamente R$ 30. Acessibilidade é um dos motivos de o Tesouro ser a porta de entrada da renda fixa.'},
+{cat:'Tesouro', q:'No vencimento de um Tesouro IPCA+, o investidor recebe:', o:['IPCA do período mais a taxa real contratada, descontado o IR','Só o valor investido','O que o gestor decidir','Um novo título automaticamente'], c:0,
+e:'Levando até o fim, a promessa se cumpre: inflação mais juro real sobre o que você aplicou, com IR de 15% sobre o rendimento. A oscilação do caminho deixa de importar.'},
+{cat:'Tesouro', q:'Comparado à poupança, o Tesouro Selic historicamente:', o:['Rende mais na maioria dos cenários','Rende sempre menos','É mais arriscado que ação','Não permite resgate'], c:0,
+e:'A poupança rende 70% da Selic quando a taxa está acima de 8,5% ao ano, além da TR. O Tesouro Selic acompanha a taxa cheia; mesmo após IR, costuma superar a poupança.'},
+{cat:'Tesouro', q:'O risco de crédito do Tesouro Direto é considerado o menor do país porque:', o:['O emissor é o governo federal, que emite a própria moeda','Os bancos garantem tudo','A B3 devolve o dinheiro','Não existe risco nenhum em investimento'], c:0,
+e:'Títulos públicos federais são a referência de menor risco de calote no Brasil. Todo o resto do mercado se compara a eles. Risco zero, porém, não existe: há risco de mercado no caminho.'},
+{cat:'Tesouro', q:'Tesouro Prefixado faz mais sentido quando o investidor acredita que:', o:['Os juros vão cair abaixo da taxa contratada','A inflação vai explodir','A bolsa vai subir','O dólar vai dobrar'], c:0,
+e:'Travar uma taxa fixa é bom negócio se os juros futuros caírem. Se subirem, você fica preso a uma taxa pior, ou realiza perda vendendo antes. É uma aposta sobre o rumo dos juros.'},
+{cat:'Tesouro', q:'Uma escada de vencimentos (comprar títulos com prazos diferentes) serve para:', o:['Reduzir o risco de precisar vender tudo num momento ruim','Pagar mais imposto','Garantir o dobro de juros','Impressionar o gerente'], c:0,
+e:'Com vencimentos espalhados, sempre há dinheiro chegando perto da data em que você precisa, sem depender da marcação a mercado de um único título longo.'},
+{cat:'Tesouro', q:'Quem pretende viver de renda no longo prazo usa o Tesouro IPCA+ principalmente para:', o:['Especular no curto prazo','Proteger o poder de compra do patrimônio ao longo de décadas','Receber dividendos mensais isentos','Substituir a reserva de emergência'], c:1,
+e:'A missão do IPCA+ na carteira é garantir juro real: seu dinheiro cresce acima da inflação até o vencimento. Renda mensal isenta é papel dos FIIs; liquidez imediata, do Tesouro Selic.'},
+{cat:'Conceitos', q:'Taxa nominal de 10% ao ano com inflação de 6% resulta em ganho real de aproximadamente:', o:['16%','10%','4%','0%'], c:2,
+e:'O que importa é o ganho acima da inflação: cerca de 4% nesse caso (na conta exata, 3,77%). Render 10% com inflação de 12% é perder poder de compra, mesmo com saldo subindo.'},
+{cat:'Conceitos', q:'O CDI, referência de muitos investimentos, costuma andar:', o:['Colado na taxa SELIC','Colado no dólar','Colado no Ibovespa','Sem relação com nada'], c:0,
+e:'O CDI é a taxa dos empréstimos entre bancos e fica levemente abaixo da Selic. Quando dizem que algo rende 100% do CDI, é praticamente a Selic do período.'},
+{cat:'Conceitos', q:'Um investimento que promete 5% ao mês garantido e sem risco provavelmente é:', o:['Uma grande oportunidade','Fraude ou pirâmide financeira','Um título público novo','Um FII conservador'], c:1,
+e:'Retorno alto, garantido e sem risco não existe: nem o Tesouro promete isso. Promessas assim são a marca registrada de pirâmides. Desconfie sempre e proteja seu patrimônio.'},
+{cat:'Conceitos', q:'O FGC (Fundo Garantidor de Créditos) protege até R$ 250 mil por CPF e instituição em produtos como:', o:['CDB e poupança','Ações','FIIs','Tesouro Direto'], c:0,
+e:'O FGC cobre depósitos e títulos bancários como CDB, LCI e LCA. Ações e FIIs não têm garantia nenhuma, e o Tesouro tem a garantia do próprio governo, sem passar pelo FGC.'},
+{cat:'Conceitos', q:'Aportar todo mês, mesmo com o mercado caindo, gera o efeito de:', o:['Preço médio: comprar mais cotas quando está barato','Perda garantida','Imposto maior','Bloqueio da conta'], c:0,
+e:'Aportes regulares compram mais frações do ativo quando o preço cai e menos quando sobe. Isso suaviza o preço médio e tira da frente a missão impossível de acertar o momento certo.'},
+{cat:'Conceitos', q:'Patrimônio líquido de uma pessoa é:', o:['Tudo que ela possui menos as dívidas','O salário anual','O limite do cartão','O saldo da poupança'], c:0,
+e:'Patrimônio é o que sobraria vendendo tudo e quitando as dívidas. Aumentá-lo, e não só a renda, é o que constrói a liberdade financeira.'},
+{cat:'Conceitos', q:'Custo de oportunidade é:', o:['O que você deixa de ganhar ao escolher uma opção em vez de outra','A taxa da corretora','O valor da mensalidade do banco','Um imposto novo'], c:0,
+e:'Todo dinheiro parado ou mal alocado tem custo invisível: o rendimento que ele teria na melhor alternativa. Pensar assim melhora muito as decisões financeiras.'},
+{cat:'Conceitos', q:'Liquidez de um investimento significa:', o:['A rapidez e facilidade de transformá-lo em dinheiro sem grande perda','O quanto ele rende','O risco de calote','A taxa de administração'], c:0,
+e:'Imóvel físico tem liquidez baixa; Tesouro Selic, altíssima. Casar a liquidez do investimento com o prazo do seu objetivo evita vender mal na hora da necessidade.'},
+{cat:'Conceitos', q:'Volatilidade é:', o:['A intensidade com que o preço de um ativo oscila','Prejuízo definitivo','Um tipo de dividendo','O imposto da bolsa'], c:0,
+e:'Oscilação não é perda permanente: só vira prejuízo se você vender na baixa. Quem foca no fluxo de renda atravessa a volatilidade com muito mais tranquilidade.'},
+{cat:'Conceitos', q:'O efeito manada nos investimentos é:', o:['Comprar ou vender só porque todo mundo está fazendo isso','Investir em agronegócio','Seguir um índice','Diversificar demais'], c:0,
+e:'Comprar na euforia e vender no pânico é a receita clássica de perder dinheiro. Ter critérios próprios, como os 4 pilares, protege você da emoção coletiva.'},
+{cat:'Conceitos', q:'Manter dinheiro parado na conta corrente por anos faz o patrimônio:', o:['Crescer com segurança','Perder poder de compra pela inflação','Render CDI','Ficar isento de tudo'], c:1,
+e:'Sem rendimento, a inflação corrói silenciosamente o valor do dinheiro. Mesmo a reserva de emergência deve render, no mínimo, perto da Selic.'},
+{cat:'Conceitos', q:'A regra prática dos 3 a 12 meses se refere a:', o:['Prazo pra declarar IR','Tamanho da reserva de emergência em meses de gastos','Tempo mínimo de um CDB','Duração de um contrato de aluguel'], c:1,
+e:'A reserva deve cobrir de 3 a 12 meses do seu custo de vida, conforme a estabilidade da sua renda. Autônomos precisam de mais folga que concursados, por exemplo.'},
+{cat:'Conceitos', q:'Renda ativa e renda passiva se diferenciam porque:', o:['A ativa exige seu trabalho contínuo; a passiva vem dos seus ativos','A passiva é ilegal','A ativa não paga imposto','São a mesma coisa'], c:0,
+e:'Salário para quando você para. Dividendos, aluguéis e juros continuam pingando. Viver de renda é transferir o sustento da renda ativa para a passiva.'},
+{cat:'Conceitos', q:'Começar a investir aos 25 anos em vez de aos 40, com o mesmo aporte mensal, resulta em:', o:['Praticamente o mesmo patrimônio','Patrimônio muito maior, pelo tempo extra de juros compostos','Menos dinheiro, pois paga mais taxas','Diferença irrelevante'], c:1,
+e:'Nos juros compostos, tempo vale mais que valor. Os aportes da juventude são os que mais se multiplicam. A melhor hora de começar foi ontem; a segunda melhor é hoje.'},
+{cat:'Conceitos', q:'Investir em algo que você não entende é perigoso porque:', o:['Você não consegue avaliar os riscos nem sustentar a posição em crises','O banco proíbe','Rende menos por lei','O IR dobra'], c:0,
+e:'Sem entender o ativo, qualquer queda vira desespero e qualquer promessa vira tentação. Conhecimento é o que separa investir de apostar.'},
+{cat:'Conceitos', q:'O preço que você pagou por um ativo deveria influenciar a decisão de mantê-lo?', o:['Sim, nunca se vende no prejuízo','Não: o que importa é a qualidade e as perspectivas do ativo hoje','Sim, é o único critério','Só em ano de eleição'], c:1,
+e:'Apego ao preço de compra é o viés de ancoragem. Ativo ruim não melhora porque você pagou caro. Reavalie os fundamentos: às vezes realizar um prejuízo pequeno evita um grande.'},
+{cat:'Conceitos', q:'Alocação de ativos significa:', o:['Distribuir o patrimônio entre classes como renda fixa, FIIs e ações','Deixar tudo em um único ativo vencedor','Trocar de corretora','Comprar só na baixa'], c:0,
+e:'Estudos mostram que a divisão entre classes explica a maior parte do resultado de longo prazo de uma carteira. É decisão mais importante que escolher o ativo perfeito.'},
+{cat:'Conceitos', q:'Rebalancear a carteira periodicamente serve para:', o:['Voltar às proporções planejadas, vendendo o que subiu demais e comprando o que ficou pra trás','Gerar imposto à toa','Seguir manchetes','Zerar a renda fixa'], c:0,
+e:'Com o tempo, o que sobe muito passa a dominar a carteira e concentra risco. Rebalancear impõe disciplina: realiza ganhos e reforça o que está descontado.'},
+{cat:'Conceitos', q:'Day trade para iniciantes é desaconselhado porque:', o:['A maioria perde dinheiro de forma consistente nessa modalidade','É proibido pela B3','Não paga imposto','Exige diploma'], c:0,
+e:'Estudos com dados da própria B3 mostram que a imensa maioria dos day traders tem prejuízo no acumulado. Construir patrimônio com aportes e juros compostos é caminho bem mais provável.'},
+{cat:'Conceitos', q:'Se seus gastos são R$ 5.000/mês e sua carteira rende 0,8% ao mês em proventos, o patrimônio necessário pra viver de renda é:', o:['R$ 625 mil','R$ 400 mil','R$ 62 mil','R$ 5 milhões'], c:0,
+e:'A conta: 5.000 dividido por 0,008 = R$ 625 mil. Gastos mensais divididos pela taxa mensal de proventos. Reduzir gastos também aproxima a meta, não só aumentar aportes.'},
+{cat:'Conceitos', q:'Uma taxa de administração de 2% ao ano em um fundo, no longo prazo:', o:['É irrelevante','Come uma fatia enorme do resultado composto','Aumenta os rendimentos','É devolvida no resgate'], c:1,
+e:'Custos também compõem juros: 2% ao ano por 30 anos consome décadas de rendimento. Comparar taxas é das poucas coisas 100% sob seu controle.'},
+{cat:'Conceitos', q:'Diversificar também entre FIIs, ações e Tesouro (e não só dentro de uma classe) importa porque:', o:['Cada classe reage diferente a juros, inflação e crescimento','A CVM obriga','Aumenta o imposto de propósito','Deixa o extrato bonito'], c:0,
+e:'Juros altos favorecem renda fixa; queda de juros favorece FIIs e ações. Com as três classes, sempre há algo trabalhando a seu favor no ciclo econômico.'},
+{cat:'Conceitos', q:'Seguir uma metodologia com critérios claros, como os 4 pilares do Manjubinha, ajuda principalmente a:', o:['Decidir com método e menos emoção','Garantir retorno fixo','Nunca mais estudar','Eliminar todos os riscos'], c:0,
+e:'Critérios objetivos (perenidade, renda, valorização e liquidez) filtram modinhas e evitam decisões por impulso. Método não garante acerto, mas evita os erros mais caros.'},
+{cat:'Conceitos', q:'Inflação de 6% ao ano durante 12 anos faz os preços aproximadamente:', o:['Subirem 6%','Dobrarem','Caírem pela metade','Ficarem estáveis'], c:1,
+e:'A regra do 72 ajuda: 72 dividido pela taxa dá o tempo pra dobrar. Com 6%, preços dobram em cerca de 12 anos. Seu dinheiro precisa render acima disso pra valer mais de verdade.'},
+{cat:'Conceitos', q:'Ao receber R$ 10 mil inesperados, uma decisão financeiramente sólida é:', o:['Gastar tudo pra comemorar','Quitar dívidas caras, reforçar a reserva e investir o restante','Apostar em bilhete premiado','Deixar parado na conta corrente'], c:1,
+e:'A ordem que costuma render mais: eliminar dívidas de juros altos (o melhor investimento que existe), garantir a reserva e só então aportar nos ativos da sua estratégia.'},
+];
+
+// ===================== LÓGICA PURA (testável) =====================
+const CFG = { numPerguntas: 20, tempoSeg: 20, pontosBase: 100, bonusMaxTempo: 100, comboMax: 3 };
+
+function embaralhar(arr, rand){
+rand = rand || Math.random;
+const a = arr.slice();
+for(let i=a.length-1;i>0;i--){
+const j = Math.floor(rand()*(i+1));
+[a[i],a[j]]=[a[j],a[i]];
+}
+return a;
+}
+
+function novaPartida(rand){
+return {
+perguntas: embaralhar(PERGUNTAS, rand).slice(0, CFG.numPerguntas),
+idx: 0, pontos: 0, combo: 1, acertos: 0,
+maiorCombo: 1, pontosPorVelocidade: 0, pontosPorCombo: 0,
+porTema: {}, // cat -> {certas, total}
+fim: false,
+};
+}
+
+// responder: escolha = índice da opção ou -1 (tempo esgotado); tempoRestante em segundos
+function responder(p, escolha, tempoRestante){
+const q = p.perguntas[p.idx];
+if(!p.porTema[q.cat]) p.porTema[q.cat] = {certas:0, total:0};
+p.porTema[q.cat].total++;
+const acertou = (escolha === q.c);
+let ganho = 0;
+if(acertou){
+const bonus = Math.round(CFG.bonusMaxTempo * Math.max(tempoRestante,0) / CFG.tempoSeg);
+const base = CFG.pontosBase + bonus;
+ganho = base * p.combo;
+p.pontos += ganho;
+p.pontosPorVelocidade += bonus * p.combo;
+if(p.combo > 1) p.pontosPorCombo += base * (p.combo - 1);
+p.acertos++;
+p.porTema[q.cat].certas++;
+p.combo = Math.min(p.combo + 1, CFG.comboMax);
+if(p.combo > p.maiorCombo) p.maiorCombo = p.combo;
+} else {
+p.combo = 1;
+}
+p.idx++;
+if(p.idx >= p.perguntas.length) p.fim = true;
+return {acertou, ganho, correta: q.c, explicacao: q.e};
+}
+
+// ===================== RELATÓRIO =====================
+const DICAS_TEMA = {
+'FII': 'Dá uma olhada nos posts sobre fundos imobiliários no Manjubinha: vacância, P/VP e dividendos isentos não terão mais segredo. <a href="https://manjubinhainvestidor.com.br/fiis-tijolo-vs-papel/" target="_top" style="color:var(--aqua)">Ler o post &rarr;</a>',
+'Ações': 'Vale revisitar os conteúdos sobre ações de dividendos: dividend yield, tag along e empresas perenes. <a href="https://manjubinhainvestidor.com.br/fiis-vs-acoes/" target="_top" style="color:var(--aqua)">Ler o post &rarr;</a>',
+'Tesouro': 'Os posts sobre Tesouro Direto explicam Selic, IPCA+ e marcação a mercado de um jeito simples. <a href="https://manjubinhainvestidor.com.br/fiis-ou-tesouro-ipca-selic-alta-erro-timing/" target="_top" style="color:var(--aqua)">Ler o post &rarr;</a>',
+'Conceitos': 'Os fundamentos do viver de renda (juros compostos, reserva, diversificação) são a base de tudo: vale reler com carinho. <a href="https://manjubinhainvestidor.com.br/posts/" target="_top" style="color:var(--aqua)">Ver os posts &rarr;</a>',
+};
+
+function gerarRelatorio(p){
+const acertosL=[], melhorar=[], fatores=[], temas=[];
+const pct = Math.round(p.acertos / p.perguntas.length * 100);
+
+for(const [cat, d] of Object.entries(p.porTema)){
+const pctCat = Math.round(d.certas/d.total*100);
+temas.push({cat, certas:d.certas, total:d.total, pct:pctCat});
+if(pctCat === 100 && d.total >= 2){
+acertosL.push('Mandou perfeito em '+cat+' ('+d.certas+'/'+d.total+'). Esse tema já é seu!');
+} else if(pctCat < 50){
+melhorar.push(cat+': '+d.certas+' de '+d.total+'. '+DICAS_TEMA[cat]);
+}
+}
+temas.sort((a,b)=>b.pct-a.pct);
+
+if(p.maiorCombo >= CFG.comboMax){
+acertosL.push('Você atingiu o combo máximo (x'+CFG.comboMax+')! Sequências de acertos renderam '+p.pontosPorCombo+' pontos extras.');
+}
+if(p.pontosPorVelocidade > 0){
+fatores.push('⚡ Velocidade: responder rápido rendeu '+p.pontosPorVelocidade+' pontos de bônus. Mas cuidado: rapidez sem certeza derruba o combo!');
+}
+if(p.pontosPorCombo > 0){
+fatores.push('🔥 Combo: os multiplicadores somaram '+p.pontosPorCombo+' pontos. Manter a sequência vale mais que qualquer acerto isolado.');
+} else {
+fatores.push('🔥 Combo: você não chegou a multiplicar pontos. Acertos seguidos multiplicam tudo por até x'+CFG.comboMax+': é aí que o placar explode.');
+}
+const perdidas = p.perguntas.length - p.acertos;
+if(perdidas > 0){
+fatores.push('🎯 Precisão: '+perdidas+' erro(s) zeraram seu combo e custaram pontos indiretos. Cada explicação que você leu vale mais que os pontos!');
+}
+
+if(acertosL.length===0){
+acertosL.push('Você completou o desafio e saiu sabendo mais do que entrou. É exatamente assim que todo investidor começa.');
+}
+if(melhorar.length===0){
+melhorar.push('Nenhum tema ficou devendo. Que tal jogar de novo e caçar a pontuação perfeita?');
+}
+return {acertosL, melhorar, fatores, temas, pct};
+}
+
+function tituloFinal(pct){
+if(pct === 100) return {emoji:'👑🐟', titulo:'Tubarão dos investimentos!', frase:'Gabaritou! O cardume inteiro se curva.'};
+if(pct >= 80) return {emoji:'🏆🐟', titulo:'Manjubinha raiz!', frase:'Você domina o oceano do viver de renda.'};
+if(pct >= 60) return {emoji:'🌊🐟', titulo:'Nadando de braçada!', frase:'Bom desempenho! Alguns temas afiados e outros pra polir.'};
+if(pct >= 40) return {emoji:'🐠', titulo:'Peixinho em crescimento!', frase:'Você já sabe mais do que a maioria. Cada erro de hoje é acerto de amanhã.'};
+return {emoji:'🌅🐟', titulo:'Todo cardume começa com um peixinho!', frase:'O importante: agora você sabe as respostas. Jogue de novo e veja seu placar subir!'};
+}
+/*CORE-END*/
+
+// ===================== NICK / STORAGE =====================
+function getNick(){ try{ return localStorage.getItem('mj_nick') || ''; }catch(e){ return ''; } }
+function setNick(n){ try{ localStorage.setItem('mj_nick', n); }catch(e){} }
+function getRanking(){ try{ return JSON.parse(localStorage.getItem('mj_quiz_ranking')||'[]'); }catch(e){ return []; } }
+function salvarRanking(nick, pontos, n){
+try{
+const r = getRanking();
+r.push({nick, pontos, n, selo: (typeof mjTrilhaCompleta==='function'&&mjTrilhaCompleta())?1:0, data: new Date().toISOString().slice(0,10)});
+r.sort((a,b)=>b.pontos-a.pontos);
+localStorage.setItem('mj_quiz_ranking', JSON.stringify(r.slice(0,10)));
+}catch(e){}
+}
+
+// ===== Ponte com o site Manjubinha =====
+var MJ_TRILHA=null;
+window.addEventListener('message',function(ev){ if(ev.data&&ev.data.type==='mjTrilha') MJ_TRILHA=ev.data; });
+function mjTrilhaCompleta(){ return !!(MJ_TRILHA&&MJ_TRILHA.total>0&&MJ_TRILHA.lidos>=MJ_TRILHA.total); }
+function mjAvisar(evt){ try{ if(window.parent!==window) window.parent.postMessage({type:'mjJogo',jogo:'quiz',evento:evt,nick:getNick()},'*'); }catch(e){} }
+setInterval(function(){ try{ if(window.parent!==window) window.parent.postMessage({type:'mjAltura',jogo:'quiz',h:document.body.scrollHeight+30},'*'); }catch(e){} },800);
+
+// ===================== UI =====================
+let P=null, timerId=null, tempoRestante=0, respondeu=false;
+const $ = id => document.getElementById(id);
+
+function comecarJogo(){
+const n=$('inputNick').value.trim();
+if(!n){ $('inputNick').focus(); return; }
+setNick(n);
+CFG.numPerguntas=Math.min(+$('selNum').value||20, PERGUNTAS.length);
+try{ localStorage.setItem('mj_quiz_num', $('selNum').value); }catch(e){}
+iniciarPartida();
+}
+function iniciarPartida(){
+P=novaPartida();
+mjAvisar('start');
+$('telaNick').style.display='none';
+$('telaFim').style.display='none';
+$('telaQuiz').classList.remove('escondido');
+mostrarPergunta();
+}
+function escapa(t){ const d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+
+function mostrarPergunta(){
+respondeu=false;
+const q=P.perguntas[P.idx];
+$('uiNum').textContent=(P.idx+1)+'/'+P.perguntas.length;
+$('uiPontos').textContent=P.pontos;
+$('uiCombo').textContent='x'+P.combo;
+$('uiAcertos').textContent=P.acertos;
+$('uiCategoria').textContent=q.cat;
+$('uiPergunta').textContent=q.q;
+$('uiFeedback').className='feedback';
+$('uiFeedback').innerHTML='';
+$('btnProxima').classList.add('escondido');
+
+const box=$('uiOpcoes');
+box.innerHTML='';
+q.o.forEach((op,i)=>{
+const b=document.createElement('button');
+b.className='opcao';
+b.textContent=op;
+b.onclick=()=>escolher(i);
+box.appendChild(b);
+});
+
+tempoRestante=CFG.tempoSeg;
+atualizarTimer();
+clearInterval(timerId);
+timerId=setInterval(()=>{
+tempoRestante-=0.2;
+atualizarTimer();
+if(tempoRestante<=0){ clearInterval(timerId); escolher(-1); }
+},200);
+}
+
+function atualizarTimer(){
+const pct=Math.max(tempoRestante/CFG.tempoSeg*100,0);
+$('uiTimer').style.width=pct+'%';
+}
+
+function escolher(i){
+if(respondeu) return;
+respondeu=true;
+clearInterval(timerId);
+const r=responder(P, i, tempoRestante);
+
+const botoes=$('uiOpcoes').querySelectorAll('.opcao');
+botoes.forEach((b,idx)=>{
+b.disabled=true;
+if(idx===r.correta) b.classList.add('certa');
+if(idx===i && !r.acertou) b.classList.add('errada');
+});
+
+const fb=$('uiFeedback');
+if(r.acertou){
+fb.innerHTML='<span class="pts ganhou">+'+r.ganho+' pontos! 🎉</span><br><b>🐟 Manjubinha explica:</b> '+r.explicacao;
+} else if(i===-1){
+fb.innerHTML='<span class="pts zerou">⏰ Tempo esgotado! Combo zerado.</span><br><b>🐟 Manjubinha explica:</b> '+r.explicacao;
+} else {
+fb.innerHTML='<span class="pts zerou">Ops, não foi dessa vez. Combo zerado.</span><br><b>🐟 Manjubinha explica:</b> '+r.explicacao;
+}
+fb.classList.add('show');
+
+$('uiPontos').textContent=P.pontos;
+$('uiCombo').textContent='x'+P.combo;
+$('uiAcertos').textContent=P.acertos;
+$('btnProxima').textContent = P.fim ? 'Ver resultado 🏁' : 'Próxima ▶';
+$('btnProxima').classList.remove('escondido');
+$('btnProxima').focus();
+}
+
+function proximaPergunta(){
+if(P.fim){ mostrarFim(); return; }
+mostrarPergunta();
+}
+
+function mostrarFim(){
+mjAvisar('fim');
+const rel=gerarRelatorio(P);
+if(MJ_TRILHA && !mjTrilhaCompleta()){ rel.melhorar.push('🐟 '+escapa(getNick())+', continue a trilha <b>Comece por aqui</b> no site: <a href="https://manjubinhainvestidor.com.br/#mj-comece" target="_top" style="color:var(--aqua)">ir para o passo '+(MJ_TRILHA.lidos+1)+' &rarr;</a>'); }
+const t=tituloFinal(rel.pct);
+salvarRanking(getNick(), P.pontos, P.perguntas.length);
+
+$('telaQuiz').classList.add('escondido');
+$('telaFim').style.display='block';
+$('fimEmoji').textContent=t.emoji;
+$('fimTitulo').textContent=t.titulo;
+$('fimTitulo').style.color = rel.pct>=60 ? 'var(--alga)' : 'var(--moeda)';
+$('fimFrase').innerHTML=t.frase+'<br><b style="color:var(--moeda)">'+P.pontos+' pontos</b> | '+P.acertos+'/'+P.perguntas.length+' acertos | maior combo x'+P.maiorCombo;
+
+const ulT=$('relTemas'); ulT.innerHTML='';
+rel.temas.forEach(tm=>{
+const li=document.createElement('li');
+li.className='fator';
+li.innerHTML=escapa(tm.cat)+': '+tm.certas+'/'+tm.total+' ('+tm.pct+'%)<div class="barraTema"><div style="width:'+tm.pct+'%"></div></div>';
+ulT.appendChild(li);
+});
+preencherLista('relAcertos', rel.acertosL, 'ok');
+preencherLista('relMelhorar', rel.melhorar, 'melhorar');
+preencherLista('relFatores', rel.fatores, 'fator');
+
+const tb=$('tabelaRanking').querySelector('tbody');
+tb.innerHTML='';
+getRanking().forEach((r,i)=>{
+const tr=document.createElement('tr');
+tr.innerHTML='<td class="pos">'+(i+1)+'º</td><td>'+escapa(r.nick)+(r.selo?' 🎓':'')+'</td><td>'+r.pontos+(r.n?' <small style="opacity:.6">('+r.n+'p)</small>':'')+'</td>';
+tb.appendChild(tr);
+});
+}
+
+function preencherLista(id, itens, classe){
+const ul=$(id); ul.innerHTML='';
+itens.forEach(t=>{
+const li=document.createElement('li');
+li.className=classe;
+li.innerHTML=t;
+ul.appendChild(li);
+});
+}
+
+function reiniciar(){ iniciarPartida(); }
+function trocarNick(){
+$('telaFim').style.display='none';
+$('telaNick').style.display='block';
+$('inputNick').value=getNick();
+}
+window.addEventListener('DOMContentLoaded',()=>{
+const n=getNick();
+if(n) $('inputNick').value=n;
+try{ const q=localStorage.getItem('mj_quiz_num'); if(q) $('selNum').value=q; }catch(e){}
+});
+</script>
+</body>
+</html>
