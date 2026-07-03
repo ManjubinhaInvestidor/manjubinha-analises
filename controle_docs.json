@@ -6,7 +6,7 @@
     "descricao": "Oferta Pública"
   },
   "MXRF11": {
-    "ultima": "2026-06-27"
+    "ultima": "2026-07-03"
   },
   "KNCR11_22956": {
     "status": "ok",
@@ -24,7 +24,7 @@
     "descricao": "Outros Comunicados Não Considerados Fatos Relevantes - Comunicado ao Mercado"
   },
   "VALE3": {
-    "ultima": "2026-06-27"
+    "ultima": "2026-07-03"
   },
   "HGLG11_23342": {
     "status": "ok",
@@ -518,5 +518,17 @@
   },
   "IRBR3": {
     "ultima": "2026-07-03"
+  },
+  "MXRF11_23812": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/mxrf11-maxi-renda-fatos-relevantes-07-2026/",
+    "data": "2026-07-03",
+    "descricao": "Fatos Relevantes"
+  },
+  "VALE3_45324": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vale3-vale-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-03",
+    "descricao": "Comunicado ao Mercado"
   }
 }
