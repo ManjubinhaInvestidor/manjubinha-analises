@@ -33,7 +33,7 @@ Adicione os 3 secrets abaixo:
 
 | Nome | Valor | Como obter |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | `sk-ant-...` | [console.anthropic.com](https://console.anthropic.com) → API Keys |
+| `GEMINI_API_KEY` | chave da API Gemini | [aistudio.google.com](https://aistudio.google.com) → API Keys |
 | `WP_USER` | seu usuário WP | Seu login do WordPress.com |
 | `WP_APP_PASS` | senha de app WP | WordPress.com → Perfil → Segurança → Senhas de aplicativo |
 
@@ -77,6 +77,6 @@ Para atualizar manualmente, edite o `ranking.json` diretamente no GitHub.
 |---|---|
 | GitHub Actions | Gratuito |
 | APIs B3/CVM | Gratuito |
-| Claude Sonnet (~40 análises/mês) | ~R$ 12/mês |
+| Gemini 2.5 Flash (~40 análises/mês) | ~R$ 12/mês |
 | WordPress.com Personal | Já pago |
 | **Total extra** | **~R$ 12/mês** |
