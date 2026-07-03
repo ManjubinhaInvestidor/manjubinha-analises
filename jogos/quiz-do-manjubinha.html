@@ -138,6 +138,18 @@ h1 svg path{fill:#7cc0b8!important}h1 svg path:nth-of-type(2){fill:var(--moeda)!
 .relatorio .fator,.barraTema{background:rgba(255,255,255,.04)!important}
 input,select,textarea{font-family:'Inter',sans-serif!important}
 .combo{color:var(--moeda)!important}
+
+.timerBox{height:auto!important;background:none!important;border:none!important;overflow:visible!important;display:flex;justify-content:center;align-items:center;margin-bottom:12px!important}
+.timerPeixes{display:none!important}
+.placar .item{position:relative}
+.floatMsg{position:absolute;left:50%;top:-2px;transform:translateX(-50%);font-size:12px;font-weight:600;white-space:nowrap;pointer-events:none;animation:qrise 1.2s ease-out forwards;z-index:6}
+@keyframes qrise{0%{opacity:0;transform:translate(-50%,4px)}15%{opacity:1}100%{opacity:0;transform:translate(-50%,-24px)}}
+.comboPulse{animation:qpulse .6s ease;box-shadow:0 0 0 2px rgba(105,173,166,.45)}
+@keyframes qpulse{0%{transform:scale(1)}35%{transform:scale(1.16)}100%{transform:scale(1)}}
+.comboLost{animation:qshake .5s ease}
+@keyframes qshake{0%,100%{transform:translateX(0)}20%{transform:translateX(-4px)}40%{transform:translateX(4px)}60%{transform:translateX(-3px)}80%{transform:translateX(3px)}}
+.timerBox.deadFlash{animation:qdead .55s ease}
+@keyframes qdead{0%{filter:none}30%{filter:drop-shadow(0 0 7px rgba(224,138,123,.85))}100%{filter:none}}
 </style>
 </head>
 <body>
@@ -156,7 +168,7 @@ input,select,textarea{font-family:'Inter',sans-serif!important}
 <option>10</option><option selected>20</option><option>30</option><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option><option>90</option><option>100</option>
 </select>
 <br>
-<button class="btn" onclick="comecarJogo()">Começar 🌊</button>
+<button class="btn" onclick="comecarJogo()">Começar</button>
 <div class="feedback show" style="text-align:left;margin-top:14px">
 <b>🐟 Como funciona:</b> cada acerto vale 100 pontos + bônus de velocidade. Acertos seguidos aumentam o combo (x2, x3), que multiplica tudo. Errou ou o tempo acabou? O combo volta pro início, mas você aprende a resposta certa na hora!
 </div>
@@ -171,7 +183,7 @@ input,select,textarea{font-family:'Inter',sans-serif!important}
 <div class="item"><div class="rotulo">Acertos</div><div class="valor" id="uiAcertos">0</div></div>
 </div>
 <div class="timerBox">
-<div class="timerAgua" id="uiTimer"></div>
+<svg id="aqTank" viewBox="0 0 160 160" width="118" height="118" aria-hidden="true"><defs><clipPath id="aqclip"><rect x="26" y="24" width="108" height="112" rx="14"/></clipPath></defs><rect x="26" y="24" width="108" height="112" rx="14" fill="#0c1a20"/><g clip-path="url(#aqclip)"><rect id="aqWater" x="26" y="24" width="108" height="112" fill="#69ada6" opacity="0.42"/><rect id="aqWaterLine" x="26" y="24" width="108" height="3" fill="#8fd0c7" opacity="0.7"/></g><g id="aqFish" transform="translate(80,86)"><path d="M-30 0 l-16 -12 v24 z" fill="#c9a86b"/><circle cx="0" cy="0" r="30" fill="#7cc0b8"/><circle cx="0" cy="0" r="30" fill="none" stroke="#5a9a92" stroke-width="1.5"/><g id="aqEyesAlive"><circle cx="-11" cy="-6" r="6" fill="#fff"/><circle cx="-11" cy="-6" r="2.6" fill="#0b1119"/><circle cx="11" cy="-6" r="6" fill="#fff"/><circle cx="11" cy="-6" r="2.6" fill="#0b1119"/><path d="M-9 12 q9 8 18 0" fill="none" stroke="#0b1119" stroke-width="2.4" stroke-linecap="round"/></g><g id="aqEyesDead" style="display:none"><path d="M-16 -11 l10 10 M-6 -11 l-10 10" stroke="#0b1119" stroke-width="2.6" stroke-linecap="round"/><path d="M6 -11 l10 10 M16 -11 l-10 10" stroke="#0b1119" stroke-width="2.6" stroke-linecap="round"/><path d="M-9 14 q9 -8 18 0" fill="none" stroke="#0b1119" stroke-width="2.4" stroke-linecap="round"/></g></g><rect x="26" y="24" width="108" height="112" rx="14" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="2"/></svg><div id="aqSecs" style="font-variant-numeric:tabular-nums;font-weight:600;font-size:15px;margin-left:12px">20s</div>
 <div class="timerPeixes">🐟🐟🐟</div>
 </div>
 <div class="card">
@@ -452,10 +464,10 @@ const q = p.perguntas[p.idx];
 if(!p.porTema[q.cat]) p.porTema[q.cat] = {certas:0, total:0};
 p.porTema[q.cat].total++;
 const acertou = (escolha === q.c);
-let ganho = 0;
+let ganho = 0; var mult=p.combo, base0=0;
 if(acertou){
 const bonus = Math.round(CFG.bonusMaxTempo * Math.max(tempoRestante,0) / CFG.tempoSeg);
-const base = CFG.pontosBase + bonus;
+const base = CFG.pontosBase + bonus; base0=base;
 ganho = base * p.combo;
 p.pontos += ganho;
 p.pontosPorVelocidade += bonus * p.combo;
@@ -469,7 +481,7 @@ p.combo = 1;
 }
 p.idx++;
 if(p.idx >= p.perguntas.length) p.fim = true;
-return {acertou, ganho, correta: q.c, explicacao: q.e};
+return {acertou, ganho, correta:q.c, explicacao:q.e, mult:mult, base:base0};
 }
 
 // ===================== RELATÓRIO =====================
@@ -594,7 +606,7 @@ b.onclick=()=>escolher(i);
 box.appendChild(b);
 });
 
-tempoRestante=CFG.tempoSeg;
+tempoRestante=CFG.tempoSeg; vivoPeixe();
 atualizarTimer();
 clearInterval(timerId);
 timerId=setInterval(()=>{
@@ -605,10 +617,22 @@ if(tempoRestante<=0){ clearInterval(timerId); escolher(-1); }
 }
 
 function atualizarTimer(){
-const pct=Math.max(tempoRestante/CFG.tempoSeg*100,0);
-$('uiTimer').style.width=pct+'%';
+var lvl=Math.max(tempoRestante/CFG.tempoSeg,0);
+var TOP=24,H=112,top=TOP+(1-lvl)*H;
+var w=document.getElementById('aqWater'),wl=document.getElementById('aqWaterLine'),s=document.getElementById('aqSecs');
+if(w){w.setAttribute('y',top);w.setAttribute('height',(TOP+H-top));}
+if(wl){wl.setAttribute('y',top);}
+var low=lvl<0.28;
+if(w)w.setAttribute('fill',low?'#c9a86b':'#69ada6');
+if(wl)wl.setAttribute('fill',low?'#e6c98a':'#8fd0c7');
+if(s){s.textContent=Math.ceil(Math.max(tempoRestante,0))+'s';s.style.color=low?'#e6c98a':'#e8edf1';}
+if(lvl<=0)matarPeixe();
 }
+function vivoPeixe(){var a=document.getElementById('aqEyesAlive'),d=document.getElementById('aqEyesDead'),f=document.getElementById('aqFish');if(a)a.style.display='';if(d)d.style.display='none';if(f)f.setAttribute('transform','translate(80,86)');}
+function matarPeixe(){var a=document.getElementById('aqEyesAlive'),d=document.getElementById('aqEyesDead'),f=document.getElementById('aqFish'),box=document.querySelector('.timerBox');if(a)a.style.display='none';if(d)d.style.display='';if(f)f.setAttribute('transform','translate(80,90) rotate(8)');if(box){box.classList.remove('deadFlash');void box.offsetWidth;box.classList.add('deadFlash');}}
 
+function qPulse(el,cls){if(!el)return;el.classList.remove(cls);void el.offsetWidth;el.classList.add(cls);setTimeout(function(){el.classList.remove(cls);},700);}
+function qFloat(el,txt,cor){if(!el)return;var s=document.createElement('span');s.className='floatMsg';s.textContent=txt;s.style.color=cor;el.appendChild(s);setTimeout(function(){s.remove();},1200);}
 function escolher(i){
 if(respondeu) return;
 respondeu=true;
@@ -624,7 +648,7 @@ if(idx===i && !r.acertou) b.classList.add('errada');
 
 const fb=$('uiFeedback');
 if(r.acertou){
-fb.innerHTML='<span class="pts ganhou">+'+r.ganho+' pontos! 🎉</span><br><b>🐟 Manjubinha explica:</b> '+r.explicacao;
+fb.innerHTML='<span class="pts ganhou">+'+r.ganho+' pontos'+(r.mult>1?' ('+r.base+'x'+r.mult+')':'')+'! 🎉</span><br><b>🐟 Manjubinha explica:</b> '+r.explicacao;
 } else if(i===-1){
 fb.innerHTML='<span class="pts zerou">⏰ Tempo esgotado! Combo zerado.</span><br><b>🐟 Manjubinha explica:</b> '+r.explicacao;
 } else {
@@ -635,7 +659,7 @@ fb.classList.add('show');
 $('uiPontos').textContent=P.pontos;
 $('uiCombo').textContent='x'+P.combo;
 $('uiAcertos').textContent=P.acertos;
-$('btnProxima').textContent = P.fim ? 'Ver resultado 🏁' : 'Próxima ▶';
+(function(){var ct=$('uiCombo').closest('.item'),pt=$('uiPontos').closest('.item');if(r.acertou){qPulse(ct,'comboPulse');qFloat(pt,'+'+r.ganho,'#5fbf8b');if(P.combo>r.mult)qFloat(ct,'Combo x'+P.combo,'#c9a86b');}else{qPulse(ct,'comboLost');qFloat(ct,'Combo perdido','#e08a7b');}})(); $('btnProxima').textContent = P.fim ? 'Ver resultado 🏁' : 'Próxima ▶';
 $('btnProxima').classList.remove('escondido');
 $('btnProxima').focus();
 }
