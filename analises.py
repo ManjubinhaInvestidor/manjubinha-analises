@@ -65,13 +65,13 @@ Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE est
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
 
-<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">⚠️ Pontos de Atencao</h3><!-- /wp:heading -->
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">⚠️ Pontos de Atenção</h3><!-- /wp:heading -->
 <!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">👁️ Deve Ser Acompanhado</h3><!-- /wp:heading -->
 <!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">✅ Boa Noticia</h3><!-- /wp:heading -->
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">✅ Boa Notícia</h3><!-- /wp:heading -->
 <!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
@@ -83,10 +83,22 @@ Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE est
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">📌 Merece Aporte?</h3><!-- /wp:heading -->
 <!-- wp:paragraph --><p><strong>💰 Foco em Renda: RESULTADO</strong><br>Explicacao curta.</p><!-- /wp:paragraph -->
-<!-- wp:paragraph --><p><strong>📈 Foco em Valorizacao: RESULTADO</strong><br>Explicacao curta.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p><strong>📈 Foco em Valorização: RESULTADO</strong><br>Explicacao curta.</p><!-- /wp:paragraph -->
 <!-- wp:quote --><blockquote class="wp-block-quote"><!-- wp:paragraph --><p>Conclusao em 2 frases.</p><!-- /wp:paragraph --></blockquote><!-- /wp:quote -->
 
-Regras: linguagem simples, maximo 600 palavras, numeros reais, sem markdown extra."""
+<!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
+
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">🐟 O que isso significa pra você</h3><!-- /wp:heading -->
+<!-- wp:paragraph --><p>ESCREVA 2 a 3 frases no tom do Manjubinha (um peixinho iniciante que aprende junto), explicando de forma pratica o que esta analise significa para o pequeno investidor. Nao e recomendacao de compra ou venda.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">❓ Perguntas rápidas</h3><!-- /wp:heading -->
+<!-- wp:paragraph --><p><strong>Pergunta real e comum sobre este FII?</strong><br>Resposta curta e direta.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p><strong>Segunda pergunta real sobre este FII?</strong><br>Resposta curta e direta.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">🔗 Leia também</h3><!-- /wp:heading -->
+<!-- wp:list --><ul class="wp-block-list"><li><a href="https://manjubinhainvestidor.com.br/fiis-tijolo-vs-papel/">FIIs de Tijolo vs FIIs de Papel: qual a diferença</a></li><li><a href="https://manjubinhainvestidor.com.br/fiis-vs-acoes/">FIIs vs Ações: renda, riscos e como analisar</a></li></ul><!-- /wp:list -->
+
+Regras: linguagem simples e acolhedora para iniciantes. Use acentuacao e ortografia corretas do portugues (ç, ã, õ, é, í, ó, ê). Ao citar qualquer sigla ou termo tecnico (por exemplo DY, P/VP, CRI, vacancia, carencia de juros, waiver, EBITDA, tag along) pela PRIMEIRA vez, explique em poucas palavras entre parenteses, pois o publico e iniciante. Mantenha os links da secao Leia tambem exatamente como estao no modelo. Maximo 850 palavras. Numeros reais, nunca invente dados. Sem markdown extra."""
 
 PROMPT_ACAO = """Voce e analista do site Manjubinha Investidor. Pesquise informacoes recentes da empresa {ticker} ({nome}) com base no documento: {descricao_doc} de {data_doc} (link: {url_doc}).
 Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE esta estrutura:
@@ -111,13 +123,13 @@ Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE est
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
 
-<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">⚠️ Pontos de Atencao</h3><!-- /wp:heading -->
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">⚠️ Pontos de Atenção</h3><!-- /wp:heading -->
 <!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">👁️ Deve Ser Acompanhado</h3><!-- /wp:heading -->
 <!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
 
-<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">✅ Boa Noticia</h3><!-- /wp:heading -->
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">✅ Boa Notícia</h3><!-- /wp:heading -->
 <!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
@@ -129,10 +141,22 @@ Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE est
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">📌 Merece Aporte?</h3><!-- /wp:heading -->
 <!-- wp:paragraph --><p><strong>💰 Foco em Renda: RESULTADO</strong><br>Explicacao curta.</p><!-- /wp:paragraph -->
-<!-- wp:paragraph --><p><strong>📈 Foco em Valorizacao: RESULTADO</strong><br>Explicacao curta.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p><strong>📈 Foco em Valorização: RESULTADO</strong><br>Explicacao curta.</p><!-- /wp:paragraph -->
 <!-- wp:quote --><blockquote class="wp-block-quote"><!-- wp:paragraph --><p>Conclusao em 2 frases.</p><!-- /wp:paragraph --></blockquote><!-- /wp:quote -->
 
-Regras: linguagem simples, maximo 600 palavras, numeros reais, sem markdown extra."""
+<!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
+
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">🐟 O que isso significa pra você</h3><!-- /wp:heading -->
+<!-- wp:paragraph --><p>ESCREVA 2 a 3 frases no tom do Manjubinha (um peixinho iniciante que aprende junto), explicando de forma pratica o que esta analise significa para o pequeno investidor. Nao e recomendacao de compra ou venda.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">❓ Perguntas rápidas</h3><!-- /wp:heading -->
+<!-- wp:paragraph --><p><strong>Pergunta real e comum sobre esta empresa?</strong><br>Resposta curta e direta.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p><strong>Segunda pergunta real sobre esta empresa?</strong><br>Resposta curta e direta.</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">🔗 Leia também</h3><!-- /wp:heading -->
+<!-- wp:list --><ul class="wp-block-list"><li><a href="https://manjubinhainvestidor.com.br/fiis-vs-acoes/">FIIs vs Ações: renda, riscos e como analisar</a></li><li><a href="https://manjubinhainvestidor.com.br/pontos-da-bolsa-indices/">O que são os pontos da bolsa e os índices</a></li></ul><!-- /wp:list -->
+
+Regras: linguagem simples e acolhedora para iniciantes. Use acentuacao e ortografia corretas do portugues (ç, ã, õ, é, í, ó, ê). Ao citar qualquer sigla ou termo tecnico (por exemplo DY, P/VP, CRI, vacancia, carencia de juros, waiver, EBITDA, tag along) pela PRIMEIRA vez, explique em poucas palavras entre parenteses, pois o publico e iniciante. Mantenha os links da secao Leia tambem exatamente como estao no modelo. Maximo 850 palavras. Numeros reais, nunca invente dados. Sem markdown extra."""
 
 def carregar(path, default):
     p = Path(path)
