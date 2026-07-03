@@ -4,7 +4,7 @@ Automação de análises de FIIs e Ações para o site [Manjubinha Investidor](h
 
 ## Como funciona
 
-- **2x por semana** (terça e sexta, 08h BRT) o script roda automaticamente
+- **A cada 6 horas, de segunda a sexta** (00h, 06h, 12h e 18h BRT) o script roda automaticamente
 - Busca documentos novos nos sites de RI dos 60 ativos monitorados
 - Analisa cada documento com a API do Claude (Sonnet)
 - Publica o post no WordPress.com no padrão estabelecido
