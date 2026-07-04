@@ -116,7 +116,7 @@ Regras:
 - Linguagem simples e acolhedora para iniciantes. Use acentuacao e ortografia corretas do portugues (ç, ã, õ, é, í, ó, ê).
 - Na secao "O que o documento diz": use os 3 bullets para o conteudo REAL do documento. Se o documento nao trouxer informacao relevante para o cotista, diga isso com transparencia em 1 bullet (ex.: "comunicado operacional, sem impacto para o cotista") e NUNCA invente conteudo.
 - Na secao "Merece Aporte?", substitua a palavra SELO por EXATAMENTE um destes tres selos coloridos, conforme sua conclusao:
-  COMPRAR -> <span style="background:#23c55e;color:#0a1118;padding:2px 12px;border-radius:12px;font-weight:700">COMPRAR</span>
+  BOA OPÇÃO -> <span style="background:#23c55e;color:#0a1118;padding:2px 12px;border-radius:12px;font-weight:700">BOA OPÇÃO</span>
   ACOMPANHAR -> <span style="background:#f6c453;color:#0a1118;padding:2px 12px;border-radius:12px;font-weight:700">ACOMPANHAR</span>
   EVITAR -> <span style="background:#525252;color:#fff;padding:2px 12px;border-radius:12px;font-weight:700">EVITAR</span>
 - Na tabela de Indicadores, a coluna Leitura deve ser ✅ ou ⚠️ seguido de 2 a 4 palavras.
@@ -198,7 +198,7 @@ Regras:
 - Linguagem simples e acolhedora para iniciantes. Use acentuacao e ortografia corretas do portugues (ç, ã, õ, é, í, ó, ê).
 - Na secao "O que o documento diz": use os 3 bullets para o conteudo REAL do documento. Se o documento nao trouxer informacao relevante para o investidor, diga isso com transparencia em 1 bullet (ex.: "comunicado operacional, sem impacto para o acionista") e NUNCA invente conteudo.
 - Na secao "Merece Aporte?", substitua a palavra SELO por EXATAMENTE um destes tres selos coloridos, conforme sua conclusao:
-  COMPRAR -> <span style="background:#23c55e;color:#0a1118;padding:2px 12px;border-radius:12px;font-weight:700">COMPRAR</span>
+  BOA OPÇÃO -> <span style="background:#23c55e;color:#0a1118;padding:2px 12px;border-radius:12px;font-weight:700">BOA OPÇÃO</span>
   ACOMPANHAR -> <span style="background:#f6c453;color:#0a1118;padding:2px 12px;border-radius:12px;font-weight:700">ACOMPANHAR</span>
   EVITAR -> <span style="background:#525252;color:#fff;padding:2px 12px;border-radius:12px;font-weight:700">EVITAR</span>
 - Na tabela de Indicadores, a coluna Leitura deve ser ✅ ou ⚠️ seguido de 2 a 4 palavras.
