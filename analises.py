@@ -38,27 +38,41 @@ WP_HEADERS = {"Authorization": f"Basic {_cred}"}
 
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
 
+CONFIG     = Path("config.json")
 CONTROLE   = Path("controle_docs.json")
 POR_RODADA = 2  # 2 FIIs + 2 Acoes = 4 por rodada
 
 INV10_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; Manjubinha/1.0)"}
 
-PROMPT_FII = """Voce e analista do site Manjubinha Investidor. Pesquise informacoes recentes do FII {ticker} ({nome}) com base no documento: {descricao_doc} de {data_doc} (link: {url_doc}).
+PROMPT_FII = """Voce e analista do site Manjubinha Investidor. Pesquise informacoes recentes do FII {ticker} ({nome}) com base no documento: {descricao_doc}{data_sufixo} (link: {url_doc}).
+
+IMPORTANTE - FOCO DO POST:
+O DOCUMENTO e o protagonista deste post. As secoes Pontos de Atencao, Deve Ser Acompanhado, Boa Noticia e Mudou fundamento devem PARTIR do que o documento traz e so entao conectar com o contexto do FII. A secao "O que esse fundo faz" e apenas uma introducao curta de no maximo 2-3 frases. Nao escreva um post sobre o FII em geral: escreva um post sobre ESTE documento.
+
 Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE esta estrutura:
 
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":4} --><h4 class="wp-block-heading"><mark style="background-color:rgba(0,0,0,0);color:#ff6900" class="has-inline-color">{descricao_doc} - {data_doc}</mark></h4><!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px"}}} --><p style="font-size:14px">Publicado em: {data_doc} - <a href="{url_doc}" target="_blank" rel="noreferrer noopener">Documento oficial ({gestora})</a></p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px"}}} --><p style="font-size:14px">Tipo: {tipo} - Gestora: {gestora}</p><!-- /wp:paragraph --></div><!-- /wp:group -->
+<!-- wp:html -->
+<div style="background:linear-gradient(145deg,#171717,#262626);border-radius:14px;padding:20px;display:flex;gap:16px;align-items:center">
+<div>{logo_html}</div>
+<div style="color:#e5e5e5">
+<h4 style="margin:0 0 8px 0"><mark style="background-color:rgba(0,0,0,0);color:#f6c453" class="has-inline-color">{descricao_doc}{data_titulo}</mark></h4>
+<p style="font-size:14px;margin:0 0 4px 0;color:#e5e5e5">{publicado_em}<a href="{url_doc}" target="_blank" rel="noreferrer noopener" style="color:#f6c453">Documento oficial ({gestora})</a></p>
+<p style="font-size:14px;margin:0;color:#e5e5e5">Tipo: {tipo} - Gestora: {gestora}</p>
+</div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">📄 O que o documento diz</h3><!-- /wp:heading -->
+<!-- wp:paragraph --><p>1 frase explicando o que E esse tipo de documento e por que ele e publicado (ex.: o que e um regimento interno, um comunicado ao mercado, um relatorio gerencial).</p><!-- /wp:paragraph -->
+<!-- wp:list --><ul class="wp-block-list"><li>Ponto REAL do conteudo do documento.</li><li>Segundo ponto REAL do documento.</li><li>Terceiro ponto REAL do documento.</li></ul><!-- /wp:list -->
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">💬 O que esse fundo faz?</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>Introducao curta de no maximo 2-3 frases, com dados reais.</p><!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">📊 Indicadores Principais</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p><strong>DY mensal: X%</strong> - explicacao curta.</p><!-- /wp:paragraph -->
-<!-- wp:paragraph --><p><strong>P/VP: X,XX</strong> - explicacao curta.</p><!-- /wp:paragraph -->
+<!-- wp:table --><figure class="wp-block-table"><table><thead><tr><th>Indicador</th><th>Valor</th><th>Leitura</th></tr></thead><tbody><tr><td>DY mensal</td><td>X%</td><td>✅ ou ⚠️ + 2-4 palavras</td></tr><tr><td>P/VP</td><td>X,XX</td><td>✅ ou ⚠️ + 2-4 palavras</td></tr></tbody></table></figure><!-- /wp:table -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">💰 DY Real?</h3><!-- /wp:heading -->
 <!-- wp:paragraph --><p>Analise se o DY esta dentro do padrao. Se fundo de papel: Fundos de papel nao devem ser comprados com P/VP acima de 1,0.</p><!-- /wp:paragraph -->
@@ -66,24 +80,24 @@ Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE est
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">⚠️ Pontos de Atenção</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>Partindo do que o DOCUMENTO traz, com dados reais.</p><!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">👁️ Deve Ser Acompanhado</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>Partindo do que o DOCUMENTO traz, com dados reais.</p><!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">✅ Boa Notícia</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>Partindo do que o DOCUMENTO traz, com dados reais.</p><!-- /wp:paragraph -->
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">🔄 Mudou fundamento?</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p>Sim ou Nao com explicacao direta.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>Sim ou Nao com explicacao direta, partindo do documento.</p><!-- /wp:paragraph -->
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">📌 Merece Aporte?</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p><strong>💰 Foco em Renda: RESULTADO</strong><br>Explicacao curta.</p><!-- /wp:paragraph -->
-<!-- wp:paragraph --><p><strong>📈 Foco em Valorização: RESULTADO</strong><br>Explicacao curta.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p><strong>💰 Foco em Renda:</strong> SELO<br>Explicacao curta.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p><strong>📈 Foco em Valorização:</strong> SELO<br>Explicacao curta.</p><!-- /wp:paragraph -->
 <!-- wp:quote --><blockquote class="wp-block-quote"><!-- wp:paragraph --><p>Conclusao em 2 frases.</p><!-- /wp:paragraph --></blockquote><!-- /wp:quote -->
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
@@ -98,25 +112,49 @@ Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE est
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">🔗 Leia também</h3><!-- /wp:heading -->
 <!-- wp:list --><ul class="wp-block-list"><li><a href="https://manjubinhainvestidor.com.br/fiis-tijolo-vs-papel/">FIIs de Tijolo vs FIIs de Papel: qual a diferença</a></li><li><a href="https://manjubinhainvestidor.com.br/fiis-vs-acoes/">FIIs vs Ações: renda, riscos e como analisar</a></li></ul><!-- /wp:list -->
 
-Regras: linguagem simples e acolhedora para iniciantes. Use acentuacao e ortografia corretas do portugues (ç, ã, õ, é, í, ó, ê). Ao citar qualquer sigla ou termo tecnico (por exemplo DY, P/VP, CRI, vacancia, carencia de juros, waiver, EBITDA, tag along) pela PRIMEIRA vez, explique em poucas palavras entre parenteses, pois o publico e iniciante. Mantenha os links da secao Leia tambem exatamente como estao no modelo. Maximo 850 palavras. Numeros reais, nunca invente dados. Sem markdown extra."""
+Regras:
+- Linguagem simples e acolhedora para iniciantes. Use acentuacao e ortografia corretas do portugues (ç, ã, õ, é, í, ó, ê).
+- Na secao "O que o documento diz": use os 3 bullets para o conteudo REAL do documento. Se o documento nao trouxer informacao relevante para o cotista, diga isso com transparencia em 1 bullet (ex.: "comunicado operacional, sem impacto para o cotista") e NUNCA invente conteudo.
+- Na secao "Merece Aporte?", substitua a palavra SELO por EXATAMENTE um destes tres selos coloridos, conforme sua conclusao:
+  COMPRAR -> <span style="background:#23c55e;color:#0a1118;padding:2px 12px;border-radius:12px;font-weight:700">COMPRAR</span>
+  ACOMPANHAR -> <span style="background:#f6c453;color:#0a1118;padding:2px 12px;border-radius:12px;font-weight:700">ACOMPANHAR</span>
+  EVITAR -> <span style="background:#525252;color:#fff;padding:2px 12px;border-radius:12px;font-weight:700">EVITAR</span>
+- Na tabela de Indicadores, a coluna Leitura deve ser ✅ ou ⚠️ seguido de 2 a 4 palavras.
+- Cada numero importante deve ganhar uma frase curta "isso importa porque..." conectando o dado ao bolso do investidor.
+- NUNCA imprima "Data nao disponivel"; se faltar alguma data, simplesmente omita a mencao.
+- TODO termo tecnico usado no post (DY, P/VP, CRI, vacancia, carencia de juros, waiver, TTM, alavancagem, tag along, etc.) deve ser explicado entre parenteses na PRIMEIRA vez em que aparecer no texto. Explique apenas os termos que voce realmente usa; nao explique termos que nao aparecem.
+- Mantenha os links da secao Leia tambem exatamente como estao no modelo.
+- Maximo 950 palavras. Numeros reais, nunca invente dados. Sem markdown extra."""
 
-PROMPT_ACAO = """Voce e analista do site Manjubinha Investidor. Pesquise informacoes recentes da empresa {ticker} ({nome}) com base no documento: {descricao_doc} de {data_doc} (link: {url_doc}).
+PROMPT_ACAO = """Voce e analista do site Manjubinha Investidor. Pesquise informacoes recentes da empresa {ticker} ({nome}) com base no documento: {descricao_doc}{data_sufixo} (link: {url_doc}).
+
+IMPORTANTE - FOCO DO POST:
+O DOCUMENTO e o protagonista deste post. As secoes Pontos de Atencao, Deve Ser Acompanhado, Boa Noticia e Mudou fundamento devem PARTIR do que o documento traz e so entao conectar com o contexto da empresa. A secao "O que essa empresa faz" e apenas uma introducao curta de no maximo 2-3 frases. Nao escreva um post sobre a empresa em geral: escreva um post sobre ESTE documento.
+
 Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE esta estrutura:
 
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:heading {"level":4} --><h4 class="wp-block-heading"><mark style="background-color:rgba(0,0,0,0);color:#ff6900" class="has-inline-color">{descricao_doc} - {data_doc}</mark></h4><!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px"}}} --><p style="font-size:14px">Publicado em: {data_doc} - <a href="{url_doc}" target="_blank" rel="noreferrer noopener">Documento oficial ({nome})</a></p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"style":{"typography":{"fontSize":"14px"}}} --><p style="font-size:14px">Setor: {setor} - Empresa: {nome}</p><!-- /wp:paragraph --></div><!-- /wp:group -->
+<!-- wp:html -->
+<div style="background:linear-gradient(145deg,#171717,#262626);border-radius:14px;padding:20px;display:flex;gap:16px;align-items:center">
+<div>{logo_html}</div>
+<div style="color:#e5e5e5">
+<h4 style="margin:0 0 8px 0"><mark style="background-color:rgba(0,0,0,0);color:#f6c453" class="has-inline-color">{descricao_doc}{data_titulo}</mark></h4>
+<p style="font-size:14px;margin:0 0 4px 0;color:#e5e5e5">{publicado_em}<a href="{url_doc}" target="_blank" rel="noreferrer noopener" style="color:#f6c453">Documento oficial ({nome})</a></p>
+<p style="font-size:14px;margin:0;color:#e5e5e5">Setor: {setor} - Empresa: {nome}</p>
+</div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:heading {"level":3} --><h3 class="wp-block-heading">📄 O que o documento diz</h3><!-- /wp:heading -->
+<!-- wp:paragraph --><p>1 frase explicando o que E esse tipo de documento e por que ele e publicado (ex.: o que e um resultado trimestral, um comunicado ao mercado, um fato relevante).</p><!-- /wp:paragraph -->
+<!-- wp:list --><ul class="wp-block-list"><li>Ponto REAL do conteudo do documento.</li><li>Segundo ponto REAL do documento.</li><li>Terceiro ponto REAL do documento.</li></ul><!-- /wp:list -->
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">💬 O que essa empresa faz?</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>Introducao curta de no maximo 2-3 frases, com dados reais.</p><!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">📊 Indicadores Principais</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p><strong>Receita: R$ X bi</strong> - explicacao curta.</p><!-- /wp:paragraph -->
-<!-- wp:paragraph --><p><strong>Lucro: R$ X bi</strong> - explicacao curta.</p><!-- /wp:paragraph -->
-<!-- wp:paragraph --><p><strong>DY anual: X%</strong> - explicacao curta.</p><!-- /wp:paragraph -->
+<!-- wp:table --><figure class="wp-block-table"><table><thead><tr><th>Indicador</th><th>Valor</th><th>Leitura</th></tr></thead><tbody><tr><td>Receita</td><td>R$ X bi</td><td>✅ ou ⚠️ + 2-4 palavras</td></tr><tr><td>Lucro</td><td>R$ X bi</td><td>✅ ou ⚠️ + 2-4 palavras</td></tr><tr><td>DY anual</td><td>X%</td><td>✅ ou ⚠️ + 2-4 palavras</td></tr></tbody></table></figure><!-- /wp:table -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">💰 DY Real?</h3><!-- /wp:heading -->
 <!-- wp:paragraph --><p>DY dentro do padrao historico ou inflado por extraordinarios?</p><!-- /wp:paragraph -->
@@ -124,24 +162,24 @@ Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE est
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">⚠️ Pontos de Atenção</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>Partindo do que o DOCUMENTO traz, com dados reais.</p><!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">👁️ Deve Ser Acompanhado</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>Partindo do que o DOCUMENTO traz, com dados reais.</p><!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">✅ Boa Notícia</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p>ESCREVA com dados reais</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>Partindo do que o DOCUMENTO traz, com dados reais.</p><!-- /wp:paragraph -->
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">🔄 Mudou fundamento?</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p>Sim ou Nao com explicacao direta.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>Sim ou Nao com explicacao direta, partindo do documento.</p><!-- /wp:paragraph -->
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
 
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">📌 Merece Aporte?</h3><!-- /wp:heading -->
-<!-- wp:paragraph --><p><strong>💰 Foco em Renda: RESULTADO</strong><br>Explicacao curta.</p><!-- /wp:paragraph -->
-<!-- wp:paragraph --><p><strong>📈 Foco em Valorização: RESULTADO</strong><br>Explicacao curta.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p><strong>💰 Foco em Renda:</strong> SELO<br>Explicacao curta.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p><strong>📈 Foco em Valorização:</strong> SELO<br>Explicacao curta.</p><!-- /wp:paragraph -->
 <!-- wp:quote --><blockquote class="wp-block-quote"><!-- wp:paragraph --><p>Conclusao em 2 frases.</p><!-- /wp:paragraph --></blockquote><!-- /wp:quote -->
 
 <!-- wp:separator --><hr class="wp-block-separator has-alpha-channel-opacity"/><!-- /wp:separator -->
@@ -156,7 +194,19 @@ Escreva uma analise completa em HTML puro para WordPress seguindo EXATAMENTE est
 <!-- wp:heading {"level":3} --><h3 class="wp-block-heading">🔗 Leia também</h3><!-- /wp:heading -->
 <!-- wp:list --><ul class="wp-block-list"><li><a href="https://manjubinhainvestidor.com.br/fiis-vs-acoes/">FIIs vs Ações: renda, riscos e como analisar</a></li><li><a href="https://manjubinhainvestidor.com.br/pontos-da-bolsa-indices/">O que são os pontos da bolsa e os índices</a></li></ul><!-- /wp:list -->
 
-Regras: linguagem simples e acolhedora para iniciantes. Use acentuacao e ortografia corretas do portugues (ç, ã, õ, é, í, ó, ê). Ao citar qualquer sigla ou termo tecnico (por exemplo DY, P/VP, CRI, vacancia, carencia de juros, waiver, EBITDA, tag along) pela PRIMEIRA vez, explique em poucas palavras entre parenteses, pois o publico e iniciante. Mantenha os links da secao Leia tambem exatamente como estao no modelo. Maximo 850 palavras. Numeros reais, nunca invente dados. Sem markdown extra."""
+Regras:
+- Linguagem simples e acolhedora para iniciantes. Use acentuacao e ortografia corretas do portugues (ç, ã, õ, é, í, ó, ê).
+- Na secao "O que o documento diz": use os 3 bullets para o conteudo REAL do documento. Se o documento nao trouxer informacao relevante para o investidor, diga isso com transparencia em 1 bullet (ex.: "comunicado operacional, sem impacto para o acionista") e NUNCA invente conteudo.
+- Na secao "Merece Aporte?", substitua a palavra SELO por EXATAMENTE um destes tres selos coloridos, conforme sua conclusao:
+  COMPRAR -> <span style="background:#23c55e;color:#0a1118;padding:2px 12px;border-radius:12px;font-weight:700">COMPRAR</span>
+  ACOMPANHAR -> <span style="background:#f6c453;color:#0a1118;padding:2px 12px;border-radius:12px;font-weight:700">ACOMPANHAR</span>
+  EVITAR -> <span style="background:#525252;color:#fff;padding:2px 12px;border-radius:12px;font-weight:700">EVITAR</span>
+- Na tabela de Indicadores, a coluna Leitura deve ser ✅ ou ⚠️ seguido de 2 a 4 palavras.
+- Cada numero importante deve ganhar uma frase curta "isso importa porque..." conectando o dado ao bolso do investidor.
+- NUNCA imprima "Data nao disponivel"; se faltar alguma data, simplesmente omita a mencao.
+- TODO termo tecnico usado no post (DY, P/VP, EBITDA, TTM, alavancagem, tag along, guidance, payout, etc.) deve ser explicado entre parenteses na PRIMEIRA vez em que aparecer no texto. Explique apenas os termos que voce realmente usa; nao explique termos que nao aparecem.
+- Mantenha os links da secao Leia tambem exatamente como estao no modelo.
+- Maximo 950 palavras. Numeros reais, nunca invente dados. Sem markdown extra."""
 
 def carregar(path, default):
     p = Path(path)
@@ -169,7 +219,8 @@ def buscar_ultimo_doc(ticker, inv10_tipo):
     """
     Raspa o Investidor10 e retorna o documento mais recente do ativo.
     inv10_tipo: "fiis" ou "acoes"
-    Retorna: {"id": str, "descricao": str, "data": str, "url_doc": str} ou None
+    Retorna: {"id": str, "descricao": str, "data": str, "url_doc": str, "soup": BeautifulSoup} ou None
+    O 'soup' e reaproveitado por garantir_logo para nao raspar a pagina duas vezes.
     """
     url = f"https://investidor10.com.br/{inv10_tipo}/{ticker.lower()}/"
     try:
@@ -198,9 +249,93 @@ def buscar_ultimo_doc(ticker, inv10_tipo):
                     descricao = descricao.split(" - ")[-1].strip()[:100]
             if span:
                 data = span.get_text(strip=True)
-        return {"id": doc_id, "descricao": descricao, "data": data, "url_doc": href}
+        return {"id": doc_id, "descricao": descricao, "data": data, "url_doc": href, "soup": soup}
     except Exception as e:
         print(f"  Erro scraping {ticker}: {e}")
+        return None
+
+def _raspar_url_logo(soup):
+    """
+    Encontra a URL do logo real do ativo na pagina do Investidor10.
+    O logo do cabecalho fica no container com id "sub-header-logo-md" (fallback
+    "sub-header-logo"); a primeira <img> da pagina e do dropdown de navegacao e
+    pode ser de outro ativo, entao NAO deve ser usada.
+    Investidor10 serve o logo por-ativo em /storage/companies/<hash>.jpg (ou /storage/fiis/).
+    FIIs sem logo caem num placeholder generico (building.svg) - nesses casos
+    retornamos None e o post sai sem logo (nunca inventamos imagem).
+    """
+    if soup is None:
+        return None
+    header = soup.find(id="sub-header-logo-md") or soup.find(id="sub-header-logo")
+    img = header.find("img") if header else None
+    src = (img.get("src") or img.get("data-src") or "") if img else ""
+    if re.search(r"/storage/(companies|fiis|stocks)/", src):
+        if src.startswith("/"):
+            src = "https://investidor10.com.br" + src
+        return src
+    return None
+
+def _extensao_de(url, content_type=""):
+    m = re.search(r"\.(jpg|jpeg|png|webp|gif|svg)(?:\?|$)", url.lower())
+    if m:
+        return m.group(1).replace("jpeg", "jpg")
+    ct = (content_type or "").lower()
+    if "png" in ct: return "png"
+    if "webp" in ct: return "webp"
+    if "svg" in ct: return "svg"
+    if "gif" in ct: return "gif"
+    return "jpg"
+
+_MIME = {"jpg": "image/jpeg", "png": "image/png", "webp": "image/webp", "gif": "image/gif", "svg": "image/svg+xml"}
+
+def garantir_logo(ativo, soup):
+    """
+    Garante que o ativo tenha um 'logo_wp' (URL do logo ja hospedado na Media Library do WP).
+    Se ja tiver, retorna direto. Senao: raspa a URL no Investidor10, baixa a imagem e faz
+    upload via /wp-json/wp/v2/media, salva o source_url em ativo['logo_wp'] e persiste config.json.
+    NUNCA lanca excecao: qualquer falha retorna None (post sai sem logo).
+    """
+    try:
+        if ativo.get("logo_wp"):
+            return ativo["logo_wp"]
+        ticker = ativo["ticker"]
+        url_logo = _raspar_url_logo(soup)
+        if not url_logo:
+            print(f"  {ticker}: sem logo real no Investidor10 (segue sem logo)")
+            return None
+        img_resp = requests.get(url_logo, timeout=15, headers=INV10_HEADERS)
+        if img_resp.status_code != 200 or not img_resp.content:
+            print(f"  {ticker}: falha ao baixar logo ({img_resp.status_code})")
+            return None
+        ext = _extensao_de(url_logo, img_resp.headers.get("Content-Type", ""))
+        mime = _MIME.get(ext, "image/jpeg")
+        filename = f"logo-{ticker.lower()}.{ext}"
+        up_headers = dict(WP_HEADERS)
+        up_headers["Content-Disposition"] = f'attachment; filename="{filename}"'
+        up_headers["Content-Type"] = mime
+        up = requests.post(f"{WP_API}/media", headers=up_headers, data=img_resp.content, timeout=30)
+        if up.status_code not in (200, 201):
+            print(f"  {ticker}: upload logo falhou {up.status_code}: {up.text[:200]}")
+            return None
+        source_url = up.json().get("source_url")
+        if not source_url:
+            print(f"  {ticker}: media sem source_url")
+            return None
+        ativo["logo_wp"] = source_url
+        # persiste no config.json para nao re-raspar/re-upar na proxima rodada
+        try:
+            config = carregar(CONFIG, {})
+            for grupo in ("fiis", "acoes"):
+                for a in config.get(grupo, []):
+                    if a.get("ticker") == ticker:
+                        a["logo_wp"] = source_url
+            salvar(CONFIG, config)
+        except Exception as e:
+            print(f"  {ticker}: nao persistiu logo_wp no config.json: {e}")
+        print(f"  {ticker}: logo salvo em {source_url}")
+        return source_url
+    except Exception as e:
+        print(f"  Logo falhou (segue sem logo): {e}")
         return None
 
 def limpar_markdown(texto):
@@ -230,7 +365,7 @@ def gemini(prompt):
     for tentativa in range(3):
         r = requests.post(GEMINI_URL, json=payload, timeout=90)
         if r.status_code == 200:
-            resp_json = r.json()            
+            resp_json = r.json()
             candidates = resp_json.get("candidates", [])
             if not candidates: return False
             content_resp = candidates[0].get("content", {})
@@ -394,15 +529,34 @@ def processar_ativo(ativo, controle, tipo):
         salvar(CONTROLE, controle)
         return
 
+    # 2b. Garante logo do ativo (reaproveita o soup ja raspado; falha nunca derruba a analise)
+    logo_url = garantir_logo(ativo, doc.get("soup"))
+    if logo_url:
+        logo_html = (f'<img src="{logo_url}" alt="Logo {t}" '
+                     'style="width:48px;height:48px;border-radius:10px;object-fit:contain;'
+                     'background:#fff;padding:4px"/>')
+    else:
+        logo_html = ""
+
+    # 2c. Tratamento de data vazia: se nao houver data, os fragmentos que a exibiriam somem
+    data_doc   = doc["data"] or ""
+    data_sufixo = f" de {data_doc}" if data_doc else ""      # "... documento: X de 01/01"
+    data_titulo = f" - {data_doc}" if data_doc else ""        # "<mark>X - 01/01</mark>"
+    publicado_em = f"Publicado em: {data_doc} - " if data_doc else ""  # box: "Publicado em: ... - "
+
     # 3. Monta prompt com info do documento
-    print(f"  Novo doc: {doc['descricao']} ({doc['data']})")
+    print(f"  Novo doc: {doc['descricao']} ({data_doc or 'sem data'})")
     if tipo == "fii":
         prompt = PROMPT_FII \
             .replace("{ticker}", t) \
             .replace("{nome}", ativo["nome"]) \
             .replace("{descricao_doc}", doc["descricao"]) \
-            .replace("{data_doc}", doc["data"]) \
+            .replace("{data_doc}", data_doc) \
+            .replace("{data_sufixo}", data_sufixo) \
+            .replace("{data_titulo}", data_titulo) \
+            .replace("{publicado_em}", publicado_em) \
             .replace("{url_doc}", doc["url_doc"]) \
+            .replace("{logo_html}", logo_html) \
             .replace("{ri_url}", ativo.get("ri_url", "")) \
             .replace("{tipo}", ativo.get("tipo", "")) \
             .replace("{gestora}", ativo.get("gestora", ""))
@@ -412,8 +566,12 @@ def processar_ativo(ativo, controle, tipo):
             .replace("{ticker}", t) \
             .replace("{nome}", ativo["nome"]) \
             .replace("{descricao_doc}", doc["descricao"]) \
-            .replace("{data_doc}", doc["data"]) \
+            .replace("{data_doc}", data_doc) \
+            .replace("{data_sufixo}", data_sufixo) \
+            .replace("{data_titulo}", data_titulo) \
+            .replace("{publicado_em}", publicado_em) \
             .replace("{url_doc}", doc["url_doc"]) \
+            .replace("{logo_html}", logo_html) \
             .replace("{ri_url}", ativo.get("ri_url", "")) \
             .replace("{setor}", ativo.get("setor", ""))
         categorias = get_acao_categories(ativo)
@@ -450,7 +608,7 @@ def processar_ativo(ativo, controle, tipo):
 def main():
     print(f"Manjubinha - {datetime.today().strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"Rodada: 2 FIIs + 2 Acoes")
-    config   = carregar("config.json", {})
+    config   = carregar(CONFIG, {})
     controle = carregar(CONTROLE, {})
     fiis_rodada  = proximos(config.get("fiis",  []), controle, POR_RODADA)
     acoes_rodada = proximos(config.get("acoes", []), controle, POR_RODADA)
