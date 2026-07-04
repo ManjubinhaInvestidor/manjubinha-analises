@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-06-28"
+    "ultima": "2026-07-04"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-06-28"
+    "ultima": "2026-07-04"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -541,6 +541,18 @@
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-comunicado-ao-mercado-07-2026/",
     "data": "2026-07-03",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "HGLG11_23883": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-cshg-logistica-outros-comunicados-07-2026/",
+    "data": "2026-07-04",
+    "descricao": "Outros Comunicados"
+  },
+  "ITUB4_45220": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-04",
     "descricao": "Comunicado ao Mercado"
   }
 }
