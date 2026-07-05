@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caça ao Dividendo | Manjubinha Investidor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1119;--card:#141b23;--card2:#0f151c;--line:rgba(255,255,255,.08);--ink:#e8edf1;--mut:rgba(232,237,241,.55);--faint:rgba(232,237,241,.34);--aqua:#69ada6;--moeda:#c9a86b;--alga:#5fbf8b;--coral:#e08a7b;}
+*{box-sizing:border-box;margin:0}
+body{background:#0b1119;color:var(--ink);font-family:'Inter','Nunito',sans-serif;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:560px;margin:0 auto;padding:12px}
+h1{font-size:1.35rem;font-weight:600;letter-spacing:-.005em;text-align:center;color:var(--ink)}
+h1 svg{vertical-align:-6px;margin-right:4px}
+h2{font-size:1.05rem;font-weight:600;margin-bottom:6px}
+.sub{text-align:center;color:var(--mut);font-size:.82rem;margin:2px 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.num{font-variant-numeric:tabular-nums;font-weight:600}
+.btn{display:inline-block;border:1px solid rgba(201,168,107,.5);background:rgba(201,168,107,.16);color:#f0dcae;border-radius:11px;padding:11px 20px;font-family:inherit;font-weight:600;font-size:.95rem;cursor:pointer}
+.btn:hover{background:rgba(201,168,107,.24)}
+.btn.sec{background:transparent;color:var(--aqua);border-color:rgba(255,255,255,.14)}
+.btn:focus-visible{outline:2px solid var(--moeda);outline-offset:2px}
+input{width:100%;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.11);border-radius:10px;padding:11px;color:var(--ink);font-family:inherit;font-size:1rem;text-align:center}
+select{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.11);border-radius:8px;color:var(--ink);font-family:inherit;padding:6px 8px}
+.escondido{display:none!important}
+.centro{text-align:center}
+
+/* HUD */
+.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.hud .item{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:7px 4px;text-align:center;position:relative}
+.hud .rot{font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.hud .val{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;margin-top:1px}
+.vidas{color:var(--coral);letter-spacing:2px;font-size:15px}
+.tempoBar{height:6px;border-radius:99px;background:rgba(255,255,255,.07);margin-bottom:8px;overflow:hidden}
+.tempoBar > i{display:block;height:100%;width:100%;background:var(--aqua);border-radius:99px;transition:width .2s linear}
+
+/* Oceano */
+.oceano{position:relative;width:100%;height:56vh;max-height:460px;min-height:340px;border-radius:14px;overflow:hidden;background:linear-gradient(180deg,#0c1a24,#0a141c);border:1px solid var(--line);touch-action:none;cursor:pointer}
+.gota{position:absolute;top:-52px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:26px;border-radius:12px;will-change:transform;user-select:none}
+.gota.bom{background:rgba(105,173,166,.14);border:1px solid rgba(105,173,166,.4)}
+.gota.ruim{background:rgba(224,138,123,.14);border:1px solid rgba(224,138,123,.42)}
+.gota.licao{background:rgba(201,168,107,.16);border:1px solid rgba(201,168,107,.5)}
+.jogador{position:absolute;bottom:6px;width:66px;height:48px;display:flex;align-items:center;justify-content:center;will-change:left;transition:filter .15s}
+.jogador.congelado{filter:grayscale(1) brightness(.6)}
+.jogador.escudo{filter:drop-shadow(0 0 6px rgba(201,168,107,.9))}
+.flut{position:absolute;font-size:14px;font-weight:600;pointer-events:none;animation:sobe .9s ease-out forwards;z-index:5}
+@keyframes sobe{0%{opacity:0;transform:translateY(6px)}15%{opacity:1}100%{opacity:0;transform:translateY(-26px)}}
+.tip{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:80%;background:rgba(11,17,25,.92);border:1px solid rgba(201,168,107,.5);border-radius:12px;padding:12px 16px;text-align:center;font-size:.9rem;line-height:1.5;z-index:8}
+.tip b{color:var(--moeda)}
+.comboFx{position:absolute;left:50%;top:12px;transform:translateX(-50%);font-weight:700;color:var(--moeda);font-size:1rem;pointer-events:none;animation:sobe 1s ease-out forwards;z-index:6}
+
+/* Legenda */
+.legenda{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;font-size:11px;color:var(--mut);margin-top:10px}
+.legenda span{white-space:nowrap}
+
+/* Relatorio */
+.rel h3{font-size:.95rem;font-weight:600;margin:14px 0 6px;color:var(--aqua)}
+.rel .linha{display:flex;justify-content:space-between;gap:10px;font-size:.86rem;padding:5px 0;border-bottom:1px solid var(--line);color:var(--mut)}
+.rel .linha b{color:var(--ink);font-weight:600}
+.rel .licao{background:rgba(255,255,255,.03);border-left:2px solid var(--coral);border-radius:0 8px 8px 0;padding:8px 10px;font-size:.82rem;line-height:1.5;color:var(--mut);margin:6px 0}
+.grande{font-size:2rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--moeda);text-align:center}
+.rank{list-style:none;padding:0;margin:8px 0 0}
+.rank li{display:flex;justify-content:space-between;font-size:.82rem;padding:4px 0;border-bottom:1px solid var(--line);color:var(--mut)}
+.rank li.eu{color:var(--aqua);font-weight:600}
+.pos{color:var(--alga)}.neg{color:var(--coral)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1><svg width="34" height="21" viewBox="0 0 66 40" aria-hidden="true"><g transform="scale(-1,1) translate(-66,0)"><path d="M4 20c9-11 24-11 33 0-9 11-24 11-33 0z" fill="#7cc0b8"/><path d="M37 20l13-8v16z" fill="#c9a86b"/><circle cx="13" cy="18" r="2.6" fill="#0b1119"/></g></svg>Caça ao Dividendo</h1>
+<p class="sub">Pegue os bons rendimentos, desvie das armadilhas. Partida rápida, dá pra rejogar!</p>
+
+<!-- TELA NICK -->
+<div id="telaNick" class="card centro">
+<h2>Quem vai caçar dividendos?</h2>
+<p class="sub" style="margin:2px 0 12px">Seu apelido fica salvo neste navegador e entra no ranking local.</p>
+<input id="inputNick" maxlength="14" placeholder="Seu apelido (ex: Manjubinha)" aria-label="Apelido">
+<p style="margin:14px 0 6px;font-size:.85rem;color:var(--mut)">Quanto tempo? <select id="selDur"><option value="60">60s</option><option value="75" selected>75s</option><option value="90">90s</option></select></p>
+<button class="btn" id="btnComecar" style="margin-top:8px">Mergulhar</button>
+<div style="margin-top:14px;text-align:left;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:.83rem;line-height:1.6;color:var(--mut)">
+<b style="color:var(--aqua)">Como jogar:</b> mova a manjubinha (mouse, setas ou o dedo) e capture os bons rendimentos que caem: moeda de dividendo, aluguel de FII, JCP e o aporte do 13º. Fuja das armadilhas: taxa abusiva, ativo sem tag along, pirâmide e o golpe do lucro garantido. Acertos seguidos aumentam o combo. Você tem 3 vidas, some uma se pegar pirâmide ou golpe. Pegue a estrela da lição pra aprender uma dica rápida.
+</div>
+</div>
+
+<!-- TELA JOGO -->
+<div id="telaJogo" class="escondido">
+<div class="hud">
+<div class="item"><div class="rot">Tempo</div><div class="val num" id="uiTempo">75s</div></div>
+<div class="item"><div class="rot">Pontos</div><div class="val num" id="uiPontos">0</div></div>
+<div class="item"><div class="rot">Combo</div><div class="val num" id="uiCombo">x1</div></div>
+<div class="item"><div class="rot">Vidas</div><div class="val vidas" id="uiVidas">&#10084;&#10084;&#10084;</div></div>
+</div>
+<div class="tempoBar"><i id="uiTempoBar"></i></div>
+<div class="oceano" id="oceano" tabindex="0" aria-label="Area do jogo">
+<div class="jogador" id="jogador" style="left:0"><svg width="60" height="38" viewBox="0 0 66 40" aria-hidden="true"><path d="M4 20c9-11 24-11 33 0-9 11-24 11-33 0z" fill="#7cc0b8"/><path d="M37 20l13-8v16z" fill="#c9a86b"/><circle cx="52" cy="18" r="3" fill="#0b1119"/></svg></div>
+</div>
+<div class="legenda">
+<span><b style="color:var(--aqua)">&#9679;</b> bom rendimento</span>
+<span><b style="color:var(--coral)">&#9679;</b> armadilha</span>
+<span><b style="color:var(--moeda)">&#9733;</b> lição</span>
+</div>
+</div>
+
+<!-- TELA FIM -->
+<div id="telaFim" class="escondido">
+<div class="card rel" id="relBox"></div>
+<div class="centro" style="margin-top:12px">
+<button class="btn" id="btnDeNovo">Jogar de novo</button>
+<button class="btn sec" id="btnTrocar" style="margin-left:6px">Trocar apelido</button>
+</div>
+</div>
+
+<p class="centro" style="margin-top:14px"><a href="/jogos/" style="color:var(--aqua);font-size:.82rem;text-decoration:none">&#8592; Voltar para todos os jogos</a></p>
+<p class="centro" style="font-size:.75rem;color:var(--faint);margin-top:6px">Jogo educativo com valores fictícios. Não constitui recomendação de investimento.</p>
+</div>
+
+<script>
+try{ if(window.top===window){ location.replace('https://manjubinhainvestidor.com.br/jogos/caca-ao-dividendo/'); } }catch(e){}
+
+/*CORE-START*/
+// ===== Configuracao e itens (logica pura, testavel em Node) =====
+var CFG = {
+  vidas: 3,
+  comboMax: 3,
+  rampaSeg: 15,
+  velBase: 130,
+  velRampa: 0.20,
+  spawnBaseMs: 820,
+  spawnMinMs: 360,
+  maxItens: 12,
+  freezeMs: 1500,
+  ruimRampa: 0.28
+};
+var ITENS = [
+  {id:'moeda',    tipo:'bom',   nome:'Moeda de dividendo',    pontos:10, peso:32, emoji:'🪙'},
+  {id:'fii',      tipo:'bom',   nome:'Aluguel de FII',        pontos:25, peso:15, emoji:'🏢'},
+  {id:'jcp',      tipo:'bom',   nome:'JCP',                   pontos:40, peso:6,  emoji:'💵'},
+  {id:'decimo',   tipo:'bom',   nome:'Aporte extra do 13º', pontos:50, peso:4, escudo:true, emoji:'🎁'},
+  {id:'taxa',     tipo:'ruim',  nome:'Taxa abusiva',          pontos:-20, peso:15, emoji:'🧾'},
+  {id:'semtag',   tipo:'ruim',  nome:'Ativo sem tag along',   pontos:-30, peso:10, emoji:'⚠️'},
+  {id:'piramide', tipo:'ruim',  nome:'Pirâmide financeira', pontos:-50, peso:3, vida:true, freeze:true, emoji:'🔺'},
+  {id:'golpe',    tipo:'ruim',  nome:'Golpe do lucro garantido', pontos:-50, peso:3, vida:true, emoji:'🎣'},
+  {id:'licao',    tipo:'licao', nome:'Lição do Manjubinha', pontos:15, peso:8, pausa:true, emoji:'⭐'}
+];
+var DICAS = [
+  'Dividendo bom é o que a empresa consegue repetir todo ano, não o maior de uma vez só.',
+  'Taxa alta corrói a rentabilidade em silêncio: compare os custos antes de investir.',
+  'Tag along protege o pequeno investidor se a empresa for vendida. Prefira 100%.',
+  'Promessa de lucro garantido não existe no mercado: desconfie sempre.',
+  'FII distribui aluguel quase todo mês, ótimo pra quem quer renda no bolso.',
+  'JCP paga imposto na fonte, mas já cai líquido pra você.',
+  'Reserva de emergência vem antes de investir pesado: evita vender no prejuízo.',
+  'Diversificar é não depender de um ativo só pra sua renda.',
+  'Perenidade: empresas com história longa cortam menos dividendos nas crises.',
+  'Liquidez importa: um ativo difícil de vender te prende numa emergência.',
+  'Reinvestir os proventos acelera os juros compostos ao longo dos anos.',
+  'DY altíssimo pode ser isca: veja se o lucro sustenta o dividendo.'
+];
+
+function fabricarRng(seed){ var s = seed || 1; return function(){ s = (s*1664525 + 1013904223) % 4294967296; return s/4294967296; }; }
+
+function nivelDificuldade(t){ return Math.floor(t / CFG.rampaSeg); }
+function velocidadeQueda(t){ return CFG.velBase * (1 + CFG.velRampa * nivelDificuldade(t)); }
+function intervaloSpawn(t){ return Math.max(CFG.spawnMinMs, CFG.spawnBaseMs - nivelDificuldade(t)*70); }
+
+function pesosNoTempo(t){
+  var n = nivelDificuldade(t);
+  var boost = 1 + CFG.ruimRampa * n;
+  return ITENS.map(function(it){
+    var peso = it.peso * (it.tipo==='ruim' ? boost : 1);
+    return { id: it.id, peso: peso };
+  });
+}
+function sortearItem(rng, t){
+  var pesos = pesosNoTempo(t);
+  var total = 0, i;
+  for(i=0;i<pesos.length;i++) total += pesos[i].peso;
+  var r = rng() * total, acc = 0;
+  for(i=0;i<pesos.length;i++){ acc += pesos[i].peso; if(r <= acc) return itemPorId(pesos[i].id); }
+  return itemPorId(pesos[pesos.length-1].id);
+}
+function itemPorId(id){ for(var i=0;i<ITENS.length;i++) if(ITENS[i].id===id) return ITENS[i]; return null; }
+
+function estadoInicial(){
+  return {
+    pontos:0, combo:1, maiorCombo:1, vidas:CFG.vidas, escudo:false,
+    capBom:0, capRuim:0, licoes:0, ruimEvitados:0,
+    ganhoPorTipo:{}, perdaPorTipo:{}, capPorRuim:{}, bonusCombo:0, fim:false
+  };
+}
+
+// Captura pura: recebe estado + item, devolve novo estado + info. Nao toca no DOM.
+function aplicarCaptura(S, item){
+  var info = { tipo:item.tipo, id:item.id, delta:0, comboAntes:S.combo, bloqueado:false, perdeuVida:false, congela:false, pausa:false };
+  if(item.tipo === 'bom'){
+    var base = item.pontos;
+    var ganho = base * S.combo;
+    S.pontos = Math.max(0, S.pontos + ganho);
+    if(S.combo > 1) S.bonusCombo += base * (S.combo - 1);
+    S.combo = Math.min(S.combo + 1, CFG.comboMax);
+    if(S.combo > S.maiorCombo) S.maiorCombo = S.combo;
+    S.capBom++;
+    S.ganhoPorTipo[item.id] = (S.ganhoPorTipo[item.id]||0) + ganho;
+    if(item.escudo) S.escudo = true;
+    info.delta = ganho;
+  } else if(item.tipo === 'licao'){
+    S.pontos = Math.max(0, S.pontos + item.pontos);
+    S.licoes++;
+    S.ganhoPorTipo[item.id] = (S.ganhoPorTipo[item.id]||0) + item.pontos;
+    info.delta = item.pontos; info.pausa = true;
+  } else { // ruim
+    if(S.escudo){
+      S.escudo = false; info.bloqueado = true;
+    } else {
+      S.pontos = Math.max(0, S.pontos + item.pontos);
+      S.combo = 1;
+      S.capRuim++;
+      S.perdaPorTipo[item.id] = (S.perdaPorTipo[item.id]||0) + item.pontos;
+      S.capPorRuim[item.id] = (S.capPorRuim[item.id]||0) + 1;
+      info.delta = item.pontos;
+      if(item.vida){ S.vidas = Math.max(0, S.vidas - 1); info.perdeuVida = true; if(S.vidas<=0) S.fim = true; }
+      if(item.freeze) info.congela = true;
+    }
+  }
+  return info;
+}
+
+// Relatorio a partir do estado final (puro)
+function gerarRelatorio(S, venceu){
+  var totalBons = S.capBom + S.ruimEvitados; // referencia de bons vistos
+  var taxaCaptura = (S.capBom + S.capRuim) > 0 ? Math.round(S.capBom/(S.capBom+S.capRuim)*100) : 0;
+  var melhorar = [];
+  for(var id in S.capPorRuim){ var it = itemPorId(id); melhorar.push({ id:id, nome:it.nome, qtd:S.capPorRuim[id] }); }
+  return {
+    venceu: venceu,
+    pontos: Math.max(0, Math.round(S.pontos)),
+    maiorCombo: S.maiorCombo,
+    capBom: S.capBom, capRuim: S.capRuim, licoes: S.licoes,
+    ruimEvitados: S.ruimEvitados,
+    taxaCaptura: taxaCaptura,
+    bonusCombo: Math.round(S.bonusCombo),
+    ganhoPorTipo: S.ganhoPorTipo, perdaPorTipo: S.perdaPorTipo, capPorRuim: S.capPorRuim,
+    melhorar: melhorar
+  };
+}
+/*CORE-END*/
+
+// ===================== INTERFACE E LOOP =====================
+function $(id){ return document.getElementById(id); }
+function fmt(n){ return Math.round(n).toLocaleString('pt-BR'); }
+
+// --- storage compartilhado ---
+function getNick(){ try{ return localStorage.getItem('mj_nick') || ''; }catch(e){ return ''; } }
+function setNick(n){ try{ localStorage.setItem('mj_nick', n); }catch(e){} }
+function getRanking(){ try{ return JSON.parse(localStorage.getItem('mj_caca_ranking')||'[]'); }catch(e){ return []; } }
+function salvarRanking(nick, pontos){
+  try{
+    var r = getRanking();
+    r.push({ nick: nick, pontos: pontos, data: Date.now() });
+    r.sort(function(a,b){ return b.pontos - a.pontos; });
+    r = r.slice(0,10);
+    localStorage.setItem('mj_caca_ranking', JSON.stringify(r));
+    return r;
+  }catch(e){ return [{nick:nick,pontos:pontos}]; }
+}
+
+// --- ponte com o site ---
+function mjAvisar(evt){ try{ if(window.parent!==window) window.parent.postMessage({type:'mjJogo',jogo:'caca',evento:evt,nick:getNick()},'*'); }catch(e){} }
+setInterval(function(){ try{ if(window.parent!==window){ var w=document.querySelector('.wrap'); var h=(w?Math.ceil(w.getBoundingClientRect().bottom):document.body.scrollHeight)+16; window.parent.postMessage({type:'mjAltura',jogo:'caca',h:h},'*'); } }catch(e){} },800);
+
+// --- estado de runtime ---
+var S, rng, gotas, jogadorX, alvoX, tempoRestante, duracao, rodando, pausado, congeladoAte, ultimoSpawn, ultimoTs, rafId, seguirMouse;
+var reduz = false;
+try{ reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+
+function comecar(){
+  var n = $('inputNick').value.trim();
+  if(!n){ $('inputNick').focus(); return; }
+  setNick(n);
+  iniciar();
+}
+function iniciar(){
+  S = estadoInicial();
+  rng = Math.random;
+  gotas = [];
+  duracao = parseInt($('selDur').value,10) || 75;
+  tempoRestante = duracao;
+  rodando = true; pausado = false; congeladoAte = 0; seguirMouse = true;
+  mjAvisar('start');
+  $('telaNick').style.display='none';
+  $('telaFim').classList.add('escondido');
+  $('telaJogo').classList.remove('escondido');
+  var oce = $('oceano');
+  [].slice.call(oce.querySelectorAll('.gota,.flut,.tip,.comboFx')).forEach(function(e){ e.remove(); });
+  jogadorX = oce.clientWidth/2 - 33;
+  alvoX = jogadorX;
+  posicionarJogador();
+  atualizarHUD();
+  ultimoSpawn = 0; ultimoTs = 0;
+  cancelAnimationFrame(rafId);
+  rafId = requestAnimationFrame(loop);
+}
+
+var relogioAcc = 0;
+function loop(ts){
+  if(!rodando) return;
+  if(!ultimoTs) ultimoTs = ts;
+  var dt = (ts - ultimoTs)/1000; if(dt>0.05) dt=0.05; ultimoTs = ts;
+  var agora = ts;
+  var travado = agora < congeladoAte;
+
+  if(!pausado){
+    // relogio
+    relogioAcc += dt;
+    if(relogioAcc >= 0.1){ tempoRestante -= relogioAcc; relogioAcc = 0; if(tempoRestante<=0){ tempoRestante=0; return terminar(true); } atualizarTempo(); }
+    // spawn
+    var elapsed = duracao - tempoRestante;
+    if(agora - ultimoSpawn > intervaloSpawn(elapsed) && gotas.length < CFG.maxItens){
+      spawnar(elapsed); ultimoSpawn = agora;
+    }
+    // jogador segue alvo
+    if(!travado){
+      jogadorX += (alvoX - jogadorX) * Math.min(1, dt*14);
+      posicionarJogador();
+    }
+    $('jogador').classList.toggle('congelado', travado);
+    // move gotas + colisao
+    var oce = $('oceano');
+    var H = oce.clientHeight;
+    var jx = jogadorX, jw = 66, jy = H - 54;
+    for(var i=gotas.length-1;i>=0;i--){
+      var g = gotas[i];
+      g.y += velocidadeQueda(elapsed) * dt;
+      g.el.style.transform = 'translate(' + g.x + 'px,' + g.y + 'px)';
+      // pegou?
+      if(!travado && g.y + 22 >= jy && g.y <= jy + 46 && g.x + 44 > jx && g.x < jx + jw){
+        capturar(g); g.el.remove(); gotas.splice(i,1); continue;
+      }
+      // passou
+      if(g.y > H + 10){
+        if(g.item.tipo === 'ruim') S.ruimEvitados++;
+        g.el.remove(); gotas.splice(i,1);
+      }
+    }
+  }
+  rafId = requestAnimationFrame(loop);
+}
+
+function spawnar(elapsed){
+  var item = sortearItem(rng, elapsed);
+  var oce = $('oceano');
+  var el = document.createElement('div');
+  el.className = 'gota ' + item.tipo;
+  el.textContent = item.emoji;
+  var x = Math.random() * (oce.clientWidth - 44);
+  el.style.transform = 'translate(' + x + 'px,-52px)';
+  oce.appendChild(el);
+  gotas.push({ item:item, el:el, x:x, y:-52 });
+}
+
+function capturar(g){
+  var info = aplicarCaptura(S, g.item);
+  atualizarHUD();
+  var oce = $('oceano');
+  if(info.bloqueado){
+    flutuar(g.x, 'Escudo!', 'var(--moeda)'); return;
+  }
+  if(g.item.tipo === 'bom'){
+    flutuar(g.x, '+' + info.delta, 'var(--alga)');
+    if(S.combo > info.comboAntes && S.combo > 1) comboFx('Combo x' + S.combo);
+  } else if(g.item.tipo === 'licao'){
+    flutuar(g.x, '+' + info.delta, 'var(--moeda)');
+    mostrarDica();
+  } else {
+    flutuar(g.x, info.delta, 'var(--coral)');
+    if(info.congela) congeladoAte = performance.now() + CFG.freezeMs;
+    if(info.perdeuVida) tremer();
+    comboFx('Combo perdido');
+  }
+  if(S.fim){ terminar(false); }
+}
+
+function mostrarDica(){
+  pausado = true;
+  var oce = $('oceano');
+  var dica = DICAS[Math.floor(Math.random()*DICAS.length)];
+  var t = document.createElement('div');
+  t.className = 'tip';
+  t.innerHTML = '<b>Lição do Manjubinha</b><br>' + dica;
+  oce.appendChild(t);
+  setTimeout(function(){ t.remove(); pausado = false; ultimoTs = 0; }, reduz?900:2000);
+}
+
+function flutuar(x, txt, cor){
+  var oce = $('oceano');
+  var s = document.createElement('span'); s.className='flut'; s.textContent=txt; s.style.color=cor;
+  s.style.left = Math.max(6, Math.min(x, oce.clientWidth-40)) + 'px';
+  s.style.bottom = '58px';
+  oce.appendChild(s); setTimeout(function(){ s.remove(); }, 900);
+}
+function comboFx(txt){
+  var oce = $('oceano');
+  var s = document.createElement('div'); s.className='comboFx'; s.textContent=txt;
+  if(/perdido/.test(txt)) s.style.color='var(--coral)';
+  oce.appendChild(s); setTimeout(function(){ s.remove(); }, 1000);
+}
+function tremer(){
+  var oce = $('oceano'); if(reduz) return;
+  oce.animate([{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}], {duration:280});
+}
+
+function posicionarJogador(){
+  var oce = $('oceano');
+  var max = oce.clientWidth - 66;
+  if(jogadorX < 0) jogadorX = 0; if(jogadorX > max) jogadorX = max;
+  $('jogador').style.left = jogadorX + 'px';
+}
+function atualizarTempo(){
+  $('uiTempo').textContent = Math.ceil(tempoRestante) + 's';
+  $('uiTempoBar').style.width = (tempoRestante/duracao*100) + '%';
+}
+function atualizarHUD(){
+  $('uiPontos').textContent = fmt(S.pontos);
+  $('uiCombo').textContent = 'x' + S.combo;
+  var c = ''; for(var i=0;i<3;i++) c += (i < S.vidas) ? '❤' : '♡';
+  $('uiVidas').innerHTML = c;
+}
+
+function terminar(porTempo){
+  if(!rodando) return;
+  rodando = false;
+  cancelAnimationFrame(rafId);
+  var venceu = porTempo; // vitoria = sobreviveu ao tempo
+  mjAvisar('fim');
+  var rel = gerarRelatorio(S, venceu);
+  var novoRank = salvarRanking(getNick(), rel.pontos);
+  renderRelatorio(rel, novoRank);
+  $('telaJogo').classList.add('escondido');
+  $('telaFim').classList.remove('escondido');
+}
+
+function renderRelatorio(rel, ranking){
+  var nomeRuim = {taxa:'taxas abusivas', semtag:'ativos sem tag along', piramide:'pirâmides', golpe:'golpes do lucro garantido'};
+  var licaoRuim = {
+    taxa:'no mundo real, taxas altas corroem a rentabilidade em silêncio.',
+    semtag:'sem tag along, o pequeno fica desprotegido se a empresa for vendida.',
+    piramide:'pirâmide não gera renda de verdade, só tira de uns pra pagar outros.',
+    golpe:'lucro garantido é sempre isca: retorno de verdade tem risco.'
+  };
+  var titulo = rel.venceu ? 'Você sobreviveu ao cardume!' : 'A maré virou dessa vez';
+  var sub = rel.venceu ? 'Boa caçada. Sua renda passiva agradece.' : 'Perdeu as vidas, mas olha o quanto você já fisgou:';
+  var h = '';
+  h += '<div class="centro"><div style="font-size:.8rem;color:var(--mut);letter-spacing:.08em;text-transform:uppercase">' + (rel.venceu?'Vitória':'Fim de jogo') + '</div>';
+  h += '<h2 style="margin:4px 0 2px">' + titulo + '</h2><p class="sub" style="margin:0 0 8px">' + sub + '</p>';
+  h += '<div class="grande">' + fmt(rel.pontos) + '</div><div style="font-size:.78rem;color:var(--mut)">pontos</div></div>';
+
+  h += '<h3>O que você acertou</h3>';
+  h += '<div class="linha"><span>Bons rendimentos pescados</span><b>' + rel.capBom + '</b></div>';
+  h += '<div class="linha"><span>Maior combo</span><b>x' + rel.maiorCombo + '</b></div>';
+  h += '<div class="linha"><span>Precisão (bons vs total pego)</span><b>' + rel.taxaCaptura + '%</b></div>';
+  h += '<div class="linha"><span>Armadilhas que você deixou passar</span><b>' + rel.ruimEvitados + '</b></div>';
+
+  h += '<h3>O que dá pra melhorar</h3>';
+  if(rel.melhorar.length === 0){
+    h += '<div class="licao">Você não mordeu nenhuma armadilha. Isso é raro e ótimo: no mercado, evitar as ciladas vale tanto quanto achar as boas.</div>';
+  } else {
+    rel.melhorar.forEach(function(m){
+      h += '<div class="licao">Você pegou <b>' + m.qtd + ' ' + (nomeRuim[m.id]||m.nome) + '</b>: ' + (licaoRuim[m.id]||'') + '</div>';
+    });
+  }
+
+  h += '<h3>O que mais pesou</h3>';
+  var ordemBom = ['moeda','fii','jcp','decimo','licao'];
+  ordemBom.forEach(function(id){ if(rel.ganhoPorTipo[id]){ var it=itemPorId(id); h += '<div class="linha"><span>' + it.emoji + ' ' + it.nome + '</span><b class="pos">+' + fmt(rel.ganhoPorTipo[id]) + '</b></div>'; } });
+  if(rel.bonusCombo>0) h += '<div class="linha"><span>Bônus de combo</span><b class="pos">+' + fmt(rel.bonusCombo) + '</b></div>';
+  for(var id in rel.perdaPorTipo){ var it2=itemPorId(id); h += '<div class="linha"><span>' + it2.emoji + ' ' + it2.nome + '</span><b class="neg">' + fmt(rel.perdaPorTipo[id]) + '</b></div>'; }
+
+  h += '<h3>Ranking local</h3><ul class="rank">';
+  var meuNick = getNick();
+  ranking.forEach(function(r,i){
+    var eu = (r.nick===meuNick && r.pontos===rel.pontos && i===ranking.map(function(x){return x.pontos;}).indexOf(rel.pontos));
+    h += '<li class="' + (eu?'eu':'') + '"><span>' + (i+1) + '. ' + escapa(r.nick) + '</span><b>' + fmt(r.pontos) + '</b></li>';
+  });
+  h += '</ul>';
+  $('relBox').innerHTML = h;
+}
+function escapa(t){ var d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+
+// ===== Input =====
+var oceEl;
+function bindInput(){
+  oceEl = $('oceano');
+  oceEl.addEventListener('mousemove', function(e){ if(!rodando) return; var r=oceEl.getBoundingClientRect(); alvoX = e.clientX - r.left - 33; });
+  oceEl.addEventListener('touchmove', function(e){ if(!rodando) return; var r=oceEl.getBoundingClientRect(); var t=e.touches[0]; alvoX = t.clientX - r.left - 33; e.preventDefault(); }, {passive:false});
+  oceEl.addEventListener('touchstart', function(e){ if(!rodando) return; var r=oceEl.getBoundingClientRect(); var t=e.touches[0]; alvoX = t.clientX - r.left - 33; e.preventDefault(); }, {passive:false});
+  document.addEventListener('keydown', function(e){
+    if(!rodando) return;
+    if(e.key==='ArrowLeft'){ alvoX -= 46; }
+    else if(e.key==='ArrowRight'){ alvoX += 46; }
+  });
+}
+
+$('btnComecar').addEventListener('click', comecar);
+$('inputNick').addEventListener('keydown', function(e){ if(e.key==='Enter') comecar(); });
+$('btnDeNovo').addEventListener('click', iniciar);
+$('btnTrocar').addEventListener('click', function(){ $('telaFim').classList.add('escondido'); $('telaNick').style.display=''; $('inputNick').value=getNick(); });
+window.addEventListener('resize', function(){ if(rodando){ var oce=$('oceano'); if(jogadorX>oce.clientWidth-66) jogadorX=oce.clientWidth-66; } });
+bindInput();
+(function(){ var n=getNick(); if(n) $('inputNick').value=n; })();
+
+// Expor core pra testes em navegador (opcional)
+window.__CORE = { CFG:CFG, ITENS:ITENS, sortearItem:sortearItem, aplicarCaptura:aplicarCaptura, estadoInicial:estadoInicial, gerarRelatorio:gerarRelatorio, pesosNoTempo:pesosNoTempo, nivelDificuldade:nivelDificuldade, velocidadeQueda:velocidadeQueda, fabricarRng:fabricarRng, itemPorId:itemPorId };
+</script>
+</body>
+</html>
