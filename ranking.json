@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-07-04",
+  "ultima_atualizacao": "2026-07-06",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -163,7 +163,7 @@
       "nome": "Kinea Renda Imobiliaria",
       "tipo": "Hibrido",
       "segmento": null,
-      "post_url": "https://manjubinhainvestidor.com.br/knri11-kinea-renda-imobiliaria-informe-mensal-06-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/knri11-kinea-renda-imobiliaria-relatorio-gerencial-07-2026/",
       "metricas": {
         "liquidez_diaria": 9607030.0,
         "dy_12m": 8.09,
@@ -705,7 +705,7 @@
       "ticker": "WEGE3",
       "nome": "WEG S.A.",
       "setor": "Industrial",
-      "post_url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-reuniao-da-administracao-06-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-politica-de-divulgacao-de-ato-ou-fato-relevante-07-2026/",
       "metricas": {
         "liquidez_diaria": 336990000.0,
         "dy_12m": 4.64,

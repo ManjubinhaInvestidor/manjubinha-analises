@@ -69,7 +69,7 @@
     "descricao": "Informe Mensal"
   },
   "KNRI11": {
-    "ultima": "2026-06-28"
+    "ultima": "2026-07-06"
   },
   "GARE11_23116": {
     "status": "ok",
@@ -96,7 +96,7 @@
     "descricao": "Reunião da Administração"
   },
   "WEGE3": {
-    "ultima": "2026-06-28"
+    "ultima": "2026-07-06"
   },
   "CPTS11_23316": {
     "status": "ok",
@@ -560,5 +560,17 @@
     "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-comunicacao-sobre-transacao-entre-partes-relacionadas-07-2026/",
     "data": "2026-07-04",
     "descricao": "Comunicação sobre Transação entre Partes Relacionadas"
+  },
+  "KNRI11_23869": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knri11-kinea-renda-imobiliaria-relatorio-gerencial-07-2026/",
+    "data": "2026-07-06",
+    "descricao": "Relatório Gerencial"
+  },
+  "WEGE3_45045": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-politica-de-divulgacao-de-ato-ou-fato-relevante-07-2026/",
+    "data": "2026-07-06",
+    "descricao": "Política de Divulgação de Ato ou Fato Relevante"
   }
 }
