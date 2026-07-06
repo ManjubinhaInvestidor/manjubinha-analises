@@ -105,7 +105,7 @@
     "descricao": "Informe Mensal"
   },
   "CPTS11": {
-    "ultima": "2026-06-28"
+    "ultima": "2026-07-06"
   },
   "GGRC11_23620": {
     "status": "ok",
@@ -132,7 +132,7 @@
     "descricao": "Conselho de Administração"
   },
   "ABEV3": {
-    "ultima": "2026-06-28"
+    "ultima": "2026-07-06"
   },
   "KNSC11_22957": {
     "status": "ok",
@@ -584,5 +584,9 @@
     "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-conselho-de-administracao-07-2026/",
     "data": "2026-07-06",
     "descricao": "Conselho de Administração"
+  },
+  "CPTS11_23855": {
+    "status": "sem_analise",
+    "data": "2026-07-06"
   }
 }
