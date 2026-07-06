@@ -78,7 +78,7 @@
     "descricao": "Informe Mensal"
   },
   "GARE11": {
-    "ultima": "2026-06-28"
+    "ultima": "2026-07-06"
   },
   "BBAS3_44747": {
     "status": "ok",
@@ -123,7 +123,7 @@
     "descricao": "Diretoria"
   },
   "BBDC4": {
-    "ultima": "2026-06-28"
+    "ultima": "2026-07-06"
   },
   "ABEV3_42735": {
     "status": "ok",
@@ -572,5 +572,17 @@
     "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-politica-de-divulgacao-de-ato-ou-fato-relevante-07-2026/",
     "data": "2026-07-06",
     "descricao": "Política de Divulgação de Ato ou Fato Relevante"
+  },
+  "GARE11_23880": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/gare11-guardian-real-estate-relatorio-gerencial-07-2026/",
+    "data": "2026-07-06",
+    "descricao": "Relatório Gerencial"
+  },
+  "BBDC4_45270": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-conselho-de-administracao-07-2026/",
+    "data": "2026-07-06",
+    "descricao": "Conselho de Administração"
   }
 }

@@ -285,7 +285,8 @@
       "nome": "Bradesco",
       "setor": "Financeiro",
       "ri_url": "https://ri.bradesco.com.br/pt-BR/informacoes-financeiras/resultados/",
-      "tipo_doc": "trimestral"
+      "tipo_doc": "trimestral",
+      "logo_wp": "https://manjubinhainvestidor.com.br/wp-content/uploads/2026/07/logo-bbdc4.jpg"
     },
     {
       "ticker": "ABEV3",
