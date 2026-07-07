@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-07-06",
+  "ultima_atualizacao": "2026-07-07",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -121,7 +121,7 @@
       "nome": "GGR Covepi Renda",
       "tipo": "Tijolo",
       "segmento": "Logistico",
-      "post_url": "https://manjubinhainvestidor.com.br/ggrc11-ggr-covepi-renda-fatos-relevantes-06-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/ggrc11-ggr-covepi-renda-distribuicoes-07-2026/",
       "metricas": {
         "liquidez_diaria": 12990400.0,
         "dy_12m": 12.06,
@@ -727,7 +727,7 @@
       "ticker": "TAEE11",
       "nome": "Taesa",
       "setor": "Energia",
-      "post_url": "https://manjubinhainvestidor.com.br/taee11-taesa-comunicado-ao-mercado-06-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/taee11-taesa-documentos-de-oferta-de-distribuicao-publica-07-2026/",
       "metricas": {
         "liquidez_diaria": 67602200.0,
         "dy_12m": 8.23,
