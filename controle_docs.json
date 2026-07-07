@@ -141,7 +141,7 @@
     "descricao": "Informe Mensal"
   },
   "KNSC11": {
-    "ultima": "2026-06-29"
+    "ultima": "2026-07-07"
   },
   "VISC11_23663": {
     "status": "ok",
@@ -168,7 +168,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPLE6": {
-    "ultima": "2026-06-29"
+    "ultima": "2026-07-07"
   },
   "BTLG11_23251": {
     "status": "ok",
@@ -600,5 +600,11 @@
     "url": "https://manjubinhainvestidor.com.br/taee11-taesa-documentos-de-oferta-de-distribuicao-publica-07-2026/",
     "data": "2026-07-07",
     "descricao": "Documentos de Oferta de Distribuição Pública"
+  },
+  "CPLE6_44992": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-conselho-de-administracao-07-2026/",
+    "data": "2026-07-07",
+    "descricao": "Conselho de Administração"
   }
 }
