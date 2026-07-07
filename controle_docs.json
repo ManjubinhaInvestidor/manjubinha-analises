@@ -150,7 +150,7 @@
     "descricao": "Fatos Relevantes"
   },
   "VISC11": {
-    "ultima": "2026-06-29"
+    "ultima": "2026-07-07"
   },
   "TAEE11_44645": {
     "status": "ok",
@@ -195,7 +195,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "EGIE3": {
-    "ultima": "2026-06-29"
+    "ultima": "2026-07-07"
   },
   "VIVT3_44450": {
     "status": "ok",
@@ -606,5 +606,17 @@
     "url": "https://manjubinhainvestidor.com.br/cple6-copel-conselho-de-administracao-07-2026/",
     "data": "2026-07-07",
     "descricao": "Conselho de Administração"
+  },
+  "VISC11_23772": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/visc11-vinci-shopping-centers-informe-mensal-07-2026/",
+    "data": "2026-07-07",
+    "descricao": "Informe Mensal"
+  },
+  "EGIE3_45404": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/egie3-engie-brasil-fato-relevante-07-2026/",
+    "data": "2026-07-07",
+    "descricao": "Fato Relevante"
   }
 }
