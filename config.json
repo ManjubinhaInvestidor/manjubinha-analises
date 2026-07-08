@@ -340,7 +340,8 @@
       "nome": "Sabesp",
       "setor": "Energia",
       "ri_url": "https://ri.sabesp.com.br/informacoes-financeiras/resultados-trimestrais/",
-      "tipo_doc": "trimestral"
+      "tipo_doc": "trimestral",
+      "logo_wp": "https://manjubinhainvestidor.com.br/wp-content/uploads/2026/07/logo-sbsp3.jpg"
     },
     {
       "ticker": "RDOR3",
