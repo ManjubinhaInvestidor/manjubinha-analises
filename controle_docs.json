@@ -177,7 +177,7 @@
     "descricao": "Informe Mensal"
   },
   "BTLG11": {
-    "ultima": "2026-06-29"
+    "ultima": "2026-07-08"
   },
   "OUJP11_23642": {
     "status": "ok",
@@ -204,7 +204,7 @@
     "descricao": "Assembleia"
   },
   "VIVT3": {
-    "ultima": "2026-06-29"
+    "ultima": "2026-07-08"
   },
   "RECR11_23281": {
     "status": "ok",
@@ -618,5 +618,17 @@
     "url": "https://manjubinhainvestidor.com.br/egie3-engie-brasil-fato-relevante-07-2026/",
     "data": "2026-07-07",
     "descricao": "Fato Relevante"
+  },
+  "BTLG11_23849": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/btlg11-btg-pactual-logistica-relatorio-gerencial-07-2026/",
+    "data": "2026-07-08",
+    "descricao": "Relatório Gerencial"
+  },
+  "VIVT3_45261": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-08",
+    "descricao": "Comunicado ao Mercado"
   }
 }
