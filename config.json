@@ -332,7 +332,8 @@
       "nome": "PRIO",
       "setor": "Commodities",
       "ri_url": "https://ri.prio.com.br/resultados/",
-      "tipo_doc": "trimestral"
+      "tipo_doc": "trimestral",
+      "logo_wp": "https://manjubinhainvestidor.com.br/wp-content/uploads/2026/07/logo-prio3.png"
     },
     {
       "ticker": "SBSP3",
