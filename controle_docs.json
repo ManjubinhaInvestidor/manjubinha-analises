@@ -276,7 +276,7 @@
     "descricao": "Fatos Relevantes"
   },
   "ALZR11": {
-    "ultima": "2026-06-30"
+    "ultima": "2026-07-09"
   },
   "HSML11_23175": {
     "status": "ok",
@@ -294,7 +294,7 @@
     "descricao": "Reunião da Administração"
   },
   "SUZB3": {
-    "ultima": "2026-06-30"
+    "ultima": "2026-07-09"
   },
   "ENGI11_44852": {
     "status": "ok",
@@ -654,5 +654,11 @@
     "url": "https://manjubinhainvestidor.com.br/pvbi11-vbi-prime-properties-distribuicoes-07-2026/",
     "data": "2026-07-09",
     "descricao": "Distribuições"
+  },
+  "SUZB3_45435": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/suzb3-suzano-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-09",
+    "descricao": "Comunicado ao Mercado"
   }
 }
