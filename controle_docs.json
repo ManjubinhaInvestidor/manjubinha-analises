@@ -249,7 +249,7 @@
     "descricao": "Informe Mensal"
   },
   "PVBI11": {
-    "ultima": "2026-06-29"
+    "ultima": "2026-07-09"
   },
   "RDOR3_44874": {
     "status": "ok",
@@ -267,7 +267,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "B3SA3": {
-    "ultima": "2026-06-29"
+    "ultima": "2026-07-09"
   },
   "ALZR11_23615": {
     "status": "ok",
@@ -648,5 +648,11 @@
     "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-reuniao-da-administracao-07-2026/",
     "data": "2026-07-08",
     "descricao": "Reunião da Administração"
+  },
+  "PVBI11_23775": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/pvbi11-vbi-prime-properties-distribuicoes-07-2026/",
+    "data": "2026-07-09",
+    "descricao": "Distribuições"
   }
 }
