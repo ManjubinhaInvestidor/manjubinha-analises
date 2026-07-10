@@ -36,6 +36,40 @@ requests = _sessao
 _cred = base64.b64encode(f"{WP_USER}:{WP_PASS}".encode()).decode()
 WP_HEADERS = {"Authorization": f"Basic {_cred}"}
 
+# --- Timeout padrao e retry leve com backoff para chamadas ao WordPress ---
+WP_TIMEOUT = 30
+_WP_BACKOFFS = [5, 15]  # esperas entre tentativas; 3 tentativas no total
+
+def wp_request(metodo, url, **kwargs):
+    """Chamada ao WordPress (wp-json) com timeout explicito (30s) e retry leve com backoff.
+    3 tentativas, aguardando 5s e depois 15s. Retenta em erros de conexao/timeout
+    (requests.exceptions.ConnectionError/Timeout) e em respostas 5xx do servidor.
+    IMPORTANTE: nao trata 429 (o 429 e exclusivo do Gemini e permanece intocado no fluxo dele).
+    Apos as 3 tentativas devolve a ultima resposta 5xx recebida; se a rede falhar de vez, a
+    excecao sobe (o ativo fica para a proxima rodada), sem engolir erro."""
+    kwargs.setdefault("timeout", WP_TIMEOUT)
+    ultimo_erro = None
+    for tentativa in range(3):
+        try:
+            r = requests.request(metodo, url, **kwargs)
+            if 500 <= r.status_code < 600 and tentativa < 2:
+                espera = _WP_BACKOFFS[tentativa]
+                print(f"  WP {r.status_code} em {url} - tentativa {tentativa+1}/3, aguardando {espera}s")
+                time.sleep(espera)
+                continue
+            return r
+        except (requests.exceptions.ConnectionError,
+                requests.exceptions.Timeout) as e:
+            ultimo_erro = e
+            if tentativa < 2:
+                espera = _WP_BACKOFFS[tentativa]
+                print(f"  Rede instavel ({type(e).__name__}) em {url} - tentativa {tentativa+1}/3, aguardando {espera}s")
+                time.sleep(espera)
+                continue
+            raise
+    return r
+
+
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_KEY}"
 
 CONFIG     = Path("config.json")
@@ -224,7 +258,7 @@ def buscar_ultimo_doc(ticker, inv10_tipo):
     """
     url = f"https://investidor10.com.br/{inv10_tipo}/{ticker.lower()}/"
     try:
-        r = requests.get(url, timeout=15, headers=INV10_HEADERS)
+        r = requests.get(url, timeout=30, headers=INV10_HEADERS)
         if r.status_code != 200:
             print(f"  Investidor10 {r.status_code} para {ticker}")
             return None
@@ -303,7 +337,7 @@ def garantir_logo(ativo, soup):
         if not url_logo:
             print(f"  {ticker}: sem logo real no Investidor10 (segue sem logo)")
             return None
-        img_resp = requests.get(url_logo, timeout=15, headers=INV10_HEADERS)
+        img_resp = requests.get(url_logo, timeout=30, headers=INV10_HEADERS)
         if img_resp.status_code != 200 or not img_resp.content:
             print(f"  {ticker}: falha ao baixar logo ({img_resp.status_code})")
             return None
@@ -313,7 +347,7 @@ def garantir_logo(ativo, soup):
         up_headers = dict(WP_HEADERS)
         up_headers["Content-Disposition"] = f'attachment; filename="{filename}"'
         up_headers["Content-Type"] = mime
-        up = requests.post(f"{WP_API}/media", headers=up_headers, data=img_resp.content, timeout=30)
+        up = wp_request("POST", f"{WP_API}/media", headers=up_headers, data=img_resp.content, timeout=30)
         if up.status_code not in (200, 201):
             print(f"  {ticker}: upload logo falhou {up.status_code}: {up.text[:200]}")
             return None
@@ -444,11 +478,11 @@ def get_acao_categories(ativo):
     return cats
 
 def get_tag(ticker):
-    r = requests.get(f"{WP_API}/tags", headers=WP_HEADERS, params={"search": ticker})
+    r = wp_request("GET", f"{WP_API}/tags", headers=WP_HEADERS, params={"search": ticker})
     tags = r.json()
     if isinstance(tags, list) and tags:
         return tags[0]["id"]
-    nova = requests.post(f"{WP_API}/tags", headers=WP_HEADERS, json={"name": ticker})
+    nova = wp_request("POST", f"{WP_API}/tags", headers=WP_HEADERS, json={"name": ticker})
     return nova.json().get("id")
 
 def solicitar_indexacao(url):
@@ -465,7 +499,7 @@ def solicitar_indexacao(url):
             "https://indexing.googleapis.com/v3/urlNotifications:publish",
             headers={"Authorization": f"Bearer {creds.token}", "Content-Type": "application/json"},
             json={"url": url, "type": "URL_UPDATED"},
-            timeout=15
+            timeout=30
         )
         if r.status_code == 200:
             print(f"  Indexacao solicitada: {url}")
@@ -476,7 +510,7 @@ def solicitar_indexacao(url):
 
 def publicar(titulo, conteudo, categorias, ticker):
     tag_id = get_tag(ticker)
-    r = requests.post(f"{WP_API}/posts", headers=WP_HEADERS, json={
+    r = wp_request("POST", f"{WP_API}/posts", headers=WP_HEADERS, json={
         "title": titulo, "content": conteudo,
         "status": "publish", "categories": categorias,
         "tags": [tag_id] if tag_id else []
