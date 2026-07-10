@@ -312,7 +312,7 @@
     "descricao": "Fatos Relevantes"
   },
   "IRDM11": {
-    "ultima": "2026-06-30"
+    "ultima": "2026-07-10"
   },
   "VGIP11_23617": {
     "status": "ok",
@@ -330,7 +330,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPFE3": {
-    "ultima": "2026-06-30"
+    "ultima": "2026-07-10"
   },
   "TOTS3_44471": {
     "status": "ok",
@@ -672,5 +672,11 @@
     "url": "https://manjubinhainvestidor.com.br/engi11-energisa-conselho-de-administracao-07-2026/",
     "data": "2026-07-10",
     "descricao": "Conselho de Administração"
+  },
+  "CPFE3_45456": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-comunicacao-sobre-transacao-entre-partes-relacionadas-07-2026/",
+    "data": "2026-07-10",
+    "descricao": "Comunicação sobre Transação entre Partes Relacionadas"
   }
 }
