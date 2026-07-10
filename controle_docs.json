@@ -348,7 +348,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RBRR11": {
-    "ultima": "2026-06-30"
+    "ultima": "2026-07-10"
   },
   "BCFF11_9369": {
     "status": "ok",
@@ -366,7 +366,7 @@
     "descricao": "Comunicação sobre Transação entre Partes Relacionadas\r\nComunicação sobre Transição entre Partes Rela"
   },
   "JBSS3": {
-    "ultima": "2026-06-30"
+    "ultima": "2026-07-10"
   },
   "ALUP11_44319": {
     "status": "ok",
@@ -678,5 +678,11 @@
     "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-comunicacao-sobre-transacao-entre-partes-relacionadas-07-2026/",
     "data": "2026-07-10",
     "descricao": "Comunicação sobre Transação entre Partes Relacionadas"
+  },
+  "RBRR11_24004": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rbrr11-rbr-high-grade-outros-comunicados-07-2026/",
+    "data": "2026-07-10",
+    "descricao": "Outros Comunicados"
   }
 }
