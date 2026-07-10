@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-06-30"
+    "ultima": "2026-07-10"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-06-30"
+    "ultima": "2026-07-10"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -660,5 +660,17 @@
     "url": "https://manjubinhainvestidor.com.br/suzb3-suzano-comunicado-ao-mercado-07-2026/",
     "data": "2026-07-09",
     "descricao": "Comunicado ao Mercado"
+  },
+  "HSML11_23936": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hsml11-hsi-malls-relatorio-gerencial-07-2026/",
+    "data": "2026-07-10",
+    "descricao": "Relatório Gerencial"
+  },
+  "ENGI11_45091": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/engi11-energisa-conselho-de-administracao-07-2026/",
+    "data": "2026-07-10",
+    "descricao": "Conselho de Administração"
   }
 }
