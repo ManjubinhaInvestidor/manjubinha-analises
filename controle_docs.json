@@ -384,7 +384,7 @@
     "descricao": "Outros Comunicados"
   },
   "RBRF11": {
-    "ultima": "2026-07-01"
+    "ultima": "2026-07-11"
   },
   "VCJR11_23505": {
     "status": "ok",
@@ -402,7 +402,7 @@
     "descricao": "Fato Relevante"
   },
   "KLBN11": {
-    "ultima": "2026-07-01"
+    "ultima": "2026-07-11"
   },
   "BPAC11_44751": {
     "status": "ok",
@@ -690,5 +690,11 @@
     "url": "https://manjubinhainvestidor.com.br/alup11-alupar-fato-relevante-07-2026/",
     "data": "2026-07-10",
     "descricao": "Fato Relevante"
+  },
+  "KLBN11_45583": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/klbn11-klabin-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-11",
+    "descricao": "Comunicado ao Mercado"
   }
 }
