@@ -420,7 +420,7 @@
     "descricao": "Informe Mensal"
   },
   "BRCO11": {
-    "ultima": "2026-07-02"
+    "ultima": "2026-07-13"
   },
   "PATL11_23818": {
     "status": "ok",
@@ -438,7 +438,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "EMBR3": {
-    "ultima": "2026-07-02"
+    "ultima": "2026-07-13"
   },
   "RENT3_45148": {
     "status": "ok",
@@ -695,6 +695,12 @@
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/klbn11-klabin-comunicado-ao-mercado-07-2026/",
     "data": "2026-07-11",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "EMBR3_45294": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/embr3-embraer-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-13",
     "descricao": "Comunicado ao Mercado"
   }
 }
