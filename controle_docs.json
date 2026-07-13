@@ -456,7 +456,7 @@
     "descricao": "Fatos Relevantes"
   },
   "RCRB11": {
-    "ultima": "2026-07-02"
+    "ultima": "2026-07-13"
   },
   "MGFF11_339": {
     "status": "ok",
@@ -474,7 +474,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "CSAN3": {
-    "ultima": "2026-07-02"
+    "ultima": "2026-07-13"
   },
   "HAPV3_43820": {
     "status": "ok",
@@ -702,5 +702,11 @@
     "url": "https://manjubinhainvestidor.com.br/embr3-embraer-comunicado-ao-mercado-07-2026/",
     "data": "2026-07-13",
     "descricao": "Comunicado ao Mercado"
+  },
+  "CSAN3_45555": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/csan3-cosan-fato-relevante-07-2026/",
+    "data": "2026-07-13",
+    "descricao": "Fato Relevante"
   }
 }

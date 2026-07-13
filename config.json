@@ -438,7 +438,8 @@
       "nome": "Cosan",
       "setor": "Commodities",
       "ri_url": "https://ri.cosan.com.br/resultados-e-comunicados/resultados/",
-      "tipo_doc": "trimestral"
+      "tipo_doc": "trimestral",
+      "logo_wp": "https://manjubinhainvestidor.com.br/wp-content/uploads/2026/07/logo-csan3.jpg"
     },
     {
       "ticker": "HAPV3",
