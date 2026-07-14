@@ -486,11 +486,13 @@
     "ultima": "2026-07-14"
   },
   "RZTR11_23698": {
-    "status": "sem_analise",
-    "data": "2026-07-02"
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rztr11-riza-terrax-fiagro-relatorio-gerencial-07-2026/",
+    "data": "2026-07-14",
+    "descricao": "Relatório Gerencial"
   },
   "RZTR11": {
-    "ultima": "2026-07-02"
+    "ultima": "2026-07-14"
   },
   "POMO4_45022": {
     "status": "ok",
@@ -499,7 +501,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "POMO4": {
-    "ultima": "2026-07-02"
+    "ultima": "2026-07-14"
   },
   "HCTR11_23105": {
     "status": "ok",
@@ -712,6 +714,12 @@
   "HAPV3_45410": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/hapv3-hapvida-relatorio-de-sustentabilidade-07-2026/",
+    "data": "2026-07-14",
+    "descricao": "Relatório de Sustentabilidade"
+  },
+  "POMO4_45483": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/pomo4-marcopolo-relatorio-de-sustentabilidade-07-2026/",
     "data": "2026-07-14",
     "descricao": "Relatório de Sustentabilidade"
   }
