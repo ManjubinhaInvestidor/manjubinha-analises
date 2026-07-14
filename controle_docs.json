@@ -465,7 +465,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "MGFF11": {
-    "ultima": "2026-07-02"
+    "ultima": "2026-07-14"
   },
   "CSAN3_45194": {
     "status": "ok",
@@ -483,7 +483,7 @@
     "descricao": "Regimento interno do Conselho de Administração"
   },
   "HAPV3": {
-    "ultima": "2026-07-02"
+    "ultima": "2026-07-14"
   },
   "RZTR11_23698": {
     "status": "sem_analise",
@@ -708,5 +708,11 @@
     "url": "https://manjubinhainvestidor.com.br/csan3-cosan-fato-relevante-07-2026/",
     "data": "2026-07-13",
     "descricao": "Fato Relevante"
+  },
+  "HAPV3_45410": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hapv3-hapvida-relatorio-de-sustentabilidade-07-2026/",
+    "data": "2026-07-14",
+    "descricao": "Relatório de Sustentabilidade"
   }
 }
