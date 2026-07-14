@@ -247,7 +247,8 @@
       "nome": "Petrobras",
       "setor": "Commodities",
       "ri_url": "https://ri.petrobras.com.br/resultados-e-comunicados/resultados/",
-      "tipo_doc": "trimestral"
+      "tipo_doc": "trimestral",
+      "logo_wp": "https://manjubinhainvestidor.com.br/wp-content/uploads/2026/07/logo-petr4.jpg"
     },
     {
       "ticker": "VALE3",

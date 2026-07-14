@@ -6,7 +6,7 @@
     "descricao": "Oferta Pública"
   },
   "MXRF11": {
-    "ultima": "2026-07-03"
+    "ultima": "2026-07-14"
   },
   "KNCR11_22956": {
     "status": "ok",
@@ -51,7 +51,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PETR4": {
-    "ultima": "2026-07-03"
+    "ultima": "2026-07-14"
   },
   "ITUB4_44665": {
     "status": "ok",
@@ -722,5 +722,11 @@
     "url": "https://manjubinhainvestidor.com.br/pomo4-marcopolo-relatorio-de-sustentabilidade-07-2026/",
     "data": "2026-07-14",
     "descricao": "Relatório de Sustentabilidade"
+  },
+  "PETR4_45671": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-comunicado-ao-mercado-07-2026-2/",
+    "data": "2026-07-14",
+    "descricao": "Comunicado ao Mercado"
   }
 }
