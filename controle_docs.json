@@ -510,7 +510,7 @@
     "descricao": "Relatório Gerencial"
   },
   "HCTR11": {
-    "ultima": "2026-07-03"
+    "ultima": "2026-07-15"
   },
   "IRBR3_45211": {
     "status": "ok",
@@ -519,7 +519,7 @@
     "descricao": "Regimento interno de Comitês"
   },
   "IRBR3": {
-    "ultima": "2026-07-03"
+    "ultima": "2026-07-15"
   },
   "MXRF11_23812": {
     "status": "ok",
@@ -740,5 +740,11 @@
     "url": "https://manjubinhainvestidor.com.br/vale3-vale-assembleia-07-2026/",
     "data": "2026-07-14",
     "descricao": "Assembleia"
+  },
+  "HCTR11_23985": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hctr11-hectare-ce-relatorio-gerencial-07-2026-2/",
+    "data": "2026-07-15",
+    "descricao": "Relatório Gerencial"
   }
 }
