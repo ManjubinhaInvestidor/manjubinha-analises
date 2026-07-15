@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-07-04"
+    "ultima": "2026-07-15"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-07-04"
+    "ultima": "2026-07-15"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -746,5 +746,17 @@
     "url": "https://manjubinhainvestidor.com.br/hctr11-hectare-ce-relatorio-gerencial-07-2026-2/",
     "data": "2026-07-15",
     "descricao": "Relatório Gerencial"
+  },
+  "HGLG11_24080": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-cshg-logistica-relatorio-gerencial-07-2026/",
+    "data": "2026-07-15",
+    "descricao": "Relatório Gerencial"
+  },
+  "ITUB4_45662": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-comunicado-ao-mercado-07-2026-2/",
+    "data": "2026-07-15",
+    "descricao": "Comunicado ao Mercado"
   }
 }
