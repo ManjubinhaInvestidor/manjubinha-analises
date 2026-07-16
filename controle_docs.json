@@ -78,7 +78,7 @@
     "descricao": "Informe Mensal"
   },
   "GARE11": {
-    "ultima": "2026-07-06"
+    "ultima": "2026-07-16"
   },
   "BBAS3_44747": {
     "status": "ok",
@@ -123,7 +123,7 @@
     "descricao": "Diretoria"
   },
   "BBDC4": {
-    "ultima": "2026-07-06"
+    "ultima": "2026-07-16"
   },
   "ABEV3_42735": {
     "status": "ok",
@@ -776,5 +776,17 @@
     "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-comunicado-ao-mercado-07-2026/",
     "data": "2026-07-16",
     "descricao": "Comunicado ao Mercado"
+  },
+  "GARE11_24114": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/gare11-guardian-real-estate-informe-mensal-07-2026/",
+    "data": "2026-07-16",
+    "descricao": "Informe Mensal"
+  },
+  "BBDC4_45632": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-ato-homologatorio-emitido-pelo-banco-central-07-2026/",
+    "data": "2026-07-16",
+    "descricao": "Ato Homologatório emitido pelo Banco Central"
   }
 }
