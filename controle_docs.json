@@ -105,7 +105,7 @@
     "descricao": "Informe Mensal"
   },
   "CPTS11": {
-    "ultima": "2026-07-06"
+    "ultima": "2026-07-16"
   },
   "GGRC11_23620": {
     "status": "ok",
@@ -132,7 +132,7 @@
     "descricao": "Conselho de Administração"
   },
   "ABEV3": {
-    "ultima": "2026-07-06"
+    "ultima": "2026-07-16"
   },
   "KNSC11_22957": {
     "status": "ok",
@@ -588,8 +588,10 @@
     "descricao": "Conselho de Administração"
   },
   "CPTS11_23855": {
-    "status": "sem_analise",
-    "data": "2026-07-06"
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpts11-capitania-securities-ii-relatorio-gerencial-07-2026/",
+    "data": "2026-07-16",
+    "descricao": "Relatório Gerencial"
   },
   "GGRC11_23817": {
     "status": "ok",
