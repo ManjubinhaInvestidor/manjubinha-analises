@@ -114,7 +114,7 @@
     "descricao": "Fatos Relevantes"
   },
   "GGRC11": {
-    "ultima": "2026-07-07"
+    "ultima": "2026-07-17"
   },
   "BBDC4_44887": {
     "status": "ok",
@@ -159,7 +159,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "TAEE11": {
-    "ultima": "2026-07-07"
+    "ultima": "2026-07-17"
   },
   "CPLE6_44918": {
     "status": "ok",
@@ -790,5 +790,17 @@
     "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-ato-homologatorio-emitido-pelo-banco-central-07-2026/",
     "data": "2026-07-16",
     "descricao": "Ato Homologatório emitido pelo Banco Central"
+  },
+  "GGRC11_24212": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/ggrc11-ggr-covepi-renda-outros-comunicados-07-2026/",
+    "data": "2026-07-17",
+    "descricao": "Outros Comunicados"
+  },
+  "TAEE11_45748": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/taee11-taesa-aviso-aos-debenturistas-07-2026/",
+    "data": "2026-07-17",
+    "descricao": "Aviso aos Debenturistas"
   }
 }
