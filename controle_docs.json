@@ -141,7 +141,7 @@
     "descricao": "Informe Mensal"
   },
   "KNSC11": {
-    "ultima": "2026-07-07"
+    "ultima": "2026-07-17"
   },
   "VISC11_23663": {
     "status": "ok",
@@ -168,7 +168,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPLE6": {
-    "ultima": "2026-07-07"
+    "ultima": "2026-07-17"
   },
   "BTLG11_23251": {
     "status": "ok",
@@ -802,5 +802,17 @@
     "url": "https://manjubinhainvestidor.com.br/taee11-taesa-aviso-aos-debenturistas-07-2026/",
     "data": "2026-07-17",
     "descricao": "Aviso aos Debenturistas"
+  },
+  "KNSC11_24165": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knsc11-kinea-securities-informe-mensal-07-2026/",
+    "data": "2026-07-17",
+    "descricao": "Informe Mensal"
+  },
+  "CPLE6_45785": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-fato-relevante-07-2026/",
+    "data": "2026-07-17",
+    "descricao": "Fato Relevante"
   }
 }
