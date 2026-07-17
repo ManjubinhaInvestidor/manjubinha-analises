@@ -177,7 +177,7 @@
     "descricao": "Informe Mensal"
   },
   "BTLG11": {
-    "ultima": "2026-07-08"
+    "ultima": "2026-07-17"
   },
   "OUJP11_23642": {
     "status": "ok",
@@ -204,7 +204,7 @@
     "descricao": "Assembleia"
   },
   "VIVT3": {
-    "ultima": "2026-07-08"
+    "ultima": "2026-07-17"
   },
   "RECR11_23281": {
     "status": "ok",
@@ -826,5 +826,17 @@
     "url": "https://manjubinhainvestidor.com.br/egie3-engie-brasil-escrituras-e-aditamentos-de-debentures-07-2026/",
     "data": "2026-07-17",
     "descricao": "Escrituras e aditamentos de debêntures"
+  },
+  "BTLG11_24189": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/btlg11-btg-pactual-logistica-distribuicoes-07-2026/",
+    "data": "2026-07-17",
+    "descricao": "Distribuições"
+  },
+  "VIVT3_45883": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-aviso-aos-acionistas-07-2026/",
+    "data": "2026-07-17",
+    "descricao": "Aviso aos Acionistas"
   }
 }
