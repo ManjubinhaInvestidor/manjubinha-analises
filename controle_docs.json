@@ -240,7 +240,7 @@
     "descricao": "Relatório Gerencial"
   },
   "TRBL11": {
-    "ultima": "2026-07-08"
+    "ultima": "2026-07-20"
   },
   "PVBI11_23402": {
     "status": "ok",
@@ -258,7 +258,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "RDOR3": {
-    "ultima": "2026-07-08"
+    "ultima": "2026-07-20"
   },
   "B3SA3_44745": {
     "status": "ok",
@@ -850,5 +850,17 @@
     "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-dados-economico-financeiros-07-2026/",
     "data": "2026-07-20",
     "descricao": "Dados Econômico-Financeiros"
+  },
+  "TRBL11_24322": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/trbl11-tellus-rio-bravo-logistica-informe-mensal-07-2026/",
+    "data": "2026-07-20",
+    "descricao": "Informe Mensal"
+  },
+  "RDOR3_45681": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rdor3-rede-dor-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-20",
+    "descricao": "Comunicado ao Mercado"
   }
 }
