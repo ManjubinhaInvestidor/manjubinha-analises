@@ -312,7 +312,7 @@
     "descricao": "Fatos Relevantes"
   },
   "IRDM11": {
-    "ultima": "2026-07-10"
+    "ultima": "2026-07-21"
   },
   "VGIP11_23617": {
     "status": "ok",
@@ -330,7 +330,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPFE3": {
-    "ultima": "2026-07-10"
+    "ultima": "2026-07-21"
   },
   "TOTS3_44471": {
     "status": "ok",
@@ -880,5 +880,17 @@
     "url": "https://manjubinhainvestidor.com.br/engi11-energisa-comunicado-ao-mercado-07-2026/",
     "data": "2026-07-21",
     "descricao": "Comunicado ao Mercado"
+  },
+  "IRDM11_24134": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/irdm11-iridium-recebiveis-imobiliarios-outros-comunicados-07-2026/",
+    "data": "2026-07-21",
+    "descricao": "Outros Comunicados"
+  },
+  "CPFE3_45894": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-conselho-de-administracao-07-2026/",
+    "data": "2026-07-21",
+    "descricao": "Conselho de Administração"
   }
 }
