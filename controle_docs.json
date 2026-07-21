@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-07-10"
+    "ultima": "2026-07-21"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-07-10"
+    "ultima": "2026-07-21"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -866,6 +866,18 @@
   "B3SA3_45774": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-21",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "HSML11_24263": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hsml11-hsi-malls-informe-mensal-07-2026/",
+    "data": "2026-07-21",
+    "descricao": "Informe Mensal"
+  },
+  "ENGI11_45977": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/engi11-energisa-comunicado-ao-mercado-07-2026/",
     "data": "2026-07-21",
     "descricao": "Comunicado ao Mercado"
   }
