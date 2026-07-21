@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-07-20",
+  "ultima_atualizacao": "2026-07-21",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -550,7 +550,7 @@
       "ticker": "B3SA3",
       "nome": "B3 Bolsa de Valores",
       "setor": "Financeiro",
-      "post_url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-comunicado-ao-mercado-06-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-comunicado-ao-mercado-07-2026/",
       "metricas": {
         "liquidez_diaria": 658498000.0,
         "dy_12m": 5.33,
