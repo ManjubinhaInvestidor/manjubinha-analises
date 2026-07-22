@@ -1,0 +1,18 @@
+name: Reindexar URLs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  reindexar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests google-auth
+      - name: Reindexar
+        env:
+          GOOGLE_INDEXING_KEY: ${{ secrets.GOOGLE_INDEXING_KEY }}
+        run: python -u reindexar.py
