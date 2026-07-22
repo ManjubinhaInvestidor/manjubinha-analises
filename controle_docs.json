@@ -348,7 +348,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RBRR11": {
-    "ultima": "2026-07-10"
+    "ultima": "2026-07-22"
   },
   "BCFF11_9369": {
     "status": "ok",
@@ -366,7 +366,7 @@
     "descricao": "Comunicação sobre Transação entre Partes Relacionadas\r\nComunicação sobre Transição entre Partes Rela"
   },
   "JBSS3": {
-    "ultima": "2026-07-10"
+    "ultima": "2026-07-22"
   },
   "ALUP11_44319": {
     "status": "ok",
@@ -904,5 +904,11 @@
     "url": "https://manjubinhainvestidor.com.br/tots3-totvs-comunicado-ao-mercado-07-2026/",
     "data": "2026-07-22",
     "descricao": "Comunicado ao Mercado"
+  },
+  "RBRR11_24397": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rbrr11-rbr-high-grade-informe-mensal-07-2026/",
+    "data": "2026-07-22",
+    "descricao": "Informe Mensal"
   }
 }
