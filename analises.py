@@ -626,7 +626,10 @@ def processar_ativo(ativo, controle, tipo):
         return
 
     mes    = datetime.today().strftime("%m/%Y")
-    titulo = f"{t} - {ativo['nome']} | {doc['descricao']} {mes}"
+    if tipo == "fii":
+        titulo = f"{t}: dividendos e análise ({doc['descricao']} {mes})"
+    else:
+        titulo = f"{t} ({ativo['nome']}): análise de {doc['descricao']} {mes}"
     print("  Publicando...")
     url = publicar(titulo, analise, categorias, t)
     if url:
