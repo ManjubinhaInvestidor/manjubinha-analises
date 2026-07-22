@@ -357,7 +357,7 @@
     "descricao": "Outros Comunicados"
   },
   "BCFF11": {
-    "ultima": "2026-07-10"
+    "ultima": "2026-07-22"
   },
   "JBSS3_31612": {
     "status": "ok",
@@ -375,7 +375,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "ALUP11": {
-    "ultima": "2026-07-10"
+    "ultima": "2026-07-22"
   },
   "RBRF11_21325": {
     "status": "ok",
@@ -910,5 +910,11 @@
     "url": "https://manjubinhainvestidor.com.br/rbrr11-rbr-high-grade-informe-mensal-07-2026/",
     "data": "2026-07-22",
     "descricao": "Informe Mensal"
+  },
+  "ALUP11_45769": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alup11-alupar-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-22",
+    "descricao": "Comunicado ao Mercado"
   }
 }
