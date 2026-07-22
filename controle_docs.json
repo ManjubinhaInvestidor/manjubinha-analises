@@ -321,7 +321,7 @@
     "descricao": "Relatório Gerencial"
   },
   "VGIP11": {
-    "ultima": "2026-07-10"
+    "ultima": "2026-07-22"
   },
   "CPFE3_44682": {
     "status": "ok",
@@ -339,7 +339,7 @@
     "descricao": "Reunião da Administração"
   },
   "TOTS3": {
-    "ultima": "2026-07-10"
+    "ultima": "2026-07-22"
   },
   "RBRR11_23449": {
     "status": "ok",
@@ -892,5 +892,17 @@
     "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-conselho-de-administracao-07-2026/",
     "data": "2026-07-21",
     "descricao": "Conselho de Administração"
+  },
+  "VGIP11_24174": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vgip11-valora-cri-ipca-informe-mensal-07-2026/",
+    "data": "2026-07-22",
+    "descricao": "Informe Mensal"
+  },
+  "TOTS3_45823": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/tots3-totvs-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-22",
+    "descricao": "Comunicado ao Mercado"
   }
 }

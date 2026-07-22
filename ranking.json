@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-07-21",
+  "ultima_atualizacao": "2026-07-22",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -373,7 +373,7 @@
       "nome": "Valora CRI IPCA",
       "tipo": "Papel",
       "segmento": "TVM",
-      "post_url": "https://manjubinhainvestidor.com.br/vgip11-valora-cri-ipca-relatorio-gerencial-06-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/vgip11-valora-cri-ipca-informe-mensal-07-2026/",
       "metricas": {
         "liquidez_diaria": 2356590.0,
         "dy_12m": 12.28,
