@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-07-22",
+  "ultima_atualizacao": "2026-07-23",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -352,7 +352,7 @@
       "nome": "Vinci Credito Imobiliario",
       "tipo": "Papel",
       "segmento": "TVM",
-      "post_url": "https://manjubinhainvestidor.com.br/vcjr11-vinci-credito-imobiliario-informe-mensal-07-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/vcjr11-dividendos-e-analise-relatorio-gerencial-07-2026/",
       "metricas": {
         "liquidez_diaria": 2471660.0,
         "dy_12m": 13.77,
