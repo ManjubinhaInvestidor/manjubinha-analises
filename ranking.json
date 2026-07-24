@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-07-23",
+  "ultima_atualizacao": "2026-07-24",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -35,7 +35,7 @@
       "nome": "Maxi Renda",
       "tipo": "Papel",
       "segmento": "TVM",
-      "post_url": "https://manjubinhainvestidor.com.br/mxrf11-maxi-renda-fatos-relevantes-07-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/mxrf11-dividendos-e-analise-outros-comunicados-07-2026/",
       "metricas": {
         "liquidez_diaria": 15002800.0,
         "dy_12m": 13.09,
@@ -461,7 +461,7 @@
       "ticker": "PETR4",
       "nome": "Petrobras",
       "setor": "Commodities",
-      "post_url": "https://manjubinhainvestidor.com.br/petr4-petrobras-comunicado-ao-mercado-07-2026-2/",
+      "post_url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-07-2026/",
       "metricas": {
         "liquidez_diaria": 1961700000.0,
         "dy_12m": 7.85,

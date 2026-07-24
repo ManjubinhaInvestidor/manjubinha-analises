@@ -6,7 +6,7 @@
     "descricao": "Oferta Pública"
   },
   "MXRF11": {
-    "ultima": "2026-07-14"
+    "ultima": "2026-07-24"
   },
   "KNCR11_22956": {
     "status": "ok",
@@ -51,7 +51,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PETR4": {
-    "ultima": "2026-07-14"
+    "ultima": "2026-07-24"
   },
   "ITUB4_44665": {
     "status": "ok",
@@ -958,5 +958,17 @@
     "url": "https://manjubinhainvestidor.com.br/csan3-cosan-analise-de-conselho-de-administracao-07-2026/",
     "data": "2026-07-23",
     "descricao": "Conselho de Administração"
+  },
+  "MXRF11_24468": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/mxrf11-dividendos-e-analise-outros-comunicados-07-2026/",
+    "data": "2026-07-24",
+    "descricao": "Outros Comunicados"
+  },
+  "PETR4_46072": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-24",
+    "descricao": "Comunicado ao Mercado"
   }
 }
