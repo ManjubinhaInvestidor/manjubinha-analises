@@ -15,7 +15,7 @@
     "descricao": "Informe Mensal"
   },
   "KNCR11": {
-    "ultima": "2026-07-14"
+    "ultima": "2026-07-24"
   },
   "VALE3_44810": {
     "status": "ok",
@@ -24,7 +24,7 @@
     "descricao": "Outros Comunicados Não Considerados Fatos Relevantes - Comunicado ao Mercado"
   },
   "VALE3": {
-    "ultima": "2026-07-14"
+    "ultima": "2026-07-24"
   },
   "HGLG11_23342": {
     "status": "ok",
@@ -970,5 +970,17 @@
     "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-07-2026/",
     "data": "2026-07-24",
     "descricao": "Comunicado ao Mercado"
+  },
+  "KNCR11_24164": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/kncr11-dividendos-e-analise-informe-mensal-07-2026/",
+    "data": "2026-07-24",
+    "descricao": "Informe Mensal"
+  },
+  "VALE3_46081": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-fato-relevante-07-2026/",
+    "data": "2026-07-24",
+    "descricao": "Fato Relevante"
   }
 }
