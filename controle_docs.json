@@ -492,7 +492,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RZTR11": {
-    "ultima": "2026-07-14"
+    "ultima": "2026-07-25"
   },
   "POMO4_45022": {
     "status": "ok",
@@ -501,7 +501,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "POMO4": {
-    "ultima": "2026-07-14"
+    "ultima": "2026-07-25"
   },
   "HCTR11_23105": {
     "status": "ok",
@@ -982,5 +982,11 @@
     "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-fato-relevante-07-2026/",
     "data": "2026-07-24",
     "descricao": "Fato Relevante"
+  },
+  "RZTR11_24729": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rztr11-dividendos-e-analise-fatos-relevantes-07-2026/",
+    "data": "2026-07-25",
+    "descricao": "Fatos Relevantes"
   }
 }
