@@ -510,7 +510,7 @@
     "descricao": "Relatório Gerencial"
   },
   "HCTR11": {
-    "ultima": "2026-07-15"
+    "ultima": "2026-07-27"
   },
   "IRBR3_45211": {
     "status": "ok",
@@ -519,7 +519,7 @@
     "descricao": "Regimento interno de Comitês"
   },
   "IRBR3": {
-    "ultima": "2026-07-15"
+    "ultima": "2026-07-27"
   },
   "MXRF11_23812": {
     "status": "ok",
@@ -1006,5 +1006,17 @@
     "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-conselho-consultivo-07-2026/",
     "data": "2026-07-27",
     "descricao": "Conselho Consultivo"
+  },
+  "HCTR11_24258": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hctr11-dividendos-e-analise-informe-mensal-07-2026/",
+    "data": "2026-07-27",
+    "descricao": "Informe Mensal"
+  },
+  "IRBR3_46024": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-comunicado-ao-mercado-07-2026/",
+    "data": "2026-07-27",
+    "descricao": "Comunicado ao Mercado"
   }
 }
