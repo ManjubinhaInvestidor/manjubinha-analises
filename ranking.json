@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-07-25",
+  "ultima_atualizacao": "2026-07-27",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -99,7 +99,7 @@
       "nome": "CSHG Logistica",
       "tipo": "Tijolo",
       "segmento": "Logistico",
-      "post_url": "https://manjubinhainvestidor.com.br/hglg11-cshg-logistica-relatorio-gerencial-07-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-informe-mensal-07-2026/",
       "metricas": {
         "liquidez_diaria": 14627000.0,
         "dy_12m": 8.68,

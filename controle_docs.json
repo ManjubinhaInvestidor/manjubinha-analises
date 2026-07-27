@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-07-15"
+    "ultima": "2026-07-27"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-07-15"
+    "ultima": "2026-07-27"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -988,5 +988,11 @@
     "url": "https://manjubinhainvestidor.com.br/rztr11-dividendos-e-analise-fatos-relevantes-07-2026/",
     "data": "2026-07-25",
     "descricao": "Fatos Relevantes"
+  },
+  "HGLG11_24181": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-informe-mensal-07-2026/",
+    "data": "2026-07-27",
+    "descricao": "Informe Mensal"
   }
 }
