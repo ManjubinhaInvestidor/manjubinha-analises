@@ -42,7 +42,7 @@
     "descricao": "Informe Mensal"
   },
   "XPML11": {
-    "ultima": "2026-07-15"
+    "ultima": "2026-07-27"
   },
   "PETR4_44699": {
     "status": "ok",
@@ -87,7 +87,7 @@
     "descricao": "Relatório de Agência de Rating"
   },
   "BBAS3": {
-    "ultima": "2026-07-15"
+    "ultima": "2026-07-27"
   },
   "WEGE3_44388": {
     "status": "ok",
@@ -994,5 +994,17 @@
     "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-informe-mensal-07-2026/",
     "data": "2026-07-27",
     "descricao": "Informe Mensal"
+  },
+  "XPML11_24173": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/xpml11-dividendos-e-analise-informe-mensal-07-2026/",
+    "data": "2026-07-27",
+    "descricao": "Informe Mensal"
+  },
+  "BBAS3_46103": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-conselho-consultivo-07-2026/",
+    "data": "2026-07-27",
+    "descricao": "Conselho Consultivo"
   }
 }
