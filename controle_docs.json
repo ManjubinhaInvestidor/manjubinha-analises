@@ -114,7 +114,7 @@
     "descricao": "Fatos Relevantes"
   },
   "GGRC11": {
-    "ultima": "2026-07-17"
+    "ultima": "2026-07-28"
   },
   "BBDC4_44887": {
     "status": "ok",
@@ -159,7 +159,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "TAEE11": {
-    "ultima": "2026-07-17"
+    "ultima": "2026-07-28"
   },
   "CPLE6_44918": {
     "status": "ok",
@@ -1048,5 +1048,17 @@
     "url": "https://manjubinhainvestidor.com.br/cpts11-dividendos-e-analise-informe-mensal-07-2026/",
     "data": "2026-07-28",
     "descricao": "Informe Mensal"
+  },
+  "GGRC11_24559": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/ggrc11-dividendos-e-analise-relatorio-gerencial-07-2026/",
+    "data": "2026-07-28",
+    "descricao": "Relatório Gerencial"
+  },
+  "TAEE11_45879": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/taee11-taesa-analise-de-assembleia-07-2026/",
+    "data": "2026-07-28",
+    "descricao": "Assembleia"
   }
 }
