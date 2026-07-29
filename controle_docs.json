@@ -141,7 +141,7 @@
     "descricao": "Informe Mensal"
   },
   "KNSC11": {
-    "ultima": "2026-07-17"
+    "ultima": "2026-07-29"
   },
   "VISC11_23663": {
     "status": "ok",
@@ -168,7 +168,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPLE6": {
-    "ultima": "2026-07-17"
+    "ultima": "2026-07-29"
   },
   "BTLG11_23251": {
     "status": "ok",
@@ -1060,5 +1060,17 @@
     "url": "https://manjubinhainvestidor.com.br/taee11-taesa-analise-de-assembleia-07-2026/",
     "data": "2026-07-28",
     "descricao": "Assembleia"
+  },
+  "KNSC11_24838": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knsc11-dividendos-e-analise-oferta-publica-07-2026/",
+    "data": "2026-07-29",
+    "descricao": "Oferta Pública"
+  },
+  "CPLE6_45895": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-conselho-de-administracao-07-2026/",
+    "data": "2026-07-29",
+    "descricao": "Conselho de Administração"
   }
 }
