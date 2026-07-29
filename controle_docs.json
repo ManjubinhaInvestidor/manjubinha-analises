@@ -186,7 +186,7 @@
     "descricao": "Informe Mensal"
   },
   "OUJP11": {
-    "ultima": "2026-07-17"
+    "ultima": "2026-07-29"
   },
   "EGIE3_44842": {
     "status": "ok",
@@ -222,7 +222,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PRIO3": {
-    "ultima": "2026-07-17"
+    "ultima": "2026-07-29"
   },
   "SBSP3_44881": {
     "status": "ok",
@@ -1090,5 +1090,11 @@
     "url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-comunicado-ao-mercado-07-2026/",
     "data": "2026-07-29",
     "descricao": "Comunicado ao Mercado"
+  },
+  "OUJP11_24893": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/oujp11-dividendos-e-analise-relatorio-gerencial-07-2026/",
+    "data": "2026-07-29",
+    "descricao": "Relatório Gerencial"
   }
 }
