@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-07-21"
+    "ultima": "2026-07-31"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-07-21"
+    "ultima": "2026-07-31"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -1136,5 +1136,11 @@
     "url": "https://manjubinhainvestidor.com.br/alzr11-dividendos-e-analise-fatos-relevantes-07-2026/",
     "data": "2026-07-30",
     "descricao": "Fatos Relevantes"
+  },
+  "ENGI11_46052": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-conselho-de-administracao-07-2026/",
+    "data": "2026-07-31",
+    "descricao": "Conselho de Administração"
   }
 }
