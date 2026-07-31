@@ -348,7 +348,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RBRR11": {
-    "ultima": "2026-07-22"
+    "ultima": "2026-07-31"
   },
   "BCFF11_9369": {
     "status": "ok",
@@ -366,7 +366,7 @@
     "descricao": "Comunicação sobre Transação entre Partes Relacionadas\r\nComunicação sobre Transição entre Partes Rela"
   },
   "JBSS3": {
-    "ultima": "2026-07-22"
+    "ultima": "2026-07-31"
   },
   "ALUP11_44319": {
     "status": "ok",
@@ -1152,6 +1152,12 @@
   "VGIP11_24574": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/vgip11-dividendos-e-analise-relatorio-gerencial-07-2026/",
+    "data": "2026-07-31",
+    "descricao": "Relatório Gerencial"
+  },
+  "RBRR11_24583": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-relatorio-gerencial-07-2026/",
     "data": "2026-07-31",
     "descricao": "Relatório Gerencial"
   }
