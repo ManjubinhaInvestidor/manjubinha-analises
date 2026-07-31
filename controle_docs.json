@@ -321,7 +321,7 @@
     "descricao": "Relatório Gerencial"
   },
   "VGIP11": {
-    "ultima": "2026-07-22"
+    "ultima": "2026-07-31"
   },
   "CPFE3_44682": {
     "status": "ok",
@@ -339,7 +339,7 @@
     "descricao": "Reunião da Administração"
   },
   "TOTS3": {
-    "ultima": "2026-07-22"
+    "ultima": "2026-07-31"
   },
   "RBRR11_23449": {
     "status": "ok",
@@ -1148,5 +1148,11 @@
     "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-conselho-de-administracao-07-2026/",
     "data": "2026-07-31",
     "descricao": "Conselho de Administração"
+  },
+  "VGIP11_24574": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vgip11-dividendos-e-analise-relatorio-gerencial-07-2026/",
+    "data": "2026-07-31",
+    "descricao": "Relatório Gerencial"
   }
 }
