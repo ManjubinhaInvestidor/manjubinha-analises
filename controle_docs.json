@@ -393,7 +393,7 @@
     "descricao": "Informe Mensal"
   },
   "VCJR11": {
-    "ultima": "2026-07-23"
+    "ultima": "2026-08-03"
   },
   "KLBN11_44777": {
     "status": "ok",
@@ -411,7 +411,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "BPAC11": {
-    "ultima": "2026-07-23"
+    "ultima": "2026-08-03"
   },
   "BRCO11_23147": {
     "status": "ok",
@@ -1160,5 +1160,11 @@
     "url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-relatorio-gerencial-07-2026/",
     "data": "2026-07-31",
     "descricao": "Relatório Gerencial"
+  },
+  "VCJR11_24664": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vcjr11-dividendos-e-analise-informe-mensal-08-2026/",
+    "data": "2026-08-03",
+    "descricao": "Informe Mensal"
   }
 }
