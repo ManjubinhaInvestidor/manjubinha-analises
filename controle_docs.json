@@ -429,7 +429,7 @@
     "descricao": "Distribuições"
   },
   "PATL11": {
-    "ultima": "2026-07-23"
+    "ultima": "2026-08-04"
   },
   "EMBR3_44598": {
     "status": "ok",
@@ -447,7 +447,7 @@
     "descricao": "Documentos de Oferta de Distribuição Pública"
   },
   "RENT3": {
-    "ultima": "2026-07-23"
+    "ultima": "2026-08-04"
   },
   "RCRB11_23734": {
     "status": "ok",
@@ -1178,5 +1178,17 @@
     "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-comunicado-ao-mercado-08-2026/",
     "data": "2026-08-03",
     "descricao": "Comunicado ao Mercado"
+  },
+  "PATL11_24691": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/patl11-dividendos-e-analise-informe-mensal-08-2026/",
+    "data": "2026-08-04",
+    "descricao": "Informe Mensal"
+  },
+  "RENT3_46443": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rent3-localiza-analise-de-documentos-de-oferta-de-distribuicao-publica-08-2026/",
+    "data": "2026-08-04",
+    "descricao": "Documentos de Oferta de Distribuição Pública"
   }
 }
