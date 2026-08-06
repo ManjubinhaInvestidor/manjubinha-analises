@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-08-05",
+  "ultima_atualizacao": "2026-08-06",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -98,7 +98,7 @@
       "nome": "CSHG Logistica",
       "tipo": "Tijolo",
       "segmento": "Logistico",
-      "post_url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-informe-mensal-07-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-fatos-relevantes-08-2026/",
       "metricas": {
         "liquidez_diaria": 16702200.0,
         "dy_12m": 8.89,
@@ -462,7 +462,7 @@
       "ticker": "ITUB4",
       "nome": "Itau Unibanco",
       "setor": "Financeiro",
-      "post_url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-comunicado-ao-mercado-07-2026-2/",
+      "post_url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-analise-de-comunicado-ao-mercado-08-2026/",
       "metricas": {
         "liquidez_diaria": 965557000.0,
         "dy_12m": 8.04,

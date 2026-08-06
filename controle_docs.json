@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-07-27"
+    "ultima": "2026-08-06"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-07-27"
+    "ultima": "2026-08-06"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -1214,5 +1214,17 @@
     "url": "https://manjubinhainvestidor.com.br/rztr11-dividendos-e-analise-relatorio-gerencial-08-2026/",
     "data": "2026-08-05",
     "descricao": "Relatório Gerencial"
+  },
+  "HGLG11_24939": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-fatos-relevantes-08-2026/",
+    "data": "2026-08-06",
+    "descricao": "Fatos Relevantes"
+  },
+  "ITUB4_46715": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-06",
+    "descricao": "Comunicado ao Mercado"
   }
 }
