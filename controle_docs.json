@@ -42,7 +42,7 @@
     "descricao": "Informe Mensal"
   },
   "XPML11": {
-    "ultima": "2026-07-27"
+    "ultima": "2026-08-06"
   },
   "PETR4_44699": {
     "status": "ok",
@@ -87,7 +87,7 @@
     "descricao": "Relatório de Agência de Rating"
   },
   "BBAS3": {
-    "ultima": "2026-07-27"
+    "ultima": "2026-08-06"
   },
   "WEGE3_44388": {
     "status": "ok",
@@ -1226,5 +1226,11 @@
     "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-analise-de-comunicado-ao-mercado-08-2026/",
     "data": "2026-08-06",
     "descricao": "Comunicado ao Mercado"
+  },
+  "BBAS3_46481": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-comunicacao-sobre-transacao-entre-partes-relacionadas-08-2026/",
+    "data": "2026-08-06",
+    "descricao": "Comunicação sobre Transação entre Partes Relacionadas"
   }
 }
