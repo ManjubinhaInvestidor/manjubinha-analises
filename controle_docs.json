@@ -78,7 +78,7 @@
     "descricao": "Informe Mensal"
   },
   "GARE11": {
-    "ultima": "2026-07-28"
+    "ultima": "2026-08-07"
   },
   "BBAS3_44747": {
     "status": "ok",
@@ -123,7 +123,7 @@
     "descricao": "Diretoria"
   },
   "BBDC4": {
-    "ultima": "2026-07-28"
+    "ultima": "2026-08-07"
   },
   "ABEV3_42735": {
     "status": "ok",
@@ -1254,6 +1254,18 @@
   "IRBR3_46859": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-07",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "GARE11_25022": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/gare11-dividendos-e-analise-fatos-relevantes-08-2026/",
+    "data": "2026-08-07",
+    "descricao": "Fatos Relevantes"
+  },
+  "BBDC4_46800": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-comunicado-ao-mercado-08-2026/",
     "data": "2026-08-07",
     "descricao": "Comunicado ao Mercado"
   }
