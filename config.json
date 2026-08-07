@@ -295,7 +295,8 @@
       "nome": "Ambev",
       "setor": "Consumo",
       "ri_url": "https://ri.ambev.com.br/resultados-e-comunicados/resultados-trimestrais/",
-      "tipo_doc": "trimestral"
+      "tipo_doc": "trimestral",
+      "logo_wp": "https://manjubinhainvestidor.com.br/wp-content/uploads/2026/08/logo-abev3.jpg"
     },
     {
       "ticker": "TAEE11",
