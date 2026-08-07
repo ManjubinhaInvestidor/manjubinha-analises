@@ -510,7 +510,7 @@
     "descricao": "Relatório Gerencial"
   },
   "HCTR11": {
-    "ultima": "2026-07-27"
+    "ultima": "2026-08-07"
   },
   "IRBR3_45211": {
     "status": "ok",
@@ -519,7 +519,7 @@
     "descricao": "Regimento interno de Comitês"
   },
   "IRBR3": {
-    "ultima": "2026-07-27"
+    "ultima": "2026-08-07"
   },
   "MXRF11_23812": {
     "status": "ok",
@@ -1244,5 +1244,17 @@
     "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-analise-de-dados-economico-financeiros-08-2026/",
     "data": "2026-08-07",
     "descricao": "Dados Econômico-Financeiros"
+  },
+  "HCTR11_24940": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hctr11-dividendos-e-analise-relatorio-gerencial-08-2026/",
+    "data": "2026-08-07",
+    "descricao": "Relatório Gerencial"
+  },
+  "IRBR3_46859": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-07",
+    "descricao": "Comunicado ao Mercado"
   }
 }
