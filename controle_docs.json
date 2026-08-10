@@ -177,7 +177,7 @@
     "descricao": "Informe Mensal"
   },
   "BTLG11": {
-    "ultima": "2026-07-29"
+    "ultima": "2026-08-10"
   },
   "OUJP11_23642": {
     "status": "ok",
@@ -204,7 +204,7 @@
     "descricao": "Assembleia"
   },
   "VIVT3": {
-    "ultima": "2026-07-29"
+    "ultima": "2026-08-10"
   },
   "RECR11_23281": {
     "status": "ok",
@@ -1314,5 +1314,17 @@
     "url": "https://manjubinhainvestidor.com.br/egie3-engie-brasil-analise-de-press-release-08-2026/",
     "data": "2026-08-10",
     "descricao": "Press-release"
+  },
+  "BTLG11_25070": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-relatorio-gerencial-08-2026/",
+    "data": "2026-08-10",
+    "descricao": "Relatório Gerencial"
+  },
+  "VIVT3_46565": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-assembleia-08-2026/",
+    "data": "2026-08-10",
+    "descricao": "Assembleia"
   }
 }
