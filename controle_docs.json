@@ -213,7 +213,7 @@
     "descricao": "Informe Mensal"
   },
   "RECR11": {
-    "ultima": "2026-07-30"
+    "ultima": "2026-08-11"
   },
   "PRIO3_44871": {
     "status": "ok",
@@ -231,7 +231,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "SBSP3": {
-    "ultima": "2026-07-30"
+    "ultima": "2026-08-11"
   },
   "TRBL11_23447": {
     "status": "ok",
@@ -1332,5 +1332,17 @@
     "url": "https://manjubinhainvestidor.com.br/prio3-prio-analise-de-comunicado-ao-mercado-08-2026/",
     "data": "2026-08-10",
     "descricao": "Comunicado ao Mercado"
+  },
+  "RECR11_25128": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/recr11-dividendos-e-analise-relatorio-gerencial-08-2026/",
+    "data": "2026-08-11",
+    "descricao": "Relatório Gerencial"
+  },
+  "SBSP3_46910": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-assembleia-08-2026/",
+    "data": "2026-08-11",
+    "descricao": "Assembleia"
   }
 }
