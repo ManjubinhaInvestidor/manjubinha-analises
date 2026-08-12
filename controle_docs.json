@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-07-31"
+    "ultima": "2026-08-12"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-07-31"
+    "ultima": "2026-08-12"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -1350,6 +1350,18 @@
   "SUZB3_46758": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/suzb3-suzano-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-12",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "HSML11_25107": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hsml11-dividendos-e-analise-relatorio-gerencial-08-2026/",
+    "data": "2026-08-12",
+    "descricao": "Relatório Gerencial"
+  },
+  "ENGI11_47135": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-08-2026/",
     "data": "2026-08-12",
     "descricao": "Comunicado ao Mercado"
   }
