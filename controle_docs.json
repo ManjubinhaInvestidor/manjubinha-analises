@@ -276,7 +276,7 @@
     "descricao": "Fatos Relevantes"
   },
   "ALZR11": {
-    "ultima": "2026-07-30"
+    "ultima": "2026-08-12"
   },
   "HSML11_23175": {
     "status": "ok",
@@ -294,7 +294,7 @@
     "descricao": "Reunião da Administração"
   },
   "SUZB3": {
-    "ultima": "2026-07-30"
+    "ultima": "2026-08-12"
   },
   "ENGI11_44852": {
     "status": "ok",
@@ -1346,5 +1346,11 @@
     "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-assembleia-08-2026/",
     "data": "2026-08-11",
     "descricao": "Assembleia"
+  },
+  "SUZB3_46758": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/suzb3-suzano-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-12",
+    "descricao": "Comunicado ao Mercado"
   }
 }
