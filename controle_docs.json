@@ -249,7 +249,7 @@
     "descricao": "Informe Mensal"
   },
   "PVBI11": {
-    "ultima": "2026-07-30"
+    "ultima": "2026-08-12"
   },
   "RDOR3_44874": {
     "status": "ok",
@@ -267,7 +267,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "B3SA3": {
-    "ultima": "2026-07-30"
+    "ultima": "2026-08-12"
   },
   "ALZR11_23615": {
     "status": "ok",
@@ -1122,8 +1122,10 @@
     "descricao": "Aviso aos Debenturistas"
   },
   "PVBI11_24642": {
-    "status": "sem_analise",
-    "data": "2026-07-30"
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/pvbi11-dividendos-e-analise-relatorio-gerencial-08-2026/",
+    "data": "2026-08-12",
+    "descricao": "Relatório Gerencial"
   },
   "B3SA3_46146": {
     "status": "ok",
