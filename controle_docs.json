@@ -357,7 +357,7 @@
     "descricao": "Outros Comunicados"
   },
   "BCFF11": {
-    "ultima": "2026-08-03"
+    "ultima": "2026-08-13"
   },
   "JBSS3_31612": {
     "status": "ok",
@@ -375,7 +375,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "ALUP11": {
-    "ultima": "2026-08-03"
+    "ultima": "2026-08-13"
   },
   "RBRF11_21325": {
     "status": "ok",
@@ -1374,6 +1374,12 @@
   "TOTS3_46927": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-13",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "ALUP11_47121": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-comunicado-ao-mercado-08-2026/",
     "data": "2026-08-13",
     "descricao": "Comunicado ao Mercado"
   }
