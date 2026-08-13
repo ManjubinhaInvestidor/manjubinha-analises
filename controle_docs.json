@@ -321,7 +321,7 @@
     "descricao": "Relatório Gerencial"
   },
   "VGIP11": {
-    "ultima": "2026-07-31"
+    "ultima": "2026-08-13"
   },
   "CPFE3_44682": {
     "status": "ok",
@@ -339,7 +339,7 @@
     "descricao": "Reunião da Administração"
   },
   "TOTS3": {
-    "ultima": "2026-07-31"
+    "ultima": "2026-08-13"
   },
   "RBRR11_23449": {
     "status": "ok",
@@ -1370,5 +1370,11 @@
     "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-aviso-aos-acionistas-08-2026/",
     "data": "2026-08-12",
     "descricao": "Aviso aos Acionistas"
+  },
+  "TOTS3_46927": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-13",
+    "descricao": "Comunicado ao Mercado"
   }
 }
