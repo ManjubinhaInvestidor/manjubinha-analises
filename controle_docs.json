@@ -384,7 +384,7 @@
     "descricao": "Outros Comunicados"
   },
   "RBRF11": {
-    "ultima": "2026-08-03"
+    "ultima": "2026-08-14"
   },
   "VCJR11_23505": {
     "status": "ok",
@@ -402,7 +402,7 @@
     "descricao": "Fato Relevante"
   },
   "KLBN11": {
-    "ultima": "2026-08-03"
+    "ultima": "2026-08-14"
   },
   "BPAC11_44751": {
     "status": "ok",
@@ -1381,6 +1381,12 @@
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-comunicado-ao-mercado-08-2026/",
     "data": "2026-08-13",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "KLBN11_47035": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/klbn11-klabin-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-14",
     "descricao": "Comunicado ao Mercado"
   }
 }

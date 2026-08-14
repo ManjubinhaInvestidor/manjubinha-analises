@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-08-13",
+  "ultima_atualizacao": "2026-08-14",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -771,7 +771,7 @@
       "ticker": "KLBN11",
       "nome": "Klabin",
       "setor": "Commodities",
-      "post_url": "https://manjubinhainvestidor.com.br/klbn11-klabin-fato-relevante-07-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/klbn11-klabin-analise-de-comunicado-ao-mercado-08-2026/",
       "metricas": {
         "liquidez_diaria": 80815100.0,
         "dy_12m": 7.72,
