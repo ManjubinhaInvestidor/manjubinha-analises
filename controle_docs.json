@@ -420,7 +420,7 @@
     "descricao": "Informe Mensal"
   },
   "BRCO11": {
-    "ultima": "2026-08-03"
+    "ultima": "2026-08-14"
   },
   "PATL11_23818": {
     "status": "ok",
@@ -438,7 +438,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "EMBR3": {
-    "ultima": "2026-08-03"
+    "ultima": "2026-08-14"
   },
   "RENT3_45148": {
     "status": "ok",
@@ -1394,5 +1394,11 @@
     "url": "https://manjubinhainvestidor.com.br/bpac11-btg-pactual-analise-de-demonstracoes-financeiras-intermediarias-08-2026/",
     "data": "2026-08-14",
     "descricao": "Demonstrações Financeiras Intermediárias"
+  },
+  "EMBR3_47758": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-aviso-aos-acionistas-08-2026/",
+    "data": "2026-08-14",
+    "descricao": "Aviso aos Acionistas"
   }
 }
