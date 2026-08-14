@@ -6,7 +6,7 @@
     "descricao": "Oferta Pública"
   },
   "MXRF11": {
-    "ultima": "2026-08-04"
+    "ultima": "2026-08-14"
   },
   "KNCR11_22956": {
     "status": "ok",
@@ -51,7 +51,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PETR4": {
-    "ultima": "2026-08-04"
+    "ultima": "2026-08-14"
   },
   "ITUB4_44665": {
     "status": "ok",
@@ -1400,5 +1400,17 @@
     "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-aviso-aos-acionistas-08-2026/",
     "data": "2026-08-14",
     "descricao": "Aviso aos Acionistas"
+  },
+  "MXRF11_25168": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/mxrf11-dividendos-e-analise-oferta-publica-08-2026/",
+    "data": "2026-08-14",
+    "descricao": "Oferta Pública"
+  },
+  "PETR4_47842": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-08-2026-2/",
+    "data": "2026-08-14",
+    "descricao": "Comunicado ao Mercado"
   }
 }
