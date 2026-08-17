@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-08-14",
+  "ultima_atualizacao": "2026-08-17",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -13,7 +13,7 @@
       "nome": "Kinea Rendimentos Imob.",
       "tipo": "Papel",
       "segmento": "TVM",
-      "post_url": "https://manjubinhainvestidor.com.br/kncr11-dividendos-e-analise-informe-mensal-07-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/kncr11-dividendos-e-analise-informe-mensal-08-2026/",
       "metricas": {
         "liquidez_diaria": 21756800.0,
         "dy_12m": 13.19,
@@ -418,7 +418,7 @@
       "ticker": "VALE3",
       "nome": "Vale",
       "setor": "Commodities",
-      "post_url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-comunicado-ao-mercado-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-comunicado-ao-mercado-08-2026-2/",
       "metricas": {
         "liquidez_diaria": 1290390000.0,
         "dy_12m": 7.34,
