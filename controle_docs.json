@@ -429,7 +429,7 @@
     "descricao": "Distribuições"
   },
   "PATL11": {
-    "ultima": "2026-08-04"
+    "ultima": "2026-08-17"
   },
   "EMBR3_44598": {
     "status": "ok",
@@ -447,7 +447,7 @@
     "descricao": "Documentos de Oferta de Distribuição Pública"
   },
   "RENT3": {
-    "ultima": "2026-08-04"
+    "ultima": "2026-08-17"
   },
   "RCRB11_23734": {
     "status": "ok",
@@ -1424,5 +1424,11 @@
     "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-comunicado-ao-mercado-08-2026-2/",
     "data": "2026-08-17",
     "descricao": "Comunicado ao Mercado"
+  },
+  "RENT3_48069": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rent3-localiza-analise-de-dados-economico-financeiros-08-2026/",
+    "data": "2026-08-17",
+    "descricao": "Dados Econômico-Financeiros"
   }
 }
