@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-08-06"
+    "ultima": "2026-08-18"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-08-06"
+    "ultima": "2026-08-18"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -1458,6 +1458,18 @@
   "POMO4_46899": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/pomo4-marcopolo-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-18",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "HGLG11_25291": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-informe-mensal-08-2026/",
+    "data": "2026-08-18",
+    "descricao": "Informe Mensal"
+  },
+  "ITUB4_48168": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-analise-de-comunicado-ao-mercado-08-2026-2/",
     "data": "2026-08-18",
     "descricao": "Comunicado ao Mercado"
   }
