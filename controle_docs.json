@@ -492,7 +492,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RZTR11": {
-    "ultima": "2026-08-05"
+    "ultima": "2026-08-18"
   },
   "POMO4_45022": {
     "status": "ok",
@@ -501,7 +501,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "POMO4": {
-    "ultima": "2026-08-05"
+    "ultima": "2026-08-18"
   },
   "HCTR11_23105": {
     "status": "ok",
@@ -1446,6 +1446,18 @@
   "HAPV3_48018": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/hapv3-hapvida-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-18",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "RZTR11_25353": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rztr11-dividendos-e-analise-informe-mensal-08-2026/",
+    "data": "2026-08-18",
+    "descricao": "Informe Mensal"
+  },
+  "POMO4_46899": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/pomo4-marcopolo-analise-de-comunicado-ao-mercado-08-2026/",
     "data": "2026-08-18",
     "descricao": "Comunicado ao Mercado"
   }
