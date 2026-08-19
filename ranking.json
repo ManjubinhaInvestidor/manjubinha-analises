@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-08-18",
+  "ultima_atualizacao": "2026-08-19",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -142,7 +142,7 @@
       "nome": "Kinea Renda Imobiliaria",
       "tipo": "Hibrido",
       "segmento": null,
-      "post_url": "https://manjubinhainvestidor.com.br/knri11-dividendos-e-analise-relatorio-gerencial-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/knri11-dividendos-e-analise-informe-mensal-08-2026/",
       "metricas": {
         "liquidez_diaria": 7620730.0,
         "dy_12m": 8.12,

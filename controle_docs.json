@@ -69,7 +69,7 @@
     "descricao": "Informe Mensal"
   },
   "KNRI11": {
-    "ultima": "2026-08-07"
+    "ultima": "2026-08-19"
   },
   "GARE11_23116": {
     "status": "ok",
@@ -96,7 +96,7 @@
     "descricao": "Reunião da Administração"
   },
   "WEGE3": {
-    "ultima": "2026-08-07"
+    "ultima": "2026-08-19"
   },
   "CPTS11_23316": {
     "status": "ok",
@@ -1484,5 +1484,11 @@
     "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-relatorio-de-analise-gerencial-08-2026/",
     "data": "2026-08-18",
     "descricao": "Relatório de Análise Gerencial"
+  },
+  "KNRI11_25283": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knri11-dividendos-e-analise-informe-mensal-08-2026/",
+    "data": "2026-08-19",
+    "descricao": "Informe Mensal"
   }
 }
