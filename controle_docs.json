@@ -114,7 +114,7 @@
     "descricao": "Fatos Relevantes"
   },
   "GGRC11": {
-    "ultima": "2026-08-07"
+    "ultima": "2026-08-19"
   },
   "BBDC4_44887": {
     "status": "ok",
@@ -159,7 +159,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "TAEE11": {
-    "ultima": "2026-08-07"
+    "ultima": "2026-08-19"
   },
   "CPLE6_44918": {
     "status": "ok",
@@ -1510,5 +1510,17 @@
     "url": "https://manjubinhainvestidor.com.br/abev3-ambev-analise-de-politica-de-divulgacao-de-ato-ou-fato-relevante-08-2026/",
     "data": "2026-08-19",
     "descricao": "Política de Divulgação de Ato ou Fato Relevante"
+  },
+  "GGRC11_25284": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/ggrc11-dividendos-e-analise-informe-mensal-08-2026/",
+    "data": "2026-08-19",
+    "descricao": "Informe Mensal"
+  },
+  "TAEE11_48202": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/taee11-taesa-analise-de-assembleia-08-2026/",
+    "data": "2026-08-19",
+    "descricao": "Assembleia"
   }
 }
