@@ -105,7 +105,7 @@
     "descricao": "Informe Mensal"
   },
   "CPTS11": {
-    "ultima": "2026-08-07"
+    "ultima": "2026-08-19"
   },
   "GGRC11_23620": {
     "status": "ok",
@@ -132,7 +132,7 @@
     "descricao": "Conselho de Administração"
   },
   "ABEV3": {
-    "ultima": "2026-08-07"
+    "ultima": "2026-08-19"
   },
   "KNSC11_22957": {
     "status": "ok",
@@ -1272,8 +1272,10 @@
     "descricao": "Comunicado ao Mercado"
   },
   "CPTS11_24890": {
-    "status": "sem_analise",
-    "data": "2026-08-07"
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpts11-dividendos-e-analise-relatorio-gerencial-08-2026/",
+    "data": "2026-08-19",
+    "descricao": "Relatório Gerencial"
   },
   "ABEV3_46387": {
     "status": "ok",
@@ -1502,5 +1504,11 @@
     "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-diretoria-08-2026/",
     "data": "2026-08-19",
     "descricao": "Diretoria"
+  },
+  "ABEV3_47683": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/abev3-ambev-analise-de-politica-de-divulgacao-de-ato-ou-fato-relevante-08-2026/",
+    "data": "2026-08-19",
+    "descricao": "Política de Divulgação de Ato ou Fato Relevante"
   }
 }
