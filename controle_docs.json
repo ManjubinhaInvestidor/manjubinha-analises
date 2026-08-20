@@ -510,7 +510,7 @@
     "descricao": "Relatório Gerencial"
   },
   "HCTR11": {
-    "ultima": "2026-08-07"
+    "ultima": "2026-08-20"
   },
   "IRBR3_45211": {
     "status": "ok",
@@ -519,7 +519,7 @@
     "descricao": "Regimento interno de Comitês"
   },
   "IRBR3": {
-    "ultima": "2026-08-07"
+    "ultima": "2026-08-20"
   },
   "MXRF11_23812": {
     "status": "ok",
@@ -1522,5 +1522,17 @@
     "url": "https://manjubinhainvestidor.com.br/taee11-taesa-analise-de-assembleia-08-2026/",
     "data": "2026-08-19",
     "descricao": "Assembleia"
+  },
+  "HCTR11_25525": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hctr11-dividendos-e-analise-relatorio-gerencial-08-2026-2/",
+    "data": "2026-08-20",
+    "descricao": "Relatório Gerencial"
+  },
+  "IRBR3_48239": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-demonstracoes-financeiras-intermediarias-08-2026/",
+    "data": "2026-08-20",
+    "descricao": "Demonstrações Financeiras Intermediárias"
   }
 }
