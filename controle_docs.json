@@ -141,7 +141,7 @@
     "descricao": "Informe Mensal"
   },
   "KNSC11": {
-    "ultima": "2026-08-10"
+    "ultima": "2026-08-20"
   },
   "VISC11_23663": {
     "status": "ok",
@@ -168,7 +168,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPLE6": {
-    "ultima": "2026-08-10"
+    "ultima": "2026-08-20"
   },
   "BTLG11_23251": {
     "status": "ok",
@@ -1534,5 +1534,17 @@
     "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-demonstracoes-financeiras-intermediarias-08-2026/",
     "data": "2026-08-20",
     "descricao": "Demonstrações Financeiras Intermediárias"
+  },
+  "KNSC11_25341": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knsc11-dividendos-e-analise-oferta-publica-08-2026-2/",
+    "data": "2026-08-20",
+    "descricao": "Oferta Pública"
+  },
+  "CPLE6_48320": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-conselho-de-administracao-08-2026/",
+    "data": "2026-08-20",
+    "descricao": "Conselho de Administração"
   }
 }
