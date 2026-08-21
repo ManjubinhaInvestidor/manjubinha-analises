@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-08-20",
+  "ultima_atualizacao": "2026-08-21",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -77,7 +77,7 @@
       "nome": "BTG Pactual Logistica",
       "tipo": "Tijolo",
       "segmento": "Logistico",
-      "post_url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-relatorio-gerencial-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-informe-mensal-08-2026/",
       "metricas": {
         "liquidez_diaria": 11266300.0,
         "dy_12m": 9.3,
@@ -594,7 +594,7 @@
       "ticker": "VIVT3",
       "nome": "Telefonica Vivo",
       "setor": "Telecom",
-      "post_url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-assembleia-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-aviso-aos-acionistas-08-2026/",
       "metricas": {
         "liquidez_diaria": 173135000.0,
         "dy_12m": 7.62,

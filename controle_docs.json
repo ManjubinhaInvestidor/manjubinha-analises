@@ -177,7 +177,7 @@
     "descricao": "Informe Mensal"
   },
   "BTLG11": {
-    "ultima": "2026-08-10"
+    "ultima": "2026-08-21"
   },
   "OUJP11_23642": {
     "status": "ok",
@@ -204,7 +204,7 @@
     "descricao": "Assembleia"
   },
   "VIVT3": {
-    "ultima": "2026-08-10"
+    "ultima": "2026-08-21"
   },
   "RECR11_23281": {
     "status": "ok",
@@ -1558,5 +1558,17 @@
     "url": "https://manjubinhainvestidor.com.br/egie3-engie-brasil-analise-de-conselho-fiscal-08-2026/",
     "data": "2026-08-20",
     "descricao": "Conselho Fiscal"
+  },
+  "BTLG11_25651": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-informe-mensal-08-2026/",
+    "data": "2026-08-21",
+    "descricao": "Informe Mensal"
+  },
+  "VIVT3_48117": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-aviso-aos-acionistas-08-2026/",
+    "data": "2026-08-21",
+    "descricao": "Aviso aos Acionistas"
   }
 }
