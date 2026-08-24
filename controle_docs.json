@@ -249,7 +249,7 @@
     "descricao": "Informe Mensal"
   },
   "PVBI11": {
-    "ultima": "2026-08-12"
+    "ultima": "2026-08-24"
   },
   "RDOR3_44874": {
     "status": "ok",
@@ -267,7 +267,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "B3SA3": {
-    "ultima": "2026-08-12"
+    "ultima": "2026-08-24"
   },
   "ALZR11_23615": {
     "status": "ok",
@@ -1586,6 +1586,18 @@
   "RDOR3_47864": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/rdor3-rede-dor-analise-de-comunicado-ao-mercado-08-2026/",
+    "data": "2026-08-24",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "PVBI11_25748": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/pvbi11-dividendos-e-analise-relatorio-gerencial-08-2026-2/",
+    "data": "2026-08-24",
+    "descricao": "Relatório Gerencial"
+  },
+  "B3SA3_48379": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-analise-de-comunicado-ao-mercado-08-2026/",
     "data": "2026-08-24",
     "descricao": "Comunicado ao Mercado"
   }
