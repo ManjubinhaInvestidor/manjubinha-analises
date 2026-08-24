@@ -276,7 +276,7 @@
     "descricao": "Fatos Relevantes"
   },
   "ALZR11": {
-    "ultima": "2026-08-12"
+    "ultima": "2026-08-24"
   },
   "HSML11_23175": {
     "status": "ok",
@@ -294,7 +294,7 @@
     "descricao": "Reunião da Administração"
   },
   "SUZB3": {
-    "ultima": "2026-08-12"
+    "ultima": "2026-08-24"
   },
   "ENGI11_44852": {
     "status": "ok",
@@ -1600,5 +1600,17 @@
     "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-analise-de-comunicado-ao-mercado-08-2026/",
     "data": "2026-08-24",
     "descricao": "Comunicado ao Mercado"
+  },
+  "ALZR11_25532": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alzr11-dividendos-e-analise-relatorio-gerencial-08-2026/",
+    "data": "2026-08-24",
+    "descricao": "Relatório Gerencial"
+  },
+  "SUZB3_48474": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/suzb3-suzano-analise-de-reuniao-da-administracao-08-2026/",
+    "data": "2026-08-24",
+    "descricao": "Reunião da Administração"
   }
 }
