@@ -384,7 +384,7 @@
     "descricao": "Outros Comunicados"
   },
   "RBRF11": {
-    "ultima": "2026-08-14"
+    "ultima": "2026-08-26"
   },
   "VCJR11_23505": {
     "status": "ok",
@@ -402,7 +402,7 @@
     "descricao": "Fato Relevante"
   },
   "KLBN11": {
-    "ultima": "2026-08-14"
+    "ultima": "2026-08-26"
   },
   "BPAC11_44751": {
     "status": "ok",
@@ -1664,6 +1664,12 @@
   "PETR4_48445": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-08-2026-3/",
+    "data": "2026-08-26",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "KLBN11_48408": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/klbn11-klabin-analise-de-comunicado-ao-mercado-08-2026-2/",
     "data": "2026-08-26",
     "descricao": "Comunicado ao Mercado"
   }
