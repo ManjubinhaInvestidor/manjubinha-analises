@@ -6,7 +6,7 @@
     "descricao": "Oferta Pública"
   },
   "MXRF11": {
-    "ultima": "2026-08-14"
+    "ultima": "2026-08-26"
   },
   "KNCR11_22956": {
     "status": "ok",
@@ -51,7 +51,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PETR4": {
-    "ultima": "2026-08-14"
+    "ultima": "2026-08-26"
   },
   "ITUB4_44665": {
     "status": "ok",
@@ -1654,5 +1654,17 @@
     "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-demonstracoes-financeiras-adicionais-08-2026/",
     "data": "2026-08-26",
     "descricao": "Demonstrações Financeiras Adicionais"
+  },
+  "MXRF11_25285": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/mxrf11-dividendos-e-analise-informe-mensal-08-2026/",
+    "data": "2026-08-26",
+    "descricao": "Informe Mensal"
+  },
+  "PETR4_48445": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-08-2026-3/",
+    "data": "2026-08-26",
+    "descricao": "Comunicado ao Mercado"
   }
 }
