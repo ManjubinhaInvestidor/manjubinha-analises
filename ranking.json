@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-08-25",
+  "ultima_atualizacao": "2026-08-26",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -815,7 +815,7 @@
       "ticker": "ALUP11",
       "nome": "Alupar",
       "setor": "Energia",
-      "post_url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-comunicado-ao-mercado-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-demonstracoes-financeiras-adicionais-08-2026/",
       "metricas": {
         "liquidez_diaria": 23812900.0,
         "dy_12m": 3.31,

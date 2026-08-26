@@ -357,7 +357,7 @@
     "descricao": "Outros Comunicados"
   },
   "BCFF11": {
-    "ultima": "2026-08-13"
+    "ultima": "2026-08-26"
   },
   "JBSS3_31612": {
     "status": "ok",
@@ -375,7 +375,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "ALUP11": {
-    "ultima": "2026-08-13"
+    "ultima": "2026-08-26"
   },
   "RBRF11_21325": {
     "status": "ok",
@@ -1648,5 +1648,11 @@
     "url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-informe-mensal-08-2026/",
     "data": "2026-08-25",
     "descricao": "Informe Mensal"
+  },
+  "ALUP11_48448": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-demonstracoes-financeiras-adicionais-08-2026/",
+    "data": "2026-08-26",
+    "descricao": "Demonstrações Financeiras Adicionais"
   }
 }
