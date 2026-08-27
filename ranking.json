@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-08-26",
+  "ultima_atualizacao": "2026-08-27",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -352,7 +352,7 @@
       "nome": "Vinci Credito Imobiliario",
       "tipo": "Papel",
       "segmento": "TVM",
-      "post_url": "https://manjubinhainvestidor.com.br/vcjr11-dividendos-e-analise-informe-mensal-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/vcjr11-dividendos-e-analise-relatorio-gerencial-08-2026/",
       "metricas": {
         "liquidez_diaria": 2322850.0,
         "dy_12m": 15.05,
@@ -616,7 +616,7 @@
       "ticker": "BPAC11",
       "nome": "BTG Pactual",
       "setor": "Financeiro",
-      "post_url": "https://manjubinhainvestidor.com.br/bpac11-btg-pactual-analise-de-demonstracoes-financeiras-intermediarias-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/bpac11-btg-pactual-analise-de-comunicacao-sobre-transacao-entre-partes-relacionadas-08-2026/",
       "metricas": {
         "liquidez_diaria": 511941000.0,
         "dy_12m": 2.17,
