@@ -15,7 +15,7 @@
     "descricao": "Informe Mensal"
   },
   "KNCR11": {
-    "ultima": "2026-08-17"
+    "ultima": "2026-08-27"
   },
   "VALE3_44810": {
     "status": "ok",
@@ -24,7 +24,7 @@
     "descricao": "Outros Comunicados Não Considerados Fatos Relevantes - Comunicado ao Mercado"
   },
   "VALE3": {
-    "ultima": "2026-08-17"
+    "ultima": "2026-08-27"
   },
   "HGLG11_23342": {
     "status": "ok",
@@ -1694,6 +1694,12 @@
   "EMBR3_48482": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-comunicado-ao-mercado-08-2026-2/",
+    "data": "2026-08-27",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "VALE3_48440": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-comunicado-ao-mercado-08-2026-3/",
     "data": "2026-08-27",
     "descricao": "Comunicado ao Mercado"
   }
