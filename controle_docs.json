@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-08-18"
+    "ultima": "2026-08-28"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-08-18"
+    "ultima": "2026-08-28"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -1726,5 +1726,11 @@
     "url": "https://manjubinhainvestidor.com.br/csan3-cosan-analise-de-conselho-fiscal-08-2026/",
     "data": "2026-08-28",
     "descricao": "Conselho Fiscal"
+  },
+  "HGLG11_25721": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-oferta-publica-08-2026/",
+    "data": "2026-08-28",
+    "descricao": "Oferta Pública"
   }
 }
