@@ -456,7 +456,7 @@
     "descricao": "Fatos Relevantes"
   },
   "RCRB11": {
-    "ultima": "2026-08-17"
+    "ultima": "2026-08-28"
   },
   "MGFF11_339": {
     "status": "ok",
@@ -474,7 +474,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "CSAN3": {
-    "ultima": "2026-08-17"
+    "ultima": "2026-08-28"
   },
   "HAPV3_43820": {
     "status": "ok",
@@ -1714,5 +1714,17 @@
     "url": "https://manjubinhainvestidor.com.br/rent3-localiza-analise-de-reuniao-da-administracao-08-2026/",
     "data": "2026-08-28",
     "descricao": "Reunião da Administração"
+  },
+  "RCRB11_25959": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rcrb11-dividendos-e-analise-informe-mensal-08-2026/",
+    "data": "2026-08-28",
+    "descricao": "Informe Mensal"
+  },
+  "CSAN3_48571": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/csan3-cosan-analise-de-conselho-fiscal-08-2026/",
+    "data": "2026-08-28",
+    "descricao": "Conselho Fiscal"
   }
 }
