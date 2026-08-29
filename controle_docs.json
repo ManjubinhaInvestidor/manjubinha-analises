@@ -465,7 +465,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "MGFF11": {
-    "ultima": "2026-08-18"
+    "ultima": "2026-08-29"
   },
   "CSAN3_45194": {
     "status": "ok",
@@ -483,7 +483,7 @@
     "descricao": "Regimento interno do Conselho de Administração"
   },
   "HAPV3": {
-    "ultima": "2026-08-18"
+    "ultima": "2026-08-29"
   },
   "RZTR11_23698": {
     "status": "ok",
@@ -1738,5 +1738,11 @@
     "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-comunicacao-sobre-transacao-entre-partes-relacionadas-08-2026-2/",
     "data": "2026-08-28",
     "descricao": "Comunicação sobre Transação entre Partes Relacionadas"
+  },
+  "HAPV3_48577": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hapv3-hapvida-analise-de-comunicado-ao-mercado-08-2026-2/",
+    "data": "2026-08-29",
+    "descricao": "Comunicado ao Mercado"
   }
 }
