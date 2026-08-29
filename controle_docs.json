@@ -42,7 +42,7 @@
     "descricao": "Informe Mensal"
   },
   "XPML11": {
-    "ultima": "2026-08-18"
+    "ultima": "2026-08-28"
   },
   "PETR4_44699": {
     "status": "ok",
@@ -87,7 +87,7 @@
     "descricao": "Relatório de Agência de Rating"
   },
   "BBAS3": {
-    "ultima": "2026-08-18"
+    "ultima": "2026-08-28"
   },
   "WEGE3_44388": {
     "status": "ok",
@@ -1732,5 +1732,11 @@
     "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-oferta-publica-08-2026/",
     "data": "2026-08-28",
     "descricao": "Oferta Pública"
+  },
+  "BBAS3_48527": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-comunicacao-sobre-transacao-entre-partes-relacionadas-08-2026-2/",
+    "data": "2026-08-28",
+    "descricao": "Comunicação sobre Transação entre Partes Relacionadas"
   }
 }

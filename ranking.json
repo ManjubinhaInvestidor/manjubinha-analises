@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-08-28",
+  "ultima_atualizacao": "2026-08-29",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -660,7 +660,7 @@
       "ticker": "BBAS3",
       "nome": "Banco do Brasil",
       "setor": "Financeiro",
-      "post_url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-relatorio-de-analise-gerencial-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-comunicacao-sobre-transacao-entre-partes-relacionadas-08-2026-2/",
       "metricas": {
         "liquidez_diaria": 406507000.0,
         "dy_12m": 2.57,
