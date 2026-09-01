@@ -105,7 +105,7 @@
     "descricao": "Informe Mensal"
   },
   "CPTS11": {
-    "ultima": "2026-08-19"
+    "ultima": "2026-09-01"
   },
   "GGRC11_23620": {
     "status": "ok",
@@ -132,7 +132,7 @@
     "descricao": "Conselho de Administração"
   },
   "ABEV3": {
-    "ultima": "2026-08-19"
+    "ultima": "2026-09-01"
   },
   "KNSC11_22957": {
     "status": "ok",
@@ -1774,5 +1774,11 @@
     "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-comunicado-ao-mercado-09-2026/",
     "data": "2026-09-01",
     "descricao": "Comunicado ao Mercado"
+  },
+  "CPTS11_25703": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpts11-dividendos-e-analise-informe-mensal-09-2026/",
+    "data": "2026-09-01",
+    "descricao": "Informe Mensal"
   }
 }
