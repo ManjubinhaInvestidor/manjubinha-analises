@@ -78,7 +78,7 @@
     "descricao": "Informe Mensal"
   },
   "GARE11": {
-    "ultima": "2026-08-19"
+    "ultima": "2026-09-01"
   },
   "BBAS3_44747": {
     "status": "ok",
@@ -123,7 +123,7 @@
     "descricao": "Diretoria"
   },
   "BBDC4": {
-    "ultima": "2026-08-19"
+    "ultima": "2026-09-01"
   },
   "ABEV3_42735": {
     "status": "ok",
@@ -1762,5 +1762,17 @@
     "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-analise-de-reuniao-da-administracao-08-2026/",
     "data": "2026-08-31",
     "descricao": "Reunião da Administração"
+  },
+  "GARE11_25826": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/gare11-dividendos-e-analise-oferta-publica-09-2026/",
+    "data": "2026-09-01",
+    "descricao": "Oferta Pública"
+  },
+  "BBDC4_48564": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-comunicado-ao-mercado-09-2026/",
+    "data": "2026-09-01",
+    "descricao": "Comunicado ao Mercado"
   }
 }
