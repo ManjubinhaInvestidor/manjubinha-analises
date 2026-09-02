@@ -141,7 +141,7 @@
     "descricao": "Informe Mensal"
   },
   "KNSC11": {
-    "ultima": "2026-08-20"
+    "ultima": "2026-09-02"
   },
   "VISC11_23663": {
     "status": "ok",
@@ -168,7 +168,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPLE6": {
-    "ultima": "2026-08-20"
+    "ultima": "2026-09-02"
   },
   "BTLG11_23251": {
     "status": "ok",
@@ -1792,5 +1792,17 @@
     "url": "https://manjubinhainvestidor.com.br/taee11-taesa-analise-de-dados-economico-financeiros-09-2026/",
     "data": "2026-09-01",
     "descricao": "Dados Econômico-Financeiros"
+  },
+  "KNSC11_26355": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knsc11-dividendos-e-analise-distribuicoes-09-2026/",
+    "data": "2026-09-02",
+    "descricao": "Distribuições"
+  },
+  "CPLE6_48392": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-demonstracoes-financeiras-adicionais-09-2026/",
+    "data": "2026-09-02",
+    "descricao": "Demonstrações Financeiras Adicionais"
   }
 }
