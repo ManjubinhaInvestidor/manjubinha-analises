@@ -177,7 +177,7 @@
     "descricao": "Informe Mensal"
   },
   "BTLG11": {
-    "ultima": "2026-08-21"
+    "ultima": "2026-09-02"
   },
   "OUJP11_23642": {
     "status": "ok",
@@ -204,7 +204,7 @@
     "descricao": "Assembleia"
   },
   "VIVT3": {
-    "ultima": "2026-08-21"
+    "ultima": "2026-09-02"
   },
   "RECR11_23281": {
     "status": "ok",
@@ -1826,5 +1826,11 @@
     "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-politica-de-gerenciamento-de-riscos-09-2026/",
     "data": "2026-09-02",
     "descricao": "Política de Gerenciamento de Riscos"
+  },
+  "BTLG11_26433": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-relatorio-gerencial-09-2026/",
+    "data": "2026-09-02",
+    "descricao": "Relatório Gerencial"
   }
 }
