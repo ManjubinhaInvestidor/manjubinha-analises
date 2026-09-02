@@ -150,7 +150,7 @@
     "descricao": "Fatos Relevantes"
   },
   "VISC11": {
-    "ultima": "2026-08-20"
+    "ultima": "2026-09-02"
   },
   "TAEE11_44645": {
     "status": "ok",
@@ -195,7 +195,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "EGIE3": {
-    "ultima": "2026-08-20"
+    "ultima": "2026-09-02"
   },
   "VIVT3_44450": {
     "status": "ok",
@@ -1804,5 +1804,17 @@
     "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-demonstracoes-financeiras-adicionais-09-2026/",
     "data": "2026-09-02",
     "descricao": "Demonstrações Financeiras Adicionais"
+  },
+  "VISC11_26389": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/visc11-dividendos-e-analise-distribuicoes-09-2026/",
+    "data": "2026-09-02",
+    "descricao": "Distribuições"
+  },
+  "EGIE3_48574": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/egie3-engie-brasil-analise-de-aviso-aos-debenturistas-09-2026/",
+    "data": "2026-09-02",
+    "descricao": "Aviso aos Debenturistas"
   }
 }
