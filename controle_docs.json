@@ -186,7 +186,7 @@
     "descricao": "Informe Mensal"
   },
   "OUJP11": {
-    "ultima": "2026-08-21"
+    "ultima": "2026-09-03"
   },
   "EGIE3_44842": {
     "status": "ok",
@@ -222,7 +222,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PRIO3": {
-    "ultima": "2026-08-21"
+    "ultima": "2026-09-03"
   },
   "SBSP3_44881": {
     "status": "ok",
@@ -1831,6 +1831,12 @@
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-relatorio-gerencial-09-2026/",
     "data": "2026-09-02",
+    "descricao": "Relatório Gerencial"
+  },
+  "OUJP11_26469": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/oujp11-dividendos-e-analise-relatorio-gerencial-09-2026/",
+    "data": "2026-09-03",
     "descricao": "Relatório Gerencial"
   }
 }
