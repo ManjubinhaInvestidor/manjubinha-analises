@@ -321,7 +321,7 @@
     "descricao": "Relatório Gerencial"
   },
   "VGIP11": {
-    "ultima": "2026-08-25"
+    "ultima": "2026-09-04"
   },
   "CPFE3_44682": {
     "status": "ok",
@@ -339,7 +339,7 @@
     "descricao": "Reunião da Administração"
   },
   "TOTS3": {
-    "ultima": "2026-08-25"
+    "ultima": "2026-09-04"
   },
   "RBRR11_23449": {
     "status": "ok",
@@ -1888,5 +1888,11 @@
     "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-09-2026/",
     "data": "2026-09-04",
     "descricao": "Comunicado ao Mercado"
+  },
+  "TOTS3_49019": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-documentos-de-oferta-de-distribuicao-publica-09-2026/",
+    "data": "2026-09-04",
+    "descricao": "Documentos de Oferta de Distribuição Pública"
   }
 }
