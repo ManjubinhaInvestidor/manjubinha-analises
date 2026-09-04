@@ -276,7 +276,7 @@
     "descricao": "Fatos Relevantes"
   },
   "ALZR11": {
-    "ultima": "2026-08-24"
+    "ultima": "2026-09-04"
   },
   "HSML11_23175": {
     "status": "ok",
@@ -294,7 +294,7 @@
     "descricao": "Reunião da Administração"
   },
   "SUZB3": {
-    "ultima": "2026-08-24"
+    "ultima": "2026-09-04"
   },
   "ENGI11_44852": {
     "status": "ok",
@@ -1874,5 +1874,9 @@
     "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-analise-de-comunicado-ao-mercado-09-2026/",
     "data": "2026-09-03",
     "descricao": "Comunicado ao Mercado"
+  },
+  "SUZB3_48907": {
+    "status": "sem_analise",
+    "data": "2026-09-04"
   }
 }
