@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-08-24"
+    "ultima": "2026-09-04"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-08-24"
+    "ultima": "2026-09-04"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -1878,5 +1878,15 @@
   "SUZB3_48907": {
     "status": "sem_analise",
     "data": "2026-09-04"
+  },
+  "HSML11_26274": {
+    "status": "sem_analise",
+    "data": "2026-09-04"
+  },
+  "ENGI11_48546": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-09-2026/",
+    "data": "2026-09-04",
+    "descricao": "Comunicado ao Mercado"
   }
 }
