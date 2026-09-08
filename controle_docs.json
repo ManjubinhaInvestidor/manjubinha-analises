@@ -393,7 +393,7 @@
     "descricao": "Informe Mensal"
   },
   "VCJR11": {
-    "ultima": "2026-08-27"
+    "ultima": "2026-09-08"
   },
   "KLBN11_44777": {
     "status": "ok",
@@ -411,7 +411,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "BPAC11": {
-    "ultima": "2026-08-27"
+    "ultima": "2026-09-08"
   },
   "BRCO11_23147": {
     "status": "ok",
@@ -1918,5 +1918,11 @@
     "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-reuniao-da-administracao-09-2026/",
     "data": "2026-09-08",
     "descricao": "Reunião da Administração"
+  },
+  "VCJR11_26347": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vcjr11-dividendos-e-analise-distribuicoes-09-2026/",
+    "data": "2026-09-08",
+    "descricao": "Distribuições"
   }
 }
