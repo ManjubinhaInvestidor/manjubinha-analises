@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-08-28"
+    "ultima": "2026-09-09"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-08-28"
+    "ultima": "2026-09-09"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -1936,5 +1936,17 @@
     "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-conselho-de-administracao-09-2026/",
     "data": "2026-09-09",
     "descricao": "Conselho de Administração"
+  },
+  "HGLG11_26576": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-oferta-publica-09-2026/",
+    "data": "2026-09-09",
+    "descricao": "Oferta Pública"
+  },
+  "ITUB4_48951": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-analise-de-comunicacao-sobre-transacao-entre-partes-relacionadas-09-2026/",
+    "data": "2026-09-09",
+    "descricao": "Comunicação sobre Transação entre Partes Relacionadas"
   }
 }
