@@ -420,7 +420,7 @@
     "descricao": "Informe Mensal"
   },
   "BRCO11": {
-    "ultima": "2026-08-27"
+    "ultima": "2026-09-09"
   },
   "PATL11_23818": {
     "status": "ok",
@@ -438,7 +438,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "EMBR3": {
-    "ultima": "2026-08-27"
+    "ultima": "2026-09-09"
   },
   "RENT3_45148": {
     "status": "ok",
@@ -1924,5 +1924,17 @@
     "url": "https://manjubinhainvestidor.com.br/vcjr11-dividendos-e-analise-distribuicoes-09-2026/",
     "data": "2026-09-08",
     "descricao": "Distribuições"
+  },
+  "BRCO11_26300": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/brco11-dividendos-e-analise-distribuicoes-09-2026/",
+    "data": "2026-09-09",
+    "descricao": "Distribuições"
+  },
+  "EMBR3_49057": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-conselho-de-administracao-09-2026/",
+    "data": "2026-09-09",
+    "descricao": "Conselho de Administração"
   }
 }
