@@ -492,7 +492,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RZTR11": {
-    "ultima": "2026-08-31"
+    "ultima": "2026-09-11"
   },
   "POMO4_45022": {
     "status": "ok",
@@ -501,7 +501,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "POMO4": {
-    "ultima": "2026-08-31"
+    "ultima": "2026-09-11"
   },
   "HCTR11_23105": {
     "status": "ok",
@@ -1978,5 +1978,17 @@
     "url": "https://manjubinhainvestidor.com.br/knri11-dividendos-e-analise-relatorio-gerencial-09-2026/",
     "data": "2026-09-10",
     "descricao": "Relatório Gerencial"
+  },
+  "RZTR11_26317": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rztr11-dividendos-e-analise-distribuicoes-09-2026/",
+    "data": "2026-09-11",
+    "descricao": "Distribuições"
+  },
+  "POMO4_49227": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/pomo4-marcopolo-analise-de-comunicado-ao-mercado-09-2026/",
+    "data": "2026-09-11",
+    "descricao": "Comunicado ao Mercado"
   }
 }

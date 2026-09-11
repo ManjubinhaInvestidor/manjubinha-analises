@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-09-10",
+  "ultima_atualizacao": "2026-09-11",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -703,7 +703,7 @@
       "ticker": "POMO4",
       "nome": "Marcopolo",
       "setor": "Industrial",
-      "post_url": "https://manjubinhainvestidor.com.br/pomo4-marcopolo-analise-de-aviso-aos-acionistas-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/pomo4-marcopolo-analise-de-comunicado-ao-mercado-09-2026/",
       "metricas": {
         "liquidez_diaria": 60108900.0,
         "dy_12m": 21.0,
