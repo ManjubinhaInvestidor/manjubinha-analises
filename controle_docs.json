@@ -105,7 +105,7 @@
     "descricao": "Informe Mensal"
   },
   "CPTS11": {
-    "ultima": "2026-09-01"
+    "ultima": "2026-09-11"
   },
   "GGRC11_23620": {
     "status": "ok",
@@ -132,7 +132,7 @@
     "descricao": "Conselho de Administração"
   },
   "ABEV3": {
-    "ultima": "2026-09-01"
+    "ultima": "2026-09-11"
   },
   "KNSC11_22957": {
     "status": "ok",
@@ -1994,6 +1994,12 @@
   "GARE11_26409": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/gare11-dividendos-e-analise-relatorio-gerencial-09-2026/",
+    "data": "2026-09-11",
+    "descricao": "Relatório Gerencial"
+  },
+  "CPTS11_26454": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpts11-dividendos-e-analise-relatorio-gerencial-09-2026/",
     "data": "2026-09-11",
     "descricao": "Relatório Gerencial"
   }
