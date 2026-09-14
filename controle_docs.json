@@ -141,7 +141,7 @@
     "descricao": "Informe Mensal"
   },
   "KNSC11": {
-    "ultima": "2026-09-02"
+    "ultima": "2026-09-14"
   },
   "VISC11_23663": {
     "status": "ok",
@@ -168,7 +168,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPLE6": {
-    "ultima": "2026-09-02"
+    "ultima": "2026-09-14"
   },
   "BTLG11_23251": {
     "status": "ok",
@@ -2014,5 +2014,11 @@
     "url": "https://manjubinhainvestidor.com.br/taee11-taesa-analise-de-comunicado-ao-mercado-09-2026/",
     "data": "2026-09-11",
     "descricao": "Comunicado ao Mercado"
+  },
+  "CPLE6_49051": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-conselho-de-administracao-09-2026/",
+    "data": "2026-09-14",
+    "descricao": "Conselho de Administração"
   }
 }
