@@ -150,7 +150,7 @@
     "descricao": "Fatos Relevantes"
   },
   "VISC11": {
-    "ultima": "2026-09-02"
+    "ultima": "2026-09-14"
   },
   "TAEE11_44645": {
     "status": "ok",
@@ -195,7 +195,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "EGIE3": {
-    "ultima": "2026-09-02"
+    "ultima": "2026-09-14"
   },
   "VIVT3_44450": {
     "status": "ok",
@@ -2020,5 +2020,11 @@
     "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-conselho-de-administracao-09-2026/",
     "data": "2026-09-14",
     "descricao": "Conselho de Administração"
+  },
+  "VISC11_26614": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/visc11-dividendos-e-analise-relatorio-gerencial-09-2026/",
+    "data": "2026-09-14",
+    "descricao": "Relatório Gerencial"
   }
 }
