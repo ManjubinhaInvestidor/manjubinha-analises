@@ -510,7 +510,7 @@
     "descricao": "Relatório Gerencial"
   },
   "HCTR11": {
-    "ultima": "2026-09-02"
+    "ultima": "2026-09-14"
   },
   "IRBR3_45211": {
     "status": "ok",
@@ -519,7 +519,7 @@
     "descricao": "Regimento interno de Comitês"
   },
   "IRBR3": {
-    "ultima": "2026-09-02"
+    "ultima": "2026-09-14"
   },
   "MXRF11_23812": {
     "status": "ok",
@@ -1818,8 +1818,10 @@
     "descricao": "Aviso aos Debenturistas"
   },
   "HCTR11_26458": {
-    "status": "sem_analise",
-    "data": "2026-09-02"
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hctr11-dividendos-e-analise-relatorio-gerencial-09-2026/",
+    "data": "2026-09-14",
+    "descricao": "Relatório Gerencial"
   },
   "IRBR3_48499": {
     "status": "ok",
@@ -2032,5 +2034,11 @@
     "url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-comunicacao-sobre-transacao-entre-partes-relacionadas-09-2026/",
     "data": "2026-09-14",
     "descricao": "Comunicação sobre Transação entre Partes Relacionadas"
+  },
+  "IRBR3_49310": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-comunicado-ao-mercado-09-2026/",
+    "data": "2026-09-14",
+    "descricao": "Comunicado ao Mercado"
   }
 }
