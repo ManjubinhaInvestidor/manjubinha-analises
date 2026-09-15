@@ -240,7 +240,7 @@
     "descricao": "Relatório Gerencial"
   },
   "TRBL11": {
-    "ultima": "2026-09-03"
+    "ultima": "2026-09-15"
   },
   "PVBI11_23402": {
     "status": "ok",
@@ -258,7 +258,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "RDOR3": {
-    "ultima": "2026-09-03"
+    "ultima": "2026-09-15"
   },
   "B3SA3_44745": {
     "status": "ok",
@@ -2056,5 +2056,11 @@
     "url": "https://manjubinhainvestidor.com.br/recr11-dividendos-e-analise-fatos-relevantes-09-2026/",
     "data": "2026-09-15",
     "descricao": "Fatos Relevantes"
+  },
+  "TRBL11_26723": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/trbl11-dividendos-e-analise-informe-mensal-09-2026/",
+    "data": "2026-09-15",
+    "descricao": "Informe Mensal"
   }
 }
