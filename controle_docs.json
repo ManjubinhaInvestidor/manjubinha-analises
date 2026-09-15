@@ -213,7 +213,7 @@
     "descricao": "Informe Mensal"
   },
   "RECR11": {
-    "ultima": "2026-09-03"
+    "ultima": "2026-09-15"
   },
   "PRIO3_44871": {
     "status": "ok",
@@ -231,7 +231,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "SBSP3": {
-    "ultima": "2026-09-03"
+    "ultima": "2026-09-15"
   },
   "TRBL11_23447": {
     "status": "ok",
@@ -2050,5 +2050,11 @@
     "url": "https://manjubinhainvestidor.com.br/prio3-prio-analise-de-comunicado-ao-mercado-09-2026/",
     "data": "2026-09-15",
     "descricao": "Comunicado ao Mercado"
+  },
+  "RECR11_26683": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/recr11-dividendos-e-analise-fatos-relevantes-09-2026/",
+    "data": "2026-09-15",
+    "descricao": "Fatos Relevantes"
   }
 }
