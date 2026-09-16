@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-09-04"
+    "ultima": "2026-09-16"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-09-04"
+    "ultima": "2026-09-16"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -2064,5 +2064,11 @@
     "url": "https://manjubinhainvestidor.com.br/trbl11-dividendos-e-analise-informe-mensal-09-2026/",
     "data": "2026-09-15",
     "descricao": "Informe Mensal"
+  },
+  "HSML11_26605": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hsml11-dividendos-e-analise-relatorio-gerencial-09-2026/",
+    "data": "2026-09-16",
+    "descricao": "Relatório Gerencial"
   }
 }
