@@ -312,7 +312,7 @@
     "descricao": "Fatos Relevantes"
   },
   "IRDM11": {
-    "ultima": "2026-09-04"
+    "ultima": "2026-09-17"
   },
   "VGIP11_23617": {
     "status": "ok",
@@ -330,7 +330,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPFE3": {
-    "ultima": "2026-09-04"
+    "ultima": "2026-09-17"
   },
   "TOTS3_44471": {
     "status": "ok",
@@ -2070,5 +2070,11 @@
     "url": "https://manjubinhainvestidor.com.br/hsml11-dividendos-e-analise-relatorio-gerencial-09-2026/",
     "data": "2026-09-16",
     "descricao": "Relatório Gerencial"
+  },
+  "CPFE3_49241": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-conselho-de-administracao-09-2026/",
+    "data": "2026-09-17",
+    "descricao": "Conselho de Administração"
   }
 }
