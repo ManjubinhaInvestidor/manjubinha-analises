@@ -6,7 +6,7 @@
     "descricao": "Oferta Pública"
   },
   "MXRF11": {
-    "ultima": "2026-09-07"
+    "ultima": "2026-09-18"
   },
   "KNCR11_22956": {
     "status": "ok",
@@ -51,7 +51,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PETR4": {
-    "ultima": "2026-09-07"
+    "ultima": "2026-09-18"
   },
   "ITUB4_44665": {
     "status": "ok",
@@ -2088,5 +2088,17 @@
     "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-politica-de-transacoes-entre-partes-relacionadas-09-2026/",
     "data": "2026-09-17",
     "descricao": "Política de Transações entre Partes Relacionadas"
+  },
+  "MXRF11_26816": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/mxrf11-dividendos-e-analise-informe-mensal-09-2026/",
+    "data": "2026-09-18",
+    "descricao": "Informe Mensal"
+  },
+  "PETR4_49546": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-09-2026-2/",
+    "data": "2026-09-18",
+    "descricao": "Comunicado ao Mercado"
   }
 }
