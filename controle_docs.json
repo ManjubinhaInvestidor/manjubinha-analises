@@ -15,7 +15,7 @@
     "descricao": "Informe Mensal"
   },
   "KNCR11": {
-    "ultima": "2026-09-08"
+    "ultima": "2026-09-21"
   },
   "VALE3_44810": {
     "status": "ok",
@@ -24,7 +24,7 @@
     "descricao": "Outros Comunicados Não Considerados Fatos Relevantes - Comunicado ao Mercado"
   },
   "VALE3": {
-    "ultima": "2026-09-08"
+    "ultima": "2026-09-21"
   },
   "HGLG11_23342": {
     "status": "ok",
@@ -2106,5 +2106,17 @@
     "url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-informe-mensal-09-2026/",
     "data": "2026-09-18",
     "descricao": "Informe Mensal"
+  },
+  "KNCR11_26763": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/kncr11-dividendos-e-analise-relatorio-gerencial-09-2026/",
+    "data": "2026-09-21",
+    "descricao": "Relatório Gerencial"
+  },
+  "VALE3_49242": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-comunicado-ao-mercado-09-2026/",
+    "data": "2026-09-21",
+    "descricao": "Comunicado ao Mercado"
   }
 }
