@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-09-09"
+    "ultima": "2026-09-22"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-09-09"
+    "ultima": "2026-09-22"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -2124,5 +2124,17 @@
     "url": "https://manjubinhainvestidor.com.br/vcjr11-dividendos-e-analise-informe-mensal-09-2026/",
     "data": "2026-09-21",
     "descricao": "Informe Mensal"
+  },
+  "HGLG11_27077": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-fatos-relevantes-09-2026/",
+    "data": "2026-09-22",
+    "descricao": "Fatos Relevantes"
+  },
+  "ITUB4_49359": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-analise-de-politica-de-transacoes-entre-partes-relacionadas-09-2026/",
+    "data": "2026-09-22",
+    "descricao": "Política de Transações entre Partes Relacionadas"
   }
 }
