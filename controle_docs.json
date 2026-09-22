@@ -42,7 +42,7 @@
     "descricao": "Informe Mensal"
   },
   "XPML11": {
-    "ultima": "2026-09-09"
+    "ultima": "2026-09-22"
   },
   "PETR4_44699": {
     "status": "ok",
@@ -87,7 +87,7 @@
     "descricao": "Relatório de Agência de Rating"
   },
   "BBAS3": {
-    "ultima": "2026-09-09"
+    "ultima": "2026-09-22"
   },
   "WEGE3_44388": {
     "status": "ok",
@@ -2136,5 +2136,17 @@
     "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-analise-de-politica-de-transacoes-entre-partes-relacionadas-09-2026/",
     "data": "2026-09-22",
     "descricao": "Política de Transações entre Partes Relacionadas"
+  },
+  "XPML11_27196": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/xpml11-dividendos-e-analise-fatos-relevantes-09-2026/",
+    "data": "2026-09-22",
+    "descricao": "Fatos Relevantes"
+  },
+  "BBAS3_49648": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-conselho-de-administracao-09-2026/",
+    "data": "2026-09-22",
+    "descricao": "Conselho de Administração"
   }
 }
