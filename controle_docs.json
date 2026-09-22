@@ -69,7 +69,7 @@
     "descricao": "Informe Mensal"
   },
   "KNRI11": {
-    "ultima": "2026-09-10"
+    "ultima": "2026-09-22"
   },
   "GARE11_23116": {
     "status": "ok",
@@ -96,7 +96,7 @@
     "descricao": "Reunião da Administração"
   },
   "WEGE3": {
-    "ultima": "2026-09-10"
+    "ultima": "2026-09-22"
   },
   "CPTS11_23316": {
     "status": "ok",
@@ -2160,5 +2160,17 @@
     "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-conselho-de-administracao-09-2026-2/",
     "data": "2026-09-22",
     "descricao": "Conselho de Administração"
+  },
+  "KNRI11_26733": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knri11-dividendos-e-analise-informe-mensal-09-2026/",
+    "data": "2026-09-22",
+    "descricao": "Informe Mensal"
+  },
+  "WEGE3_49496": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-analise-de-reuniao-da-administracao-09-2026/",
+    "data": "2026-09-22",
+    "descricao": "Reunião da Administração"
   }
 }
