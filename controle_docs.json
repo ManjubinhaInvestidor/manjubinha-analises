@@ -429,7 +429,7 @@
     "descricao": "Distribuições"
   },
   "PATL11": {
-    "ultima": "2026-09-10"
+    "ultima": "2026-09-23"
   },
   "EMBR3_44598": {
     "status": "ok",
@@ -447,7 +447,7 @@
     "descricao": "Documentos de Oferta de Distribuição Pública"
   },
   "RENT3": {
-    "ultima": "2026-09-10"
+    "ultima": "2026-09-23"
   },
   "RCRB11_23734": {
     "status": "ok",
@@ -2172,5 +2172,17 @@
     "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-analise-de-reuniao-da-administracao-09-2026/",
     "data": "2026-09-22",
     "descricao": "Reunião da Administração"
+  },
+  "PATL11_27370": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/patl11-dividendos-e-analise-informe-mensal-09-2026/",
+    "data": "2026-09-23",
+    "descricao": "Informe Mensal"
+  },
+  "RENT3_49767": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rent3-localiza-analise-de-fato-relevante-09-2026/",
+    "data": "2026-09-23",
+    "descricao": "Fato Relevante"
   }
 }
