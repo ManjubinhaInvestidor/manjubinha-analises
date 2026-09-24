@@ -78,7 +78,7 @@
     "descricao": "Informe Mensal"
   },
   "GARE11": {
-    "ultima": "2026-09-11"
+    "ultima": "2026-09-24"
   },
   "BBAS3_44747": {
     "status": "ok",
@@ -123,7 +123,7 @@
     "descricao": "Diretoria"
   },
   "BBDC4": {
-    "ultima": "2026-09-11"
+    "ultima": "2026-09-24"
   },
   "ABEV3_42735": {
     "status": "ok",
@@ -2196,5 +2196,17 @@
     "url": "https://manjubinhainvestidor.com.br/csan3-cosan-analise-de-estatuto-social-09-2026/",
     "data": "2026-09-23",
     "descricao": "Estatuto Social"
+  },
+  "GARE11_26787": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/gare11-dividendos-e-analise-informe-mensal-09-2026/",
+    "data": "2026-09-24",
+    "descricao": "Informe Mensal"
+  },
+  "BBDC4_49651": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-conselho-de-administracao-09-2026/",
+    "data": "2026-09-24",
+    "descricao": "Conselho de Administração"
   }
 }
