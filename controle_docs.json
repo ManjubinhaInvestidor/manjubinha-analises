@@ -141,7 +141,7 @@
     "descricao": "Informe Mensal"
   },
   "KNSC11": {
-    "ultima": "2026-09-14"
+    "ultima": "2026-09-25"
   },
   "VISC11_23663": {
     "status": "ok",
@@ -168,7 +168,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPLE6": {
-    "ultima": "2026-09-14"
+    "ultima": "2026-09-25"
   },
   "BTLG11_23251": {
     "status": "ok",
@@ -2238,5 +2238,17 @@
     "url": "https://manjubinhainvestidor.com.br/pomo4-marcopolo-analise-de-comunicado-ao-mercado-09-2026-2/",
     "data": "2026-09-25",
     "descricao": "Comunicado ao Mercado"
+  },
+  "KNSC11_27305": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knsc11-dividendos-e-analise-relatorio-gerencial-09-2026/",
+    "data": "2026-09-25",
+    "descricao": "Relatório Gerencial"
+  },
+  "CPLE6_49513": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-fato-relevante-09-2026/",
+    "data": "2026-09-25",
+    "descricao": "Fato Relevante"
   }
 }
