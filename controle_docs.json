@@ -186,7 +186,7 @@
     "descricao": "Informe Mensal"
   },
   "OUJP11": {
-    "ultima": "2026-09-15"
+    "ultima": "2026-09-28"
   },
   "EGIE3_44842": {
     "status": "ok",
@@ -222,7 +222,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PRIO3": {
-    "ultima": "2026-09-15"
+    "ultima": "2026-09-28"
   },
   "SBSP3_44881": {
     "status": "ok",
@@ -2286,5 +2286,11 @@
     "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-plano-de-remuneracao-baseado-em-acoes-exceto-plano-de-opcoes-09-2026/",
     "data": "2026-09-28",
     "descricao": "Plano de Remuneração Baseado em Ações (exceto Plano de Opções)"
+  },
+  "OUJP11_27360": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/oujp11-dividendos-e-analise-informe-mensal-09-2026/",
+    "data": "2026-09-28",
+    "descricao": "Informe Mensal"
   }
 }
