@@ -240,7 +240,7 @@
     "descricao": "Relatório Gerencial"
   },
   "TRBL11": {
-    "ultima": "2026-09-15"
+    "ultima": "2026-09-29"
   },
   "PVBI11_23402": {
     "status": "ok",
@@ -258,7 +258,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "RDOR3": {
-    "ultima": "2026-09-15"
+    "ultima": "2026-09-29"
   },
   "B3SA3_44745": {
     "status": "ok",
@@ -2304,5 +2304,17 @@
     "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-assembleia-09-2026-2/",
     "data": "2026-09-29",
     "descricao": "Assembleia"
+  },
+  "TRBL11_27537": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/trbl11-dividendos-e-analise-relatorio-gerencial-09-2026/",
+    "data": "2026-09-29",
+    "descricao": "Relatório Gerencial"
+  },
+  "RDOR3_49695": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rdor3-rede-dor-analise-de-reuniao-da-administracao-09-2026/",
+    "data": "2026-09-29",
+    "descricao": "Reunião da Administração"
   }
 }
