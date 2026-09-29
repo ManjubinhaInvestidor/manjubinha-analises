@@ -249,7 +249,7 @@
     "descricao": "Informe Mensal"
   },
   "PVBI11": {
-    "ultima": "2026-09-16"
+    "ultima": "2026-09-29"
   },
   "RDOR3_44874": {
     "status": "ok",
@@ -267,7 +267,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "B3SA3": {
-    "ultima": "2026-09-16"
+    "ultima": "2026-09-29"
   },
   "ALZR11_23615": {
     "status": "ok",
@@ -2316,5 +2316,17 @@
     "url": "https://manjubinhainvestidor.com.br/rdor3-rede-dor-analise-de-reuniao-da-administracao-09-2026/",
     "data": "2026-09-29",
     "descricao": "Reunião da Administração"
+  },
+  "PVBI11_27595": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/pvbi11-dividendos-e-analise-outros-comunicados-09-2026/",
+    "data": "2026-09-29",
+    "descricao": "Outros Comunicados"
+  },
+  "B3SA3_49968": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-analise-de-politica-de-transacoes-entre-partes-relacionadas-09-2026/",
+    "data": "2026-09-29",
+    "descricao": "Política de Transações entre Partes Relacionadas"
   }
 }
