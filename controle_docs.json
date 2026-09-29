@@ -276,7 +276,7 @@
     "descricao": "Fatos Relevantes"
   },
   "ALZR11": {
-    "ultima": "2026-09-16"
+    "ultima": "2026-09-29"
   },
   "HSML11_23175": {
     "status": "ok",
@@ -294,7 +294,7 @@
     "descricao": "Reunião da Administração"
   },
   "SUZB3": {
-    "ultima": "2026-09-16"
+    "ultima": "2026-09-29"
   },
   "ENGI11_44852": {
     "status": "ok",
@@ -2328,5 +2328,11 @@
     "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-analise-de-politica-de-transacoes-entre-partes-relacionadas-09-2026/",
     "data": "2026-09-29",
     "descricao": "Política de Transações entre Partes Relacionadas"
+  },
+  "ALZR11_27187": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alzr11-dividendos-e-analise-relatorio-gerencial-09-2026/",
+    "data": "2026-09-29",
+    "descricao": "Relatório Gerencial"
   }
 }
