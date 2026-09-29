@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-09-28",
+  "ultima_atualizacao": "2026-09-29",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -332,7 +332,7 @@
       "nome": "REC Recebiveis Imob.",
       "tipo": "Papel",
       "segmento": "TVM",
-      "post_url": "https://manjubinhainvestidor.com.br/recr11-dividendos-e-analise-fatos-relevantes-09-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/recr11-dividendos-e-analise-informe-mensal-09-2026-2/",
       "metricas": {
         "liquidez_diaria": 2775680.0,
         "dy_12m": 11.81,
@@ -549,7 +549,7 @@
       "ticker": "SBSP3",
       "nome": "Sabesp",
       "setor": "Energia",
-      "post_url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-assembleia-09-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-assembleia-09-2026-2/",
       "metricas": {
         "liquidez_diaria": 461046000.0,
         "dy_12m": 2.68,
