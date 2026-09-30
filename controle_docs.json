@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-09-16"
+    "ultima": "2026-09-30"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-09-16"
+    "ultima": "2026-09-30"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -2334,5 +2334,17 @@
     "url": "https://manjubinhainvestidor.com.br/alzr11-dividendos-e-analise-relatorio-gerencial-09-2026/",
     "data": "2026-09-29",
     "descricao": "Relatório Gerencial"
+  },
+  "HSML11_26878": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hsml11-dividendos-e-analise-informe-mensal-09-2026/",
+    "data": "2026-09-30",
+    "descricao": "Informe Mensal"
+  },
+  "ENGI11_49743": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-09-2026-2/",
+    "data": "2026-09-30",
+    "descricao": "Comunicado ao Mercado"
   }
 }
