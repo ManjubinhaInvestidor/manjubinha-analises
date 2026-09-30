@@ -312,7 +312,7 @@
     "descricao": "Fatos Relevantes"
   },
   "IRDM11": {
-    "ultima": "2026-09-17"
+    "ultima": "2026-09-30"
   },
   "VGIP11_23617": {
     "status": "ok",
@@ -330,7 +330,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPFE3": {
-    "ultima": "2026-09-17"
+    "ultima": "2026-09-30"
   },
   "TOTS3_44471": {
     "status": "ok",
@@ -2346,5 +2346,11 @@
     "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-09-2026-2/",
     "data": "2026-09-30",
     "descricao": "Comunicado ao Mercado"
+  },
+  "CPFE3_49910": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-regimento-interno-de-comites-09-2026/",
+    "data": "2026-09-30",
+    "descricao": "Regimento interno de Comitês"
   }
 }
