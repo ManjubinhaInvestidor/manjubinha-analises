@@ -348,7 +348,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RBRR11": {
-    "ultima": "2026-09-18"
+    "ultima": "2026-10-01"
   },
   "BCFF11_9369": {
     "status": "ok",
@@ -366,7 +366,7 @@
     "descricao": "Comunicação sobre Transação entre Partes Relacionadas\r\nComunicação sobre Transição entre Partes Rela"
   },
   "JBSS3": {
-    "ultima": "2026-09-18"
+    "ultima": "2026-10-01"
   },
   "ALUP11_44319": {
     "status": "ok",
@@ -2370,5 +2370,11 @@
     "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-aviso-aos-acionistas-10-2026/",
     "data": "2026-10-01",
     "descricao": "Aviso aos Acionistas"
+  },
+  "RBRR11_27806": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-outros-comunicados-10-2026/",
+    "data": "2026-10-01",
+    "descricao": "Outros Comunicados"
   }
 }
