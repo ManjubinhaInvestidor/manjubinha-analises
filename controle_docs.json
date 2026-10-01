@@ -321,7 +321,7 @@
     "descricao": "Relatório Gerencial"
   },
   "VGIP11": {
-    "ultima": "2026-09-17"
+    "ultima": "2026-10-01"
   },
   "CPFE3_44682": {
     "status": "ok",
@@ -339,7 +339,7 @@
     "descricao": "Reunião da Administração"
   },
   "TOTS3": {
-    "ultima": "2026-09-17"
+    "ultima": "2026-10-01"
   },
   "RBRR11_23449": {
     "status": "ok",
@@ -2352,5 +2352,11 @@
     "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-regimento-interno-de-comites-09-2026/",
     "data": "2026-09-30",
     "descricao": "Regimento interno de Comitês"
+  },
+  "TOTS3_49636": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-aviso-aos-acionistas-10-2026/",
+    "data": "2026-10-01",
+    "descricao": "Aviso aos Acionistas"
   }
 }

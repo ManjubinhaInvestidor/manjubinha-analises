@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-09-30",
+  "ultima_atualizacao": "2026-10-01",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -814,7 +814,7 @@
       "ticker": "TOTS3",
       "nome": "TOTVS",
       "setor": "Industrial",
-      "post_url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-politica-de-transacoes-entre-partes-relacionadas-09-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-aviso-aos-acionistas-10-2026/",
       "metricas": {
         "liquidez_diaria": 122257000.0,
         "dy_12m": 1.98,
