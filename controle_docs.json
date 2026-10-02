@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-09-22"
+    "ultima": "2026-10-02"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-09-22"
+    "ultima": "2026-10-02"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -2400,5 +2400,17 @@
     "url": "https://manjubinhainvestidor.com.br/vcjr11-dividendos-e-analise-distribuicoes-10-2026/",
     "data": "2026-10-02",
     "descricao": "Distribuições"
+  },
+  "HGLG11_27887": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-fatos-relevantes-10-2026/",
+    "data": "2026-10-02",
+    "descricao": "Fatos Relevantes"
+  },
+  "ITUB4_49751": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-02",
+    "descricao": "Comunicado ao Mercado"
   }
 }
