@@ -357,7 +357,7 @@
     "descricao": "Outros Comunicados"
   },
   "BCFF11": {
-    "ultima": "2026-09-21"
+    "ultima": "2026-10-02"
   },
   "JBSS3_31612": {
     "status": "ok",
@@ -375,7 +375,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "ALUP11": {
-    "ultima": "2026-09-21"
+    "ultima": "2026-10-02"
   },
   "RBRF11_21325": {
     "status": "ok",
@@ -2388,5 +2388,11 @@
     "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-comunicado-ao-mercado-10-2026/",
     "data": "2026-10-01",
     "descricao": "Comunicado ao Mercado"
+  },
+  "ALUP11_50180": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-conselho-de-administracao-10-2026/",
+    "data": "2026-10-02",
+    "descricao": "Conselho de Administração"
   }
 }
