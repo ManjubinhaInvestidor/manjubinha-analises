@@ -69,7 +69,7 @@
     "descricao": "Informe Mensal"
   },
   "KNRI11": {
-    "ultima": "2026-09-22"
+    "ultima": "2026-10-05"
   },
   "GARE11_23116": {
     "status": "ok",
@@ -96,7 +96,7 @@
     "descricao": "Reunião da Administração"
   },
   "WEGE3": {
-    "ultima": "2026-09-22"
+    "ultima": "2026-10-05"
   },
   "CPTS11_23316": {
     "status": "ok",
@@ -2418,5 +2418,17 @@
     "url": "https://manjubinhainvestidor.com.br/xpml11-dividendos-e-analise-oferta-publica-10-2026/",
     "data": "2026-10-05",
     "descricao": "Oferta Pública"
+  },
+  "KNRI11_27907": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knri11-dividendos-e-analise-relatorio-gerencial-10-2026/",
+    "data": "2026-10-05",
+    "descricao": "Relatório Gerencial"
+  },
+  "WEGE3_50423": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-05",
+    "descricao": "Comunicado ao Mercado"
   }
 }
