@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-10-06",
+  "ultima_atualizacao": "2026-10-07",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -56,7 +56,7 @@
       "nome": "Capitania Securities II",
       "tipo": "Papel",
       "segmento": "TVM",
-      "post_url": "https://manjubinhainvestidor.com.br/cpts11-dividendos-e-analise-informe-mensal-09-2026-2/",
+      "post_url": "https://manjubinhainvestidor.com.br/cpts11-dividendos-e-analise-relatorio-gerencial-10-2026/",
       "metricas": {
         "liquidez_diaria": 6768110.0,
         "dy_12m": 14.16,

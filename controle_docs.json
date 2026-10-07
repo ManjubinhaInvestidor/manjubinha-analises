@@ -105,7 +105,7 @@
     "descricao": "Informe Mensal"
   },
   "CPTS11": {
-    "ultima": "2026-09-24"
+    "ultima": "2026-10-07"
   },
   "GGRC11_23620": {
     "status": "ok",
@@ -132,7 +132,7 @@
     "descricao": "Conselho de Administração"
   },
   "ABEV3": {
-    "ultima": "2026-09-24"
+    "ultima": "2026-10-07"
   },
   "KNSC11_22957": {
     "status": "ok",
@@ -2464,5 +2464,11 @@
     "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-politica-de-negociacao-de-valores-mobiliarios-10-2026/",
     "data": "2026-10-06",
     "descricao": "Política de Negociação de Valores Mobiliários"
+  },
+  "CPTS11_27805": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpts11-dividendos-e-analise-relatorio-gerencial-10-2026/",
+    "data": "2026-10-07",
+    "descricao": "Relatório Gerencial"
   }
 }
