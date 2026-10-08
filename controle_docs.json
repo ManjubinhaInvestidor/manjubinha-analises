@@ -492,7 +492,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RZTR11": {
-    "ultima": "2026-09-25"
+    "ultima": "2026-10-08"
   },
   "POMO4_45022": {
     "status": "ok",
@@ -501,7 +501,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "POMO4": {
-    "ultima": "2026-09-25"
+    "ultima": "2026-10-08"
   },
   "HCTR11_23105": {
     "status": "ok",
@@ -2506,5 +2506,11 @@
     "url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-oferta-publica-10-2026/",
     "data": "2026-10-08",
     "descricao": "Oferta Pública"
+  },
+  "RZTR11_27876": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rztr11-dividendos-e-analise-fatos-relevantes-10-2026/",
+    "data": "2026-10-08",
+    "descricao": "Fatos Relevantes"
   }
 }
