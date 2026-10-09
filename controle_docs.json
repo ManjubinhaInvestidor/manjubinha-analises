@@ -510,7 +510,7 @@
     "descricao": "Relatório Gerencial"
   },
   "HCTR11": {
-    "ultima": "2026-09-28"
+    "ultima": "2026-10-09"
   },
   "IRBR3_45211": {
     "status": "ok",
@@ -519,7 +519,7 @@
     "descricao": "Regimento interno de Comitês"
   },
   "IRBR3": {
-    "ultima": "2026-09-28"
+    "ultima": "2026-10-09"
   },
   "MXRF11_23812": {
     "status": "ok",
@@ -2522,6 +2522,18 @@
   "PRIO3_50578": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/prio3-prio-analise-de-fato-relevante-10-2026/",
+    "data": "2026-10-09",
+    "descricao": "Fato Relevante"
+  },
+  "HCTR11_28027": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hctr11-dividendos-e-analise-distribuicoes-10-2026/",
+    "data": "2026-10-09",
+    "descricao": "Distribuições"
+  },
+  "IRBR3_50085": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-fato-relevante-10-2026/",
     "data": "2026-10-09",
     "descricao": "Fato Relevante"
   }
