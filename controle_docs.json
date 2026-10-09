@@ -213,7 +213,7 @@
     "descricao": "Informe Mensal"
   },
   "RECR11": {
-    "ultima": "2026-09-29"
+    "ultima": "2026-10-09"
   },
   "PRIO3_44871": {
     "status": "ok",
@@ -231,7 +231,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "SBSP3": {
-    "ultima": "2026-09-29"
+    "ultima": "2026-10-09"
   },
   "TRBL11_23447": {
     "status": "ok",
@@ -2536,5 +2536,17 @@
     "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-fato-relevante-10-2026/",
     "data": "2026-10-09",
     "descricao": "Fato Relevante"
+  },
+  "RECR11_28065": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/recr11-dividendos-e-analise-relatorio-gerencial-10-2026/",
+    "data": "2026-10-09",
+    "descricao": "Relatório Gerencial"
+  },
+  "SBSP3_50674": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-reuniao-da-administracao-10-2026/",
+    "data": "2026-10-09",
+    "descricao": "Reunião da Administração"
   }
 }
