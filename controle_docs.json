@@ -240,7 +240,7 @@
     "descricao": "Relatório Gerencial"
   },
   "TRBL11": {
-    "ultima": "2026-09-29"
+    "ultima": "2026-10-09"
   },
   "PVBI11_23402": {
     "status": "ok",
@@ -258,7 +258,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "RDOR3": {
-    "ultima": "2026-09-29"
+    "ultima": "2026-10-09"
   },
   "B3SA3_44745": {
     "status": "ok",
@@ -2546,6 +2546,12 @@
   "SBSP3_50674": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-reuniao-da-administracao-10-2026/",
+    "data": "2026-10-09",
+    "descricao": "Reunião da Administração"
+  },
+  "RDOR3_50245": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rdor3-rede-dor-analise-de-reuniao-da-administracao-10-2026/",
     "data": "2026-10-09",
     "descricao": "Reunião da Administração"
   }
