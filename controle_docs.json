@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-09-30"
+    "ultima": "2026-10-12"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-09-30"
+    "ultima": "2026-10-12"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -2566,5 +2566,11 @@
     "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-analise-de-conselho-de-administracao-10-2026/",
     "data": "2026-10-10",
     "descricao": "Conselho de Administração"
+  },
+  "ENGI11_50294": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-12",
+    "descricao": "Comunicado ao Mercado"
   }
 }
