@@ -321,7 +321,7 @@
     "descricao": "Relatório Gerencial"
   },
   "VGIP11": {
-    "ultima": "2026-10-01"
+    "ultima": "2026-10-13"
   },
   "CPFE3_44682": {
     "status": "ok",
@@ -339,7 +339,7 @@
     "descricao": "Reunião da Administração"
   },
   "TOTS3": {
-    "ultima": "2026-10-01"
+    "ultima": "2026-10-13"
   },
   "RBRR11_23449": {
     "status": "ok",
@@ -2594,6 +2594,18 @@
   "VALE3_50329": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-comunicado-ao-mercado-10-2026-2/",
+    "data": "2026-10-13",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "VGIP11_27982": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vgip11-dividendos-e-analise-relatorio-gerencial-10-2026/",
+    "data": "2026-10-13",
+    "descricao": "Relatório Gerencial"
+  },
+  "TOTS3_50699": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-comunicado-ao-mercado-10-2026/",
     "data": "2026-10-13",
     "descricao": "Comunicado ao Mercado"
   }
