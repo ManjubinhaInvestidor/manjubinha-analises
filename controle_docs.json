@@ -357,7 +357,7 @@
     "descricao": "Outros Comunicados"
   },
   "BCFF11": {
-    "ultima": "2026-10-02"
+    "ultima": "2026-10-14"
   },
   "JBSS3_31612": {
     "status": "ok",
@@ -375,7 +375,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "ALUP11": {
-    "ultima": "2026-10-02"
+    "ultima": "2026-10-14"
   },
   "RBRF11_21325": {
     "status": "ok",
@@ -2620,5 +2620,11 @@
     "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-analise-de-estatuto-social-10-2026/",
     "data": "2026-10-14",
     "descricao": "Estatuto Social"
+  },
+  "ALUP11_50753": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-14",
+    "descricao": "Comunicado ao Mercado"
   }
 }
