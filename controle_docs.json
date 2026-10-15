@@ -420,7 +420,7 @@
     "descricao": "Informe Mensal"
   },
   "BRCO11": {
-    "ultima": "2026-10-05"
+    "ultima": "2026-10-15"
   },
   "PATL11_23818": {
     "status": "ok",
@@ -438,7 +438,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "EMBR3": {
-    "ultima": "2026-10-05"
+    "ultima": "2026-10-15"
   },
   "RENT3_45148": {
     "status": "ok",
@@ -2642,6 +2642,12 @@
   "WEGE3_50489": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-analise-de-comunicado-ao-mercado-10-2026-2/",
+    "data": "2026-10-15",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "EMBR3_50773": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-comunicado-ao-mercado-10-2026-2/",
     "data": "2026-10-15",
     "descricao": "Comunicado ao Mercado"
   }
