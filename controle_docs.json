@@ -69,7 +69,7 @@
     "descricao": "Informe Mensal"
   },
   "KNRI11": {
-    "ultima": "2026-10-05"
+    "ultima": "2026-10-15"
   },
   "GARE11_23116": {
     "status": "ok",
@@ -96,7 +96,7 @@
     "descricao": "Reunião da Administração"
   },
   "WEGE3": {
-    "ultima": "2026-10-05"
+    "ultima": "2026-10-15"
   },
   "CPTS11_23316": {
     "status": "ok",
@@ -2638,5 +2638,11 @@
     "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-conselho-de-administracao-10-2026/",
     "data": "2026-10-15",
     "descricao": "Conselho de Administração"
+  },
+  "WEGE3_50489": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-analise-de-comunicado-ao-mercado-10-2026-2/",
+    "data": "2026-10-15",
+    "descricao": "Comunicado ao Mercado"
   }
 }
