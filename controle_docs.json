@@ -42,7 +42,7 @@
     "descricao": "Informe Mensal"
   },
   "XPML11": {
-    "ultima": "2026-10-05"
+    "ultima": "2026-10-15"
   },
   "PETR4_44699": {
     "status": "ok",
@@ -87,7 +87,7 @@
     "descricao": "Relatório de Agência de Rating"
   },
   "BBAS3": {
-    "ultima": "2026-10-05"
+    "ultima": "2026-10-15"
   },
   "WEGE3_44388": {
     "status": "ok",
@@ -2626,5 +2626,17 @@
     "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-comunicado-ao-mercado-10-2026/",
     "data": "2026-10-14",
     "descricao": "Comunicado ao Mercado"
+  },
+  "XPML11_28071": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/xpml11-dividendos-e-analise-relatorio-gerencial-10-2026/",
+    "data": "2026-10-15",
+    "descricao": "Relatório Gerencial"
+  },
+  "BBAS3_50493": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-conselho-de-administracao-10-2026/",
+    "data": "2026-10-15",
+    "descricao": "Conselho de Administração"
   }
 }

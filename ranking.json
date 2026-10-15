@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-10-14",
+  "ultima_atualizacao": "2026-10-15",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -98,7 +98,7 @@
       "nome": "XP Malls",
       "tipo": "Tijolo",
       "segmento": "Shoppings",
-      "post_url": "https://manjubinhainvestidor.com.br/xpml11-dividendos-e-analise-oferta-publica-10-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/xpml11-dividendos-e-analise-relatorio-gerencial-10-2026/",
       "metricas": {
         "liquidez_diaria": 19937000.0,
         "dy_12m": 10.98,
@@ -614,7 +614,7 @@
       "ticker": "BBAS3",
       "nome": "Banco do Brasil",
       "setor": "Financeiro",
-      "post_url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-conselho-de-administracao-09-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-conselho-de-administracao-10-2026/",
       "metricas": {
         "liquidez_diaria": 707915000.0,
         "dy_12m": 2.99,
