@@ -429,7 +429,7 @@
     "descricao": "Distribuições"
   },
   "PATL11": {
-    "ultima": "2026-10-06"
+    "ultima": "2026-10-16"
   },
   "EMBR3_44598": {
     "status": "ok",
@@ -447,7 +447,7 @@
     "descricao": "Documentos de Oferta de Distribuição Pública"
   },
   "RENT3": {
-    "ultima": "2026-10-06"
+    "ultima": "2026-10-16"
   },
   "RCRB11_23734": {
     "status": "ok",
@@ -2438,8 +2438,10 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PATL11_27735": {
-    "status": "sem_analise",
-    "data": "2026-10-06"
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/patl11-dividendos-e-analise-relatorio-gerencial-10-2026/",
+    "data": "2026-10-16",
+    "descricao": "Relatório Gerencial"
   },
   "RENT3_49943": {
     "status": "ok",
