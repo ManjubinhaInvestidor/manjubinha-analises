@@ -78,7 +78,7 @@
     "descricao": "Informe Mensal"
   },
   "GARE11": {
-    "ultima": "2026-10-06"
+    "ultima": "2026-10-16"
   },
   "BBAS3_44747": {
     "status": "ok",
@@ -123,7 +123,7 @@
     "descricao": "Diretoria"
   },
   "BBDC4": {
-    "ultima": "2026-10-06"
+    "ultima": "2026-10-16"
   },
   "ABEV3_42735": {
     "status": "ok",
@@ -2650,5 +2650,17 @@
     "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-comunicado-ao-mercado-10-2026-2/",
     "data": "2026-10-15",
     "descricao": "Comunicado ao Mercado"
+  },
+  "GARE11_28255": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/gare11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-16",
+    "descricao": "Informe Mensal"
+  },
+  "BBDC4_50759": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-conselho-de-administracao-10-2026/",
+    "data": "2026-10-16",
+    "descricao": "Conselho de Administração"
   }
 }
