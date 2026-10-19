@@ -105,7 +105,7 @@
     "descricao": "Informe Mensal"
   },
   "CPTS11": {
-    "ultima": "2026-10-07"
+    "ultima": "2026-10-19"
   },
   "GGRC11_23620": {
     "status": "ok",
@@ -159,7 +159,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "TAEE11": {
-    "ultima": "2026-10-07"
+    "ultima": "2026-10-19"
   },
   "CPLE6_44918": {
     "status": "ok",
@@ -2670,5 +2670,11 @@
     "url": "https://manjubinhainvestidor.com.br/rcrb11-dividendos-e-analise-relatorio-gerencial-10-2026/",
     "data": "2026-10-16",
     "descricao": "Relatório Gerencial"
+  },
+  "TAEE11_50934": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/taee11-taesa-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-19",
+    "descricao": "Comunicado ao Mercado"
   }
 }
