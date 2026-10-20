@@ -150,7 +150,7 @@
     "descricao": "Fatos Relevantes"
   },
   "VISC11": {
-    "ultima": "2026-10-08"
+    "ultima": "2026-10-20"
   },
   "TAEE11_44645": {
     "status": "ok",
@@ -204,7 +204,7 @@
     "descricao": "Assembleia"
   },
   "VIVT3": {
-    "ultima": "2026-10-08"
+    "ultima": "2026-10-20"
   },
   "RECR11_23281": {
     "status": "ok",
@@ -2694,5 +2694,17 @@
     "url": "https://manjubinhainvestidor.com.br/knsc11-dividendos-e-analise-informe-mensal-10-2026/",
     "data": "2026-10-20",
     "descricao": "Informe Mensal"
+  },
+  "VISC11_28678": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/visc11-dividendos-e-analise-outros-comunicados-10-2026/",
+    "data": "2026-10-20",
+    "descricao": "Outros Comunicados"
+  },
+  "VIVT3_50889": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-reuniao-da-administracao-10-2026/",
+    "data": "2026-10-20",
+    "descricao": "Reunião da Administração"
   }
 }
