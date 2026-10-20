@@ -141,7 +141,7 @@
     "descricao": "Informe Mensal"
   },
   "KNSC11": {
-    "ultima": "2026-10-08"
+    "ultima": "2026-10-20"
   },
   "VISC11_23663": {
     "status": "ok",
@@ -195,7 +195,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "EGIE3": {
-    "ultima": "2026-10-08"
+    "ultima": "2026-10-20"
   },
   "VIVT3_44450": {
     "status": "ok",
@@ -2688,5 +2688,11 @@
     "url": "https://manjubinhainvestidor.com.br/hapv3-hapvida-analise-de-comunicado-ao-mercado-10-2026/",
     "data": "2026-10-19",
     "descricao": "Comunicado ao Mercado"
+  },
+  "KNSC11_28291": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knsc11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-20",
+    "descricao": "Informe Mensal"
   }
 }
