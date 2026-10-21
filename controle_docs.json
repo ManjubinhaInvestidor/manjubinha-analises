@@ -222,7 +222,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PRIO3": {
-    "ultima": "2026-10-09"
+    "ultima": "2026-10-21"
   },
   "SBSP3_44881": {
     "status": "ok",
@@ -492,7 +492,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RZTR11": {
-    "ultima": "2026-10-08"
+    "ultima": "2026-10-21"
   },
   "POMO4_45022": {
     "status": "ok",
@@ -2712,5 +2712,17 @@
     "url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-informe-mensal-10-2026/",
     "data": "2026-10-21",
     "descricao": "Informe Mensal"
+  },
+  "RZTR11_28400": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rztr11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-21",
+    "descricao": "Informe Mensal"
+  },
+  "PRIO3_51101": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/prio3-prio-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-21",
+    "descricao": "Comunicado ao Mercado"
   }
 }
