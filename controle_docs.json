@@ -177,7 +177,7 @@
     "descricao": "Informe Mensal"
   },
   "BTLG11": {
-    "ultima": "2026-10-08"
+    "ultima": "2026-10-21"
   },
   "OUJP11_23642": {
     "status": "ok",
@@ -501,7 +501,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "POMO4": {
-    "ultima": "2026-10-08"
+    "ultima": "2026-10-21"
   },
   "HCTR11_23105": {
     "status": "ok",
@@ -2706,5 +2706,11 @@
     "url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-reuniao-da-administracao-10-2026/",
     "data": "2026-10-20",
     "descricao": "Reunião da Administração"
+  },
+  "BTLG11_28469": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-21",
+    "descricao": "Informe Mensal"
   }
 }
