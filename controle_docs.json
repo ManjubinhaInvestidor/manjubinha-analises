@@ -240,7 +240,7 @@
     "descricao": "Relatório Gerencial"
   },
   "TRBL11": {
-    "ultima": "2026-10-09"
+    "ultima": "2026-10-22"
   },
   "PVBI11_23402": {
     "status": "ok",
@@ -519,7 +519,7 @@
     "descricao": "Regimento interno de Comitês"
   },
   "IRBR3": {
-    "ultima": "2026-10-09"
+    "ultima": "2026-10-22"
   },
   "MXRF11_23812": {
     "status": "ok",
@@ -2748,5 +2748,11 @@
     "url": "https://manjubinhainvestidor.com.br/rdor3-rede-dor-analise-de-acordo-de-acionistas-10-2026/",
     "data": "2026-10-22",
     "descricao": "Acordo de Acionistas"
+  },
+  "TRBL11_28352": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/trbl11-dividendos-e-analise-outros-comunicados-10-2026/",
+    "data": "2026-10-22",
+    "descricao": "Outros Comunicados"
   }
 }
