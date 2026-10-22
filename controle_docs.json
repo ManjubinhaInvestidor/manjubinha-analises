@@ -249,7 +249,7 @@
     "descricao": "Informe Mensal"
   },
   "PVBI11": {
-    "ultima": "2026-10-10"
+    "ultima": "2026-10-22"
   },
   "RDOR3_44874": {
     "status": "ok",
@@ -294,7 +294,7 @@
     "descricao": "Reunião da Administração"
   },
   "SUZB3": {
-    "ultima": "2026-10-12"
+    "ultima": "2026-10-22"
   },
   "ENGI11_44852": {
     "status": "ok",
@@ -2764,6 +2764,18 @@
   "B3SA3_50758": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-22",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "PVBI11_28924": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/pvbi11-dividendos-e-analise-relatorio-gerencial-10-2026/",
+    "data": "2026-10-22",
+    "descricao": "Relatório Gerencial"
+  },
+  "SUZB3_51134": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/suzb3-suzano-analise-de-comunicado-ao-mercado-10-2026/",
     "data": "2026-10-22",
     "descricao": "Comunicado ao Mercado"
   }
