@@ -213,7 +213,7 @@
     "descricao": "Informe Mensal"
   },
   "RECR11": {
-    "ultima": "2026-10-09"
+    "ultima": "2026-10-22"
   },
   "PRIO3_44871": {
     "status": "ok",
@@ -258,7 +258,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "RDOR3": {
-    "ultima": "2026-10-09"
+    "ultima": "2026-10-22"
   },
   "B3SA3_44745": {
     "status": "ok",
@@ -2736,5 +2736,17 @@
     "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-assembleia-10-2026/",
     "data": "2026-10-21",
     "descricao": "Assembleia"
+  },
+  "RECR11_28737": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/recr11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-22",
+    "descricao": "Informe Mensal"
+  },
+  "RDOR3_50977": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rdor3-rede-dor-analise-de-acordo-de-acionistas-10-2026/",
+    "data": "2026-10-22",
+    "descricao": "Acordo de Acionistas"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-10-21",
+  "ultima_atualizacao": "2026-10-22",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -309,7 +309,7 @@
       "nome": "REC Recebiveis Imob.",
       "tipo": "Papel",
       "segmento": "TVM",
-      "post_url": "https://manjubinhainvestidor.com.br/recr11-dividendos-e-analise-relatorio-gerencial-10-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/recr11-dividendos-e-analise-informe-mensal-10-2026/",
       "metricas": {
         "liquidez_diaria": 3000780.0,
         "dy_12m": 14.4,
