@@ -276,7 +276,7 @@
     "descricao": "Fatos Relevantes"
   },
   "ALZR11": {
-    "ultima": "2026-10-12"
+    "ultima": "2026-10-23"
   },
   "HSML11_23175": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-10-12"
+    "ultima": "2026-10-23"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -2777,6 +2777,18 @@
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/suzb3-suzano-analise-de-comunicado-ao-mercado-10-2026/",
     "data": "2026-10-22",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "ALZR11_28933": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alzr11-dividendos-e-analise-oferta-publica-10-2026/",
+    "data": "2026-10-23",
+    "descricao": "Oferta Pública"
+  },
+  "ENGI11_51169": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-10-2026-2/",
+    "data": "2026-10-23",
     "descricao": "Comunicado ao Mercado"
   }
 }
