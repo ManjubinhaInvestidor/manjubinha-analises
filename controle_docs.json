@@ -51,7 +51,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PETR4": {
-    "ultima": "2026-10-13"
+    "ultima": "2026-10-26"
   },
   "ITUB4_44665": {
     "status": "ok",
@@ -312,7 +312,7 @@
     "descricao": "Fatos Relevantes"
   },
   "IRDM11": {
-    "ultima": "2026-10-12"
+    "ultima": "2026-10-26"
   },
   "VGIP11_23617": {
     "status": "ok",
@@ -2802,5 +2802,11 @@
     "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-calendario-de-eventos-corporativos-10-2026/",
     "data": "2026-10-23",
     "descricao": "Calendário de Eventos Corporativos"
+  },
+  "PETR4_50790": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-26",
+    "descricao": "Comunicado ao Mercado"
   }
 }
