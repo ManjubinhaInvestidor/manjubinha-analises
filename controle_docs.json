@@ -15,7 +15,7 @@
     "descricao": "Informe Mensal"
   },
   "KNCR11": {
-    "ultima": "2026-10-13"
+    "ultima": "2026-10-26"
   },
   "VALE3_44810": {
     "status": "ok",
@@ -339,7 +339,7 @@
     "descricao": "Reunião da Administração"
   },
   "TOTS3": {
-    "ultima": "2026-10-13"
+    "ultima": "2026-10-26"
   },
   "RBRR11_23449": {
     "status": "ok",
@@ -2820,5 +2820,17 @@
     "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-codigo-de-conduta-10-2026/",
     "data": "2026-10-26",
     "descricao": "Código de Conduta"
+  },
+  "KNCR11_28798": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/kncr11-dividendos-e-analise-oferta-publica-10-2026/",
+    "data": "2026-10-26",
+    "descricao": "Oferta Pública"
+  },
+  "TOTS3_51045": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-comunicado-ao-mercado-10-2026-2/",
+    "data": "2026-10-26",
+    "descricao": "Comunicado ao Mercado"
   }
 }
