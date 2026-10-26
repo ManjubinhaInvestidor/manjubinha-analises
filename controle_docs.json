@@ -6,7 +6,7 @@
     "descricao": "Oferta Pública"
   },
   "MXRF11": {
-    "ultima": "2026-10-13"
+    "ultima": "2026-10-26"
   },
   "KNCR11_22956": {
     "status": "ok",
@@ -24,7 +24,7 @@
     "descricao": "Outros Comunicados Não Considerados Fatos Relevantes - Comunicado ao Mercado"
   },
   "VALE3": {
-    "ultima": "2026-10-13"
+    "ultima": "2026-10-26"
   },
   "HGLG11_23342": {
     "status": "ok",
@@ -2808,5 +2808,17 @@
     "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-10-2026/",
     "data": "2026-10-26",
     "descricao": "Comunicado ao Mercado"
+  },
+  "MXRF11_28308": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/mxrf11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-26",
+    "descricao": "Informe Mensal"
+  },
+  "VALE3_51279": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-codigo-de-conduta-10-2026/",
+    "data": "2026-10-26",
+    "descricao": "Código de Conduta"
   }
 }
