@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-10-14"
+    "ultima": "2026-10-27"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -348,7 +348,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RBRR11": {
-    "ultima": "2026-10-13"
+    "ultima": "2026-10-27"
   },
   "BCFF11_9369": {
     "status": "ok",
@@ -2836,6 +2836,12 @@
   "VGIP11_28682": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/vgip11-dividendos-e-analise-relatorio-gerencial-10-2026-2/",
+    "data": "2026-10-27",
+    "descricao": "Relatório Gerencial"
+  },
+  "RBRR11_28913": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-relatorio-gerencial-10-2026/",
     "data": "2026-10-27",
     "descricao": "Relatório Gerencial"
   }
