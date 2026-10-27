@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-10-14"
+    "ultima": "2026-10-27"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -375,7 +375,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "ALUP11": {
-    "ultima": "2026-10-14"
+    "ultima": "2026-10-27"
   },
   "RBRF11_21325": {
     "status": "ok",
@@ -2844,5 +2844,17 @@
     "url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-relatorio-gerencial-10-2026/",
     "data": "2026-10-27",
     "descricao": "Relatório Gerencial"
+  },
+  "HGLG11_29026": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-fatos-relevantes-10-2026-3/",
+    "data": "2026-10-27",
+    "descricao": "Fatos Relevantes"
+  },
+  "ALUP11_51001": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-comunicado-ao-mercado-10-2026-2/",
+    "data": "2026-10-27",
+    "descricao": "Comunicado ao Mercado"
   }
 }
