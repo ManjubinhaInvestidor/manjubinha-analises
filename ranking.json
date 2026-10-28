@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-10-27",
+  "ultima_atualizacao": "2026-10-28",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -636,7 +636,7 @@
       "ticker": "BPAC11",
       "nome": "BTG Pactual",
       "setor": "Financeiro",
-      "post_url": "https://manjubinhainvestidor.com.br/bpac11-btg-pactual-analise-de-comunicacao-sobre-transacao-entre-partes-relacionadas-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/bpac11-btg-pactual-analise-de-calendario-de-eventos-corporativos-10-2026/",
       "metricas": {
         "liquidez_diaria": 646151000.0,
         "dy_12m": 2.2,
