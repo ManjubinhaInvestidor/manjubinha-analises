@@ -87,7 +87,7 @@
     "descricao": "Relatório de Agência de Rating"
   },
   "BBAS3": {
-    "ultima": "2026-10-15"
+    "ultima": "2026-10-28"
   },
   "WEGE3_44388": {
     "status": "ok",
@@ -393,7 +393,7 @@
     "descricao": "Informe Mensal"
   },
   "VCJR11": {
-    "ultima": "2026-10-14"
+    "ultima": "2026-10-28"
   },
   "KLBN11_44777": {
     "status": "ok",
@@ -2868,5 +2868,17 @@
     "url": "https://manjubinhainvestidor.com.br/bpac11-btg-pactual-analise-de-calendario-de-eventos-corporativos-10-2026/",
     "data": "2026-10-28",
     "descricao": "Calendário de Eventos Corporativos"
+  },
+  "VCJR11_28863": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vcjr11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-28",
+    "descricao": "Informe Mensal"
+  },
+  "BBAS3_51332": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-28",
+    "descricao": "Comunicado ao Mercado"
   }
 }
