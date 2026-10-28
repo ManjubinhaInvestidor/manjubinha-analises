@@ -42,7 +42,7 @@
     "descricao": "Informe Mensal"
   },
   "XPML11": {
-    "ultima": "2026-10-15"
+    "ultima": "2026-10-28"
   },
   "PETR4_44699": {
     "status": "ok",
@@ -96,7 +96,7 @@
     "descricao": "Reunião da Administração"
   },
   "WEGE3": {
-    "ultima": "2026-10-15"
+    "ultima": "2026-10-28"
   },
   "CPTS11_23316": {
     "status": "ok",
@@ -2878,6 +2878,18 @@
   "BBAS3_51332": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-28",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "XPML11_29162": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/xpml11-dividendos-e-analise-fatos-relevantes-10-2026/",
+    "data": "2026-10-28",
+    "descricao": "Fatos Relevantes"
+  },
+  "WEGE3_51328": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-analise-de-comunicado-ao-mercado-10-2026-3/",
     "data": "2026-10-28",
     "descricao": "Comunicado ao Mercado"
   }
