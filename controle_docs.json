@@ -429,7 +429,7 @@
     "descricao": "Distribuições"
   },
   "PATL11": {
-    "ultima": "2026-10-16"
+    "ultima": "2026-10-29"
   },
   "EMBR3_44598": {
     "status": "ok",
@@ -447,7 +447,7 @@
     "descricao": "Documentos de Oferta de Distribuição Pública"
   },
   "RENT3": {
-    "ultima": "2026-10-16"
+    "ultima": "2026-10-29"
   },
   "RCRB11_23734": {
     "status": "ok",
@@ -2920,5 +2920,17 @@
   "ABEV3_51148": {
     "status": "sem_analise",
     "data": "2026-10-29"
+  },
+  "PATL11_29002": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/patl11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-29",
+    "descricao": "Informe Mensal"
+  },
+  "RENT3_51356": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rent3-localiza-analise-de-documentos-de-oferta-de-distribuicao-publica-10-2026/",
+    "data": "2026-10-29",
+    "descricao": "Documentos de Oferta de Distribuição Pública"
   }
 }
