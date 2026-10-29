@@ -69,7 +69,7 @@
     "descricao": "Informe Mensal"
   },
   "KNRI11": {
-    "ultima": "2026-10-15"
+    "ultima": "2026-10-29"
   },
   "GARE11_23116": {
     "status": "ok",
@@ -438,7 +438,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "EMBR3": {
-    "ultima": "2026-10-15"
+    "ultima": "2026-10-29"
   },
   "RENT3_45148": {
     "status": "ok",
@@ -2891,6 +2891,18 @@
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-analise-de-comunicado-ao-mercado-10-2026-3/",
     "data": "2026-10-28",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "KNRI11_28289": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knri11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-29",
+    "descricao": "Informe Mensal"
+  },
+  "EMBR3_51239": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-comunicado-ao-mercado-10-2026-3/",
+    "data": "2026-10-29",
     "descricao": "Comunicado ao Mercado"
   }
 }
