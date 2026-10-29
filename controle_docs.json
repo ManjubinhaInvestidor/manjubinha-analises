@@ -78,7 +78,7 @@
     "descricao": "Informe Mensal"
   },
   "GARE11": {
-    "ultima": "2026-10-16"
+    "ultima": "2026-10-29"
   },
   "BBAS3_44747": {
     "status": "ok",
@@ -132,7 +132,7 @@
     "descricao": "Conselho de Administração"
   },
   "ABEV3": {
-    "ultima": "2026-10-16"
+    "ultima": "2026-10-29"
   },
   "KNSC11_22957": {
     "status": "ok",
@@ -2916,5 +2916,9 @@
     "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-fato-relevante-10-2026/",
     "data": "2026-10-29",
     "descricao": "Fato Relevante"
+  },
+  "ABEV3_51148": {
+    "status": "sem_analise",
+    "data": "2026-10-29"
   }
 }
