@@ -123,7 +123,7 @@
     "descricao": "Diretoria"
   },
   "BBDC4": {
-    "ultima": "2026-10-16"
+    "ultima": "2026-10-29"
   },
   "ABEV3_42735": {
     "status": "ok",
@@ -420,7 +420,7 @@
     "descricao": "Informe Mensal"
   },
   "BRCO11": {
-    "ultima": "2026-10-15"
+    "ultima": "2026-10-29"
   },
   "PATL11_23818": {
     "status": "ok",
@@ -2904,5 +2904,17 @@
     "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-comunicado-ao-mercado-10-2026-3/",
     "data": "2026-10-29",
     "descricao": "Comunicado ao Mercado"
+  },
+  "BRCO11_28505": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/brco11-dividendos-e-analise-relatorio-gerencial-10-2026/",
+    "data": "2026-10-29",
+    "descricao": "Relatório Gerencial"
+  },
+  "BBDC4_51178": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-fato-relevante-10-2026/",
+    "data": "2026-10-29",
+    "descricao": "Fato Relevante"
   }
 }
