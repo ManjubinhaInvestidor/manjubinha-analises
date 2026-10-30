@@ -456,7 +456,7 @@
     "descricao": "Fatos Relevantes"
   },
   "RCRB11": {
-    "ultima": "2026-10-16"
+    "ultima": "2026-10-30"
   },
   "MGFF11_339": {
     "status": "ok",
@@ -474,7 +474,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "CSAN3": {
-    "ultima": "2026-10-16"
+    "ultima": "2026-10-30"
   },
   "HAPV3_43820": {
     "status": "ok",
@@ -2932,5 +2932,17 @@
     "url": "https://manjubinhainvestidor.com.br/rent3-localiza-analise-de-documentos-de-oferta-de-distribuicao-publica-10-2026/",
     "data": "2026-10-29",
     "descricao": "Documentos de Oferta de Distribuição Pública"
+  },
+  "RCRB11_28815": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rcrb11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-30",
+    "descricao": "Informe Mensal"
+  },
+  "CSAN3_51377": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/csan3-cosan-analise-de-fato-relevante-10-2026/",
+    "data": "2026-10-30",
+    "descricao": "Fato Relevante"
   }
 }
