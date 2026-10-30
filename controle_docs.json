@@ -105,7 +105,7 @@
     "descricao": "Informe Mensal"
   },
   "CPTS11": {
-    "ultima": "2026-10-19"
+    "ultima": "2026-10-30"
   },
   "GGRC11_23620": {
     "status": "ok",
@@ -159,7 +159,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "TAEE11": {
-    "ultima": "2026-10-19"
+    "ultima": "2026-10-30"
   },
   "CPLE6_44918": {
     "status": "ok",
@@ -2944,5 +2944,17 @@
     "url": "https://manjubinhainvestidor.com.br/csan3-cosan-analise-de-fato-relevante-10-2026/",
     "data": "2026-10-30",
     "descricao": "Fato Relevante"
+  },
+  "CPTS11_28480": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpts11-dividendos-e-analise-informe-mensal-10-2026/",
+    "data": "2026-10-30",
+    "descricao": "Informe Mensal"
+  },
+  "TAEE11_51499": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/taee11-taesa-analise-de-assembleia-10-2026/",
+    "data": "2026-10-30",
+    "descricao": "Assembleia"
   }
 }
