@@ -114,7 +114,7 @@
     "descricao": "Fatos Relevantes"
   },
   "GGRC11": {
-    "ultima": "2026-10-19"
+    "ultima": "2026-10-30"
   },
   "BBDC4_44887": {
     "status": "ok",
@@ -168,7 +168,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPLE6": {
-    "ultima": "2026-10-19"
+    "ultima": "2026-10-30"
   },
   "BTLG11_23251": {
     "status": "ok",
@@ -2956,5 +2956,17 @@
     "url": "https://manjubinhainvestidor.com.br/taee11-taesa-analise-de-assembleia-10-2026/",
     "data": "2026-10-30",
     "descricao": "Assembleia"
+  },
+  "GGRC11_28802": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/ggrc11-dividendos-e-analise-relatorio-gerencial-10-2026/",
+    "data": "2026-10-30",
+    "descricao": "Relatório Gerencial"
+  },
+  "CPLE6_51287": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-comunicado-ao-mercado-10-2026/",
+    "data": "2026-10-30",
+    "descricao": "Comunicado ao Mercado"
   }
 }
