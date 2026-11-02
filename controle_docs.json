@@ -141,7 +141,7 @@
     "descricao": "Informe Mensal"
   },
   "KNSC11": {
-    "ultima": "2026-10-20"
+    "ultima": "2026-11-02"
   },
   "VISC11_23663": {
     "status": "ok",
@@ -195,7 +195,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "EGIE3": {
-    "ultima": "2026-10-20"
+    "ultima": "2026-11-02"
   },
   "VIVT3_44450": {
     "status": "ok",
@@ -2968,5 +2968,11 @@
     "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-comunicado-ao-mercado-10-2026/",
     "data": "2026-10-30",
     "descricao": "Comunicado ao Mercado"
+  },
+  "KNSC11_29213": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knsc11-dividendos-e-analise-oferta-publica-11-2026/",
+    "data": "2026-11-02",
+    "descricao": "Oferta Pública"
   }
 }
