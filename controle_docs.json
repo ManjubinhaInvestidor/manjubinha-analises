@@ -150,7 +150,7 @@
     "descricao": "Fatos Relevantes"
   },
   "VISC11": {
-    "ultima": "2026-10-20"
+    "ultima": "2026-11-02"
   },
   "TAEE11_44645": {
     "status": "ok",
@@ -204,7 +204,7 @@
     "descricao": "Assembleia"
   },
   "VIVT3": {
-    "ultima": "2026-10-20"
+    "ultima": "2026-11-02"
   },
   "RECR11_23281": {
     "status": "ok",
@@ -2974,5 +2974,11 @@
     "url": "https://manjubinhainvestidor.com.br/knsc11-dividendos-e-analise-oferta-publica-11-2026/",
     "data": "2026-11-02",
     "descricao": "Oferta Pública"
+  },
+  "VISC11_29263": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/visc11-dividendos-e-analise-fatos-relevantes-11-2026/",
+    "data": "2026-11-02",
+    "descricao": "Fatos Relevantes"
   }
 }
