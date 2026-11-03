@@ -213,7 +213,7 @@
     "descricao": "Informe Mensal"
   },
   "RECR11": {
-    "ultima": "2026-10-22"
+    "ultima": "2026-11-03"
   },
   "PRIO3_44871": {
     "status": "ok",
@@ -258,7 +258,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "RDOR3": {
-    "ultima": "2026-10-22"
+    "ultima": "2026-11-03"
   },
   "B3SA3_44745": {
     "status": "ok",
@@ -2998,5 +2998,9 @@
     "url": "https://manjubinhainvestidor.com.br/rztr11-dividendos-e-analise-relatorio-gerencial-11-2026/",
     "data": "2026-11-03",
     "descricao": "Relatório Gerencial"
+  },
+  "RECR11_28899": {
+    "status": "sem_analise",
+    "data": "2026-11-03"
   }
 }
