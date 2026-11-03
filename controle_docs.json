@@ -492,7 +492,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RZTR11": {
-    "ultima": "2026-10-21"
+    "ultima": "2026-11-03"
   },
   "POMO4_45022": {
     "status": "ok",
@@ -501,7 +501,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "POMO4": {
-    "ultima": "2026-10-21"
+    "ultima": "2026-11-03"
   },
   "HCTR11_23105": {
     "status": "ok",
@@ -2992,5 +2992,11 @@
     "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-estatuto-social-11-2026/",
     "data": "2026-11-03",
     "descricao": "Estatuto Social"
+  },
+  "RZTR11_29113": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rztr11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-03",
+    "descricao": "Relatório Gerencial"
   }
 }
