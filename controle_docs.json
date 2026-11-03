@@ -240,7 +240,7 @@
     "descricao": "Relatório Gerencial"
   },
   "TRBL11": {
-    "ultima": "2026-10-22"
+    "ultima": "2026-11-03"
   },
   "PVBI11_23402": {
     "status": "ok",
@@ -267,7 +267,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "B3SA3": {
-    "ultima": "2026-10-22"
+    "ultima": "2026-11-03"
   },
   "ALZR11_23615": {
     "status": "ok",
@@ -3002,5 +3002,17 @@
   "RECR11_28899": {
     "status": "sem_analise",
     "data": "2026-11-03"
+  },
+  "TRBL11_29387": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/trbl11-dividendos-e-analise-distribuicoes-11-2026/",
+    "data": "2026-11-03",
+    "descricao": "Distribuições"
+  },
+  "B3SA3_51368": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-analise-de-conselho-de-administracao-11-2026/",
+    "data": "2026-11-03",
+    "descricao": "Conselho de Administração"
   }
 }
