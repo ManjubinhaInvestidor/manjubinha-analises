@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-11-02",
+  "ultima_atualizacao": "2026-11-03",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -484,7 +484,7 @@
       "ticker": "SBSP3",
       "nome": "Sabesp",
       "setor": "Energia",
-      "post_url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-assembleia-10-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-estatuto-social-11-2026/",
       "metricas": {
         "liquidez_diaria": 755020000.0,
         "dy_12m": 2.73,

@@ -186,7 +186,7 @@
     "descricao": "Informe Mensal"
   },
   "OUJP11": {
-    "ultima": "2026-10-21"
+    "ultima": "2026-11-03"
   },
   "EGIE3_44842": {
     "status": "ok",
@@ -231,7 +231,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "SBSP3": {
-    "ultima": "2026-10-21"
+    "ultima": "2026-11-03"
   },
   "TRBL11_23447": {
     "status": "ok",
@@ -2980,5 +2980,17 @@
     "url": "https://manjubinhainvestidor.com.br/visc11-dividendos-e-analise-fatos-relevantes-11-2026/",
     "data": "2026-11-02",
     "descricao": "Fatos Relevantes"
+  },
+  "OUJP11_29227": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/oujp11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-03",
+    "descricao": "Relatório Gerencial"
+  },
+  "SBSP3_51434": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-estatuto-social-11-2026/",
+    "data": "2026-11-03",
+    "descricao": "Estatuto Social"
   }
 }
