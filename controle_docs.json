@@ -249,7 +249,7 @@
     "descricao": "Informe Mensal"
   },
   "PVBI11": {
-    "ultima": "2026-10-22"
+    "ultima": "2026-11-04"
   },
   "RDOR3_44874": {
     "status": "ok",
@@ -294,7 +294,7 @@
     "descricao": "Reunião da Administração"
   },
   "SUZB3": {
-    "ultima": "2026-10-22"
+    "ultima": "2026-11-04"
   },
   "ENGI11_44852": {
     "status": "ok",
@@ -3014,5 +3014,11 @@
     "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-analise-de-conselho-de-administracao-11-2026/",
     "data": "2026-11-03",
     "descricao": "Conselho de Administração"
+  },
+  "PVBI11_29366": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/pvbi11-dividendos-e-analise-distribuicoes-11-2026/",
+    "data": "2026-11-04",
+    "descricao": "Distribuições"
   }
 }
