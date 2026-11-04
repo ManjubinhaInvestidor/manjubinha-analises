@@ -276,7 +276,7 @@
     "descricao": "Fatos Relevantes"
   },
   "ALZR11": {
-    "ultima": "2026-10-23"
+    "ultima": "2026-11-04"
   },
   "HSML11_23175": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-10-23"
+    "ultima": "2026-11-04"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -3024,6 +3024,18 @@
   "IRBR3_51200": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-comunicado-ao-mercado-11-2026-2/",
+    "data": "2026-11-04",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "ALZR11_29291": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alzr11-dividendos-e-analise-fatos-relevantes-11-2026/",
+    "data": "2026-11-04",
+    "descricao": "Fatos Relevantes"
+  },
+  "ENGI11_51590": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-11-2026/",
     "data": "2026-11-04",
     "descricao": "Comunicado ao Mercado"
   }
