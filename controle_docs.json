@@ -510,7 +510,7 @@
     "descricao": "Relatório Gerencial"
   },
   "HCTR11": {
-    "ultima": "2026-10-22"
+    "ultima": "2026-11-04"
   },
   "IRBR3_45211": {
     "status": "ok",
@@ -519,7 +519,7 @@
     "descricao": "Regimento interno de Comitês"
   },
   "IRBR3": {
-    "ultima": "2026-10-22"
+    "ultima": "2026-11-04"
   },
   "MXRF11_23812": {
     "status": "ok",
@@ -3020,5 +3020,11 @@
     "url": "https://manjubinhainvestidor.com.br/pvbi11-dividendos-e-analise-distribuicoes-11-2026/",
     "data": "2026-11-04",
     "descricao": "Distribuições"
+  },
+  "IRBR3_51200": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-comunicado-ao-mercado-11-2026-2/",
+    "data": "2026-11-04",
+    "descricao": "Comunicado ao Mercado"
   }
 }
