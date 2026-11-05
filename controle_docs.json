@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-10-23"
+    "ultima": "2026-11-05"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -330,7 +330,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPFE3": {
-    "ultima": "2026-10-23"
+    "ultima": "2026-11-05"
   },
   "TOTS3_44471": {
     "status": "ok",
@@ -3038,5 +3038,17 @@
     "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-11-2026/",
     "data": "2026-11-04",
     "descricao": "Comunicado ao Mercado"
+  },
+  "HSML11_29500": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hsml11-dividendos-e-analise-distribuicoes-11-2026/",
+    "data": "2026-11-05",
+    "descricao": "Distribuições"
+  },
+  "CPFE3_51237": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-conselho-de-administracao-11-2026/",
+    "data": "2026-11-05",
+    "descricao": "Conselho de Administração"
   }
 }
