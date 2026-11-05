@@ -312,7 +312,7 @@
     "descricao": "Fatos Relevantes"
   },
   "IRDM11": {
-    "ultima": "2026-10-26"
+    "ultima": "2026-11-05"
   },
   "VGIP11_23617": {
     "status": "ok",
@@ -339,7 +339,7 @@
     "descricao": "Reunião da Administração"
   },
   "TOTS3": {
-    "ultima": "2026-10-26"
+    "ultima": "2026-11-05"
   },
   "RBRR11_23449": {
     "status": "ok",
@@ -3074,5 +3074,11 @@
     "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-comunicado-ao-mercado-11-2026/",
     "data": "2026-11-05",
     "descricao": "Comunicado ao Mercado"
+  },
+  "TOTS3_51827": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-dados-economico-financeiros-11-2026/",
+    "data": "2026-11-05",
+    "descricao": "Dados Econômico-Financeiros"
   }
 }
