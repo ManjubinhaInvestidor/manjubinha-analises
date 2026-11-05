@@ -6,7 +6,7 @@
     "descricao": "Oferta Pública"
   },
   "MXRF11": {
-    "ultima": "2026-10-26"
+    "ultima": "2026-11-05"
   },
   "KNCR11_22956": {
     "status": "ok",
@@ -51,7 +51,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PETR4": {
-    "ultima": "2026-10-26"
+    "ultima": "2026-11-05"
   },
   "ITUB4_44665": {
     "status": "ok",
@@ -3050,5 +3050,17 @@
     "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-conselho-de-administracao-11-2026/",
     "data": "2026-11-05",
     "descricao": "Conselho de Administração"
+  },
+  "MXRF11_29362": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/mxrf11-dividendos-e-analise-distribuicoes-11-2026/",
+    "data": "2026-11-05",
+    "descricao": "Distribuições"
+  },
+  "PETR4_51490": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-11-2026/",
+    "data": "2026-11-05",
+    "descricao": "Comunicado ao Mercado"
   }
 }
