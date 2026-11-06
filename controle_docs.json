@@ -348,7 +348,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RBRR11": {
-    "ultima": "2026-10-27"
+    "ultima": "2026-11-06"
   },
   "BCFF11_9369": {
     "status": "ok",
@@ -375,7 +375,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "ALUP11": {
-    "ultima": "2026-10-27"
+    "ultima": "2026-11-06"
   },
   "RBRF11_21325": {
     "status": "ok",
@@ -3092,5 +3092,17 @@
     "url": "https://manjubinhainvestidor.com.br/itub4-itau-unibanco-analise-de-demonstracoes-financeiras-adicionais-11-2026/",
     "data": "2026-11-06",
     "descricao": "Demonstrações Financeiras Adicionais"
+  },
+  "RBRR11_29644": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-fatos-relevantes-11-2026/",
+    "data": "2026-11-06",
+    "descricao": "Fatos Relevantes"
+  },
+  "ALUP11_51856": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-conselho-de-administracao-11-2026/",
+    "data": "2026-11-06",
+    "descricao": "Conselho de Administração"
   }
 }
