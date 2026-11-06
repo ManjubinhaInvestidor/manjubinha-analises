@@ -357,7 +357,7 @@
     "descricao": "Outros Comunicados"
   },
   "BCFF11": {
-    "ultima": "2026-10-27"
+    "ultima": "2026-11-06"
   },
   "JBSS3_31612": {
     "status": "ok",
@@ -402,7 +402,7 @@
     "descricao": "Fato Relevante"
   },
   "KLBN11": {
-    "ultima": "2026-10-27"
+    "ultima": "2026-11-06"
   },
   "BPAC11_44751": {
     "status": "ok",
@@ -3104,5 +3104,11 @@
     "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-conselho-de-administracao-11-2026/",
     "data": "2026-11-06",
     "descricao": "Conselho de Administração"
+  },
+  "KLBN11_52012": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/klbn11-klabin-analise-de-comunicado-ao-mercado-11-2026/",
+    "data": "2026-11-06",
+    "descricao": "Comunicado ao Mercado"
   }
 }
