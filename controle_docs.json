@@ -42,7 +42,7 @@
     "descricao": "Informe Mensal"
   },
   "XPML11": {
-    "ultima": "2026-10-28"
+    "ultima": "2026-11-07"
   },
   "PETR4_44699": {
     "status": "ok",
@@ -87,7 +87,7 @@
     "descricao": "Relatório de Agência de Rating"
   },
   "BBAS3": {
-    "ultima": "2026-10-28"
+    "ultima": "2026-11-07"
   },
   "WEGE3_44388": {
     "status": "ok",
@@ -3109,6 +3109,12 @@
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/klbn11-klabin-analise-de-comunicado-ao-mercado-11-2026/",
     "data": "2026-11-06",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "BBAS3_51369": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-comunicado-ao-mercado-11-2026/",
+    "data": "2026-11-07",
     "descricao": "Comunicado ao Mercado"
   }
 }
