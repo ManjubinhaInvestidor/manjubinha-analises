@@ -69,7 +69,7 @@
     "descricao": "Informe Mensal"
   },
   "KNRI11": {
-    "ultima": "2026-10-29"
+    "ultima": "2026-11-09"
   },
   "GARE11_23116": {
     "status": "ok",
@@ -123,7 +123,7 @@
     "descricao": "Diretoria"
   },
   "BBDC4": {
-    "ultima": "2026-10-29"
+    "ultima": "2026-11-09"
   },
   "ABEV3_42735": {
     "status": "ok",
@@ -3134,5 +3134,17 @@
     "url": "https://manjubinhainvestidor.com.br/bpac11-btg-pactual-analise-de-calendario-de-eventos-corporativos-11-2026/",
     "data": "2026-11-09",
     "descricao": "Calendário de Eventos Corporativos"
+  },
+  "KNRI11_29645": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knri11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-09",
+    "descricao": "Relatório Gerencial"
+  },
+  "BBDC4_51570": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-conselho-fiscal-11-2026/",
+    "data": "2026-11-09",
+    "descricao": "Conselho Fiscal"
   }
 }
