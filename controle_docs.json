@@ -96,7 +96,7 @@
     "descricao": "Reunião da Administração"
   },
   "WEGE3": {
-    "ultima": "2026-10-28"
+    "ultima": "2026-11-09"
   },
   "CPTS11_23316": {
     "status": "ok",
@@ -384,7 +384,7 @@
     "descricao": "Outros Comunicados"
   },
   "RBRF11": {
-    "ultima": "2026-10-28"
+    "ultima": "2026-11-09"
   },
   "VCJR11_23505": {
     "status": "ok",
@@ -3116,5 +3116,11 @@
     "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-comunicado-ao-mercado-11-2026/",
     "data": "2026-11-07",
     "descricao": "Comunicado ao Mercado"
+  },
+  "WEGE3_51838": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/wege3-weg-s-a-analise-de-dados-economico-financeiros-11-2026/",
+    "data": "2026-11-09",
+    "descricao": "Dados Econômico-Financeiros"
   }
 }
