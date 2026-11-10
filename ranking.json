@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-11-09",
+  "ultima_atualizacao": "2026-11-10",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -573,7 +573,7 @@
       "ticker": "ABEV3",
       "nome": "Ambev",
       "setor": "Consumo",
-      "post_url": "https://manjubinhainvestidor.com.br/abev3-ambev-analise-de-politica-de-divulgacao-de-ato-ou-fato-relevante-08-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/abev3-ambev-analise-de-press-release-11-2026/",
       "metricas": {
         "liquidez_diaria": 584632000.0,
         "dy_12m": 5.9,

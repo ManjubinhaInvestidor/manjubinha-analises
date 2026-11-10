@@ -78,7 +78,7 @@
     "descricao": "Informe Mensal"
   },
   "GARE11": {
-    "ultima": "2026-10-29"
+    "ultima": "2026-11-10"
   },
   "BBAS3_44747": {
     "status": "ok",
@@ -132,7 +132,7 @@
     "descricao": "Conselho de Administração"
   },
   "ABEV3": {
-    "ultima": "2026-10-29"
+    "ultima": "2026-11-10"
   },
   "KNSC11_22957": {
     "status": "ok",
@@ -3146,5 +3146,17 @@
     "url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-conselho-fiscal-11-2026/",
     "data": "2026-11-09",
     "descricao": "Conselho Fiscal"
+  },
+  "GARE11_29669": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/gare11-dividendos-e-analise-fatos-relevantes-11-2026/",
+    "data": "2026-11-10",
+    "descricao": "Fatos Relevantes"
+  },
+  "ABEV3_51442": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/abev3-ambev-analise-de-press-release-11-2026/",
+    "data": "2026-11-10",
+    "descricao": "Press-release"
   }
 }
