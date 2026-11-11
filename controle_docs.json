@@ -141,7 +141,7 @@
     "descricao": "Informe Mensal"
   },
   "KNSC11": {
-    "ultima": "2026-11-02"
+    "ultima": "2026-11-11"
   },
   "VISC11_23663": {
     "status": "ok",
@@ -195,7 +195,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "EGIE3": {
-    "ultima": "2026-11-02"
+    "ultima": "2026-11-11"
   },
   "VIVT3_44450": {
     "status": "ok",
@@ -3218,5 +3218,17 @@
     "url": "https://manjubinhainvestidor.com.br/hapv3-hapvida-analise-de-comunicado-ao-mercado-11-2026/",
     "data": "2026-11-11",
     "descricao": "Comunicado ao Mercado"
+  },
+  "KNSC11_29696": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/knsc11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-11",
+    "descricao": "Relatório Gerencial"
+  },
+  "EGIE3_52358": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/egie3-engie-brasil-analise-de-demonstracoes-financeiras-intermediarias-11-2026/",
+    "data": "2026-11-11",
+    "descricao": "Demonstrações Financeiras Intermediárias"
   }
 }
