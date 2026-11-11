@@ -114,7 +114,7 @@
     "descricao": "Fatos Relevantes"
   },
   "GGRC11": {
-    "ultima": "2026-10-30"
+    "ultima": "2026-11-11"
   },
   "BBDC4_44887": {
     "status": "ok",
@@ -168,7 +168,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPLE6": {
-    "ultima": "2026-10-30"
+    "ultima": "2026-11-11"
   },
   "BTLG11_23251": {
     "status": "ok",
@@ -3188,5 +3188,17 @@
     "url": "https://manjubinhainvestidor.com.br/cpts11-dividendos-e-analise-relatorio-gerencial-11-2026/",
     "data": "2026-11-10",
     "descricao": "Relatório Gerencial"
+  },
+  "GGRC11_29807": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/ggrc11-dividendos-e-analise-fatos-relevantes-11-2026/",
+    "data": "2026-11-11",
+    "descricao": "Fatos Relevantes"
+  },
+  "CPLE6_51631": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-fato-relevante-11-2026/",
+    "data": "2026-11-11",
+    "descricao": "Fato Relevante"
   }
 }
