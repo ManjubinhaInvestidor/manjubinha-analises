@@ -465,7 +465,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "MGFF11": {
-    "ultima": "2026-10-31"
+    "ultima": "2026-11-11"
   },
   "CSAN3_45194": {
     "status": "ok",
@@ -483,7 +483,7 @@
     "descricao": "Regimento interno do Conselho de Administração"
   },
   "HAPV3": {
-    "ultima": "2026-10-31"
+    "ultima": "2026-11-11"
   },
   "RZTR11_23698": {
     "status": "ok",
@@ -3210,6 +3210,12 @@
   "CSAN3_52158": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/csan3-cosan-analise-de-comunicado-ao-mercado-11-2026/",
+    "data": "2026-11-11",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "HAPV3_51643": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hapv3-hapvida-analise-de-comunicado-ao-mercado-11-2026/",
     "data": "2026-11-11",
     "descricao": "Comunicado ao Mercado"
   }
