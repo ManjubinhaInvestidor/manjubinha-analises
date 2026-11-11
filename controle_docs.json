@@ -456,7 +456,7 @@
     "descricao": "Fatos Relevantes"
   },
   "RCRB11": {
-    "ultima": "2026-10-30"
+    "ultima": "2026-11-11"
   },
   "MGFF11_339": {
     "status": "ok",
@@ -474,7 +474,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "CSAN3": {
-    "ultima": "2026-10-30"
+    "ultima": "2026-11-11"
   },
   "HAPV3_43820": {
     "status": "ok",
@@ -3200,5 +3200,17 @@
     "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-fato-relevante-11-2026/",
     "data": "2026-11-11",
     "descricao": "Fato Relevante"
+  },
+  "RCRB11_29639": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rcrb11-dividendos-e-analise-fatos-relevantes-11-2026/",
+    "data": "2026-11-11",
+    "descricao": "Fatos Relevantes"
+  },
+  "CSAN3_52158": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/csan3-cosan-analise-de-comunicado-ao-mercado-11-2026/",
+    "data": "2026-11-11",
+    "descricao": "Comunicado ao Mercado"
   }
 }
