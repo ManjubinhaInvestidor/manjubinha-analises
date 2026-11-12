@@ -177,7 +177,7 @@
     "descricao": "Informe Mensal"
   },
   "BTLG11": {
-    "ultima": "2026-11-02"
+    "ultima": "2026-11-12"
   },
   "OUJP11_23642": {
     "status": "ok",
@@ -222,7 +222,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PRIO3": {
-    "ultima": "2026-11-02"
+    "ultima": "2026-11-12"
   },
   "SBSP3_44881": {
     "status": "ok",
@@ -3242,5 +3242,17 @@
     "url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-dados-economico-financeiros-11-2026/",
     "data": "2026-11-12",
     "descricao": "Dados Econômico-Financeiros"
+  },
+  "BTLG11_29848": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-fatos-relevantes-11-2026/",
+    "data": "2026-11-12",
+    "descricao": "Fatos Relevantes"
+  },
+  "PRIO3_52293": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/prio3-prio-analise-de-reuniao-da-administracao-11-2026/",
+    "data": "2026-11-12",
+    "descricao": "Reunião da Administração"
   }
 }
