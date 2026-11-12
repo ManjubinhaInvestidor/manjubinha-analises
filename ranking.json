@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-11-11",
+  "ultima_atualizacao": "2026-11-12",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -206,7 +206,7 @@
       "nome": "Vinci Shopping Centers",
       "tipo": "Tijolo",
       "segmento": "Shoppings",
-      "post_url": "https://manjubinhainvestidor.com.br/visc11-dividendos-e-analise-fatos-relevantes-11-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/visc11-dividendos-e-analise-relatorio-gerencial-11-2026/",
       "metricas": {
         "liquidez_diaria": 9515640.0,
         "dy_12m": 9.99,
@@ -551,7 +551,7 @@
       "ticker": "VIVT3",
       "nome": "Telefonica Vivo",
       "setor": "Telecom",
-      "post_url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-reuniao-da-administracao-10-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/vivt3-telefonica-vivo-analise-de-dados-economico-financeiros-11-2026/",
       "metricas": {
         "liquidez_diaria": 201624000.0,
         "dy_12m": 8.37,
