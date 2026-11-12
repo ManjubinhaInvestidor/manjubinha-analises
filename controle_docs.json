@@ -186,7 +186,7 @@
     "descricao": "Informe Mensal"
   },
   "OUJP11": {
-    "ultima": "2026-11-03"
+    "ultima": "2026-11-12"
   },
   "EGIE3_44842": {
     "status": "ok",
@@ -231,7 +231,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "SBSP3": {
-    "ultima": "2026-11-03"
+    "ultima": "2026-11-12"
   },
   "TRBL11_23447": {
     "status": "ok",
@@ -3252,6 +3252,18 @@
   "PRIO3_52293": {
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/prio3-prio-analise-de-reuniao-da-administracao-11-2026/",
+    "data": "2026-11-12",
+    "descricao": "Reunião da Administração"
+  },
+  "OUJP11_29422": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/oujp11-dividendos-e-analise-distribuicoes-11-2026/",
+    "data": "2026-11-12",
+    "descricao": "Distribuições"
+  },
+  "SBSP3_52309": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-reuniao-da-administracao-11-2026/",
     "data": "2026-11-12",
     "descricao": "Reunião da Administração"
   }
