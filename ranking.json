@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-11-13",
+  "ultima_atualizacao": "2026-11-14",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -706,7 +706,7 @@
       "ticker": "ENGI11",
       "nome": "Energisa",
       "setor": "Energia",
-      "post_url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-11-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-comunicado-ao-mercado-11-2026-2/",
       "metricas": {
         "liquidez_diaria": 273177000.0,
         "dy_12m": 2.57,
