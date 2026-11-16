@@ -6,7 +6,7 @@
     "descricao": "Oferta Pública"
   },
   "MXRF11": {
-    "ultima": "2026-11-05"
+    "ultima": "2026-11-16"
   },
   "KNCR11_22956": {
     "status": "ok",
@@ -51,7 +51,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PETR4": {
-    "ultima": "2026-11-05"
+    "ultima": "2026-11-16"
   },
   "ITUB4_44665": {
     "status": "ok",
@@ -3326,5 +3326,17 @@
     "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-press-release-11-2026/",
     "data": "2026-11-16",
     "descricao": "Press-release"
+  },
+  "MXRF11_29935": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/mxrf11-dividendos-e-analise-informe-mensal-11-2026/",
+    "data": "2026-11-16",
+    "descricao": "Informe Mensal"
+  },
+  "PETR4_52786": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-comunicado-ao-mercado-11-2026-2/",
+    "data": "2026-11-16",
+    "descricao": "Comunicado ao Mercado"
   }
 }
