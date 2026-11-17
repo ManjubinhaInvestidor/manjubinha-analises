@@ -312,7 +312,7 @@
     "descricao": "Fatos Relevantes"
   },
   "IRDM11": {
-    "ultima": "2026-11-05"
+    "ultima": "2026-11-17"
   },
   "VGIP11_23617": {
     "status": "ok",
@@ -339,7 +339,7 @@
     "descricao": "Reunião da Administração"
   },
   "TOTS3": {
-    "ultima": "2026-11-05"
+    "ultima": "2026-11-17"
   },
   "RBRR11_23449": {
     "status": "ok",
@@ -3362,5 +3362,11 @@
     "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-press-release-11-2026/",
     "data": "2026-11-17",
     "descricao": "Press-release"
+  },
+  "TOTS3_52863": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-reuniao-da-administracao-11-2026/",
+    "data": "2026-11-17",
+    "descricao": "Reunião da Administração"
   }
 }
