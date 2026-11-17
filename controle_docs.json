@@ -321,7 +321,7 @@
     "descricao": "Relatório Gerencial"
   },
   "VGIP11": {
-    "ultima": "2026-11-06"
+    "ultima": "2026-11-17"
   },
   "CPFE3_44682": {
     "status": "ok",
@@ -366,7 +366,7 @@
     "descricao": "Comunicação sobre Transação entre Partes Relacionadas\r\nComunicação sobre Transição entre Partes Rela"
   },
   "JBSS3": {
-    "ultima": "2026-11-06"
+    "ultima": "2026-11-17"
   },
   "ALUP11_44319": {
     "status": "ok",
@@ -3374,5 +3374,11 @@
     "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-informe-mensal-11-2026/",
     "data": "2026-11-17",
     "descricao": "Informe Mensal"
+  },
+  "VGIP11_30079": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vgip11-dividendos-e-analise-outros-comunicados-11-2026/",
+    "data": "2026-11-17",
+    "descricao": "Outros Comunicados"
   }
 }
