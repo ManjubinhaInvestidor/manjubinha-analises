@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-11-06"
+    "ultima": "2026-11-17"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-11-06"
+    "ultima": "2026-11-17"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -3368,5 +3368,11 @@
     "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-reuniao-da-administracao-11-2026/",
     "data": "2026-11-17",
     "descricao": "Reunião da Administração"
+  },
+  "HGLG11_29941": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-informe-mensal-11-2026/",
+    "data": "2026-11-17",
+    "descricao": "Informe Mensal"
   }
 }
