@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-11-05"
+    "ultima": "2026-11-17"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -330,7 +330,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPFE3": {
-    "ultima": "2026-11-05"
+    "ultima": "2026-11-17"
   },
   "TOTS3_44471": {
     "status": "ok",
@@ -3350,5 +3350,17 @@
     "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-aviso-aos-debenturistas-11-2026/",
     "data": "2026-11-16",
     "descricao": "Aviso aos Debenturistas"
+  },
+  "HSML11_29776": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hsml11-dividendos-e-analise-outros-comunicados-11-2026/",
+    "data": "2026-11-17",
+    "descricao": "Outros Comunicados"
+  },
+  "CPFE3_52927": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-press-release-11-2026/",
+    "data": "2026-11-17",
+    "descricao": "Press-release"
   }
 }
