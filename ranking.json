@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-11-17",
+  "ultima_atualizacao": "2026-11-18",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -227,7 +227,7 @@
       "nome": "RBR High Grade",
       "tipo": "Papel",
       "segmento": "TVM",
-      "post_url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-fatos-relevantes-11-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-informe-mensal-11-2026/",
       "metricas": {
         "liquidez_diaria": 4806510.0,
         "dy_12m": 15.0,
@@ -772,7 +772,7 @@
       "ticker": "ALUP11",
       "nome": "Alupar",
       "setor": "Energia",
-      "post_url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-conselho-de-administracao-11-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-comunicado-ao-mercado-11-2026/",
       "metricas": {
         "liquidez_diaria": 54520400.0,
         "dy_12m": 3.44,
