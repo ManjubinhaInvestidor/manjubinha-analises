@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-11-18",
+  "ultima_atualizacao": "2026-11-19",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -441,7 +441,7 @@
       "ticker": "BBDC4",
       "nome": "Bradesco",
       "setor": "Financeiro",
-      "post_url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-conselho-fiscal-11-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/bbdc4-bradesco-analise-de-diretoria-11-2026/",
       "metricas": {
         "liquidez_diaria": 1247350000.0,
         "dy_12m": 11.02,
