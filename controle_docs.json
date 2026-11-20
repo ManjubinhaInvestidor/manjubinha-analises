@@ -114,7 +114,7 @@
     "descricao": "Fatos Relevantes"
   },
   "GGRC11": {
-    "ultima": "2026-11-11"
+    "ultima": "2026-11-20"
   },
   "BBDC4_44887": {
     "status": "ok",
@@ -168,7 +168,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPLE6": {
-    "ultima": "2026-11-11"
+    "ultima": "2026-11-20"
   },
   "BTLG11_23251": {
     "status": "ok",
@@ -3470,5 +3470,17 @@
     "url": "https://manjubinhainvestidor.com.br/rent3-localiza-analise-de-dados-economico-financeiros-11-2026/",
     "data": "2026-11-20",
     "descricao": "Dados Econômico-Financeiros"
+  },
+  "GGRC11_30065": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/ggrc11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-20",
+    "descricao": "Relatório Gerencial"
+  },
+  "CPLE6_53214": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cple6-copel-analise-de-comunicado-ao-mercado-11-2026/",
+    "data": "2026-11-20",
+    "descricao": "Comunicado ao Mercado"
   }
 }
