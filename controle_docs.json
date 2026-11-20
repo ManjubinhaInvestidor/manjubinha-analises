@@ -429,7 +429,7 @@
     "descricao": "Distribuições"
   },
   "PATL11": {
-    "ultima": "2026-11-10"
+    "ultima": "2026-11-20"
   },
   "EMBR3_44598": {
     "status": "ok",
@@ -447,7 +447,7 @@
     "descricao": "Documentos de Oferta de Distribuição Pública"
   },
   "RENT3": {
-    "ultima": "2026-11-10"
+    "ultima": "2026-11-20"
   },
   "RCRB11_23734": {
     "status": "ok",
@@ -3464,5 +3464,11 @@
     "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-regimento-interno-do-conselho-de-administracao-11-2026/",
     "data": "2026-11-20",
     "descricao": "Regimento interno do Conselho de Administração"
+  },
+  "RENT3_53208": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rent3-localiza-analise-de-dados-economico-financeiros-11-2026/",
+    "data": "2026-11-20",
+    "descricao": "Dados Econômico-Financeiros"
   }
 }
