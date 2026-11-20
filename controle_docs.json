@@ -420,7 +420,7 @@
     "descricao": "Informe Mensal"
   },
   "BRCO11": {
-    "ultima": "2026-11-10"
+    "ultima": "2026-11-20"
   },
   "PATL11_23818": {
     "status": "ok",
@@ -438,7 +438,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "EMBR3": {
-    "ultima": "2026-11-10"
+    "ultima": "2026-11-20"
   },
   "RENT3_45148": {
     "status": "ok",
@@ -3452,5 +3452,17 @@
     "url": "https://manjubinhainvestidor.com.br/taee11-taesa-analise-de-aviso-aos-debenturistas-11-2026/",
     "data": "2026-11-19",
     "descricao": "Aviso aos Debenturistas"
+  },
+  "BRCO11_30156": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/brco11-dividendos-e-analise-informe-mensal-11-2026/",
+    "data": "2026-11-20",
+    "descricao": "Informe Mensal"
+  },
+  "EMBR3_52950": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/embr3-embraer-analise-de-regimento-interno-do-conselho-de-administracao-11-2026/",
+    "data": "2026-11-20",
+    "descricao": "Regimento interno do Conselho de Administração"
   }
 }
