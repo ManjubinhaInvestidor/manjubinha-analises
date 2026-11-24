@@ -240,7 +240,7 @@
     "descricao": "Relatório Gerencial"
   },
   "TRBL11": {
-    "ultima": "2026-11-13"
+    "ultima": "2026-11-24"
   },
   "PVBI11_23402": {
     "status": "ok",
@@ -267,7 +267,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "B3SA3": {
-    "ultima": "2026-11-13"
+    "ultima": "2026-11-24"
   },
   "ALZR11_23615": {
     "status": "ok",
@@ -3548,5 +3548,17 @@
     "url": "https://manjubinhainvestidor.com.br/rdor3-rede-dor-analise-de-fato-relevante-11-2026/",
     "data": "2026-11-24",
     "descricao": "Fato Relevante"
+  },
+  "TRBL11_30077": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/trbl11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-24",
+    "descricao": "Relatório Gerencial"
+  },
+  "B3SA3_52655": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/b3sa3-b3-bolsa-de-valores-analise-de-comunicado-ao-mercado-11-2026-2/",
+    "data": "2026-11-24",
+    "descricao": "Comunicado ao Mercado"
   }
 }
