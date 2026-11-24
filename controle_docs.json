@@ -213,7 +213,7 @@
     "descricao": "Informe Mensal"
   },
   "RECR11": {
-    "ultima": "2026-11-12"
+    "ultima": "2026-11-24"
   },
   "PRIO3_44871": {
     "status": "ok",
@@ -258,7 +258,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "RDOR3": {
-    "ultima": "2026-11-12"
+    "ultima": "2026-11-24"
   },
   "B3SA3_44745": {
     "status": "ok",
@@ -3536,5 +3536,17 @@
     "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-aviso-aos-acionistas-11-2026/",
     "data": "2026-11-24",
     "descricao": "Aviso aos Acionistas"
+  },
+  "RECR11_30013": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/recr11-dividendos-e-analise-informe-mensal-11-2026/",
+    "data": "2026-11-24",
+    "descricao": "Informe Mensal"
+  },
+  "RDOR3_53303": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rdor3-rede-dor-analise-de-fato-relevante-11-2026/",
+    "data": "2026-11-24",
+    "descricao": "Fato Relevante"
   }
 }
