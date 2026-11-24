@@ -186,7 +186,7 @@
     "descricao": "Informe Mensal"
   },
   "OUJP11": {
-    "ultima": "2026-11-12"
+    "ultima": "2026-11-24"
   },
   "EGIE3_44842": {
     "status": "ok",
@@ -231,7 +231,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "SBSP3": {
-    "ultima": "2026-11-12"
+    "ultima": "2026-11-24"
   },
   "TRBL11_23447": {
     "status": "ok",
@@ -3524,5 +3524,17 @@
     "url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-oferta-publica-11-2026/",
     "data": "2026-11-24",
     "descricao": "Oferta Pública"
+  },
+  "OUJP11_30319": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/oujp11-dividendos-e-analise-fatos-relevantes-11-2026/",
+    "data": "2026-11-24",
+    "descricao": "Fatos Relevantes"
+  },
+  "SBSP3_53211": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/sbsp3-sabesp-analise-de-aviso-aos-acionistas-11-2026/",
+    "data": "2026-11-24",
+    "descricao": "Aviso aos Acionistas"
   }
 }
