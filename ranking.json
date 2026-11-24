@@ -1,5 +1,5 @@
 {
-  "ultima_atualizacao": "2026-11-23",
+  "ultima_atualizacao": "2026-11-24",
   "proxima_atualizacao": "2026-07-25",
   "metodologia": {
     "ordenacao": "Soma das posicoes nos 4 pilares (liquidez com peso 2). Menor soma = melhor colocado.",
@@ -78,7 +78,7 @@
       "nome": "BTG Pactual Logistica",
       "tipo": "Tijolo",
       "segmento": "Logistico",
-      "post_url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-fatos-relevantes-11-2026/",
+      "post_url": "https://manjubinhainvestidor.com.br/btlg11-dividendos-e-analise-oferta-publica-11-2026/",
       "metricas": {
         "liquidez_diaria": 25103600.0,
         "dy_12m": 9.75,
