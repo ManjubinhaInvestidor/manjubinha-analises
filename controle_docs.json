@@ -6,7 +6,7 @@
     "descricao": "Oferta Pública"
   },
   "MXRF11": {
-    "ultima": "2026-11-16"
+    "ultima": "2026-11-25"
   },
   "KNCR11_22956": {
     "status": "ok",
@@ -51,7 +51,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "PETR4": {
-    "ultima": "2026-11-16"
+    "ultima": "2026-11-25"
   },
   "ITUB4_44665": {
     "status": "ok",
@@ -3590,5 +3590,17 @@
     "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-aviso-aos-acionistas-11-2026/",
     "data": "2026-11-25",
     "descricao": "Aviso aos Acionistas"
+  },
+  "MXRF11_30323": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/mxrf11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-25",
+    "descricao": "Relatório Gerencial"
+  },
+  "PETR4_53437": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/petr4-petrobras-analise-de-informacao-prestada-as-bolsas-estrangeiras-11-2026/",
+    "data": "2026-11-25",
+    "descricao": "Informação Prestada às Bolsas Estrangeiras"
   }
 }
