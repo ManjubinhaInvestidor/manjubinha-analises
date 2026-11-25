@@ -276,7 +276,7 @@
     "descricao": "Fatos Relevantes"
   },
   "ALZR11": {
-    "ultima": "2026-11-14"
+    "ultima": "2026-11-25"
   },
   "HSML11_23175": {
     "status": "ok",
@@ -303,7 +303,7 @@
     "descricao": "Comunicado ao Mercado"
   },
   "ENGI11": {
-    "ultima": "2026-11-14"
+    "ultima": "2026-11-25"
   },
   "IRDM11_16704": {
     "status": "ok",
@@ -3578,5 +3578,17 @@
     "url": "https://manjubinhainvestidor.com.br/pomo4-marcopolo-analise-de-comunicado-ao-mercado-11-2026-2/",
     "data": "2026-11-25",
     "descricao": "Comunicado ao Mercado"
+  },
+  "ALZR11_30233": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alzr11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-25",
+    "descricao": "Relatório Gerencial"
+  },
+  "ENGI11_53491": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/engi11-energisa-analise-de-aviso-aos-acionistas-11-2026/",
+    "data": "2026-11-25",
+    "descricao": "Aviso aos Acionistas"
   }
 }
