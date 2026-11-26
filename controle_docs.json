@@ -33,7 +33,7 @@
     "descricao": "Fatos Relevantes"
   },
   "HGLG11": {
-    "ultima": "2026-11-17"
+    "ultima": "2026-11-26"
   },
   "XPML11_23072": {
     "status": "ok",
@@ -60,7 +60,7 @@
     "descricao": "Calendário de Eventos Corporativos"
   },
   "ITUB4": {
-    "ultima": "2026-11-17"
+    "ultima": "2026-11-26"
   },
   "KNRI11_22955": {
     "status": "ok",
@@ -3626,5 +3626,11 @@
     "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-comunicado-ao-mercado-11-2026-3/",
     "data": "2026-11-26",
     "descricao": "Comunicado ao Mercado"
+  },
+  "HGLG11_30626": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-26",
+    "descricao": "Relatório Gerencial"
   }
 }
