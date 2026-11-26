@@ -510,7 +510,7 @@
     "descricao": "Relatório Gerencial"
   },
   "HCTR11": {
-    "ultima": "2026-11-16"
+    "ultima": "2026-11-26"
   },
   "IRBR3_45211": {
     "status": "ok",
@@ -519,7 +519,7 @@
     "descricao": "Regimento interno de Comitês"
   },
   "IRBR3": {
-    "ultima": "2026-11-16"
+    "ultima": "2026-11-26"
   },
   "MXRF11_23812": {
     "status": "ok",
@@ -3613,6 +3613,18 @@
     "status": "ok",
     "url": "https://manjubinhainvestidor.com.br/vale3-vale-analise-de-comunicado-ao-mercado-11-2026-2/",
     "data": "2026-11-25",
+    "descricao": "Comunicado ao Mercado"
+  },
+  "HCTR11_30368": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hctr11-dividendos-e-analise-informe-mensal-11-2026/",
+    "data": "2026-11-26",
+    "descricao": "Informe Mensal"
+  },
+  "IRBR3_52970": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/irbr3-irb-brasil-analise-de-comunicado-ao-mercado-11-2026-3/",
+    "data": "2026-11-26",
     "descricao": "Comunicado ao Mercado"
   }
 }
