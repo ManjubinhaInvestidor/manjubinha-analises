@@ -285,7 +285,7 @@
     "descricao": "Informe Mensal"
   },
   "HSML11": {
-    "ultima": "2026-11-17"
+    "ultima": "2026-11-26"
   },
   "SUZB3_44099": {
     "status": "ok",
@@ -330,7 +330,7 @@
     "descricao": "Conselho de Administração"
   },
   "CPFE3": {
-    "ultima": "2026-11-17"
+    "ultima": "2026-11-26"
   },
   "TOTS3_44471": {
     "status": "ok",
@@ -3632,5 +3632,17 @@
     "url": "https://manjubinhainvestidor.com.br/hglg11-dividendos-e-analise-relatorio-gerencial-11-2026/",
     "data": "2026-11-26",
     "descricao": "Relatório Gerencial"
+  },
+  "HSML11_30503": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/hsml11-dividendos-e-analise-informe-mensal-11-2026/",
+    "data": "2026-11-26",
+    "descricao": "Informe Mensal"
+  },
+  "CPFE3_53539": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/cpfe3-cpfl-energia-analise-de-conselho-de-administracao-11-2026-2/",
+    "data": "2026-11-26",
+    "descricao": "Conselho de Administração"
   }
 }
