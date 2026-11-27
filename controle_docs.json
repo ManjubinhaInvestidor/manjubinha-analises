@@ -321,7 +321,7 @@
     "descricao": "Relatório Gerencial"
   },
   "VGIP11": {
-    "ultima": "2026-11-17"
+    "ultima": "2026-11-27"
   },
   "CPFE3_44682": {
     "status": "ok",
@@ -366,7 +366,7 @@
     "descricao": "Comunicação sobre Transação entre Partes Relacionadas\r\nComunicação sobre Transição entre Partes Rela"
   },
   "JBSS3": {
-    "ultima": "2026-11-17"
+    "ultima": "2026-11-27"
   },
   "ALUP11_44319": {
     "status": "ok",
@@ -3650,5 +3650,11 @@
     "url": "https://manjubinhainvestidor.com.br/tots3-totvs-analise-de-comunicado-ao-mercado-11-2026/",
     "data": "2026-11-26",
     "descricao": "Comunicado ao Mercado"
+  },
+  "VGIP11_30607": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/vgip11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-27",
+    "descricao": "Relatório Gerencial"
   }
 }
