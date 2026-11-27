@@ -42,7 +42,7 @@
     "descricao": "Informe Mensal"
   },
   "XPML11": {
-    "ultima": "2026-11-18"
+    "ultima": "2026-11-27"
   },
   "PETR4_44699": {
     "status": "ok",
@@ -87,7 +87,7 @@
     "descricao": "Relatório de Agência de Rating"
   },
   "BBAS3": {
-    "ultima": "2026-11-18"
+    "ultima": "2026-11-27"
   },
   "WEGE3_44388": {
     "status": "ok",
@@ -3656,5 +3656,11 @@
     "url": "https://manjubinhainvestidor.com.br/vgip11-dividendos-e-analise-relatorio-gerencial-11-2026/",
     "data": "2026-11-27",
     "descricao": "Relatório Gerencial"
+  },
+  "BBAS3_53474": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-comunicado-ao-mercado-11-2026-2/",
+    "data": "2026-11-27",
+    "descricao": "Comunicado ao Mercado"
   }
 }
