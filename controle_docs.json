@@ -348,7 +348,7 @@
     "descricao": "Relatório Gerencial"
   },
   "RBRR11": {
-    "ultima": "2026-11-18"
+    "ultima": "2026-11-27"
   },
   "BCFF11_9369": {
     "status": "ok",
@@ -375,7 +375,7 @@
     "descricao": "Aviso aos Acionistas"
   },
   "ALUP11": {
-    "ultima": "2026-11-18"
+    "ultima": "2026-11-27"
   },
   "RBRF11_21325": {
     "status": "ok",
@@ -3662,5 +3662,17 @@
     "url": "https://manjubinhainvestidor.com.br/bbas3-banco-do-brasil-analise-de-comunicado-ao-mercado-11-2026-2/",
     "data": "2026-11-27",
     "descricao": "Comunicado ao Mercado"
+  },
+  "RBRR11_30622": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/rbrr11-dividendos-e-analise-relatorio-gerencial-11-2026/",
+    "data": "2026-11-27",
+    "descricao": "Relatório Gerencial"
+  },
+  "ALUP11_53322": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-demonstracoes-financeiras-adicionais-11-2026/",
+    "data": "2026-11-27",
+    "descricao": "Demonstrações Financeiras Adicionais"
   }
 }
