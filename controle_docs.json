@@ -357,7 +357,7 @@
     "descricao": "Outros Comunicados"
   },
   "BCFF11": {
-    "ultima": "2026-11-18"
+    "ultima": "2026-11-28"
   },
   "JBSS3_31612": {
     "status": "ok",
@@ -402,7 +402,7 @@
     "descricao": "Fato Relevante"
   },
   "KLBN11": {
-    "ultima": "2026-11-18"
+    "ultima": "2026-11-28"
   },
   "BPAC11_44751": {
     "status": "ok",
@@ -3674,5 +3674,11 @@
     "url": "https://manjubinhainvestidor.com.br/alup11-alupar-analise-de-demonstracoes-financeiras-adicionais-11-2026/",
     "data": "2026-11-27",
     "descricao": "Demonstrações Financeiras Adicionais"
+  },
+  "KLBN11_53550": {
+    "status": "ok",
+    "url": "https://manjubinhainvestidor.com.br/klbn11-klabin-analise-de-calendario-de-eventos-corporativos-11-2026/",
+    "data": "2026-11-28",
+    "descricao": "Calendário de Eventos Corporativos"
   }
 }
